@@ -62,6 +62,7 @@ public class PlayerMovemant : CharacterController
             //tmpV3.Set(Mathf.Lerp(transform.position.x, cursor.x, Time.deltaTime), Mathf.Lerp(transform.position.y, cursor.y, Time.deltaTime), transform.position.z + flySpeed * Time.deltaTime);
             
             transform.position = tmpV3;
+            PlayerVisualRotating();
             CameraController.instance.PlayerPosUpdate(transform.position);
 
 
@@ -69,4 +70,19 @@ public class PlayerMovemant : CharacterController
         }
     }
 
+
+    private void PlayerVisualRotating()
+    {
+        int dirX = 0;
+        int dirY = 0;
+
+        dirX = cursor.x > 0 ? -1 : cursor.x < 0 ? 1 : 0;
+        dirY = cursor.y > 0 ? -1 : cursor.y < 0 ? 1 : 0;
+
+        
+       
+        tmpV3.Set(Mathf.Lerp(playerPrefab.rotation.z, 30 * dirX, Time.deltaTime* touchControll), Mathf.Lerp(playerPrefab.rotation.x, 30 * dirY, Time.deltaTime*touchControll), 0);
+
+        playerPrefab.rotation = Quaternion.Euler(tmpV3.z, 0, tmpV3.x);
+    }
 }

@@ -628,7 +628,6 @@ GameObject:
   - component: {fileID: 1106438645}
   - component: {fileID: 1106438649}
   - component: {fileID: 1106438650}
-  - component: {fileID: 1106438651}
   m_Layer: 0
   m_Name: Char
   m_TagString: Untagged
@@ -686,6 +685,7 @@ MonoBehaviour:
   touchControll: 0.1
   rb: {fileID: 1106438650}
   cursor: {x: 0, y: 0, z: 0}
+  playerPrefab: {fileID: 1814656535}
 --- !u!54 &1106438650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -702,18 +702,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1106438651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106438643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381c10d75d393224185d994cd25eef38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1400940659
 GameObject:
   m_ObjectHideFlags: 0
