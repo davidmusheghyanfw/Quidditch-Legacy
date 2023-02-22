@@ -8,11 +8,15 @@ public class PlayerMovemant : CharacterController
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Vector3 cursor;
-
-    private Vector3 tmpV3 = Vector3.zero;
-
-    [SerializeField] private Transform playerPrefab;
    
+    private Vector3 playerDistance;
+    private Vector3 tmpV3 = Vector3.zero;
+    private Vector3 tmpV3Rot = Vector3.zero;
+
+    [SerializeField] private Transform visualContainer;
+
+   
+
     void Start()
     {
         PlayerCoursorFollowRoutineC = StartCoroutine(PlayerCoursorFollowRoutine());
@@ -30,9 +34,11 @@ public class PlayerMovemant : CharacterController
     void OnTouchDrag(Vector3 currentPos, Vector3 deltaPosition)
     {
 
-        //Debug.Log(cursor);
+       
+        if(deltaPosition.x != 0 || deltaPosition.y != 0)
+        cursor =  CharacterNewPos(deltaPosition - cursor);
 
-        cursor =  CharacterNewPos(deltaPosition);
+        playerDistance = transform.position + cursor;
     }
 
     void OnTouchUp(Vector3 lastPos)
@@ -50,39 +56,33 @@ public class PlayerMovemant : CharacterController
         while (true)
         {
             
-            cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
-            cursor.y = Mathf.Clamp(cursor.y, varticalBorderMin, varticalBorderMax);
 
-            
             tmpV3 = transform.position;
-            transform.position = Vector3.Lerp(transform.position, cursor, touchControll);
+           
 
-            tmpV3.Set(transform.position.x, transform.position.y, tmpV3.z + flySpeed * Time.deltaTime);
+            tmpV3.Set(Mathf.Lerp(transform.position.x, playerDistance.x,  touchControl), Mathf.Lerp(transform.position.y, playerDistance.y, touchControl), transform.position.z + flySpeed * Time.deltaTime);
+
+           
+            tmpV3Rot = tmpV3;
             
-            //tmpV3.Set(Mathf.Lerp(transform.position.x, cursor.x, Time.deltaTime), Mathf.Lerp(transform.position.y, cursor.y, Time.deltaTime), transform.position.z + flySpeed * Time.deltaTime);
+            
+            tmpV3.y = Mathf.Clamp(tmpV3.y, varticalBorderMin, varticalBorderMax);
+            tmpV3.x = Mathf.Clamp(tmpV3.x, horizontalBorderMin, horizontalBorderMax);
             
             transform.position = tmpV3;
-            PlayerVisualRotating();
-            CameraController.instance.PlayerPosUpdate(transform.position);
 
+            tmpV3Rot.y = Mathf.Clamp(tmpV3Rot.y, -verticalRotationAmount, verticalRotationAmount);
+            tmpV3Rot.x = Mathf.Clamp(tmpV3Rot.x, -horizontalRotationAmount, horizontalRotationAmount);
+
+
+            visualContainer.rotation = Quaternion.Euler(-tmpV3Rot.y, 0, -tmpV3Rot.x);
+
+
+            CameraController.instance.PlayerPosUpdate(transform.position);
+            
 
             yield return new WaitForEndOfFrame();
         }
     }
 
-
-    private void PlayerVisualRotating()
-    {
-        int dirX = 0;
-        int dirY = 0;
-
-        dirX = cursor.x > 0 ? -1 : cursor.x < 0 ? 1 : 0;
-        dirY = cursor.y > 0 ? -1 : cursor.y < 0 ? 1 : 0;
-
-        
-       
-        tmpV3.Set(Mathf.Lerp(playerPrefab.rotation.z, 30 * dirX, Time.deltaTime* touchControll), Mathf.Lerp(playerPrefab.rotation.x, 30 * dirY, Time.deltaTime*touchControll), 0);
-
-        playerPrefab.rotation = Quaternion.Euler(tmpV3.z, 0, tmpV3.x);
-    }
 }

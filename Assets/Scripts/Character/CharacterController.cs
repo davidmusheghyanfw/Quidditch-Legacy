@@ -11,13 +11,11 @@ public class CharacterController : MonoBehaviour
     [SerializeField] protected float horizontalBorderMin;
 
     [SerializeField] private float sensetivity;
-    [SerializeField] protected float touchControll;
-   
-    //private float pitch;
-    //private float roll;
+    [SerializeField] protected float touchControl;
 
-    //private float verticalAxis;
-    //private float horizontalAxis;
+    [SerializeField] protected float horizontalRotationAmount;
+    [SerializeField] protected float verticalRotationAmount;
+   
     private Vector3 pos;
 
     void Start()
@@ -34,8 +32,9 @@ public class CharacterController : MonoBehaviour
 
     public Vector3 CharacterNewPos(Vector3 deltaPos)// float verticalDirection = 0, float horizontalDirection = 0)
     {
+       
         
-        pos = new  Vector3(deltaPos.x , deltaPos.y, 0)*sensetivity;
+        pos = new  Vector3(deltaPos.x , deltaPos.y, 0) * sensetivity;
 
 
         return pos;
