@@ -5,6 +5,7 @@ using UnityEngine;
 public class CheckPointSpawning : MonoBehaviour
 {
     [SerializeField] private float offset;
+    [SerializeField] private int spawningCount;
     [SerializeField] private Vector2 spawningPosX;
     [SerializeField] private Vector2 spawningPosY;
     [SerializeField] private GameObject checkPoint;
@@ -23,7 +24,7 @@ public class CheckPointSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (checkPoints.Count < 12)
+        if (checkPoints.Count < spawningCount)
         {
             spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
                 Random.Range(spawningPosY.x, spawningPosY.y), offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count-1].transform.position.z));

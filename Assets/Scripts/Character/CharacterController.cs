@@ -5,12 +5,12 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] protected float flySpeed;
-    [SerializeField] protected float varticalBorderMax;
-    [SerializeField] protected float varticalBorderMin;
+    [SerializeField] protected float verticalBorderMax;
+    [SerializeField] protected float verticalBorderMin;
     [SerializeField] protected float horizontalBorderMax;
     [SerializeField] protected float horizontalBorderMin;
 
-    [SerializeField] private float sensetivity;
+    [SerializeField] protected float sensetivity;
     [SerializeField] protected float touchControl;
 
     [SerializeField] protected float horizontalRotationAmount;
@@ -38,11 +38,6 @@ public class CharacterController : MonoBehaviour
 
 
         return pos;
-        //pitch = Mathf.Lerp(varticalPitchMin, varticalPitchMax, Mathf.Abs(verticalDirection)) * Mathf.Sign(verticalDirection);
-        //roll = Mathf.Lerp(horizontalRollMin, horizontalRollMax, Mathf.Abs(horizontalDirection)) * -Mathf.Sign(horizontalDirection);
-
-        //transform.localRotation = Quaternion.Euler(Vector3.right * pitch + Vector3.forward * roll);
-        //transform.Translate(horizontalDirection * Time.deltaTime * flySpeed, 0, 0);
 
     }
 
