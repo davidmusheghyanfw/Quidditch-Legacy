@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3284140326051777494}
   - component: {fileID: 1988279402101601231}
+  - component: {fileID: 7782057803858681886}
   m_Layer: 0
   m_Name: Gold Ring
   m_TagString: Untagged
@@ -46,6 +47,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9758472, y: 3.2743242, z: 1}
   m_Center: {x: -0.009442329, y: -0.019864274, z: 0}
+--- !u!64 &7782057803858681886
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799071373063508332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &6581315367682517429
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6581315367682517429}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

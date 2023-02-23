@@ -73,6 +73,8 @@ public class PlayerMovemant : CharacterController
           
             diff = diff.normalized;
 
+            animator.SetFloat("DirY", diff.y);
+
 
             Vector3 upwards = Vector3.up +(Vector3.right  * diff.x * rotationZAxisSensitivity);
           
