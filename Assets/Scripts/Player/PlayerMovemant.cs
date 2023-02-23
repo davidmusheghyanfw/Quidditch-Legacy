@@ -12,6 +12,7 @@ public class PlayerMovemant : CharacterController
     [SerializeField] private Transform visualContainer;
     [SerializeField] private float rotationDiff;
     [SerializeField] private float rotationZAxisSensitivity;
+    [SerializeField] private float rotationDelay;
 
     [SerializeField] private Animator animator;
 
@@ -60,6 +61,7 @@ public class PlayerMovemant : CharacterController
 
         while (true)
         {
+           // rb.velocity = Vector3.forward * flySpeed *
 
             transform.position += Vector3.forward * flySpeed * Time.deltaTime;
 
@@ -70,8 +72,8 @@ public class PlayerMovemant : CharacterController
 
             Vector3 diff = transform.position - prevPos;
 
-          
-            diff = diff.normalized;
+
+            diff = diff.normalized + Vector3.forward* rotationDelay;
 
             animator.SetFloat("DirY", diff.y);
 

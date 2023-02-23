@@ -828,8 +828,9 @@ MonoBehaviour:
   rb: {fileID: 1106438650}
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1814656535}
-  rotationDiff: 1
+  rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
+  rotationDelay: 5
   animator: {fileID: 2011246906}
 --- !u!54 &1106438650
 Rigidbody:
@@ -913,12 +914,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.19000053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
@@ -1075,12 +1076,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 708aaf7a5f01dc641a127c8481fcd8aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.41
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708aaf7a5f01dc641a127c8481fcd8aa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.27
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708aaf7a5f01dc641a127c8481fcd8aa,
         type: 3}
