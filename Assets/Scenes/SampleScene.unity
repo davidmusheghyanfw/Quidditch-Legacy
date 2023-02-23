@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &183552311
 Transform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183552310}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -346,14 +346,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.17426372, y: -0, z: -0, w: 0.9846991}
-  m_LocalPosition: {x: 0, y: 7.8, z: -15.7}
+  m_LocalRotation: {x: 0.13214695, y: -0, z: -0, w: 0.99123013}
+  m_LocalPosition: {x: 0, y: 6.356, z: -21.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651112316}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20.072, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.187, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,7 +784,7 @@ BoxCollider:
   m_GameObject: {fileID: 1106438643}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 8.604522}
   m_Center: {x: 0, y: 0, z: 0.57457674}
@@ -822,7 +822,7 @@ MonoBehaviour:
   horizontalBorderMax: 50
   horizontalBorderMin: -50
   sensetivity: 0.2
-  touchControl: 3
+  touchControl: 5
   horizontalRotationAmount: 50
   verticalRotationAmount: 1
   rb: {fileID: 1106438650}
@@ -846,7 +846,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &1400940659
 GameObject:
   m_ObjectHideFlags: 0
