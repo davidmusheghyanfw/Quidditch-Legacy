@@ -1148,7 +1148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 200
   nextSegmentCreationOffset: 300
-  spawningCount: 17
+  maxSegmentAmount: 5
+  visibleSegmentCount: 5
   spawningPosX: {x: -40, y: 40}
   spawningPosY: {x: 20, y: 40}
   checkPoint: {fileID: 8152831937271981020, guid: 815907d45109d0347a09d6f4bbaa8c68,
