@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreUpdateSlider: {fileID: 91020955}
-  levelCompleteScore: 25
+  levelCompleteScore: 10
 --- !u!1001 &2011246903
 PrefabInstance:
   m_ObjectHideFlags: 0

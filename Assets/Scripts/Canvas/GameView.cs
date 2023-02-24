@@ -28,7 +28,7 @@ public class GameView : MonoBehaviour
     public void UpdateScore()
     {
         scoreUpdateSlider.value ++;
-        if (scoreUpdateSlider.value == levelCompleteScore)GameManager.instance.GameWin();
+        if (scoreUpdateSlider.value >= levelCompleteScore)GameManager.instance.GameWin();
     }
 
     public GameObject GetGameObject()

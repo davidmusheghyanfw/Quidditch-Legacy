@@ -18,6 +18,7 @@ public class PlayerMovemant : CharacterController
     [SerializeField] private Animator animator;
 
     float tmpFlySpeed;
+    bool isStopping = false;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerMovemant : CharacterController
         StopCursorFollowing();
         cursor.Set(cursor.x, verticalBorderMin, 0);
         transform.position = cursor;
+        isStopping = false;
         StartCursorFollowing();
     }
 
@@ -48,17 +50,18 @@ public class PlayerMovemant : CharacterController
 
     void OnTouchDrag(Vector3 currentPos, Vector3 deltaPosition)
     {
-   
-        Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
+        if (!isStopping)
+        {
+            Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
 
-        if (newCursorPosition.y < verticalBorderMin) newCursorPosition.y = verticalBorderMin;
-        if (newCursorPosition.y > verticalBorderMax) newCursorPosition.y = verticalBorderMax;
+            if (newCursorPosition.y < verticalBorderMin) newCursorPosition.y = verticalBorderMin;
+            if (newCursorPosition.y > verticalBorderMax) newCursorPosition.y = verticalBorderMax;
 
-        if (newCursorPosition.x < horizontalBorderMin) newCursorPosition.x = horizontalBorderMin;
-        if (newCursorPosition.x > horizontalBorderMax) newCursorPosition.x = horizontalBorderMax;
+            if (newCursorPosition.x < horizontalBorderMin) newCursorPosition.x = horizontalBorderMin;
+            if (newCursorPosition.x > horizontalBorderMax) newCursorPosition.x = horizontalBorderMax;
 
-        cursor = newCursorPosition;
-
+            cursor = newCursorPosition;
+        }
       
     }
 
@@ -73,8 +76,6 @@ public class PlayerMovemant : CharacterController
     IEnumerator PlayerCoursorFollowRoutine()
     {
         Vector3 prevPos = transform.position;
-
-        
 
         while (true)
         {
@@ -121,17 +122,18 @@ public class PlayerMovemant : CharacterController
     private Coroutine PlayerStoppingRoutinC;
     private IEnumerator PlayerStoppingRoutin()
     {
-        
+        isStopping = true;
         float t = 0.0f;
         float startTime = Time.fixedTime;
-
+        cursor = transform.position ;
         while(t<1)
         {
-            t = (Time.fixedTime - startTime)/2;
+            t = (Time.fixedTime - startTime)/1;
             tmpFlySpeed = Mathf.Lerp(tmpFlySpeed, 0, t);
             yield return new WaitForEndOfFrame();
         }
-        StopCursorFollowing();
+        if (isStopping) StopCursorFollowing();
+        else tmpFlySpeed = flySpeed;
     }
 
     public void OnGameWin()
