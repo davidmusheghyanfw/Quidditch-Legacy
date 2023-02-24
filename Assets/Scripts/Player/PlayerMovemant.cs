@@ -103,6 +103,7 @@ public class PlayerMovemant : CharacterController
             CameraController.instance.PlayerPosUpdate(transform.position);
             prevPos = transform.position;
 
+            GameView.instance.UpdateScore();
             yield return new WaitForEndOfFrame();
         }
     }
@@ -134,6 +135,11 @@ public class PlayerMovemant : CharacterController
         }
         if (isStopping) StopCursorFollowing();
         else tmpFlySpeed = flySpeed;
+    }
+
+    public Transform GetPlayer()
+    {
+        return gameObject.transform;
     }
 
     public void OnGameWin()

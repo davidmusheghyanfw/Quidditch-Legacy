@@ -39,7 +39,6 @@ public class CheckPointSpawning : MonoBehaviour
         StopCheckPointSpawning();
         DestroyAll();
         checkPoints.Clear();
-        Debug.Log(checkPoints.Count);
         spawnPos = Vector3.zero;
         StartCheckPointSpawning();
     }

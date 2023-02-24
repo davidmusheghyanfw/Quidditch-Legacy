@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public static GameManager instance;
+    public static GameManager instance;
+
+   
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     public void GameInit()
     {
         PlayerMovemant.instance.PlayerInit();
+        LevelManager.instance.InitLevel();
         GameView.instance.gameObject.SetActive(true);
         GameView.instance.GameViewCanvasInit();
         CheckPointSpawning.instance.CheckPointsSpawningInit();
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void GameWin()
     {
+        LevelManager.instance.levelWin();
         PlayerMovemant.instance.OnGameWin();
         GameView.instance.GetGameObject().SetActive(false);
         LevelEndCanvas.instance.LevelWinCanvasActive();
@@ -43,4 +47,6 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+   
 }

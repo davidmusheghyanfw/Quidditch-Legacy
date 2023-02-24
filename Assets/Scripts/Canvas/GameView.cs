@@ -8,7 +8,7 @@ public class GameView : MonoBehaviour
     public static GameView instance;
 
     [SerializeField] private Slider scoreUpdateSlider;
-    [SerializeField] private int levelCompleteScore;
+    [SerializeField] private float levelCompleteScore;
 
     private void Awake()
     {
@@ -25,10 +25,13 @@ public class GameView : MonoBehaviour
         scoreUpdateSlider.value = 0;
         scoreUpdateSlider.maxValue = levelCompleteScore;
     }
+    public void SetFinishDistance(float distance)
+    {
+        levelCompleteScore = distance;
+    }
     public void UpdateScore()
     {
-        scoreUpdateSlider.value ++;
-        if (scoreUpdateSlider.value >= levelCompleteScore)GameManager.instance.GameWin();
+        scoreUpdateSlider.value = PlayerMovemant.instance.GetPlayer().transform.position.z;
     }
 
     public GameObject GetGameObject()

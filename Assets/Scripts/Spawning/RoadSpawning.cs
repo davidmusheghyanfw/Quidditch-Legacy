@@ -7,6 +7,7 @@ public class RoadSpawning : MonoBehaviour
     public static RoadSpawning instance;
 
     [SerializeField] private GameObject road;
+    [SerializeField] private GameObject Finish;
     [SerializeField] private Transform player;
     [SerializeField] private Transform parent;
     [SerializeField] private Transform firstRoad;
@@ -37,6 +38,7 @@ public class RoadSpawning : MonoBehaviour
         DestroyAll();
         roads.Clear();
         tmpV3 = Vector3.zero;
+        SpawnFinish();
         StartRoadSpawning();
     }
 
@@ -48,7 +50,7 @@ public class RoadSpawning : MonoBehaviour
 
             if (roads.Count == 0) SpawnNewRoad();
 
-            if (player.position.z >= roads[roads.Count - 1].position.z / 2 && !isDestroying)
+            if (player.position.z >= roads[roads.Count - 1].position.z / 2 && !isDestroying && roads.Count - 1 < LevelManager.instance.GetLevel())
             {
                 DestroyBackRoads();
                 SpawnNewRoad();
@@ -111,5 +113,16 @@ public class RoadSpawning : MonoBehaviour
         if (SpawnNewRoadRoutineC != null) StopCoroutine(SpawnNewRoadRoutineC);
         SpawnNewRoadRoutineC = StartCoroutine(SpawnNewRoadRoutine());
 
+    }
+
+    public float GetRoadLength()
+    {
+        return roadLength;
+    }
+
+    private void SpawnFinish()
+    {
+        tmpV3.z = LevelManager.instance.GetLevelDistance();
+        Finish.transform.position = tmpV3;
     }
 }
