@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovemant : CharacterController
 {
+    public static PlayerMovemant instance;
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Vector3 cursor;
@@ -16,13 +17,27 @@ public class PlayerMovemant : CharacterController
 
     [SerializeField] private Animator animator;
 
+    float tmpFlySpeed;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        cursor.Set(cursor.x, verticalBorderMin, cursor.z);
-        PlayerCoursorFollowRoutineC = StartCoroutine(PlayerCoursorFollowRoutine());
         TouchManager.instance.OnTouchDown += OnTouchDown;
         TouchManager.instance.OnTouchDrag += OnTouchDrag;
         TouchManager.instance.OnTouchUp += OnTouchUp;
+    }
+
+    public void PlayerInit()
+    {
+        tmpFlySpeed = flySpeed;
+        StopCursorFollowing();
+        cursor.Set(cursor.x, verticalBorderMin, 0);
+        transform.position = cursor;
+        StartCursorFollowing();
     }
 
     void OnTouchDown(Vector3 startPos)
@@ -59,11 +74,13 @@ public class PlayerMovemant : CharacterController
     {
         Vector3 prevPos = transform.position;
 
+        
+
         while (true)
         {
            // rb.velocity = Vector3.forward * flySpeed *
 
-            transform.position += Vector3.forward * flySpeed * Time.deltaTime;
+            transform.position += Vector3.forward * tmpFlySpeed * Time.deltaTime;
 
             cursor.z = transform.position.z;
 
@@ -89,4 +106,37 @@ public class PlayerMovemant : CharacterController
         }
     }
 
+    private void StartCursorFollowing()
+    {
+        if (PlayerCoursorFollowRoutineC != null) StopCoroutine(PlayerCoursorFollowRoutineC);
+        PlayerCoursorFollowRoutineC = StartCoroutine(PlayerCoursorFollowRoutine());
+
+    }
+
+    private void StopCursorFollowing()
+    {
+        if (PlayerCoursorFollowRoutineC != null) StopCoroutine(PlayerCoursorFollowRoutineC);
+    }
+
+    private Coroutine PlayerStoppingRoutinC;
+    private IEnumerator PlayerStoppingRoutin()
+    {
+        
+        float t = 0.0f;
+        float startTime = Time.fixedTime;
+
+        while(t<1)
+        {
+            t = (Time.fixedTime - startTime)/2;
+            tmpFlySpeed = Mathf.Lerp(tmpFlySpeed, 0, t);
+            yield return new WaitForEndOfFrame();
+        }
+        StopCursorFollowing();
+    }
+
+    public void OnGameWin()
+    {
+        if (PlayerStoppingRoutinC != null) StopCoroutine(PlayerStoppingRoutinC);
+        PlayerStoppingRoutinC = StartCoroutine(PlayerStoppingRoutin());
+    }
 }

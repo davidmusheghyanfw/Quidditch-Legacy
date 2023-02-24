@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoadSpawning : MonoBehaviour
 {
+    public static RoadSpawning instance;
+
     [SerializeField] private GameObject road;
     [SerializeField] private Transform player;
     [SerializeField] private Transform parent;
@@ -17,14 +19,28 @@ public class RoadSpawning : MonoBehaviour
     private Vector3 tmpV3;
 
     private List<Transform> roads = new List<Transform> ();
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        StartCoroutine(SpawnNewRoadRoutine());
+       
        // roads.Add(firstRoad);
        //tmpV3 = firstRoad.position;
     }
 
+    public void RoadSpawningInit()
+    {
+        StopRoadSpawning();
+        DestroyAll();
+        roads.Clear();
+        tmpV3 = Vector3.zero;
+        StartRoadSpawning();
+    }
 
+    Coroutine SpawnNewRoadRoutineC;
     private IEnumerator SpawnNewRoadRoutine()
     {
         while (true)
@@ -38,16 +54,6 @@ public class RoadSpawning : MonoBehaviour
                 SpawnNewRoad();
             }
 
-            //if (player.position.z - roads[roads.Count - 1].position.z + nextSegmentCreationOffset
-            //>= roads[roads.Count - 1].position.z - roads[roads.Count - 1].position.z)
-            //{
-
-              
-
-            //}
-
-
-            
 
             yield return new WaitForEndOfFrame();
         }
@@ -83,5 +89,27 @@ public class RoadSpawning : MonoBehaviour
             
             roads.RemoveAt(i);
         }
+    }
+
+    private void DestroyAll()
+    {
+        foreach (Transform item in parent)
+        {
+            Destroy(item.gameObject);
+        }
+    }
+
+
+    private void StopRoadSpawning()
+    {
+        if (SpawnNewRoadRoutineC != null) StopCoroutine(SpawnNewRoadRoutineC);
+        
+    }   
+    
+    private void StartRoadSpawning()
+    {
+        if (SpawnNewRoadRoutineC != null) StopCoroutine(SpawnNewRoadRoutineC);
+        SpawnNewRoadRoutineC = StartCoroutine(SpawnNewRoadRoutine());
+
     }
 }

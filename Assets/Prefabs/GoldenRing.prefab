@@ -129,8 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4522714628569638767}
-  - component: {fileID: 4620244193472750976}
-  - component: {fileID: 5090393135072514674}
+  - component: {fileID: 5538307994676867235}
   m_Layer: 0
   m_Name: Gold Ring
   m_TagString: Untagged
@@ -155,35 +154,6 @@ Transform:
   m_Father: {fileID: 2642522538166128319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4620244193472750976
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1988279402101601231, guid: 36908a07163effd41b3c7c0d82e895fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 7770786840803059989}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3147000422635111036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.9758472, y: 3.2743242, z: 1}
-  m_Center: {x: -0.009442329, y: -0.019864274, z: 0}
---- !u!64 &5090393135072514674
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7782057803858681886, guid: 36908a07163effd41b3c7c0d82e895fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 7770786840803059989}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3147000422635111036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &8152831937271981020
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,9 +163,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3304737848078468994}
+  - component: {fileID: 2761994540387330480}
   m_Layer: 0
   m_Name: GoldenRing
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,6 +187,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2761994540387330480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152831937271981020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 15, z: 2.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7770786840803059989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,5 +267,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7782057803858681886, guid: 36908a07163effd41b3c7c0d82e895fb,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782057803858681886, guid: 36908a07163effd41b3c7c0d82e895fb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 36908a07163effd41b3c7c0d82e895fb, type: 3}
+--- !u!64 &5538307994676867235
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147000422635111036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 127ad8efd968df04181675c1fe17160a, type: 3}

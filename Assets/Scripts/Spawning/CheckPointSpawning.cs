@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckPointSpawning : MonoBehaviour
 {
+    public static CheckPointSpawning instance;
+
     [SerializeField] private float offset;
     [SerializeField] private float nextSegmentCreationOffset;
     [SerializeField] private int maxSegmentAmount;
@@ -21,20 +23,28 @@ public class CheckPointSpawning : MonoBehaviour
     GameObject currentCheckPoint;
 
     private Vector3 spawnPos;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(CheckPointSpawnRoutine());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
-       
     }
 
+    public void CheckPointsSpawningInit()
+    {
+        StopCheckPointSpawning();
+        DestroyAll();
+        checkPoints.Clear();
+        Debug.Log(checkPoints.Count);
+        spawnPos = Vector3.zero;
+        StartCheckPointSpawning();
+    }
+
+    private Coroutine CheckPointSpawnRoutineC;
     private IEnumerator CheckPointSpawnRoutine()
     {
         while (true)
@@ -80,5 +90,24 @@ public class CheckPointSpawning : MonoBehaviour
         }
 
        
+    }
+
+    private void DestroyAll()
+    {
+        foreach (Transform item in parent)
+        {
+            Destroy(item.gameObject);
+        }
+    }
+
+    private void StopCheckPointSpawning()
+    {
+        if (CheckPointSpawnRoutineC != null) StopCoroutine(CheckPointSpawnRoutineC);
+    } 
+    
+    private void StartCheckPointSpawning()
+    {
+        if (CheckPointSpawnRoutineC != null) StopCoroutine(CheckPointSpawnRoutineC);
+        CheckPointSpawnRoutineC = StartCoroutine(CheckPointSpawnRoutine());
     }
 }

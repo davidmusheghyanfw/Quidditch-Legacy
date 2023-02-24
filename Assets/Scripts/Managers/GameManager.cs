@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   public static GameManager instance;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+  
+    void Start()
     {
-        
+        GameInit();
+    }
+
+    public void GameInit()
+    {
+        PlayerMovemant.instance.PlayerInit();
+        GameView.instance.gameObject.SetActive(true);
+        GameView.instance.GameViewCanvasInit();
+        CheckPointSpawning.instance.CheckPointsSpawningInit();
+        RoadSpawning.instance.RoadSpawningInit();
+        LevelEndCanvas.instance.LevelEndCanvasInit();
+    }
+
+    public void GameWin()
+    {
+        PlayerMovemant.instance.OnGameWin();
+        GameView.instance.GetGameObject().SetActive(false);
+        LevelEndCanvas.instance.LevelWinCanvasActive();
+    }
+
+    public void GameOver()
+    {
+
+    }
+
+    public void GameStopped()
+    {
+
     }
 }
