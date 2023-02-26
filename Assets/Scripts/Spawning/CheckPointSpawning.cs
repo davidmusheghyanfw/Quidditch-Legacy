@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CheckPointSpawning : MonoBehaviour
@@ -66,8 +67,14 @@ public class CheckPointSpawning : MonoBehaviour
     {
         for (int i = 0; i < visibleSegmentCount; i++)
         {
+            float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+            if (tmpOffset >= LevelManager.instance.GetLevelDistance())
+            {
+                StopCheckPointSpawning();
+                break;
+            }
             spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
-             Random.Range(spawningPosY.x, spawningPosY.y), offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z));
+             Random.Range(spawningPosY.x, spawningPosY.y),tmpOffset);
 
             currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
 

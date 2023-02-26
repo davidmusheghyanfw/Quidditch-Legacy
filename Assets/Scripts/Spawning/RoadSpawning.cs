@@ -14,6 +14,7 @@ public class RoadSpawning : MonoBehaviour
 
     [SerializeField] private float nextSegmentCreationOffset;
     [SerializeField] private float roadLength;
+    [SerializeField] private float finishLength;
     [SerializeField] private int visibleSegmentCount;
 
     private bool isDestroying = false;
@@ -49,7 +50,7 @@ public class RoadSpawning : MonoBehaviour
         {
 
             if (roads.Count == 0) SpawnNewRoad();
-
+            
             if (player.position.z >= roads[roads.Count - 1].position.z / 2 && !isDestroying && roads.Count - 1 < LevelManager.instance.GetLevel())
             {
                 DestroyBackRoads();
@@ -67,8 +68,16 @@ public class RoadSpawning : MonoBehaviour
         for (int i = 0; i < visibleSegmentCount; i++)
         {
             tmpV3.z += roadLength;
-            if (roads.Count == 0) tmpV3.z = 0;
+            if (tmpV3.z >= LevelManager.instance.GetLevelDistance())
+            {
 
+                SpawnFinish();
+                StopRoadSpawning();
+                break;
+            }
+      
+            if (roads.Count == 0) tmpV3.z = 0;
+          
             GameObject currentRoad = Instantiate(road, tmpV3, transform.rotation, parent);
             roads.Add(currentRoad.transform);
         }
@@ -122,7 +131,6 @@ public class RoadSpawning : MonoBehaviour
 
     private void SpawnFinish()
     {
-        tmpV3.z = LevelManager.instance.GetLevelDistance();
         Finish.transform.position = tmpV3;
     }
 }

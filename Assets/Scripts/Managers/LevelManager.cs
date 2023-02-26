@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    [SerializeField] private float firstLevelDistance;
 
     private float levelCompleteDistance;
 
@@ -38,7 +39,8 @@ public class LevelManager : MonoBehaviour
 
     private void CalculateLevelDistance()
     {
-        levelCompleteDistance = level * RoadSpawning.instance.GetRoadLength();
+          
+        levelCompleteDistance = (level * RoadSpawning.instance.GetRoadLength())+firstLevelDistance;
         GameView.instance.SetFinishDistance(levelCompleteDistance);
     }
 
