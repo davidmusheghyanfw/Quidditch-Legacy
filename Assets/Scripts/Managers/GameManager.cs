@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
 
     public void GameInit()
     {
-        EnemyManager.instance.EnemyInit();
         PlayerControler.instance.CharacterInit();
         CanvasSetActivs();
         LevelManager.instance.InitLevel();
         RoadSpawning.instance.RoadSpawningInit();
         CheckPointSpawning.instance.CheckPointsSpawningInit();
+        EnemyManager.instance.EnemyInit();
         GameView.instance.GameViewCanvasInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         DebugCanvas.instance.DebugInit();

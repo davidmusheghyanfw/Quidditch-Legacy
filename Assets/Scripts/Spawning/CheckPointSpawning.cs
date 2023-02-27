@@ -23,6 +23,8 @@ public class CheckPointSpawning : MonoBehaviour
 
     GameObject currentCheckPoint;
 
+    private int maxCheckpointCount = 0;
+
     private Vector3 spawnPos;
     private void Awake()
     {
@@ -79,6 +81,7 @@ public class CheckPointSpawning : MonoBehaviour
             currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
 
             checkPoints.Add(currentCheckPoint);
+            maxCheckpointCount++;
         }
        
     }
@@ -93,6 +96,7 @@ public class CheckPointSpawning : MonoBehaviour
         for (int i = 0; i < visibleSegmentCount; i++)
         {
             checkPoints.RemoveAt(i);
+            maxCheckpointCount--;
         }
 
        
@@ -115,5 +119,15 @@ public class CheckPointSpawning : MonoBehaviour
     {
         if (CheckPointSpawnRoutineC != null) StopCoroutine(CheckPointSpawnRoutineC);
         CheckPointSpawnRoutineC = StartCoroutine(CheckPointSpawnRoutine());
+    }
+
+    public Transform GetCheckPointByIndex(int index)
+    {
+        return checkPoints[index].transform;
+    }
+
+    public int GetCheckPointCount()
+    {
+        return maxCheckpointCount;
     }
 }
