@@ -36,4 +36,10 @@ public class DataManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("levelNumber", GetLevelNumber() + 1);
     }
+
+
+    public void ClearStats()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

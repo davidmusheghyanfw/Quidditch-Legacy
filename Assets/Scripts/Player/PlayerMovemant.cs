@@ -119,11 +119,26 @@ public class PlayerMovemant : CharacterController
     {
         if (PlayerCoursorFollowRoutineC != null) StopCoroutine(PlayerCoursorFollowRoutineC);
     }
+      private void StartPlayerStoppingRoutin()
+    {
+        if (PlayerStoppingRoutinC != null) StopCoroutine(PlayerStoppingRoutinC);
+        PlayerStoppingRoutinC = StartCoroutine(PlayerStoppingRoutin());
+        isStopping = true;
+
+    }
+
+    private void StopPlayerStoppingRoutin()
+    {
+        if (PlayerStoppingRoutinC != null) StopCoroutine(PlayerStoppingRoutinC);
+        isStopping = false;
+    }
+
+
 
     private Coroutine PlayerStoppingRoutinC;
     private IEnumerator PlayerStoppingRoutin()
     {
-        isStopping = true;
+       
         float t = 0.0f;
         float startTime = Time.fixedTime;
         cursor = transform.position ;
@@ -144,7 +159,19 @@ public class PlayerMovemant : CharacterController
 
     public void OnGameWin()
     {
-        if (PlayerStoppingRoutinC != null) StopCoroutine(PlayerStoppingRoutinC);
-        PlayerStoppingRoutinC = StartCoroutine(PlayerStoppingRoutin());
+        StartPlayerStoppingRoutin();
+    }
+
+    public void GameStopped()
+    {
+      
+        StartPlayerStoppingRoutin();
+    }
+
+    public void GameResume()
+    {
+        StopPlayerStoppingRoutin();
+        tmpFlySpeed = flySpeed;
+        StartCursorFollowing();
     }
 }

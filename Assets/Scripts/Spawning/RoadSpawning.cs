@@ -52,7 +52,7 @@ public class RoadSpawning : MonoBehaviour
 
             if (roads.Count == 0) SpawnNewRoad();
             
-            if (player.position.z >= roads[roads.Count - 1].position.z / 2 && !isDestroying)// && roads.Count - 1 < LevelManager.instance.GetLevel())
+            if (player.position.z >= roads[roads.Count - 1].position.z / 2 && !isDestroying)
             {
                 DestroyBackRoads();
                 SpawnNewRoad();

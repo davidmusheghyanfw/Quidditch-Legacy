@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         CheckPointSpawning.instance.CheckPointsSpawningInit();
         GameView.instance.GameViewCanvasInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
+        DebugCanvas.instance.DebugInit();
     }
 
     public void GameWin()
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void CanvasSetActivs()
     {
+        DebugCanvas.instance.gameObject.SetActive(true);
         GameView.instance.gameObject.SetActive(true);
         LevelEndCanvas.instance.gameObject.SetActive(true);
     }
@@ -51,7 +53,12 @@ public class GameManager : MonoBehaviour
 
     public void GameStopped()
     {
+        PlayerMovemant.instance.GameStopped();
+    }
 
+    public void GameResume()
+    {
+        PlayerMovemant.instance.GameResume();
     }
 
    
