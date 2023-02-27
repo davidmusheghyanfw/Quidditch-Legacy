@@ -4,43 +4,86 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] protected float flySpeed;
+
+    [SerializeField] private CharacterMovemant characterMovemant;
+
+    [SerializeField] protected float sensetivity;
     [SerializeField] protected float verticalBorderMax;
     [SerializeField] protected float verticalBorderMin;
     [SerializeField] protected float horizontalBorderMax;
     [SerializeField] protected float horizontalBorderMin;
 
-    [SerializeField] protected float sensetivity;
-    [SerializeField] protected float touchControl;
+    [SerializeField] protected Vector3 cursor;
+    [SerializeField] private Transform visualContainer;
+    [SerializeField] private Animator animator;
 
-    [SerializeField] protected float horizontalRotationAmount;
-    [SerializeField] protected float verticalRotationAmount;
-   
+    protected bool isStopping = false;
+
     private Vector3 pos;
 
-    void Start()
+   
+    public Vector3 CharacterNewPos(Vector3 deltaPos)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-
-    public Vector3 CharacterNewPos(Vector3 deltaPos)// float verticalDirection = 0, float horizontalDirection = 0)
-    {
-       
-        
-        pos = new  Vector3(deltaPos.x , deltaPos.y, 0) * sensetivity;
-
-
+        pos = new Vector3(deltaPos.x, deltaPos.y, 0) * sensetivity;
         return pos;
 
     }
 
+    public void CharacterInit()
+    {
 
-   
+        characterMovemant.StopCursorFollowing();
+        cursor.Set(cursor.x, verticalBorderMin, 0);
+        transform.position = cursor;
+        isStopping = false;
+        characterMovemant.StartCursorFollowing();
+        
+    }
+
+    public Transform GetCharacter()
+    {
+        return gameObject.transform;
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+    public Vector3 GetCursor()
+    {
+        return cursor;
+    }
+
+    public Transform GetCharacterVisual()
+    {
+        return visualContainer;
+    }
+
+    public bool IsStopping()
+    {
+        return isStopping;
+    }
+    public void SetStopState(bool value)
+    {
+        isStopping = value;
+    }
+
+    public void OnGameWin()
+    {
+        characterMovemant.StartCharacterStoppingRoutin();
+    }
+
+    public void GameStopped()
+    {
+
+        characterMovemant.StartCharacterStoppingRoutin();
+    }
+
+    public void GameResume()
+    {
+        characterMovemant.StopCharacterStoppingRoutin();
+        characterMovemant.StartCursorFollowing();
+    }
+
+
 }

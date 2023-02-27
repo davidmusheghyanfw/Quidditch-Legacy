@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     public void GameInit()
     {
-        PlayerMovemant.instance.PlayerInit();
+        EnemyManager.instance.EnemyInit();
+        PlayerControler.instance.CharacterInit();
         CanvasSetActivs();
         LevelManager.instance.InitLevel();
         RoadSpawning.instance.RoadSpawningInit();
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void GameWin()
     {
         LevelManager.instance.levelWin();
-        PlayerMovemant.instance.OnGameWin();
+        PlayerControler.instance.OnGameWin();
         GameView.instance.GetGameObject().SetActive(false);
         LevelEndCanvas.instance.LevelWinCanvasActive();
     }
@@ -53,12 +54,12 @@ public class GameManager : MonoBehaviour
 
     public void GameStopped()
     {
-        PlayerMovemant.instance.GameStopped();
+        PlayerControler.instance.GameStopped();
     }
 
     public void GameResume()
     {
-        PlayerMovemant.instance.GameResume();
+        PlayerControler.instance.GameResume();
     }
 
    

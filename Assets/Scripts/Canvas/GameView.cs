@@ -31,7 +31,7 @@ public class GameView : MonoBehaviour
     }
     public void UpdateScore()
     {
-        scoreUpdateSlider.value = PlayerMovemant.instance.GetPlayer().transform.position.z;
+        scoreUpdateSlider.value = PlayerControler.instance.GetCharacter().transform.position.z;
     }
 
     public GameObject GetGameObject()
