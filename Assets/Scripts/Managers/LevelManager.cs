@@ -34,14 +34,14 @@ public class LevelManager : MonoBehaviour
     
     public void levelWin()
     {
-        level++;
-        Debug.Log(level);
+        
+        DataManager.instance.IncreaseLevelNumber();
     }
 
     private void CalculateLevelDistance()
     {
 
-        levelCompleteDistance = level * (RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z * 2);
+        levelCompleteDistance = DataManager.instance.GetLevelNumber() * (RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z * 2);
 
         GameView.instance.SetFinishDistance(levelCompleteDistance+ RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z/2);
     }
