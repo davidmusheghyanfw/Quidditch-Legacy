@@ -51,7 +51,7 @@ public class CheckPointSpawning : MonoBehaviour
         {
             if (checkPoints.Count == 0) SpawnNewCheckPoint();
 
-            if (player.position.z > checkPoints[visibleSegmentCount - 1].transform.position.z + nextSegmentCreationOffset) DestroyCheckPoint();
+            if (player.position.z > checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset) DestroyCheckPoint();
             
             if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
                 && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount)

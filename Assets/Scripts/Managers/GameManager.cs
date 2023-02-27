@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
     public void GameInit()
     {
         PlayerMovemant.instance.PlayerInit();
+        CanvasSetActivs();
         LevelManager.instance.InitLevel();
-        GameView.instance.gameObject.SetActive(true);
-        GameView.instance.GameViewCanvasInit();
-        CheckPointSpawning.instance.CheckPointsSpawningInit();
         RoadSpawning.instance.RoadSpawningInit();
+        CheckPointSpawning.instance.CheckPointsSpawningInit();
+        GameView.instance.GameViewCanvasInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
     }
 
@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
         PlayerMovemant.instance.OnGameWin();
         GameView.instance.GetGameObject().SetActive(false);
         LevelEndCanvas.instance.LevelWinCanvasActive();
+    }
+
+    public void CanvasSetActivs()
+    {
+        GameView.instance.gameObject.SetActive(true);
+        LevelEndCanvas.instance.gameObject.SetActive(true);
     }
 
     public void GameOver()
