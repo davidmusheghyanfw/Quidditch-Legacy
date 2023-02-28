@@ -4,37 +4,51 @@ using UnityEngine;
 
 public class EnemyController : CharacterController
 {
+
+    int index = 0;
+    int prevCheckPointCount = 0;
+    int CheckPointCount = 0;
+
     private void Start()
     {
-        StartCursorFollowing();
+        
+    }
+
+    public override void CharacterInit()
+    {
+        StartGettingCursor();
+        base.CharacterInit();
     }
 
     Coroutine GettingCursorPositionRoutineC;
     IEnumerator GettingCursorPositionRoutine()
     {
-        int index = 0;
+        
         while (true)
         {
+            CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
 
-            Debug.Log(index);
-            cursor = Vector3.Lerp(transform.position, CheckPointSpawning.instance.GetCheckPointByIndex(index).position, 0.2f);
-            if(CheckPointSpawning.instance.GetCheckPointByIndex(index).position.z <= transform.position.z 
-                && index < CheckPointSpawning.instance.GetCheckPointCount()) index++;
-            //cursor.Set(Random.Range(horizontalBorderMin, horizontalBorderMax), Random.Range(verticalBorderMin, verticalBorderMax), 0);
-            //yield return new WaitForSeconds(4f);
+            cursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).position;
+            cursor.z = 0;
+            if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
+
+            if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).transform.position.z <= transform.position.z
+                && index < CheckPointCount) index++;
+
+            prevCheckPointCount = CheckPointCount;
             yield return new WaitForEndOfFrame();
         }
         
     }
 
-    public void StartCursorFollowing()
+    public void StartGettingCursor()
     {
         if (GettingCursorPositionRoutineC != null) StopCoroutine(GettingCursorPositionRoutineC);
         GettingCursorPositionRoutineC = StartCoroutine(GettingCursorPositionRoutine());
 
     }
 
-    public void StopCursorFollowing()
+    public void StopGettingCursor()
     {
         if (GettingCursorPositionRoutineC != null) StopCoroutine(GettingCursorPositionRoutineC);
     }

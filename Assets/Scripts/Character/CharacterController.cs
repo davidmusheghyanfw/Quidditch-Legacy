@@ -29,16 +29,17 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    public void CharacterInit()
+    public virtual void CharacterInit()
     {
 
         characterMovemant.StopCursorFollowing();
-        cursor.Set(cursor.x, verticalBorderMin, 0);
         transform.position = cursor;
         isStopping = false;
         characterMovemant.StartCursorFollowing();
         
     }
+
+   
 
     public Transform GetCharacter()
     {
@@ -70,18 +71,31 @@ public class CharacterController : MonoBehaviour
 
     public void OnGameWin()
     {
-        characterMovemant.StartCharacterStoppingRoutin();
+        StartCharacterStoppingRoutin();
     }
 
     public void GameStopped()
     {
-
-        characterMovemant.StartCharacterStoppingRoutin();
+        StopCharacterStoppingRoutin();
     }
 
     public void GameResume()
     {
+        StopCharacterStoppingRoutin();
+        StartCursorFollowing();
+    }
+
+    public void StartCharacterStoppingRoutin()
+    {
+        characterMovemant.StartCharacterStoppingRoutin();
+    }
+     public void StopCharacterStoppingRoutin()
+    {
         characterMovemant.StopCharacterStoppingRoutin();
+    }
+
+     public void StartCursorFollowing()
+    {
         characterMovemant.StartCursorFollowing();
     }
 

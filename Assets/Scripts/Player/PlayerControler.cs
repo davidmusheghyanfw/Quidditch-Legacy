@@ -21,8 +21,12 @@ public class PlayerControler : CharacterController
         TouchManager.instance.OnTouchUp += OnTouchUp;
     }
 
-  
-    
+
+    public override void CharacterInit()
+    {
+        cursor.Set(cursor.x, verticalBorderMin, 0);
+        base.CharacterInit();
+    }
 
     void OnTouchDown(Vector3 startPos)
     {
@@ -44,6 +48,10 @@ public class PlayerControler : CharacterController
             if (newCursorPosition.x > horizontalBorderMax) newCursorPosition.x = horizontalBorderMax;
 
             cursor = newCursorPosition;
+        }
+        else
+        {
+            cursor = transform.position;
         }
     }
 

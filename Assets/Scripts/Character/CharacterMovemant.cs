@@ -30,7 +30,7 @@ public class CharacterMovemant : MonoBehaviour
     {
         visual = characterController.GetCharacterVisual();
         Vector3 prevPos = transform.position;
-        Debug.Log("s");
+    
         while (true)
         {
             // rb.velocity = Vector3.forward * flySpeed *
@@ -41,7 +41,7 @@ public class CharacterMovemant : MonoBehaviour
 
             cursor.z = characterController.GetCharacter().position.z;
 
-            characterController.GetCharacter().position = Vector3.Lerp(transform.position, cursor, touchControl * Time.deltaTime);
+            characterController.GetCharacter().position = Vector3.Lerp(characterController.GetCharacter().position, cursor, touchControl * Time.deltaTime);
 
 
             Vector3 diff = transform.position - prevPos;

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public bool isGameInited = false;
+    public bool isGameStopped = false;
    
 
     private void Awake()
@@ -16,20 +18,23 @@ public class GameManager : MonoBehaviour
   
     void Start()
     {
+       
         GameInit();
     }
 
     public void GameInit()
     {
-        PlayerControler.instance.CharacterInit();
-        CanvasSetActivs();
+        isGameInited = false;
         LevelManager.instance.InitLevel();
+        CanvasSetActivs();
         RoadSpawning.instance.RoadSpawningInit();
         CheckPointSpawning.instance.CheckPointsSpawningInit();
-        EnemyManager.instance.EnemyInit();
+        EnemySpawning.instance.EnemySpawningInit();
         GameView.instance.GameViewCanvasInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         DebugCanvas.instance.DebugInit();
+        PlayerControler.instance.CharacterInit();
+        isGameInited = true;
     }
 
     public void GameWin()
@@ -54,11 +59,14 @@ public class GameManager : MonoBehaviour
 
     public void GameStopped()
     {
+        //isGameStopped = true;
         PlayerControler.instance.GameStopped();
+
     }
 
     public void GameResume()
     {
+        //isGameStopped = false;
         PlayerControler.instance.GameResume();
     }
 

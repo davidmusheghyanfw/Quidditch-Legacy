@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager instance;
     [SerializeField] private GameObject enemy;
 
-    [SerializeField] private List<CharacterController> enemyList = new List<CharacterController>();
+    [SerializeField] private List<Transform> enemyList = new List<Transform>();
     private void Awake()
     {
         instance = this;
@@ -15,9 +15,12 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyInit()
     {
-        foreach (var item in enemyList)
+        foreach (Transform item in transform)
         {
-            item.CharacterInit();
+            
+            item.GetComponent<CharacterController>().CharacterInit();
+
+            enemyList.Add(item);
         }
     }
    

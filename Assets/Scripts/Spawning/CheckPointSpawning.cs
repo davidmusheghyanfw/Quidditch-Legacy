@@ -24,6 +24,7 @@ public class CheckPointSpawning : MonoBehaviour
     GameObject currentCheckPoint;
 
     private int maxCheckpointCount = 0;
+    private int currentCheckpoint = 0;
 
     private Vector3 spawnPos;
     private void Awake()
@@ -53,10 +54,12 @@ public class CheckPointSpawning : MonoBehaviour
         {
             if (checkPoints.Count == 0) SpawnNewCheckPoint();
 
-            if (player.position.z > checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset) DestroyCheckPoint();
+            if (player.position.z > checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
+                && GameManager.instance.isGameInited) DestroyCheckPoint();
             
             if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
-                && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount)
+                && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount
+                && GameManager.instance.isGameInited)
             {
                 SpawnNewCheckPoint();
             }
@@ -97,6 +100,7 @@ public class CheckPointSpawning : MonoBehaviour
         {
             checkPoints.RemoveAt(i);
             maxCheckpointCount--;
+            
         }
 
        
@@ -121,10 +125,12 @@ public class CheckPointSpawning : MonoBehaviour
         CheckPointSpawnRoutineC = StartCoroutine(CheckPointSpawnRoutine());
     }
 
-    public Transform GetCheckPointByIndex(int index)
+    public Transform GetEnemyGoalCheckPoint(int index)
     {
         return checkPoints[index].transform;
     }
+
+    
 
     public int GetCheckPointCount()
     {
