@@ -253,3 +253,4 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1752488334937976033}
   animator: {fileID: 1752488336836538122}
+  smoothnesControl: 0.05

@@ -18,23 +18,35 @@ public class GameManager : MonoBehaviour
   
     void Start()
     {
-       
         GameInit();
     }
 
+    public void GameDefaultConfigs()
+    {
+       
+    }
     public void GameInit()
     {
         isGameInited = false;
+        GameView.instance.SetActiveGameStartCanvas(true);
         LevelManager.instance.InitLevel();
-        CanvasSetActivs();
-        RoadSpawning.instance.RoadSpawningInit();
-        CheckPointSpawning.instance.CheckPointsSpawningInit();
+     
         EnemySpawning.instance.EnemySpawningInit();
-        GameView.instance.GameViewCanvasInit();
-        LevelEndCanvas.instance.LevelEndCanvasInit();
+        CanvasSetActivs();
+
         DebugCanvas.instance.DebugInit();
+        CheckPointSpawning.instance.CheckPointsSpawningInit();
+        RoadSpawning.instance.RoadSpawningInit();
+        LevelEndCanvas.instance.LevelEndCanvasInit();
         PlayerControler.instance.CharacterInit();
         isGameInited = true;
+    }
+    public void GameStart()
+    {
+        GameView.instance.GameViewCanvasInit();
+        LevelEndCanvas.instance.LevelEndCanvasInit();
+        EnemyManager.instance.EnemyInit();
+        PlayerControler.instance.StartCursorFollowing();
     }
 
     public void GameWin()
@@ -47,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void CanvasSetActivs()
     {
+        
         DebugCanvas.instance.gameObject.SetActive(true);
         GameView.instance.gameObject.SetActive(true);
         LevelEndCanvas.instance.gameObject.SetActive(true);

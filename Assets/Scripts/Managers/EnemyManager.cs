@@ -19,6 +19,7 @@ public class EnemyManager : MonoBehaviour
         {
             
             item.GetComponent<CharacterController>().CharacterInit();
+            item.GetComponent<CharacterController>().StartCursorFollowing();
 
             enemyList.Add(item);
         }

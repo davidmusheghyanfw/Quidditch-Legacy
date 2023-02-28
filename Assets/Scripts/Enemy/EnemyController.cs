@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyController : CharacterController
 {
-
-    int index = 0;
-    int prevCheckPointCount = 0;
-    int CheckPointCount = 0;
+    [SerializeField] private float smoothnesControl;
+    private Vector3 targetCursor;
+    int index;
+    int prevCheckPointCount;
+    int CheckPointCount;
 
     private void Start()
     {
@@ -16,6 +17,12 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
+        index = 0;
+        prevCheckPointCount = 0;
+        CheckPointCount = 0;
+        transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
+            Random.Range(verticalBorderMin, verticalBorderMax), 0);
+        cursor = transform.position; 
         StartGettingCursor();
         base.CharacterInit();
     }
@@ -28,8 +35,10 @@ public class EnemyController : CharacterController
         {
             CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
 
-            cursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).position;
-            cursor.z = 0;
+            targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).position;
+            targetCursor.z = 0;
+            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl);
+
             if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
 
             if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).transform.position.z <= transform.position.z

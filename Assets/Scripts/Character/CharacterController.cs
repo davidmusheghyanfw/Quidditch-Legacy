@@ -21,7 +21,23 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 pos;
 
-   
+    public float VerticalBorderMax()
+    {
+        return verticalBorderMax;
+    }
+    public float VerticalBorderMin()
+    {
+        return verticalBorderMin;
+    }
+     public float HorizontalBorderMax()
+    {
+        return horizontalBorderMax;
+    }
+    public float HorizontalBorderMin()
+    {
+        return horizontalBorderMin;
+    }
+
     public Vector3 CharacterNewPos(Vector3 deltaPos)
     {
         pos = new Vector3(deltaPos.x, deltaPos.y, 0) * sensetivity;
@@ -32,11 +48,9 @@ public class CharacterController : MonoBehaviour
     public virtual void CharacterInit()
     {
 
-        characterMovemant.StopCursorFollowing();
+        StopCursorFollowing();
         transform.position = cursor;
         isStopping = false;
-        characterMovemant.StartCursorFollowing();
-        
     }
 
    
@@ -94,10 +108,13 @@ public class CharacterController : MonoBehaviour
         characterMovemant.StopCharacterStoppingRoutin();
     }
 
-     public void StartCursorFollowing()
+    public void StartCursorFollowing()
     {
         characterMovemant.StartCursorFollowing();
     }
-
+    public void StopCursorFollowing()
+    {
+        characterMovemant.StopCursorFollowing();
+    }
 
 }
