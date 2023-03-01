@@ -95,10 +95,12 @@ public class CharacterMovemant : MonoBehaviour
     private Coroutine CharacterStoppingRoutinC;
     private IEnumerator CharacterStoppingRoutin()
     {
-
         float t = 0.0f;
         float startTime = Time.fixedTime;
         cursor = characterController.GetCharacter().position;
+        visual.rotation = Quaternion.Euler(0, 0, 0);
+
+
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 1;

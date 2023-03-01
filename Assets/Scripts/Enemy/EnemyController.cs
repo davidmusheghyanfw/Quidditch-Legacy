@@ -6,6 +6,7 @@ public class EnemyController : CharacterController
 {
     [SerializeField] private float smoothnesControl;
     private Vector3 targetCursor;
+    private Vector3 randomPos;
     int index;
     int prevCheckPointCount;
     int CheckPointCount;
@@ -35,13 +36,16 @@ public class EnemyController : CharacterController
         {
             CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
 
-            targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).position;
-            targetCursor.z = 0;
-            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl);
+            targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
+            randomPos = Random.insideUnitCircle * 125;
+            targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
+          
+            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
+
 
             if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
 
-            if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).transform.position.z <= transform.position.z
+            if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).z <= transform.position.z
                 && index < CheckPointCount) index++;
 
             prevCheckPointCount = CheckPointCount;
@@ -60,5 +64,6 @@ public class EnemyController : CharacterController
     public void StopGettingCursor()
     {
         if (GettingCursorPositionRoutineC != null) StopCoroutine(GettingCursorPositionRoutineC);
+        StopCursorFollowing();
     }
 }

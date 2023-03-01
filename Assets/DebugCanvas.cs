@@ -18,13 +18,11 @@ public class DebugCanvas : MonoBehaviour
     public void OpenDebugMenu()
     {
         debugMenu.SetActive(true);
-        GameManager.instance.GameStopped();
     }
 
     public void Exit()
     {
         debugMenu.SetActive(false);
-        GameManager.instance.GameResume();
     }
 
     public void RestartGame()

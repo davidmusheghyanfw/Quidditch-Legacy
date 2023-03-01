@@ -163,7 +163,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3304737848078468994}
-  - component: {fileID: 2761994540387330480}
+  - component: {fileID: 9067273004313199015}
+  - component: {fileID: 3167202047670858194}
   m_Layer: 0
   m_Name: GoldenRing
   m_TagString: CheckPoint
@@ -187,7 +188,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2761994540387330480
+--- !u!114 &9067273004313199015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152831937271981020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b08e1cfeef3b544fad9d7940ce7106b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerRadius: 12
+  ringScale: 8
+--- !u!65 &3167202047670858194
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +213,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 15, z: 2.5}
+  m_Size: {x: 15, y: 15, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7770786840803059989
 PrefabInstance:
@@ -216,6 +231,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284140326051777494, guid: 36908a07163effd41b3c7c0d82e895fb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284140326051777494, guid: 36908a07163effd41b3c7c0d82e895fb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284140326051777494, guid: 36908a07163effd41b3c7c0d82e895fb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3284140326051777494, guid: 36908a07163effd41b3c7c0d82e895fb,
         type: 3}

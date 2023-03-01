@@ -25,6 +25,7 @@ public class PlayerControler : CharacterController
     public override void CharacterInit()
     {
         cursor.Set(cursor.x, verticalBorderMin, 0);
+        CameraController.instance.PlayerPosUpdate(cursor);
         base.CharacterInit();
     }
 
@@ -33,7 +34,28 @@ public class PlayerControler : CharacterController
 
 
     }
+    //public void StartCameraFollow()
+    //{
+    //    if (CameraFollowRoutineC != null) StopCoroutine(CameraFollowRoutineC);
+    //    CameraFollowRoutineC = StartCoroutine(CameraFollowRoutine());
 
+    //}
+
+    //public void StopCameraFollow()
+    //{
+    //    if (CameraFollowRoutineC != null) StopCoroutine(CameraFollowRoutineC);
+    //}
+
+    //Coroutine CameraFollowRoutineC;
+    //public IEnumerator CameraFollowRoutine()
+    //{
+    //    while (true)
+    //    {
+    //    CameraController.instance.PlayerPosUpdate(transform.position);
+    //    yield return new WaitForEndOfFrame();
+
+    //    }      
+    //}
     void OnTouchDrag(Vector3 currentPos, Vector3 deltaPosition)
     {
 

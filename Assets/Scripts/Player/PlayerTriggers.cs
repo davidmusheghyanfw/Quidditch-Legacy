@@ -8,7 +8,7 @@ public class PlayerTriggers : MonoBehaviour
     {
         if(other.gameObject.tag == "CheckPoint")
         {
-            //GameView.instance.UpdateScore();
+            Debug.Log("s");
         }
         if (other.gameObject.tag == "Finish")
         {
