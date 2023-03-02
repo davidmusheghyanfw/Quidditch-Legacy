@@ -51,6 +51,7 @@ public class CharacterController : MonoBehaviour
         StopCursorFollowing();
         transform.position = cursor;
         isStopping = false;
+        characterMovemant.StartYenToBaseSpeedRoutine();
     }
 
    
@@ -118,6 +119,11 @@ public class CharacterController : MonoBehaviour
         characterMovemant.StopCursorFollowing();
     }
 
+    public void DoCheckPointForce()
+    {
+        characterMovemant.DoCheckPointForce();
+    }
+
     Coroutine AddForceRoutineC;
     private IEnumerator AddForceRoutine()
     {
@@ -128,6 +134,7 @@ public class CharacterController : MonoBehaviour
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 0.5f;
+            //fix
             characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetCurrentSpeed(), t));
                // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
             yield return new WaitForEndOfFrame();

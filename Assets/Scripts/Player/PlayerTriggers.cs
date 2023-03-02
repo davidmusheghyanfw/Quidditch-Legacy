@@ -8,7 +8,7 @@ public class PlayerTriggers : MonoBehaviour
     {
         if(other.gameObject.tag == "CheckPoint")
         {
-            gameObject.GetComponent<PlayerControler>().StartAddForceRoutine();
+            gameObject.GetComponent<PlayerControler>().DoCheckPointForce();
             CameraController.instance.StartForceEffectRoutine();
         }
         if (other.gameObject.tag == "Finish")
@@ -19,7 +19,7 @@ public class PlayerTriggers : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             
-            other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
+            //other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
         }
     }
 }

@@ -42,10 +42,10 @@ public class EnemyController : CharacterController
 
             if (getNewCheckpoint)
             {
-                targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
-                randomPos = Random.insideUnitCircle * 125;
-                targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
             }
+                targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
+                //randomPos = Random.insideUnitCircle * 125;
+                targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
 
             cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
             cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);

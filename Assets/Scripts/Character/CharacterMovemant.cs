@@ -7,6 +7,8 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private CharacterController characterController;
 
     [SerializeField] private float flySpeed;
+    [SerializeField] private float yenControll;
+    [SerializeField] private float checkpPointForceControll;
   
     [SerializeField] private float rotationDiff;
     [SerializeField] private float rotationZAxisSensitivity;
@@ -109,6 +111,35 @@ public class CharacterMovemant : MonoBehaviour
         }
         if (characterController.IsStopping()) StopCursorFollowing();
         else tmpFlySpeed = flySpeed;
+    }
+
+     public void StartYenToBaseSpeedRoutine()
+    {
+        if (YenToBaseSpeedRoutineC != null) StopCoroutine(YenToBaseSpeedRoutineC);
+        YenToBaseSpeedRoutineC = StartCoroutine(YenToBaseSpeedRoutine());
+
+    }
+
+    public void StopYenToBaseSpeedRoutine()
+    {
+        if (YenToBaseSpeedRoutineC != null) StopCoroutine(YenToBaseSpeedRoutineC);
+    }
+
+
+
+    private Coroutine YenToBaseSpeedRoutineC;
+    private IEnumerator YenToBaseSpeedRoutine()
+    {
+        while (true)
+        {
+            tmpFlySpeed = Mathf.Lerp(tmpFlySpeed, flySpeed, yenControll * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    public void DoCheckPointForce()
+    {
+        tmpFlySpeed += checkpPointForceControll;
     }
 
     public float GetDefaultSpeed()

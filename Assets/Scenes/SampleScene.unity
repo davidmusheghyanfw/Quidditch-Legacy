@@ -783,8 +783,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 500, y: 100, z: 1}
-  m_Center: {x: 0, y: 50, z: -250}
+  m_Size: {x: 500, y: 100, z: 10}
+  m_Center: {x: 0, y: 50, z: -245}
 --- !u!1 &263192069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,11 +2237,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  flySpeed: 200
+  flySpeed: 100
+  yenControll: 0.2
+  checkpPointForceControll: 50
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
-  touchControl: 2
+  touchControl: 6
 --- !u!114 &1106438653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2255,7 +2257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.3
+  sensetivity: 0.35
   verticalBorderMax: 80
   verticalBorderMin: 5
   horizontalBorderMax: 100
@@ -3974,11 +3976,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cb2781164951e488bb0a2c9e899c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 300
-  nextSegmentCreationOffset: 300
+  offset: {x: 50, y: 200}
+  minOffset: 25
+  aviableToDestroy: 300
+  firstSpawnPos: 50
   maxSegmentAmount: 5
   visibleSegmentCount: 5
-  spawningPosX: {x: -60, y: 60}
+  spawningPosX: {x: -35, y: 35}
   spawningPosY: {x: 20, y: 60}
   checkPoint: {fileID: 8152831937271981020, guid: 815907d45109d0347a09d6f4bbaa8c68,
     type: 3}

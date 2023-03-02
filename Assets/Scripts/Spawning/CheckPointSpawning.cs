@@ -7,8 +7,10 @@ public class CheckPointSpawning : MonoBehaviour
 {
     public static CheckPointSpawning instance;
 
-    [SerializeField] private float offset;
-    [SerializeField] private float nextSegmentCreationOffset;
+    [SerializeField] private Vector2 offset;
+    [SerializeField] private float minOffset;
+    [SerializeField] private float aviableToDestroy;
+    [SerializeField] private float firstSpawnPos;
     [SerializeField] private int maxSegmentAmount;
     [SerializeField] private int visibleSegmentCount;
     [SerializeField] private Vector2 spawningPosX;
@@ -24,10 +26,9 @@ public class CheckPointSpawning : MonoBehaviour
     GameObject currentCheckPoint;
 
     private int maxCheckpointCount = 0;
-    private int currentCheckpoint = 0;
 
     private Vector3 spawnPos;
-    private Vector3 radnomPointInsideCircle;
+   
     private void Awake()
     {
         instance = this;
@@ -36,15 +37,17 @@ public class CheckPointSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     public void CheckPointsSpawningInit()
     {
+
         StopCheckPointSpawning();
         DestroyAll();
         checkPoints.Clear();
         spawnPos = Vector3.zero;
+        offset.x = firstSpawnPos;
         StartCheckPointSpawning();
     }
 
@@ -55,10 +58,10 @@ public class CheckPointSpawning : MonoBehaviour
         {
             if (checkPoints.Count == 0) SpawnNewCheckPoint();
 
-            if (player.position.z > checkPoints[0].transform.position.z + nextSegmentCreationOffset
+            if (player.position.z > checkPoints[0].transform.position.z + aviableToDestroy
                 && GameManager.instance.isGameInited) DestroyCheckPoint();
             
-            if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
+            if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + aviableToDestroy
                 && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount
                 && GameManager.instance.isGameInited)
             {
@@ -73,7 +76,13 @@ public class CheckPointSpawning : MonoBehaviour
     {
         for (int i = 0; i < visibleSegmentCount; i++)
         {
-            float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+            if (offset.x <= offset.y)
+            {
+                offset.x += minOffset;
+            }
+            else if (offset.x > offset.y) offset.x = offset.y;
+
+            float tmpOffset = offset.x + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
             if (tmpOffset >= LevelManager.instance.GetLevelDistance())
             {
                 StopCheckPointSpawning();
