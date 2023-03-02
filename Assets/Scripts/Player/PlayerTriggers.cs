@@ -8,11 +8,18 @@ public class PlayerTriggers : MonoBehaviour
     {
         if(other.gameObject.tag == "CheckPoint")
         {
-            Debug.Log("s");
+            gameObject.GetComponent<PlayerControler>().StartAddForceRoutine();
+            CameraController.instance.StartForceEffectRoutine();
         }
         if (other.gameObject.tag == "Finish")
         {
             GameManager.instance.GameWin();
+        }
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            
+            other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
         }
     }
 }

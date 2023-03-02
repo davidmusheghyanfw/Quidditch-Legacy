@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
-    [SerializeField] private GameObject enemy;
 
     [SerializeField] private List<Transform> enemyList = new List<Transform>();
     private void Awake()

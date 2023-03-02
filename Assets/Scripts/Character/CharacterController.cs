@@ -118,4 +118,41 @@ public class CharacterController : MonoBehaviour
         characterMovemant.StopCursorFollowing();
     }
 
+    Coroutine AddForceRoutineC;
+    private IEnumerator AddForceRoutine()
+    {
+        
+        float t = 0.0f;
+        float startTime = Time.fixedTime;
+
+        while (t < 1)
+        {
+            t = (Time.fixedTime - startTime) / 0.5f;
+            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetCurrentSpeed(), t));
+               // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
+            yield return new WaitForEndOfFrame();
+        }
+        yield return new WaitForSeconds(1);
+        t = 0.0f;
+        startTime = Time.fixedTime;
+        while (t < 1)
+        {
+            t = (Time.fixedTime - startTime) / 1.5f;
+            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+
+    public void StartAddForceRoutine()
+    {
+        if (AddForceRoutineC != null) StopCoroutine(AddForceRoutineC);
+        AddForceRoutineC = StartCoroutine(AddForceRoutine());
+
+    }
+
+    public void StopAddForceRoutine()
+    {
+        if (AddForceRoutineC != null) StopCoroutine(AddForceRoutineC);
+    }
 }

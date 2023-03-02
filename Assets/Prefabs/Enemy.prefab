@@ -187,9 +187,10 @@ GameObject:
   - component: {fileID: 1752488336878765015}
   - component: {fileID: 1752488336878764588}
   - component: {fileID: 1752488336878765014}
+  - component: {fileID: 3000513256064036229}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 220
+  flySpeed: 200
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -290,7 +291,22 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1752488334937976033}
   animator: {fileID: 3621211923003173579}
-  smoothnesControl: 1
+  smoothnesControl: 2
+  GetCheckPointRate: 40
+  rb: {fileID: 1752488336878765015}
+--- !u!65 &3000513256064036229
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752488336878765013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.76, z: 4.66}
+  m_Center: {x: 0, y: 0, z: 2.28}
 --- !u!1001 &1762928164
 PrefabInstance:
   m_ObjectHideFlags: 0

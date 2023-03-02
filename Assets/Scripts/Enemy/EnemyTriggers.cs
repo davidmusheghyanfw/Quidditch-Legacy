@@ -8,7 +8,7 @@ public class EnemyTriggers : MonoBehaviour
     {
         if (other.gameObject.tag == "CheckPoint")
         {
-            //GameView.instance.UpdateScore();
+            gameObject.GetComponent<EnemyController>().StartAddForceRoutine();
         }
         if (other.gameObject.tag == "Finish")
         {

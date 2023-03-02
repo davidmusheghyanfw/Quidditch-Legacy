@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1055,7 +1055,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 61.8
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1080,14 +1080,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.13214695, y: -0, z: -0, w: 0.99123013}
-  m_LocalPosition: {x: 0, y: 6.356, z: -21.91}
+  m_LocalRotation: {x: 0.013457496, y: -0, z: -0, w: 0.99990946}
+  m_LocalPosition: {x: 0, y: 5.9, z: -26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 651112316}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15.187, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.542, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,7 +1595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb93d833439aa14e97ecfd3c45d10a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   enemyList: []
 --- !u!4 &613219149
 Transform:
@@ -1710,6 +1709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 330585545}
+  maxFiledOfView: 75
+  minFiledOfView: 60
 --- !u!4 &651112316
 Transform:
   m_ObjectHideFlags: 0
@@ -2236,7 +2237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  flySpeed: 200
+  flySpeed: 50
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -2254,7 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.2
+  sensetivity: 0.3
   verticalBorderMax: 80
   verticalBorderMin: 5
   horizontalBorderMax: 100
@@ -3973,11 +3974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cb2781164951e488bb0a2c9e899c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 500
+  offset: 300
   nextSegmentCreationOffset: 300
   maxSegmentAmount: 5
   visibleSegmentCount: 5
-  spawningPosX: {x: -100, y: 100}
+  spawningPosX: {x: -60, y: 60}
   spawningPosY: {x: 20, y: 60}
   checkPoint: {fileID: 8152831937271981020, guid: 815907d45109d0347a09d6f4bbaa8c68,
     type: 3}
@@ -4032,4 +4033,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1752488336878765013, guid: ebeb046de698bbf42b3694d08e86d391, type: 3}
   parent: {fileID: 613219149}
-  enemyCount: 5
+  enemyCount: 10

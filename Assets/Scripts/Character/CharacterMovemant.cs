@@ -111,4 +111,16 @@ public class CharacterMovemant : MonoBehaviour
         else tmpFlySpeed = flySpeed;
     }
 
+    public float GetDefaultSpeed()
+    {
+        return flySpeed;
+    }
+    public float GetCurrentSpeed()
+    {
+        return tmpFlySpeed;
+    }
+    public void SetCurrentSpeed(float value)
+    {
+        tmpFlySpeed = value;
+    }
 }
