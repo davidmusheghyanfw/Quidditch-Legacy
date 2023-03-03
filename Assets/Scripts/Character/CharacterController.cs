@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
 
+    [SerializeField, Range(0, 1)] private double distanceInPercent = 0f; 
+
     protected bool isStopping = false;
 
     private Vector3 pos;
@@ -44,7 +46,14 @@ public class CharacterController : MonoBehaviour
         return pos;
 
     }
-
+    public double GetCurrentDistancePercent()
+    {
+        return distanceInPercent;
+    }
+    public void SetCurrentDistancePercent(double value)
+    {
+        distanceInPercent = value;
+    }
     public virtual void CharacterInit()
     {
 

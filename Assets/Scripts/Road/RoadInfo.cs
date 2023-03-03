@@ -24,4 +24,7 @@ public class RoadInfo : MonoBehaviour
     {
         return roadGroundPrefab.transform.localScale;
     }
+
+    public GameObject GetRoadGround()
+    { return roadGroundPrefab; }
 }

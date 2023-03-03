@@ -1,3 +1,4 @@
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,37 +30,54 @@ public class CharacterMovemant : MonoBehaviour
     IEnumerator CharacterCoursorFollowRoutine()
     {
         visual = characterController.GetCharacterVisual();
-        Vector3 prevPos = transform.position;
-    
+        SplineSample prevDot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+
         while (true)
         {
-            // rb.velocity = Vector3.forward * flySpeed *
+            characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
+                + (tmpFlySpeed/ RoadGenerator.instance.GetDistance())/100);
+            SplineSample dot =  RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
 
             cursor = characterController.GetCursor();
 
-            characterController.GetCharacter().position += Vector3.forward * tmpFlySpeed * Time.deltaTime;
+            cursor.z = 0;
+            dot.position += cursor + dot.right;
+            
+            //dot.position.x += cursor.x;
+            //dot.position.y += cursor.y;
+            
+            characterController.GetCharacter().position = dot.position;
+            characterController.GetCharacterVisual().rotation = dot.rotation;
 
-            cursor.z = characterController.GetCharacter().position.z;
-
-            characterController.GetCharacter().position = Vector3.Lerp(characterController.GetCharacter().position, cursor, touchControl * Time.deltaTime);
-
-
-            Vector3 diff = transform.position - prevPos;
-
-
-            diff = diff.normalized + Vector3.forward * rotationDelay;
-
+            Vector3 diff = (dot.position - prevDot.position).normalized;
             characterController.GetAnimator().SetFloat("DirY", diff.y);
 
 
-            Vector3 upwards = Vector3.up + (Vector3.right * diff.x * rotationZAxisSensitivity);
+        //    // rb.velocity = Vector3.forward * flySpeed *
 
-            visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), rotationDiff);
+        
+
+        //    characterController.GetCharacter().position += Vector3.forward * tmpFlySpeed * Time.deltaTime;
+
+        //    cursor.z = characterController.GetCharacter().position.z;
+
+        //    characterController.GetCharacter().position = Vector3.Lerp(characterController.GetCharacter().position, cursor, touchControl * Time.deltaTime);
+
+
+
+
+            //diff = diff.normalized + Vector3.forward * rotationDelay;
+
+
+
+          //  Vector3 upwards = Vector3.up + (Vector3.right * diff.x * rotationZAxisSensitivity);
+
+         //   visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), rotationDiff);
 
             CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position);
-            prevPos = transform.position;
+            prevDot = dot;
 
-            GameView.instance.UpdateScore();
+        //    GameView.instance.UpdateScore();
             yield return new WaitForEndOfFrame();
         }
     }

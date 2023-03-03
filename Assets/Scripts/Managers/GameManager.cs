@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
         CanvasSetActivs();
 
         DebugCanvas.instance.DebugInit();
-        CheckPointSpawning.instance.CheckPointsSpawningInit();
-        RoadSpawning.instance.RoadSpawningInit();
+        //CheckPointSpawning.instance.CheckPointsSpawningInit();
+        //RoadSpawning.instance.RoadSpawningInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         PlayerControler.instance.CharacterInit();
         isGameInited = true;

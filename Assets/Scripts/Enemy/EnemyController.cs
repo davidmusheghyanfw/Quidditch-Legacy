@@ -27,7 +27,7 @@ public class EnemyController : CharacterController
         transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
             Random.Range(verticalBorderMin, verticalBorderMax), 0);
         cursor = targetCursor = transform.position;
-        StartGettingCursor();
+       // StartGettingCursor();
         base.CharacterInit();
     }
 
