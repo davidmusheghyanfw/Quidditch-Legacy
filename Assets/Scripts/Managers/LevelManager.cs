@@ -6,6 +6,8 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     [SerializeField] private float firstLevelDistance;
+    [SerializeField] private float roadDistance;
+    [SerializeField] private float roadPointOffset;
 
     private float levelCompleteDistance;
 
@@ -49,5 +51,14 @@ public class LevelManager : MonoBehaviour
     public float GetLevelDistance()
     {
         return levelCompleteDistance;
+    }
+
+    public float GetRoadDistance()
+    {
+        return roadDistance;
+    } 
+    public float GetRoadPointOffset()
+    {
+        return roadPointOffset;
     }
 }

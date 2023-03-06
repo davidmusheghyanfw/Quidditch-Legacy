@@ -19,7 +19,7 @@ public class CharacterMovemant : MonoBehaviour
     private Transform visual;
 
     float tmpFlySpeed;
-    
+    SplineSample dot;
 
     public void SetCharacterController( CharacterController controller)
     {
@@ -31,25 +31,36 @@ public class CharacterMovemant : MonoBehaviour
     {
         visual = characterController.GetCharacterVisual();
         SplineSample prevDot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+        Vector3 newPos = Vector3.zero;
 
         while (true)
         {
-            characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
-                + (tmpFlySpeed/ RoadGenerator.instance.GetDistance())/100);
-            SplineSample dot =  RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+            if (characterController.GetCurrentDistancePercent() <= 1f)
+            {
+                characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
+                + (tmpFlySpeed / RoadGenerator.instance.GetDistance()) / 100);
 
+            }
+            else
+                characterController.SetCurrentDistancePercent(1f);
+
+            dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+            
             cursor = characterController.GetCursor();
 
             cursor.z = 0;
-            dot.position += cursor + dot.right;
+            newPos = dot.position;
+            newPos += cursor.x * dot.right + cursor.y * dot.up;
+            
+            
             
             //dot.position.x += cursor.x;
             //dot.position.y += cursor.y;
             
-            characterController.GetCharacter().position = dot.position;
+            characterController.GetCharacter().position = newPos;
             characterController.GetCharacterVisual().rotation = dot.rotation;
 
-            Vector3 diff = (dot.position - prevDot.position).normalized;
+            Vector3 diff = (cursor - prevDot.position).normalized;
             characterController.GetAnimator().SetFloat("DirY", diff.y);
 
 

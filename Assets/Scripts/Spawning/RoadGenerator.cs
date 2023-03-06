@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck;
 using Dreamteck.Splines;
+using System;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -11,8 +12,16 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] SplineMesh splineMesh;
     [SerializeField] GameObject firstRoad;
     [SerializeField] GameObject secondRoad;
-    private float roadLength;
+    [SerializeField] SplineDefinition splineDefinition;
+
+    
     private double distance;
+    private int pointCount;
+
+    private Vector3 newPointDir;
+    private Vector3 newPointPos;
+    private Vector3 prevPointDir;
+    private Vector3 prevPoint;
 
     private void Awake()
     {
@@ -21,21 +30,40 @@ public class RoadGenerator : MonoBehaviour
 
     private void Start()
     {
-        //roadLength = firstRoad.GetComponent<RoadInfo>().GetRoadScale().z;
+       
+        pointCount = 0;
         CreateRoadSplinePoints();
     }
 
     private void CreateRoadSplinePoints()
     {
-        splineComputer.Rebuild(); 
-        for (int i = 0; i < 10; i++)
+        splineComputer.Rebuild();
+       
+        for (int i = 0; i < splineDefinition.SplineSegments.Count; i++)
         {
-            splineComputer.SetPoint(i, new SplinePoint(new Vector3(Random.Range(-50, 50), Random.Range(-50,50), i * 300)));
-           
-            //splineComputer.SetPoint(i, new SplinePoint(Vector3.forward * i * roadLength));
-            
+            NewPoint(splineDefinition.SplineSegments[i].length, splineDefinition.SplineSegments[i].rotation);
         }
         distance = splineComputer.CalculateLength();
+        GenerateFinish();
+    }
+
+    private void NewPoint(float length, Vector3 rot)
+    {
+        rot /= 2;
+        rot /= length / LevelManager.instance.GetRoadPointOffset();
+
+        for (int j = 0; j < length / LevelManager.instance.GetRoadPointOffset(); j++)
+        {
+            splineComputer.SetPoint(pointCount, new SplinePoint(newPointPos));
+        
+            newPointDir = (Quaternion.Euler(Vector3.up * rot.x + Vector3.right * rot.y) * prevPointDir) * LevelManager.instance.GetRoadPointOffset();
+
+            newPointPos = prevPoint + newPointDir;
+            pointCount++;
+
+            prevPointDir = newPointDir;
+            prevPoint = newPointPos;
+        }
     }
 
     public SplineComputer GetSplineComputer() 
@@ -46,5 +74,10 @@ public class RoadGenerator : MonoBehaviour
     public double GetDistance()
     {
         return distance;
+    }
+
+    private void GenerateFinish()
+    {
+
     }
 }
