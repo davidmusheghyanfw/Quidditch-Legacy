@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
 
     public void InitLevel()
     {
+        RoadGenerator.instance.RoadGeneratorInit();
+        CheckPointSpawning.instance.CheckPointsSpawningInit();
         CalculateLevelDistance();
     }
 
@@ -43,9 +45,10 @@ public class LevelManager : MonoBehaviour
     private void CalculateLevelDistance()
     {
 
-        levelCompleteDistance = DataManager.instance.GetLevelNumber() * (RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z * 2);
+        //levelCompleteDistance = DataManager.instance.GetLevelNumber() * (RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z * 2);
+        levelCompleteDistance = (float)RoadGenerator.instance.GetDistance();
 
-        GameView.instance.SetFinishDistance(levelCompleteDistance+ RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z/2);
+        GameView.instance.SetFinishDistance(levelCompleteDistance);//+ RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z/2);
     }
 
     public float GetLevelDistance()

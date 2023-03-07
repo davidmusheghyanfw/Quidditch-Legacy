@@ -85,7 +85,7 @@ public class CharacterMovemant : MonoBehaviour
 
          //   visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), rotationDiff);
 
-            CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position);
+            CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position,PlayerControler.instance.GetCharacterVisual());
             prevDot = dot;
 
         //    GameView.instance.UpdateScore();

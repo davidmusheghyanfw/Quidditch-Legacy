@@ -14,9 +14,10 @@ public class CameraController : MonoBehaviour
         instance = this;
     }
    
-    public void PlayerPosUpdate(Vector3 playerPos)
+    public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
     {
         transform.position = playerPos;
+        transform.localRotation = playerRot.localRotation;
     }
 
     Coroutine ForceEffectRoutineC;

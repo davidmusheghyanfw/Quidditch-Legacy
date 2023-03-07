@@ -24,10 +24,10 @@ public class CheckPointSpawning : MonoBehaviour
     GameObject currentCheckPoint;
 
     private int maxCheckpointCount = 0;
-    private int currentCheckpoint = 0;
+
 
     private Vector3 spawnPos;
-    private Vector3 radnomPointInsideCircle;
+
     private void Awake()
     {
         instance = this;
@@ -36,7 +36,7 @@ public class CheckPointSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void CheckPointsSpawningInit()
@@ -53,17 +53,19 @@ public class CheckPointSpawning : MonoBehaviour
     {
         while (true)
         {
-            if (checkPoints.Count == 0) SpawnNewCheckPoint();
 
-            if (player.position.z > checkPoints[0].transform.position.z + nextSegmentCreationOffset
-                && GameManager.instance.isGameInited) DestroyCheckPoint();
-            
-            if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
-                && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount
-                && GameManager.instance.isGameInited)
-            {
-                SpawnNewCheckPoint();
-            }
+            SpawnNewCheckPoint();
+            //if (checkPoints.Count == 0) SpawnNewCheckPoint();
+
+            //if (player.position.z > checkPoints[0].transform.position.z + nextSegmentCreationOffset
+            //    && GameManager.instance.isGameInited) DestroyCheckPoint();
+
+            //if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
+            //    && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount
+            //    && GameManager.instance.isGameInited)
+            //{
+            //    SpawnNewCheckPoint();
+            //}
 
 
             yield return new WaitForEndOfFrame();
@@ -71,23 +73,44 @@ public class CheckPointSpawning : MonoBehaviour
     }
     private void SpawnNewCheckPoint()
     {
-        for (int i = 0; i < visibleSegmentCount; i++)
+        float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+        if (tmpOffset >= RoadGenerator.instance.GetDistance())
         {
-            float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
-            if (tmpOffset >= LevelManager.instance.GetLevelDistance())
-            {
-                StopCheckPointSpawning();
-                break;
-            }
-            spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
-             Random.Range(spawningPosY.x, spawningPosY.y),tmpOffset);
-
-            currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
-
-            checkPoints.Add(currentCheckPoint);
-            maxCheckpointCount++;
+            StopCheckPointSpawning();
         }
-       
+
+        Vector3 pointOnRoad = GetNearestPointOnRoad(tmpOffset);
+        spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y)+pointOnRoad.x,
+            Random.Range(spawningPosY.x, spawningPosY.y) + pointOnRoad.y, tmpOffset);
+
+        currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
+
+        checkPoints.Add(currentCheckPoint);
+        maxCheckpointCount++;
+        //for (int i = 0; i < visibleSegmentCount; i++)
+        //{
+        //    float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+        //    if (tmpOffset >= RoadGenerator.instance.GetDistance())
+        //    {
+
+        //        StopCheckPointSpawning();
+        //        break;
+        //    }
+        //    spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
+        //     Random.Range(spawningPosY.x, spawningPosY.y),tmpOffset);
+
+        //    currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
+
+        //    checkPoints.Add(currentCheckPoint);
+        //    maxCheckpointCount++;
+        //}
+
+    }
+
+    private Vector3 GetNearestPointOnRoad(float offset)
+    {
+        Debug.Log(offset / RoadGenerator.instance.GetFirstAndLastPointDistance() / 100);
+        return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetFirstAndLastPointDistance() / 100).position;
     }
 
     private void DestroyCheckPoint()
@@ -111,8 +134,8 @@ public class CheckPointSpawning : MonoBehaviour
     private void StopCheckPointSpawning()
     {
         if (CheckPointSpawnRoutineC != null) StopCoroutine(CheckPointSpawnRoutineC);
-    } 
-    
+    }
+
     private void StartCheckPointSpawning()
     {
         if (CheckPointSpawnRoutineC != null) StopCoroutine(CheckPointSpawnRoutineC);
@@ -125,7 +148,7 @@ public class CheckPointSpawning : MonoBehaviour
         return checkPoints[index].transform.position;
     }
 
-   
+
 
     public int GetCheckPointCount()
     {

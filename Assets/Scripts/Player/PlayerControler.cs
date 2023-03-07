@@ -28,7 +28,7 @@ public class PlayerControler : CharacterController
     public override void CharacterInit()
     {
        
-        CameraController.instance.PlayerPosUpdate(cursor);
+        CameraController.instance.PlayerPosUpdate(cursor,GetCharacterVisual());
         
         base.CharacterInit();
     }
