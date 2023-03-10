@@ -6,6 +6,8 @@ public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
     public Camera main;
+
+    [SerializeField] private float smoothness;
     [SerializeField] private float maxFiledOfView;
     [SerializeField] private float minFiledOfView;
 
@@ -16,8 +18,8 @@ public class CameraController : MonoBehaviour
    
     public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
     {
-        transform.position = playerPos;
-        transform.localRotation = playerRot.localRotation;
+        transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * smoothness);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, playerRot.localRotation, Time.deltaTime * smoothness);
     }
 
     Coroutine ForceEffectRoutineC;

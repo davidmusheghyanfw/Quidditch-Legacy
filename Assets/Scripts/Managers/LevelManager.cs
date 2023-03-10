@@ -5,13 +5,13 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
-    [SerializeField] private float firstLevelDistance;
-    [SerializeField] private float roadDistance;
+    [SerializeField] private List<SplineDefinition> levelDefinitionsList;
     [SerializeField] private float roadPointOffset;
 
     private float levelCompleteDistance;
 
     private int level = 1;
+    private int levelDefinition = 0;
 
 
     private void Awake()
@@ -26,7 +26,9 @@ public class LevelManager : MonoBehaviour
 
     public void InitLevel()
     {
+       
         RoadGenerator.instance.RoadGeneratorInit();
+
         CheckPointSpawning.instance.CheckPointsSpawningInit();
         CalculateLevelDistance();
     }
@@ -38,7 +40,7 @@ public class LevelManager : MonoBehaviour
     
     public void levelWin()
     {
-        
+        levelDefinition++; ;
         DataManager.instance.IncreaseLevelNumber();
     }
 
@@ -56,12 +58,16 @@ public class LevelManager : MonoBehaviour
         return levelCompleteDistance;
     }
 
-    public float GetRoadDistance()
-    {
-        return roadDistance;
-    } 
     public float GetRoadPointOffset()
     {
         return roadPointOffset;
+    }
+
+    public SplineDefinition GetLevelDefinition()
+    {
+        
+        if (levelDefinition > levelDefinitionsList.Count-1) levelDefinition = 0;
+        
+        return levelDefinitionsList[levelDefinition];
     }
 }

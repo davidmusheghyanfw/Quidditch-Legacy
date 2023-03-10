@@ -4,27 +4,25 @@ using UnityEngine;
 using Dreamteck;
 using Dreamteck.Splines;
 using System;
+using System.Linq;
 
 public class RoadGenerator : MonoBehaviour
 {
     public static RoadGenerator instance;
     [SerializeField] SplineComputer splineComputer;
     [SerializeField] SplineMesh splineMesh;
-    [SerializeField] GameObject firstRoad;
-    [SerializeField] GameObject secondRoad;
     [SerializeField] SplineDefinition splineDefinition;
-
+    [SerializeField] GameObject finish;
     
     private double distance;
     private float offset;
-    private int pointCount;
 
     private Vector3 newPointDir;
     private Vector3 newPointPos;
     private Vector3 prevPointDir;
     private Vector3 prevPointPos;
     private Vector3 dir;
-
+    private List<SplinePoint> allSplinePoints;
    
 
     private void Awake()
@@ -39,24 +37,38 @@ public class RoadGenerator : MonoBehaviour
 
     public void RoadGeneratorInit()
     {
-
-        pointCount = 0;
         dir = Vector3.forward;
+        newPointDir = Vector3.zero;
+        newPointPos = Vector3.zero;
+        prevPointPos = Vector3.zero;
+        prevPointDir = Vector3.zero;
         offset = LevelManager.instance.GetRoadPointOffset();
+        
         CreateRoadSplinePoints();
     }
 
     private void CreateRoadSplinePoints()
     {
-        splineComputer.Rebuild();
-        splineComputer.SetPoint(pointCount, new SplinePoint(Vector3.zero));
+        
+        allSplinePoints = new List<SplinePoint>();
+        allSplinePoints.Add(new SplinePoint(Vector3.zero));
+
+        splineDefinition = LevelManager.instance.GetLevelDefinition();
 
         for (int i = 0; i < splineDefinition.SplineSegments.Count; i++)
         {
             NewPoint(splineDefinition.SplineSegments[i].length, splineDefinition.SplineSegments[i].rotation);
         }
-        distance = splineComputer.CalculateLength();
+        splineComputer.SetPoints(allSplinePoints.ToArray());
+        splineComputer.RebuildImmediate();
+
+        distance = -1;
+        
         GenerateFinish();
+        this.Timer(1f, () =>
+        {
+
+        });
     }
 
     private void NewPoint(float length, Vector3 rot)
@@ -81,10 +93,7 @@ public class RoadGenerator : MonoBehaviour
             prevPointDir = newPointDir;
             prevPointPos = newPointPos;
 
-
-            pointCount++;
-            splineComputer.SetPoint(pointCount, new SplinePoint(newPointPos));
-           
+            allSplinePoints.Add(new SplinePoint(newPointPos));
         }
 
     }
@@ -96,16 +105,34 @@ public class RoadGenerator : MonoBehaviour
 
     public double GetDistance()
     {
+        if(distance == -1)
+        {
+            distance = splineComputer.CalculateLength();
+        }
         return distance;
     }
 
     private void GenerateFinish()
     {
-
+        finish.transform.position = newPointPos;
     }
 
     public float GetFirstAndLastPointDistance()
     {
         return Vector3.Distance(Vector3.zero, splineComputer.GetPoint(splineComputer.pointCount-1).position);
+    }
+}
+
+public static class Extensions
+{
+    public static void Timer(this MonoBehaviour mono, float delay, Action action)
+    {
+        mono.StartCoroutine(Delay(delay, action));
+    }
+
+    static IEnumerator Delay(float delay, Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
     }
 }

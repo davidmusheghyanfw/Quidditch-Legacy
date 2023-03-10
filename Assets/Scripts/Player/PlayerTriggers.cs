@@ -19,7 +19,7 @@ public class PlayerTriggers : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             
-            //other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
+            other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
         }
     }
 }

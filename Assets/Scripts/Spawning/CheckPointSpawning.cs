@@ -25,7 +25,7 @@ public class CheckPointSpawning : MonoBehaviour
 
     private int maxCheckpointCount = 0;
 
-
+    float tmpOffset;
     private Vector3 spawnPos;
 
     private void Awake()
@@ -42,6 +42,7 @@ public class CheckPointSpawning : MonoBehaviour
     public void CheckPointsSpawningInit()
     {
         StopCheckPointSpawning();
+        tmpOffset = 0;
         DestroyAll();
         checkPoints.Clear();
         spawnPos = Vector3.zero;
@@ -73,18 +74,19 @@ public class CheckPointSpawning : MonoBehaviour
     }
     private void SpawnNewCheckPoint()
     {
-        float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+        tmpOffset += offset; //+ (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
         if (tmpOffset >= RoadGenerator.instance.GetDistance())
         {
             StopCheckPointSpawning();
+            return;
         }
 
         Vector3 pointOnRoad = GetNearestPointOnRoad(tmpOffset);
         spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y)+pointOnRoad.x,
-            Random.Range(spawningPosY.x, spawningPosY.y) + pointOnRoad.y, tmpOffset);
+            Random.Range(spawningPosY.x, spawningPosY.y) + pointOnRoad.y, pointOnRoad.z);
 
         currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
-
+        currentCheckPoint.transform.localRotation = Quaternion.Euler(pointOnRoad.normalized);
         checkPoints.Add(currentCheckPoint);
         maxCheckpointCount++;
         //for (int i = 0; i < visibleSegmentCount; i++)
@@ -109,8 +111,8 @@ public class CheckPointSpawning : MonoBehaviour
 
     private Vector3 GetNearestPointOnRoad(float offset)
     {
-        Debug.Log(offset / RoadGenerator.instance.GetFirstAndLastPointDistance() / 100);
-        return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetFirstAndLastPointDistance() / 100).position;
+        //Debug.Log(RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position);
+        return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
     }
 
     private void DestroyCheckPoint()

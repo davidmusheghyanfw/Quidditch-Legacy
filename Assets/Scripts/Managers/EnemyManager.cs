@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
+    public EnemySpawning spawner;
 
-    [SerializeField] private List<Transform> enemyList = new List<Transform>();
+    [SerializeField] private List<EnemyController> enemyList = new List<EnemyController>();
     private void Awake()
     {
         instance = this;
@@ -14,14 +15,28 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyInit()
     {
-        foreach (Transform item in transform)
-        {
-            
-            item.GetComponent<CharacterController>().CharacterInit();
-            item.GetComponent<CharacterController>().StartCursorFollowing();
+        enemyList = spawner.EnemySpawningInit();
 
-            enemyList.Add(item);
+        foreach (EnemyController character in enemyList)
+        {
+            character.CharacterInit();
         }
     }
-   
+
+    public void SpawnEnemies()
+    {
+
+    }
+
+    public void EnemyStart()
+    {
+        foreach (EnemyController character in enemyList)
+        {
+            character.StartCursorFollowing();
+        }
+    }
+
+
+
+
 }

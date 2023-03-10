@@ -28,9 +28,10 @@ public class PlayerControler : CharacterController
     public override void CharacterInit()
     {
        
+        transform.position = cursor = Vector3.zero;
         CameraController.instance.PlayerPosUpdate(cursor,GetCharacterVisual());
-        
         base.CharacterInit();
+        
     }
  
 

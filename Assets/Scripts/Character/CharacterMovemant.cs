@@ -35,15 +35,9 @@ public class CharacterMovemant : MonoBehaviour
 
         while (true)
         {
-            if (characterController.GetCurrentDistancePercent() <= 1f)
-            {
-                characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
-                + (tmpFlySpeed / RoadGenerator.instance.GetDistance()) / 100);
+          
 
-            }
-            else
-                characterController.SetCurrentDistancePercent(1f);
-
+            if(characterController.GetCurrentDistancePercent() <= 1f)
             dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
             
             cursor = characterController.GetCursor();
@@ -51,16 +45,16 @@ public class CharacterMovemant : MonoBehaviour
             cursor.z = 0;
             newPos = dot.position;
             newPos += cursor.x * dot.right + cursor.y * dot.up;
-            
-            
-            
+
+
+
             //dot.position.x += cursor.x;
             //dot.position.y += cursor.y;
-            
-            characterController.GetCharacter().position = newPos;
+
+            characterController.GetCharacter().position = Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * touchControl);
             characterController.GetCharacterVisual().rotation = dot.rotation;
 
-            Vector3 diff = (cursor - prevDot.position).normalized;
+            Vector3 diff = (cursor - dot.position).normalized;
             characterController.GetAnimator().SetFloat("DirY", diff.y);
 
 
@@ -88,7 +82,11 @@ public class CharacterMovemant : MonoBehaviour
             CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position,PlayerControler.instance.GetCharacterVisual());
             prevDot = dot;
 
-        //    GameView.instance.UpdateScore();
+            //    GameView.instance.UpdateScore();
+
+            characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
+            + tmpFlySpeed / RoadGenerator.instance.GetDistance());
+
             yield return new WaitForEndOfFrame();
         }
     }
