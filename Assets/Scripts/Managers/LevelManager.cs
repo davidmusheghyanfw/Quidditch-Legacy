@@ -29,8 +29,11 @@ public class LevelManager : MonoBehaviour
        
         RoadGenerator.instance.RoadGeneratorInit();
 
-        CheckPointSpawning.instance.CheckPointsSpawningInit();
-        CalculateLevelDistance();
+        this.Timer(1f, () => {
+            CheckPointSpawning.instance.CheckPointsSpawningInit();
+            CalculateLevelDistance();
+        });
+        
     }
 
     public int GetLevel()

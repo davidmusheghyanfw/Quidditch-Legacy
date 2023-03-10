@@ -50,6 +50,7 @@ public class RoadGenerator : MonoBehaviour
     private void CreateRoadSplinePoints()
     {
         
+        splineComputer.RebuildImmediate();
         allSplinePoints = new List<SplinePoint>();
         allSplinePoints.Add(new SplinePoint(Vector3.zero));
 
@@ -60,15 +61,11 @@ public class RoadGenerator : MonoBehaviour
             NewPoint(splineDefinition.SplineSegments[i].length, splineDefinition.SplineSegments[i].rotation);
         }
         splineComputer.SetPoints(allSplinePoints.ToArray());
-        splineComputer.RebuildImmediate();
 
-        distance = -1;
-        
+        distance = splineComputer.CalculateLength();
+
         GenerateFinish();
-        this.Timer(1f, () =>
-        {
-
-        });
+        
     }
 
     private void NewPoint(float length, Vector3 rot)
@@ -105,10 +102,7 @@ public class RoadGenerator : MonoBehaviour
 
     public double GetDistance()
     {
-        if(distance == -1)
-        {
-            distance = splineComputer.CalculateLength();
-        }
+       
         return distance;
     }
 
@@ -123,16 +117,3 @@ public class RoadGenerator : MonoBehaviour
     }
 }
 
-public static class Extensions
-{
-    public static void Timer(this MonoBehaviour mono, float delay, Action action)
-    {
-        mono.StartCoroutine(Delay(delay, action));
-    }
-
-    static IEnumerator Delay(float delay, Action action)
-    {
-        yield return new WaitForSeconds(delay);
-        action?.Invoke();
-    }
-}

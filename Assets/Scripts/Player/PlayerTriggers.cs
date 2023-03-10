@@ -8,8 +8,8 @@ public class PlayerTriggers : MonoBehaviour
     {
         if(other.gameObject.tag == "CheckPoint")
         {
-            gameObject.GetComponent<PlayerControler>().StartAddForceRoutine();
-            CameraController.instance.StartForceEffectRoutine();
+            //gameObject.GetComponent<PlayerControler>().StartAddForceRoutine();
+            //CameraController.instance.StartForceEffectRoutine();
         }
         if (other.gameObject.tag == "Finish")
         {

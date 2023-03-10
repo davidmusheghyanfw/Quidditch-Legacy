@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 4
+  flySpeed: 7
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1752488336878764584}
   sensetivity: 0.2
-  verticalBorderMax: 80
+  verticalBorderMax: 30
   verticalBorderMin: 5
-  horizontalBorderMax: 50
-  horizontalBorderMin: -50
+  horizontalBorderMax: 25
+  horizontalBorderMin: -25
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1752488334937976033}
   animator: {fileID: 3621211923003173579}

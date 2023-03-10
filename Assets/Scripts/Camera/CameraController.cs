@@ -15,10 +15,13 @@ public class CameraController : MonoBehaviour
     {
         instance = this;
     }
-   
+
+    Vector3 camVelocity;
     public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
     {
-        transform.position = Vector3.Lerp(transform.position, playerPos, Time.deltaTime * smoothness);
+        //transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref camVelocity, smoothness);
+        transform.position = Vector3.Lerp(transform.position, playerPos, Time.fixedDeltaTime * smoothness);
+
         transform.localRotation = Quaternion.Lerp(transform.localRotation, playerRot.localRotation, Time.deltaTime * smoothness);
     }
 

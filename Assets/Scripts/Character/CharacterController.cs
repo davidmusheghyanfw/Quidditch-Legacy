@@ -138,7 +138,7 @@ public class CharacterController : MonoBehaviour
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 0.5f;
-            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetCurrentSpeed()+0.1f, t));
+            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed()+(characterMovemant.GetDefaultSpeed()/2), t));
                // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
             yield return new WaitForEndOfFrame();
         }
