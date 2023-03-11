@@ -29,10 +29,11 @@ public class GameManager : MonoBehaviour
     {
        
         isGameInited = false;
-        GameView.instance.SetActiveGameStartCanvas(true);
         LevelManager.instance.InitLevel();
         PlayerControler.instance.CharacterInit();
      
+        GameView.instance.SetActiveGameStartCanvas(true);
+        
         CanvasSetActivs();
         EnemyManager.instance.EnemyInit();
 
@@ -44,17 +45,17 @@ public class GameManager : MonoBehaviour
     {
        
         PlayerControler.instance.CharacterInit();
-        GameView.instance.GameViewCanvasInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         EnemyManager.instance.EnemyStart();
         PlayerControler.instance.StartCursorFollowing();
+        GameView.instance.GameViewCanvasInit();
     }
 
     public void GameWin()
     {
+        GameView.instance.GetGameObject().SetActive(false);
         LevelManager.instance.levelWin();
         PlayerControler.instance.OnGameWin();
-        GameView.instance.GetGameObject().SetActive(false);
         LevelEndCanvas.instance.LevelWinCanvasActive();
     }
 

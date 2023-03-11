@@ -79,7 +79,7 @@ public class CharacterMovemant : MonoBehaviour
 
     public void StartCursorFollowing()
     {
-        tmpFlySpeed = flySpeed;
+       
         if (CharacterCoursorFollowRoutineC != null) StopCoroutine(CharacterCoursorFollowRoutineC);
         CharacterCoursorFollowRoutineC = StartCoroutine(CharacterCoursorFollowRoutine());
 

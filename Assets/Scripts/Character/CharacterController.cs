@@ -27,6 +27,7 @@ public class CharacterController : MonoBehaviour
     {
         
         StopCursorFollowing();
+        characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
         SetCurrentDistancePercent(0);
         transform.position = cursor;
         isStopping = false;
@@ -91,6 +92,20 @@ public class CharacterController : MonoBehaviour
     public void SetStopState(bool value)
     {
         isStopping = value;
+    }
+
+    public float GetSensetivity()
+    {
+        return sensetivity;
+    }
+
+    public void SetSensetivity( float value)
+    {
+        sensetivity = value;
+    }
+    public CharacterMovemant GetCharacterMovemant()
+    {
+        return characterMovemant;
     }
 
     public void OnGameWin()
