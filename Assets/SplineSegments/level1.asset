@@ -17,33 +17,29 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0}
   - length: 150
     rotation: {x: 0, y: -15, z: 0}
-  - length: 200
+  - length: 600
     rotation: {x: 0, y: 0, z: 0}
-  - length: 150
+  - length: 300
     rotation: {x: 0, y: 15, z: 0}
-  - length: 300
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: -15, y: 0, z: 0}
+  - length: 800
+    rotation: {x: 0, y: 15, z: 0}
   - length: 500
     rotation: {x: 0, y: 0, z: 0}
-  - length: 300
-    rotation: {x: 20, y: 0, z: 0}
-  - length: 300
+  - length: 500
+    rotation: {x: 0, y: -15, z: 0}
+  - length: 600
     rotation: {x: 0, y: 0, z: 0}
   - length: 600
+    rotation: {x: 0, y: 0, z: 0}
+  - length: 800
     rotation: {x: 20, y: 0, z: 0}
-  - length: 300
+  - length: 800
     rotation: {x: 0, y: 0, z: 0}
-  - length: 600
+  - length: 800
     rotation: {x: -20, y: 0, z: 0}
-  - length: 300
+  - length: 800
     rotation: {x: 0, y: 0, z: 0}
   - length: 500
     rotation: {x: -20, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 15, y: 0, z: 0}
   - length: 500
     rotation: {x: 0, y: 0, z: 0}

@@ -28,6 +28,9 @@ public class CheckPointSpawning : MonoBehaviour
     float tmpOffset;
     private Vector3 spawnPos;
 
+    private Vector3 pointOnRoad;
+    private Vector3 prevPointOnRoad;
+
     private void Awake()
     {
         instance = this;
@@ -46,6 +49,7 @@ public class CheckPointSpawning : MonoBehaviour
         DestroyAll();
         checkPoints.Clear();
         spawnPos = Vector3.zero;
+        prevPointOnRoad = Vector3.zero;
         StartCheckPointSpawning();
     }
 
@@ -56,56 +60,32 @@ public class CheckPointSpawning : MonoBehaviour
         {
 
             SpawnNewCheckPoint();
-            //if (checkPoints.Count == 0) SpawnNewCheckPoint();
-
-            //if (player.position.z > checkPoints[0].transform.position.z + nextSegmentCreationOffset
-            //    && GameManager.instance.isGameInited) DestroyCheckPoint();
-
-            //if (player.position.z < checkPoints[checkPoints.Count - 1].transform.position.z + nextSegmentCreationOffset
-            //    && checkPoints.Count - 1 < maxSegmentAmount * visibleSegmentCount
-            //    && GameManager.instance.isGameInited)
-            //{
-            //    SpawnNewCheckPoint();
-            //}
-
+     
 
             yield return new WaitForEndOfFrame();
         }
     }
     private void SpawnNewCheckPoint()
     {
-        tmpOffset += offset; //+ (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
+        tmpOffset += offset;
         if (tmpOffset >= RoadGenerator.instance.GetDistance())
         {
             StopCheckPointSpawning();
             return;
         }
 
-        Vector3 pointOnRoad = GetNearestPointOnRoad(tmpOffset);
+        pointOnRoad = GetNearestPointOnRoad(tmpOffset);
+        prevPointOnRoad = GetNearestPointOnRoad(tmpOffset - 20);
         spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y)+pointOnRoad.x,
             Random.Range(spawningPosY.x, spawningPosY.y) + pointOnRoad.y, pointOnRoad.z);
 
         currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
-        currentCheckPoint.transform.localRotation = Quaternion.Euler(pointOnRoad.normalized);
+        currentCheckPoint.transform.LookAt(prevPointOnRoad - pointOnRoad);
+        
         checkPoints.Add(currentCheckPoint);
         maxCheckpointCount++;
-        //for (int i = 0; i < visibleSegmentCount; i++)
-        //{
-        //    float tmpOffset = offset + (checkPoints.Count == 0 ? 0 : checkPoints[checkPoints.Count - 1].transform.position.z);
-        //    if (tmpOffset >= RoadGenerator.instance.GetDistance())
-        //    {
 
-        //        StopCheckPointSpawning();
-        //        break;
-        //    }
-        //    spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
-        //     Random.Range(spawningPosY.x, spawningPosY.y),tmpOffset);
-
-        //    currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
-
-        //    checkPoints.Add(currentCheckPoint);
-        //    maxCheckpointCount++;
-        //}
+        
 
     }
 

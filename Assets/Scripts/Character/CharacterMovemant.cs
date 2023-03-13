@@ -14,6 +14,7 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private float rotationDelay;
 
     [SerializeField] private float touchControl;
+    [SerializeField] private float smoothnes;
 
     private Vector3 cursor;
     private Transform visual;
@@ -40,6 +41,7 @@ public class CharacterMovemant : MonoBehaviour
     {
         visual = characterController.GetCharacterVisual();
         Vector3 newPos = Vector3.zero;
+        Vector3 cursorPrevPos = Vector3.zero;
 
         while (true)
         {
@@ -51,17 +53,18 @@ public class CharacterMovemant : MonoBehaviour
             cursor = characterController.GetCursor();
 
             cursor.z = 0;
-           
+
+            cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             newPos = dot.position;
-            newPos += cursor.x * dot.right + cursor.y * dot.up;
+            newPos += cursorPrevPos.x * dot.right + cursorPrevPos.y * dot.up;
 
 
-            characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * touchControl);
+            characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
             characterController.GetCharacterVisual().rotation = dot.rotation;
 
 
-            Vector3 diff = (cursor - dot.position).normalized;
-            characterController.GetAnimator().SetFloat("DirY", diff.y);
+            //Vector3 diff = (cursor - dot.position).normalized;
+            //characterController.GetAnimator().SetFloat("DirY", diff.y);
 
 
        
