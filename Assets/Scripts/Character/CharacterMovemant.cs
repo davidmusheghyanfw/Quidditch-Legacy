@@ -1,7 +1,8 @@
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class CharacterMovemant : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
@@ -13,60 +14,75 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private float rotationDelay;
 
     [SerializeField] private float touchControl;
+    [SerializeField] private float smoothnes;
 
     private Vector3 cursor;
     private Transform visual;
 
     float tmpFlySpeed;
-    
+    SplineSample dot;
 
     public void SetCharacterController( CharacterController controller)
     {
         characterController = controller;
     }
+    //private void OnDrawGizmos()
+    //{
+    //    if (characterController is not PlayerControler) return;
+    //    foreach(var dot in splineSamples)
+    //    {
+    //        Gizmos.DrawSphere(dot.position + Vector3.up * 3, 1f);
+    //    }
+    //}
+    //List<SplineSample> splineSamples = new List<SplineSample>();
 
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
         visual = characterController.GetCharacterVisual();
-        Vector3 prevPos = transform.position;
-    
+        Vector3 newPos = Vector3.zero;
+        Vector3 cursorPrevPos = Vector3.zero;
+
         while (true)
         {
-            // rb.velocity = Vector3.forward * flySpeed *
+          
 
+            if(characterController.GetCurrentDistancePercent() <= 1f)
+            dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+            //splineSamples.Add(dot);
             cursor = characterController.GetCursor();
 
-            characterController.GetCharacter().position += Vector3.forward * tmpFlySpeed * Time.deltaTime;
+            cursor.z = 0;
 
-            cursor.z = characterController.GetCharacter().position.z;
-
-            characterController.GetCharacter().position = Vector3.Lerp(characterController.GetCharacter().position, cursor, touchControl * Time.deltaTime);
-
-
-            Vector3 diff = transform.position - prevPos;
+            cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
+            newPos = dot.position;
+            newPos += cursorPrevPos.x * dot.right + cursorPrevPos.y * dot.up;
 
 
-            diff = diff.normalized + Vector3.forward * rotationDelay;
+            characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
+            characterController.GetCharacterVisual().rotation = dot.rotation;
 
-            characterController.GetAnimator().SetFloat("DirY", diff.y);
+
+            //Vector3 diff = (cursor - dot.position).normalized;
+            //characterController.GetAnimator().SetFloat("DirY", diff.y);
 
 
-            Vector3 upwards = Vector3.up + (Vector3.right * diff.x * rotationZAxisSensitivity);
+       
+            if(characterController is PlayerControler)
+            CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position,PlayerControler.instance.GetCharacterVisual());
+      
 
-            visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), rotationDiff);
 
-            CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position);
-            prevPos = transform.position;
+            characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
+            + tmpFlySpeed / RoadGenerator.instance.GetDistance());
 
-            GameView.instance.UpdateScore();
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
     }
 
     public void StartCursorFollowing()
     {
-        tmpFlySpeed = flySpeed;
+       
         if (CharacterCoursorFollowRoutineC != null) StopCoroutine(CharacterCoursorFollowRoutineC);
         CharacterCoursorFollowRoutineC = StartCoroutine(CharacterCoursorFollowRoutine());
 

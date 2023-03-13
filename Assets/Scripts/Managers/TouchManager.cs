@@ -33,7 +33,7 @@ public class TouchManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())// && GameManager.instance.isGameStarted)
         {
             m_StartPosition = Input.mousePosition;
             m_LastPosition = m_StartPosition;
@@ -45,7 +45,7 @@ public class TouchManager : MonoBehaviour
 
             //FingerController.instance.Push();
         }
-        if (Input.GetMouseButton(0))// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
+        if (Input.GetMouseButton(0) && !IsPointerOverUI())// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
         {
             m_CurrentPosition = Input.mousePosition;
             m_DeltaPosition = m_CurrentPosition - m_LastPosition;
@@ -55,7 +55,7 @@ public class TouchManager : MonoBehaviour
            
             OnTouchDrag?.Invoke(m_CurrentPosition, m_DeltaPosition);
         }
-        if (Input.GetMouseButtonUp(0))// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
+        if (Input.GetMouseButtonUp(0) && !IsPointerOverUI())// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
         {
             m_DeltaPosition = Vector3.zero;
 
@@ -67,23 +67,23 @@ public class TouchManager : MonoBehaviour
         }
     }
 
-    //bool ispointeroverui()
-    //{
-    //    pointereventdata eventdatacurrentposition = new pointereventdata(eventsystem.current);
-    //    eventdatacurrentposition.position = input.mouseposition;
+    bool IsPointerOverUI()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = Input.mousePosition;
 
-    //    list<raycastresult> results = new list<raycastresult>();
-    //    eventsystem.current.raycastall(eventdatacurrentposition, results);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
 
-    //    for(int i = 0; i < results.count; i++)
-    //    {
-    //        if (results[i].gameobject.layer != layermask.nametolayer("ui") || results[i].gameobject.getcomponent<ignoreuiprevention>())
-    //        {
-    //            results.removeat(i);
-    //            i--;
-    //        }
-    //    }
+        for (int i = 0; i < results.Count; i++)
+        {
+            if (results[i].gameObject.layer != LayerMask.NameToLayer("UI") || results[i].gameObject.GetComponent<IgnoreUIPrevention>())
+            {
+                results.RemoveAt(i);
+                i--;
+            }
+        }
 
-    //    return results.count > 0;
-    //}
+        return results.Count > 0;
+    }
 }

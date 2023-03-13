@@ -17,9 +17,21 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
 
+    [SerializeField, Range(0, 1)] private double distanceInPercent = 0f; 
+
     protected bool isStopping = false;
 
     private Vector3 pos;
+
+    public virtual void CharacterInit()
+    {
+        
+        StopCursorFollowing();
+        characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
+        SetCurrentDistancePercent(0);
+        transform.position = cursor;
+        isStopping = false;
+    }
 
     public float VerticalBorderMax()
     {
@@ -44,15 +56,14 @@ public class CharacterController : MonoBehaviour
         return pos;
 
     }
-
-    public virtual void CharacterInit()
+    public double GetCurrentDistancePercent()
     {
-
-        StopCursorFollowing();
-        transform.position = cursor;
-        isStopping = false;
+        return distanceInPercent;
     }
-
+    public void SetCurrentDistancePercent(double value)
+    {
+        distanceInPercent = value;
+    }
    
 
     public Transform GetCharacter()
@@ -81,6 +92,20 @@ public class CharacterController : MonoBehaviour
     public void SetStopState(bool value)
     {
         isStopping = value;
+    }
+
+    public float GetSensetivity()
+    {
+        return sensetivity;
+    }
+
+    public void SetSensetivity( float value)
+    {
+        sensetivity = value;
+    }
+    public CharacterMovemant GetCharacterMovemant()
+    {
+        return characterMovemant;
     }
 
     public void OnGameWin()
@@ -128,7 +153,7 @@ public class CharacterController : MonoBehaviour
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 0.5f;
-            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetCurrentSpeed(), t));
+            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed()+(characterMovemant.GetDefaultSpeed()/2), t));
                // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
             yield return new WaitForEndOfFrame();
         }

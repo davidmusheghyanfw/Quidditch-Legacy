@@ -27,33 +27,35 @@ public class GameManager : MonoBehaviour
     }
     public void GameInit()
     {
+       
         isGameInited = false;
-        GameView.instance.SetActiveGameStartCanvas(true);
         LevelManager.instance.InitLevel();
+        PlayerControler.instance.CharacterInit();
      
-        EnemySpawning.instance.EnemySpawningInit();
+        GameView.instance.SetActiveGameStartCanvas(true);
+        
         CanvasSetActivs();
+        EnemyManager.instance.EnemyInit();
 
         DebugCanvas.instance.DebugInit();
-        CheckPointSpawning.instance.CheckPointsSpawningInit();
-        RoadSpawning.instance.RoadSpawningInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
-        PlayerControler.instance.CharacterInit();
         isGameInited = true;
     }
     public void GameStart()
     {
-        GameView.instance.GameViewCanvasInit();
+       
+        PlayerControler.instance.CharacterInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
-        EnemyManager.instance.EnemyInit();
+        EnemyManager.instance.EnemyStart();
         PlayerControler.instance.StartCursorFollowing();
+        GameView.instance.GameViewCanvasInit();
     }
 
     public void GameWin()
     {
+        GameView.instance.GetGameObject().SetActive(false);
         LevelManager.instance.levelWin();
         PlayerControler.instance.OnGameWin();
-        GameView.instance.GetGameObject().SetActive(false);
         LevelEndCanvas.instance.LevelWinCanvasActive();
     }
 

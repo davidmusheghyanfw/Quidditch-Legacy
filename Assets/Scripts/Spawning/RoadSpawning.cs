@@ -33,6 +33,8 @@ public class RoadSpawning : MonoBehaviour
        //tmpV3 = firstRoad.position;
     }
 
+    #region OldVersion
+
     public void RoadSpawningInit()
     {
         StopRoadSpawning();
@@ -146,4 +148,5 @@ public class RoadSpawning : MonoBehaviour
     {
         return road.transform;
     }
+    #endregion
 }

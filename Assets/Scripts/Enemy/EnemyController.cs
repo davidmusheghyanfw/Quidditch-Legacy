@@ -38,29 +38,32 @@ public class EnemyController : CharacterController
 
         while (true)
         {
-            CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
 
-            if (getNewCheckpoint)
-            {
-                targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
-                randomPos = Random.insideUnitCircle * 125;
-                targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
-            }
+            //CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
 
-            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
-            cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
-            cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
+            //if (getNewCheckpoint)
+            //{
+            //    targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
+                
+            //    randomPos = Random.insideUnitCircle * 125;
+            //    targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
+            //}
+
+            //cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
+            //cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
+            //cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
-            if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
+            //if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
 
-            if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).z <= transform.position.z
-                && index < CheckPointCount)
-            {
-                getNewCheckpoint = NewCheckPointRate();
-                index++;
-            }
-            prevCheckPointCount = CheckPointCount;
+            //if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).z <= transform.position.z ||
+            //    CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).x <= transform.position.x 
+            //    && index < CheckPointCount)
+            //{
+            //    getNewCheckpoint = NewCheckPointRate();
+            //    index++;
+            //}
+            //prevCheckPointCount = CheckPointCount;
             yield return new WaitForEndOfFrame();
         }
 
