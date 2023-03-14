@@ -91,7 +91,7 @@ public class CheckPointSpawning : MonoBehaviour
 
     private Vector3 GetNearestPointOnRoad(float offset)
     {
-        //Debug.Log(RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position);
+        
         return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
     }
 

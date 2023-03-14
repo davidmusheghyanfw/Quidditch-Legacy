@@ -21,5 +21,11 @@ public class PlayerTriggers : MonoBehaviour
             
             other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
         }
+
+        if (other.gameObject.tag == "Coin")
+        {
+
+            Destroy(other.gameObject);
+        }
     }
 }

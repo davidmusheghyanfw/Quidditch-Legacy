@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
 
         this.Timer(1f, () => {
             CheckPointSpawning.instance.CheckPointsSpawningInit();
+            CoinSpawner.instance.CoinSpawnerInit();
             CalculateLevelDistance();
         });
         
