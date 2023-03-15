@@ -24,7 +24,7 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Coin")
         {
-
+            DataManager.instance.SetCoinsAmount(DataManager.instance.GetCoinsAmount()+1);
             Destroy(other.gameObject);
         }
     }

@@ -37,6 +37,23 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt("levelNumber", GetLevelNumber() + 1);
     }
 
+    public void SetCoinsAmount(int newTotalCoins)
+    {
+        PlayerPrefs.SetInt("coinsAmount", newTotalCoins);
+    }
+    public int GetCoinsAmount()
+    {
+        int coinsAmount = 0;
+        if (!PlayerPrefs.HasKey("coinsAmount"))
+        {
+            PlayerPrefs.SetInt("coinsAmount", coinsAmount);
+        }
+
+        coinsAmount = PlayerPrefs.GetInt("coinsAmount", coinsAmount);
+
+        return coinsAmount;
+    }
+
 
     public void ClearStats()
     {

@@ -8,15 +8,19 @@ public class CoinSpawner : MonoBehaviour
     public static CoinSpawner instance;
     [SerializeField] private Coin coin;
     [SerializeField] private float offset;
-    [SerializeField] private CoinDefinition coinDefinition;
+    //[SerializeField] private CoinDefinition coinDefinition;
     [SerializeField] private Transform parent;
 
-    [SerializeField] private List<GameObject> coins= new List<GameObject>();
+    [SerializeField] private List<GameObject> coins = new List<GameObject>();
 
     private Vector3 pointOnRoad;
     private Vector3 spawnPos;
 
     private GameObject currentCoin;
+
+    private float tmpOffset = 0f;
+    private float coinSpawnDistance = 0;
+
 
     private void Awake()
     {
@@ -28,6 +32,8 @@ public class CoinSpawner : MonoBehaviour
         StopCoinSpawnRoutine();
         DestroyAll();
         coins.Clear();
+        tmpOffset= 0f;
+        tmpOffset += offset;
         spawnPos = Vector3.zero;
         StartCoinSpawnRoutine();
     }
@@ -35,35 +41,47 @@ public class CoinSpawner : MonoBehaviour
     Coroutine CoinSpawnRoutineC;
     IEnumerator CoinSpawnRoutine()
     {
-        float tmpOffset = 0f;
-        for (int i = 0; i < coinDefinition.CoinSegments.Count; i++)
+        while(true)
         {
-            if (coinDefinition.CoinSegments[i].coinCount == 0) continue;
-                tmpOffset += offset;
+            int num = Random.Range(0, LevelManager.instance.GetCoinDefinitionsCount()-1);
 
-            for (int j = 0; j < coinDefinition.CoinSegments[i].coinCount; j++)
+            //CoinDefinitonSpawn(LevelManager.instance.GetCoinDefinition(num));
+            CoinDefinition coinDefinition = LevelManager.instance.GetCoinDefinition(num);
+            
+            for (int i = 0; i < coinDefinition.CoinSegments.Count; i++)
             {
-                if (tmpOffset >= RoadGenerator.instance.GetDistance())
+                if (coinDefinition.CoinSegments[i].coinCount == 0) continue;
+
+                coinSpawnDistance = tmpOffset;
+                for (int j = 0; j < coinDefinition.CoinSegments[i].coinCount; j++)
                 {
-                    StopCoinSpawnRoutine();
-                    break;
+                    coinSpawnDistance += coinDefinition.CoinSegments[i].offset;
+                    if (coinSpawnDistance >= RoadGenerator.instance.GetDistance())
+                    {
+                        StopCoinSpawnRoutine();
+                        break;
+                    }
+                    pointOnRoad = GetNearestPointOnRoad(coinSpawnDistance);
+
+                    spawnPos.Set(pointOnRoad.x + coinDefinition.CoinSegments[i].position.x, pointOnRoad.y + coinDefinition.CoinSegments[i].position.y,
+                        pointOnRoad.z + coinDefinition.CoinSegments[i].position.z);
+
+                    currentCoin = Instantiate(coin.gameObject, spawnPos, transform.rotation, parent);
+
+
+                    coins.Add(currentCoin);
                 }
-                tmpOffset += coinDefinition.CoinSegments[i].offset;
-               pointOnRoad = GetNearestPointOnRoad(tmpOffset);
-
-                spawnPos.Set(pointOnRoad.x + coinDefinition.CoinSegments[i].position.x, pointOnRoad.y + coinDefinition.CoinSegments[i].position.y,
-                    pointOnRoad.z + coinDefinition.CoinSegments[i].position.z);
-
-                currentCoin = Instantiate(coin.gameObject, spawnPos, transform.rotation, parent);
-              
-
-                coins.Add(currentCoin);
-                yield return new WaitForEndOfFrame();
             }
+            tmpOffset += offset;
+            yield return new WaitForEndOfFrame();
         }
-       
+
     }
 
+    private void CoinDefinitonSpawn(CoinDefinition coinDefinition)
+    {
+        
+    }
     private void StopCoinSpawnRoutine()
     {
         if (CoinSpawnRoutineC != null) StopCoroutine(CoinSpawnRoutineC);
