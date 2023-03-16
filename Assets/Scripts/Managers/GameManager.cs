@@ -46,8 +46,9 @@ public class GameManager : MonoBehaviour
        
         PlayerControler.instance.CharacterInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
-        EnemyManager.instance.EnemyStart();
         PlayerControler.instance.StartCursorFollowing();
+        EnemyManager.instance.EnemyStart();
+
         GameView.instance.GameViewCanvasInit();
     }
 

@@ -5,19 +5,22 @@ using UnityEngine;
 public class EnemySpawning : MonoBehaviour
 {
     public static EnemySpawning instance;
-    //private CharacterController characterController;
+    private CharacterController characterController;
     [SerializeField] private EnemyController enemy;
     [SerializeField] private Transform parent;
     [SerializeField] private int enemyCount = 5;
+    [SerializeField] private float offset;
 
-    private Vector3 spawnPosition;
+    private float tmpOffset;
 
     private List<EnemyController> enemies = new List<EnemyController>();
 
-    //private void Awake()
-    //{
-    //    instance = this;
-    //}
+    private Vector3 spawnPosOnRoad;
+    private Vector3 spawnPosOnScreen;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public List<EnemyController> EnemySpawningInit()
     {
@@ -35,33 +38,31 @@ public class EnemySpawning : MonoBehaviour
     {
         while (enemies.Count < enemyCount)
         {
+            tmpOffset += offset;
+            if (tmpOffset >= RoadGenerator.instance.GetDistance())
+            {
+                break;
+            }
+            spawnPosOnRoad = GetNearestPointOnRoad(tmpOffset);
 
-            // spawnPosition.Set(Random.Range(characterController.HorizontalBorderMin(), characterController.HorizontalBorderMax()),
-            // Random.Range(characterController.VerticalBorderMin(), characterController.VerticalBorderMax()), 0);
-            var currentEnemy = Instantiate(enemy, Vector3.zero, transform.rotation, parent);
+            spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderMin(), enemy.HorizontalBorderMax()),
+              Random.Range(enemy.VerticalBorderMin(), enemy.VerticalBorderMax()),spawnPosOnRoad.z);
+
+            var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
             enemies.Add(currentEnemy);
+            enemies[enemies.Count - 1].SetCurrentDistancePercent(tmpOffset / RoadGenerator.instance.GetDistance());
+            enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
         }
 
-        //while (true)
-        //{
-           
-        //    else StopCharacterStoppingRoutin();
-        //    yield return new WaitForEndOfFrame();
-        //}
+        
     }
 
-    //public void StartCharacterStoppingRoutin()
-    //{
-    //    if (EnemySpawningRoutineC != null) StopCoroutine(EnemySpawningRoutineC);
-    //    EnemySpawningRoutineC = StartCoroutine(EnemySpawningRoutine());
+    private Vector3 GetNearestPointOnRoad(float offset)
+    {
 
-    //}
+        return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
+    }
 
-    //public void StopCharacterStoppingRoutin()
-    //{
-    //    if (EnemySpawningRoutineC != null) StopCoroutine(EnemySpawningRoutineC);
-     
-    //}
 
     private void DestroyAll()
     {

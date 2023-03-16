@@ -24,10 +24,10 @@ public class EnemyController : CharacterController
         index = 0;
         prevCheckPointCount = 0;
         CheckPointCount = 0;
-        transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
-            Random.Range(verticalBorderMin, verticalBorderMax), 0);
-        cursor = targetCursor = transform.position;
-        StartGettingCursor();
+        //transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
+        //   Random.Range(verticalBorderMin, verticalBorderMax), 0);
+       
+        //StartGettingCursor();
         base.CharacterInit();
     }
 

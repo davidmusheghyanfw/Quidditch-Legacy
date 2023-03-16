@@ -45,9 +45,9 @@ public class CharacterMovemant : MonoBehaviour
 
         while (true)
         {
-          
+            
 
-            if(characterController.GetCurrentDistancePercent() <= 1f)
+            if (characterController.GetCurrentDistancePercent() <= 1f)
             dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
             //splineSamples.Add(dot);
             cursor = characterController.GetCursor();

@@ -237,11 +237,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 7
+  flySpeed: 2
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
   touchControl: 5
+  smoothnes: 10
 --- !u!54 &1752488336878765015
 Rigidbody:
   m_ObjectHideFlags: 0

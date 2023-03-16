@@ -32,6 +32,7 @@ public class EnemyManager : MonoBehaviour
     {
         foreach (EnemyController character in enemyList)
         {
+           
             character.StartCursorFollowing();
         }
     }

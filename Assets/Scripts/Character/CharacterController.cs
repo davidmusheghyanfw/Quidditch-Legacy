@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour
         
         StopCursorFollowing();
         characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
-        SetCurrentDistancePercent(0);
+       
         transform.position = cursor;
         isStopping = false;
     }
@@ -78,6 +78,10 @@ public class CharacterController : MonoBehaviour
     public Vector3 GetCursor()
     {
         return cursor;
+    }
+     public void SetCursor(Vector3 pos)
+    {
+        cursor = pos;
     }
 
     public Transform GetCharacterVisual()
