@@ -30,9 +30,11 @@ public class EnemyManager : MonoBehaviour
 
     public void EnemyStart()
     {
+        
         foreach (EnemyController character in enemyList)
         {
            
+            character.SetCurrentDistancePercent(character.GetSpawnPosPersent());
             character.StartCursorFollowing();
         }
     }

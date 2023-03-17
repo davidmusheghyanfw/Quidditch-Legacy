@@ -7,6 +7,8 @@ public class EnemyController : CharacterController
     [SerializeField] private float smoothnesControl;
     [SerializeField] private float GetCheckPointRate;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private float spawnPosPersent;
+
     private Vector3 targetCursor;
     private Vector3 randomPos;
     int index;
@@ -26,8 +28,9 @@ public class EnemyController : CharacterController
         CheckPointCount = 0;
         //transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
         //   Random.Range(verticalBorderMin, verticalBorderMax), 0);
-       
+
         //StartGettingCursor();
+        SetCurrentDistancePercent(spawnPosPersent);
         base.CharacterInit();
     }
 
@@ -44,7 +47,7 @@ public class EnemyController : CharacterController
             //if (getNewCheckpoint)
             //{
             //    targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
-                
+
             //    randomPos = Random.insideUnitCircle * 125;
             //    targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
             //}
@@ -92,7 +95,7 @@ public class EnemyController : CharacterController
     public void OnPlayerTriggered(Vector3 playerPos)
     {
         int dir = transform.position.x - playerPos.x > 0 ? 1 : -1;
-        //rb.AddForce(Vector3.right * 300 * dir);
+       
         pushedPos = transform.position;
         pushedPos.x += 10 * dir;
         StartCoroutine(PushRoutine());
@@ -102,7 +105,7 @@ public class EnemyController : CharacterController
     {
         float t = 0.0f;
         float startTime = Time.fixedTime;
-       
+
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 0.5f;
@@ -110,5 +113,16 @@ public class EnemyController : CharacterController
             yield return new WaitForEndOfFrame();
         }
 
+    }
+
+    public void SetSpawnPosPersent(float persent)
+    {
+       
+        spawnPosPersent = persent;
+    }
+
+    public float GetSpawnPosPersent()
+    {
+        return spawnPosPersent;
     }
 }

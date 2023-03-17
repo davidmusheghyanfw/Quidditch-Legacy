@@ -36,6 +36,7 @@ public class EnemySpawning : MonoBehaviour
     //Coroutine EnemySpawningRoutineC;
     public void SpawnEnemies()
     {
+        tmpOffset = 0;
         while (enemies.Count < enemyCount)
         {
             tmpOffset += offset;
@@ -52,6 +53,7 @@ public class EnemySpawning : MonoBehaviour
             enemies.Add(currentEnemy);
             enemies[enemies.Count - 1].SetCurrentDistancePercent(tmpOffset / RoadGenerator.instance.GetDistance());
             enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
+            enemies[enemies.Count - 1].SetSpawnPosPersent((float)(tmpOffset / RoadGenerator.instance.GetDistance()));
         }
 
         
