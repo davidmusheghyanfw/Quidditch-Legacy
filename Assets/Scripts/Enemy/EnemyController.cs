@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class EnemyController : CharacterController
 {
@@ -11,10 +12,11 @@ public class EnemyController : CharacterController
 
     private Vector3 targetCursor;
     private Vector3 randomPos;
-    int index;
+
     int prevCheckPointCount;
     int CheckPointCount;
     Vector3 pushedPos;
+    private int nextCheckPointIndex;
 
     private void Start()
     {
@@ -23,14 +25,10 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
-        index = 0;
+      
         prevCheckPointCount = 0;
         CheckPointCount = 0;
-        //transform.position = new Vector3(Random.Range(horizontalBorderMin, horizontalBorderMax),
-        //   Random.Range(verticalBorderMin, verticalBorderMax), 0);
-
-        //StartGettingCursor();
-        SetCurrentDistancePercent(spawnPosPersent);
+        SetPosInSpline(spawnPosPersent);
         base.CharacterInit();
     }
 
@@ -38,35 +36,34 @@ public class EnemyController : CharacterController
     IEnumerator GettingCursorPositionRoutine()
     {
         bool getNewCheckpoint = NewCheckPointRate();
-
+        CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
         while (true)
         {
 
-            //CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
+          
 
-            //if (getNewCheckpoint)
-            //{
-            //    targetCursor = CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index);
+            if (getNewCheckpoint)
+            {
+                
+               targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
 
-            //    randomPos = Random.insideUnitCircle * 125;
-            //    targetCursor.Set(targetCursor.x + randomPos.x, targetCursor.y + randomPos.y, 0);
-            //}
+              
+               targetCursor.Set(targetCursor.x , targetCursor.y, 0);
+            }
 
-            //cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
-            //cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
-            //cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
+            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
+            cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
+            cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
-            //if (CheckPointCount - prevCheckPointCount < 0) index -= CheckPointCount - prevCheckPointCount;
+          
 
-            //if (CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).z <= transform.position.z ||
-            //    CheckPointSpawning.instance.GetEnemyGoalCheckPoint(index).x <= transform.position.x 
-            //    && index < CheckPointCount)
-            //{
-            //    getNewCheckpoint = NewCheckPointRate();
-            //    index++;
-            //}
-            //prevCheckPointCount = CheckPointCount;
+            if(CheckPointSpawning.instance.GetNextCheckPointOnSpline(nextCheckPointIndex) < GetPosInSpline() && nextCheckPointIndex < CheckPointCount-1)
+            {
+               
+                nextCheckPointIndex++;
+                getNewCheckpoint = NewCheckPointRate();
+            }
             yield return new WaitForEndOfFrame();
         }
 
@@ -124,5 +121,15 @@ public class EnemyController : CharacterController
     public float GetSpawnPosPersent()
     {
         return spawnPosPersent;
+    }
+    public void SetNextCheckPointIndex(int index)
+    {
+
+        nextCheckPointIndex = index;
+    }
+
+    public float GetNextCheckPointIndex()
+    {
+        return nextCheckPointIndex;
     }
 }

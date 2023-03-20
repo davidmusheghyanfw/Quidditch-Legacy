@@ -30,7 +30,7 @@ public class PlayerControler : CharacterController
        
         transform.position = cursor = Vector3.zero;
         CameraController.instance.PlayerPosUpdate(cursor,GetCharacterVisual());
-        SetCurrentDistancePercent(0);
+        SetPosInSpline(0);
         base.CharacterInit();
         
     }

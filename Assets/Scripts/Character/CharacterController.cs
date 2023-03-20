@@ -17,7 +17,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
 
-    [SerializeField, Range(0, 1)] private double distanceInPercent = 0f; 
+    [SerializeField, Range(0, 1)] private double posInSpline = 0f; 
 
     protected bool isStopping = false;
 
@@ -56,13 +56,13 @@ public class CharacterController : MonoBehaviour
         return pos;
 
     }
-    public double GetCurrentDistancePercent()
+    public double GetPosInSpline()
     {
-        return distanceInPercent;
+        return posInSpline;
     }
-    public void SetCurrentDistancePercent(double value)
+    public void SetPosInSpline(double value)
     {
-        distanceInPercent = value;
+        posInSpline = value;
     }
    
 

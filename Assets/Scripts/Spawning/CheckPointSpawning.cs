@@ -14,14 +14,14 @@ public class CheckPointSpawning : MonoBehaviour
     [SerializeField] private Vector2 spawningPosX;
     [SerializeField] private Vector2 spawningPosY;
 
-    [SerializeField] private GameObject checkPoint;
+    [SerializeField] private CheckPointInfo checkPoint;
     [SerializeField] private Transform parent;
 
     [SerializeField] private Transform player;
 
-    private List<GameObject> checkPoints = new List<GameObject>();
+    private List<CheckPointInfo> checkPoints = new List<CheckPointInfo>();
 
-    GameObject currentCheckPoint;
+    //GameObject currentCheckPoint;
 
     private int maxCheckpointCount = 0;
 
@@ -76,12 +76,14 @@ public class CheckPointSpawning : MonoBehaviour
 
         pointOnRoad = GetNearestPointOnRoad(tmpOffset);
         prevPointOnRoad = GetNearestPointOnRoad(tmpOffset - 20);
-        spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y)+pointOnRoad.x,
-            Random.Range(spawningPosY.x, spawningPosY.y) + pointOnRoad.y, pointOnRoad.z);
+        spawnPos.Set(Random.Range(spawningPosX.x, spawningPosX.y),
+            Random.Range(spawningPosY.x, spawningPosY.y), 0);
 
-        currentCheckPoint = Instantiate(checkPoint, spawnPos, transform.rotation, parent);
+        var currentCheckPoint = Instantiate(checkPoint, spawnPos + pointOnRoad, transform.rotation, parent);
         currentCheckPoint.transform.LookAt(prevPointOnRoad - pointOnRoad);
-        
+        currentCheckPoint.SetPosInSpline((float)(tmpOffset / RoadGenerator.instance.GetDistance()));
+        currentCheckPoint.SetOverallPos(spawnPos + pointOnRoad);
+        currentCheckPoint.SetPosInScreen(spawnPos);
         checkPoints.Add(currentCheckPoint);
         maxCheckpointCount++;
 
@@ -93,6 +95,25 @@ public class CheckPointSpawning : MonoBehaviour
     {
         
         return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
+    }
+
+    public int CalculateEnemyNearestCheckPoint(float enemyPos)
+    {
+        
+        for (int i = 0; i < checkPoints.Count; i++)
+        {
+            if(enemyPos< checkPoints[i].GetPosInSpline()) return i;
+        }
+        return 0;
+    }
+
+    public Vector3 GetNextCheckPointOnScreen(int index)
+    {
+        return checkPoints[index].GetPosInScreen();
+    }
+    public float GetNextCheckPointOnSpline(int index)
+    {
+        return checkPoints[index].GetPosInSpline();
     }
 
     private void DestroyCheckPoint()

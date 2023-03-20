@@ -292,10 +292,11 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1752488334937976033}
   animator: {fileID: 3621211923003173579}
-  distanceInPercent: 0
+  posInSpline: 0
   smoothnesControl: 2
-  GetCheckPointRate: 100
+  GetCheckPointRate: 60
   rb: {fileID: 1752488336878765015}
+  spawnPosPersent: 0
 --- !u!65 &3000513256064036229
 BoxCollider:
   m_ObjectHideFlags: 0

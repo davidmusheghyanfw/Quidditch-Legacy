@@ -34,8 +34,11 @@ public class EnemyManager : MonoBehaviour
         foreach (EnemyController character in enemyList)
         {
            
-            character.SetCurrentDistancePercent(character.GetSpawnPosPersent());
+            character.SetPosInSpline(character.GetSpawnPosPersent());
+            character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
+            
             character.StartCursorFollowing();
+            character.StartGettingCursor();
         }
     }
 

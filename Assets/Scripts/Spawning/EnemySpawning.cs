@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemySpawning : MonoBehaviour
 {
     public static EnemySpawning instance;
-    private CharacterController characterController;
+  
     [SerializeField] private EnemyController enemy;
     [SerializeField] private Transform parent;
-    [SerializeField] private int enemyCount = 5;
+    [SerializeField,Range(1,10)] private int SegmentCount;
+    [SerializeField] private int enemyCountInSegment;
     [SerializeField] private float offset;
+    [SerializeField] private float rangeOffset;
 
     private float tmpOffset;
 
@@ -37,26 +39,31 @@ public class EnemySpawning : MonoBehaviour
     public void SpawnEnemies()
     {
         tmpOffset = 0;
-        while (enemies.Count < enemyCount)
+        for (int i = 0; i < SegmentCount; i++)
         {
+            int enemyCount = Random.Range(0, enemyCountInSegment);
             tmpOffset += offset;
-            if (tmpOffset >= RoadGenerator.instance.GetDistance())
+            for (int j = 0; j < enemyCount; j++)
             {
-                break;
+               
+                if (tmpOffset >= RoadGenerator.instance.GetDistance())
+                {
+                        break;
+                }
+                float tmpRange = Random.Range(-rangeOffset, rangeOffset);
+                spawnPosOnRoad = GetNearestPointOnRoad(tmpRange+tmpOffset);
+
+                spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderMin(), enemy.HorizontalBorderMax()),
+                  Random.Range(enemy.VerticalBorderMin(), enemy.VerticalBorderMax()), spawnPosOnRoad.z);
+
+                var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
+                enemies.Add(currentEnemy);
+                enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
+                enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
+                enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
             }
-            spawnPosOnRoad = GetNearestPointOnRoad(tmpOffset);
 
-            spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderMin(), enemy.HorizontalBorderMax()),
-              Random.Range(enemy.VerticalBorderMin(), enemy.VerticalBorderMax()),spawnPosOnRoad.z);
-
-            var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
-            enemies.Add(currentEnemy);
-            enemies[enemies.Count - 1].SetCurrentDistancePercent(tmpOffset / RoadGenerator.instance.GetDistance());
-            enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
-            enemies[enemies.Count - 1].SetSpawnPosPersent((float)(tmpOffset / RoadGenerator.instance.GetDistance()));
         }
-
-        
     }
 
     private Vector3 GetNearestPointOnRoad(float offset)

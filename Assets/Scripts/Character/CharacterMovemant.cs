@@ -47,8 +47,8 @@ public class CharacterMovemant : MonoBehaviour
         {
             
 
-            if (characterController.GetCurrentDistancePercent() <= 1f)
-            dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetCurrentDistancePercent());
+            if (characterController.GetPosInSpline() <= 1f)
+            dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetPosInSpline());
             //splineSamples.Add(dot);
             cursor = characterController.GetCursor();
 
@@ -73,7 +73,7 @@ public class CharacterMovemant : MonoBehaviour
       
 
 
-            characterController.SetCurrentDistancePercent(characterController.GetCurrentDistancePercent()
+            characterController.SetPosInSpline(characterController.GetPosInSpline()
             + tmpFlySpeed / RoadGenerator.instance.GetDistance());
 
             yield return new WaitForFixedUpdate();

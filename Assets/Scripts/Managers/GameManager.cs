@@ -30,16 +30,19 @@ public class GameManager : MonoBehaviour
        
         isGameInited = false;
         LevelManager.instance.InitLevel();
-        PlayerControler.instance.CharacterInit();
-     
         GameView.instance.SetActiveGameStartCanvas(true);
-        
         CanvasSetActivs();
-        EnemyManager.instance.EnemyInit();
-
         DebugCanvas.instance.DebugInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
-        isGameInited = true;
+        this.Timer(1f, () =>
+        {
+            PlayerControler.instance.CharacterInit();
+
+
+            EnemyManager.instance.EnemyInit();
+
+            isGameInited = true;
+        });
     }
     public void GameStart()
     {
