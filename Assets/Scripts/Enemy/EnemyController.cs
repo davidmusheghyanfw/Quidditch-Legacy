@@ -36,19 +36,18 @@ public class EnemyController : CharacterController
     IEnumerator GettingCursorPositionRoutine()
     {
         bool getNewCheckpoint = NewCheckPointRate();
+        bool isPosGetted = false;
         CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
         while (true)
         {
-
-          
-
-            if (getNewCheckpoint)
+            if (getNewCheckpoint && !isPosGetted)
             {
-                
-               targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
 
-              
-               targetCursor.Set(targetCursor.x , targetCursor.y, 0);
+                targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
+
+                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle * 7;
+                targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+                isPosGetted = true;
             }
 
             cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
@@ -63,6 +62,7 @@ public class EnemyController : CharacterController
                
                 nextCheckPointIndex++;
                 getNewCheckpoint = NewCheckPointRate();
+                isPosGetted = false;
             }
             yield return new WaitForEndOfFrame();
         }

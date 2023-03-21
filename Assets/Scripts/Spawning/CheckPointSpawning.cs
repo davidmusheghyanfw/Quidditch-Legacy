@@ -109,10 +109,12 @@ public class CheckPointSpawning : MonoBehaviour
 
     public Vector3 GetNextCheckPointOnScreen(int index)
     {
+        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInScreen();
         return checkPoints[index].GetPosInScreen();
     }
     public float GetNextCheckPointOnSpline(int index)
     {
+        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInSpline();
         return checkPoints[index].GetPosInSpline();
     }
 
