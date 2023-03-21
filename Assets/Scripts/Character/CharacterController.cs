@@ -27,8 +27,8 @@ public class CharacterController : MonoBehaviour
     {
         
         StopCursorFollowing();
-        characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
-       
+        characterMovemant.SetCurrentSpeed(1);
+        //if (this is PlayerControler) characterMovemant.SetCurrentSpeed(0);
         transform.position = cursor;
         isStopping = false;
     }
@@ -172,6 +172,24 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    public void StartChraracterAccelarationRoutine()
+    {
+        characterMovemant.StartChraracterAccelarationRoutine();
+    }
+
+    public void StopChraracterAccelarationRoutine()
+    {
+        characterMovemant.StartChraracterAccelarationRoutine();    
+    }
+    public void StartChraracterDeaccelarationRoutine()
+    {
+       characterMovemant.StartChraracterDeaccelarationRoutine();
+    }
+
+    public void StopChraracterDeaccelarationRoutine()
+    {
+        characterMovemant.StopChraracterDeaccelarationRoutine();
+    }
 
     public void StartAddForceRoutine()
     {

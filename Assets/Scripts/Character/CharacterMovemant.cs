@@ -19,7 +19,7 @@ public class CharacterMovemant : MonoBehaviour
     private Vector3 cursor;
     private Transform visual;
 
-    float tmpFlySpeed;
+    [SerializeField]float tmpFlySpeed;
     SplineSample dot;
 
     public void SetCharacterController( CharacterController controller)
@@ -80,7 +80,58 @@ public class CharacterMovemant : MonoBehaviour
         }
     }
 
+    Coroutine ChraracterAccelarationRoutineC;
 
+    IEnumerator ChraracterAccelarationRoutine()
+    {
+        float t = 0.0f;
+        float startTime = Time.fixedTime;
+        while (t < 1)
+        {
+            t = (Time.fixedTime - startTime) / 2;
+            SetCurrentSpeed( Mathf.Lerp(tmpFlySpeed, flySpeed, t));
+            yield return new WaitForFixedUpdate();
+        }
+    }
+    Coroutine ChraracterDeaccelarationRoutineC;
+
+    IEnumerator ChraracterDeaccelarationRoutine()
+    {
+        float t = 0.0f;
+        float startTime = Time.fixedTime;
+        while (t < 1)
+        {
+            t = (Time.fixedTime - startTime) / 1;
+            SetCurrentSpeed(Mathf.Lerp(tmpFlySpeed, 1, t));
+            yield return new WaitForFixedUpdate();
+        }
+    }
+    public void StartChraracterAccelarationRoutine()
+    {
+        if (ChraracterAccelarationRoutineC != null) StopCoroutine(ChraracterAccelarationRoutineC);
+        ChraracterAccelarationRoutineC = StartCoroutine(ChraracterAccelarationRoutine());
+
+
+    }
+
+    public void StopChraracterAccelarationRoutine()
+    {
+        if (ChraracterAccelarationRoutineC != null) StopCoroutine(ChraracterAccelarationRoutineC);
+
+    }
+    public void StartChraracterDeaccelarationRoutine()
+    {
+        if (ChraracterDeaccelarationRoutineC != null) StopCoroutine(ChraracterDeaccelarationRoutineC);
+        ChraracterDeaccelarationRoutineC = StartCoroutine(ChraracterDeaccelarationRoutine());
+       
+
+    }
+
+    public void StopChraracterDeaccelarationRoutine()
+    {
+        if (ChraracterDeaccelarationRoutineC != null) StopCoroutine(ChraracterDeaccelarationRoutineC);
+        
+    }
 
     public void StartCursorFollowing()
     {

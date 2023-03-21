@@ -11,6 +11,9 @@ public class PlayerControler : CharacterController
     [SerializeField] private Rigidbody rb;
     [SerializeField] private SplineProjector splineProjector;
 
+    bool isAccelarationStarted = false;
+    bool isDeaccelarationStarted = false;
+
     private void Awake()
     {
         instance = this;
@@ -34,11 +37,17 @@ public class PlayerControler : CharacterController
         base.CharacterInit();
         
     }
- 
+
 
     void OnTouchDown(Vector3 startPos)
     {
-
+        if (!isAccelarationStarted)
+        {
+            isAccelarationStarted = true;
+            isDeaccelarationStarted=false;
+            StopChraracterDeaccelarationRoutine();
+            StartChraracterAccelarationRoutine();
+        }
 
     }
    
@@ -67,7 +76,13 @@ public class PlayerControler : CharacterController
 
     void OnTouchUp(Vector3 lastPos)
     {
-
+        if (!isDeaccelarationStarted)
+        {
+            isAccelarationStarted = false;
+            isDeaccelarationStarted = true;
+            StopChraracterAccelarationRoutine();
+            StartChraracterDeaccelarationRoutine();
+        }
     }
 
 }
