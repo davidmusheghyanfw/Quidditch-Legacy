@@ -10,6 +10,7 @@ public class EnemyController : CharacterController
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float spawnPosPersent;
 
+    private CharacterMovemant characterMovemant;
     private Vector3 targetCursor;
     private Vector3 randomPos;
 
@@ -25,10 +26,11 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
-      
+
         prevCheckPointCount = 0;
         CheckPointCount = 0;
         SetPosInSpline(spawnPosPersent);
+        characterMovemant = GetCharacterMovemant();
         base.CharacterInit();
     }
 
@@ -55,11 +57,11 @@ public class EnemyController : CharacterController
             cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
-          
 
-            if(CheckPointSpawning.instance.GetNextCheckPointOnSpline(nextCheckPointIndex) < GetPosInSpline() && nextCheckPointIndex < CheckPointCount-1)
+
+            if (CheckPointSpawning.instance.GetNextCheckPointOnSpline(nextCheckPointIndex) < GetPosInSpline() && nextCheckPointIndex < CheckPointCount - 1)
             {
-               
+
                 nextCheckPointIndex++;
                 getNewCheckpoint = NewCheckPointRate();
                 isPosGetted = false;
@@ -68,7 +70,38 @@ public class EnemyController : CharacterController
         }
 
     }
+    Coroutine SpeedControllRountineC;
+    IEnumerator SpeedControllRountine()
+    {
+        characterMovemant.SetCurrentSpeed(characterMovemant.GetCurrentSpeed() * 2);
+            float t = 0.0f;
+            float startTime = Time.fixedTime;
+        while (true)
+        {
 
+            while (t < 1)
+            {
+                t = (Time.fixedTime - startTime) / 5;
+                characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
+                yield return new WaitForEndOfFrame();
+            }
+           
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    public void StartSpeedControllRountine()
+    {
+        if (SpeedControllRountineC != null) StopCoroutine(SpeedControllRountineC);
+        SpeedControllRountineC = StartCoroutine(SpeedControllRountine());
+
+    }
+
+    public void StopSpeedControllRountine()
+    {
+        if (SpeedControllRountineC != null) StopCoroutine(SpeedControllRountineC);
+      
+    }
     public void StartGettingCursor()
     {
         if (GettingCursorPositionRoutineC != null) StopCoroutine(GettingCursorPositionRoutineC);
