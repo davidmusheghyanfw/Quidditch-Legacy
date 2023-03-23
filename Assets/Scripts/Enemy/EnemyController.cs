@@ -9,16 +9,17 @@ public class EnemyController : CharacterController
     [SerializeField] private float GetCheckPointRate;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float spawnPosPersent;
+    [SerializeField] private AnimationCurve speedCurve;
 
     private CharacterMovemant characterMovemant;
     private Vector3 targetCursor;
-    private Vector3 randomPos;
-
-    int prevCheckPointCount;
+  
     int CheckPointCount;
     Vector3 pushedPos;
     private int nextCheckPointIndex;
 
+    private PlayerControler player;
+    private float dynamicSpeed;
     private void Start()
     {
 
@@ -26,11 +27,10 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
-
-        prevCheckPointCount = 0;
         CheckPointCount = 0;
         SetPosInSpline(spawnPosPersent);
         characterMovemant = GetCharacterMovemant();
+        player = PlayerControler.instance;
         base.CharacterInit();
     }
 
@@ -73,21 +73,28 @@ public class EnemyController : CharacterController
     Coroutine SpeedControllRountineC;
     IEnumerator SpeedControllRountine()
     {
-        characterMovemant.SetCurrentSpeed(characterMovemant.GetCurrentSpeed() * 2);
-            float t = 0.0f;
-            float startTime = Time.fixedTime;
         while (true)
         {
+            characterMovemant.SetCurrentSpeed(speedCurve.Evaluate((float)GetPosInSpline()));
 
-            while (t < 1)
-            {
-                t = (Time.fixedTime - startTime) / 5;
-                characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
-                yield return new WaitForEndOfFrame();
-            }
-           
             yield return new WaitForEndOfFrame();
         }
+        //characterMovemant.SetCurrentSpeed(characterMovemant.GetCurrentSpeed() * 2);
+        //    float t = 0.0f;
+        //    float startTime = Time.fixedTime;
+        //while (true)
+        //{
+
+        //    while (t < 1)
+        //    {
+        //        t = (Time.fixedTime - startTime) / 5;
+        //        characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
+        //        yield return new WaitForEndOfFrame();
+        //    }
+
+        //    yield return new WaitForEndOfFrame();
+        //}
+
     }
 
     public void StartSpeedControllRountine()
