@@ -39,9 +39,9 @@ public class EnemySpawning : MonoBehaviour
     public void SpawnEnemies()
     {
         tmpOffset = 50;
-        for (int i = 0; i < SegmentCount; i++)
-        {
-            int enemyCount = Random.Range(0, enemyCountInSegment);
+        //for (int i = 0; i < SegmentCount; i++)
+        //{
+            int enemyCount = enemyCountInSegment; //Random.Range(0, enemyCountInSegment);
             for (int j = 0; j < enemyCount; j++)
             {
                
@@ -63,7 +63,7 @@ public class EnemySpawning : MonoBehaviour
             }
             tmpOffset += offset;
 
-        }
+        //}
     }
 
     private Vector3 GetNearestPointOnRoad(float offset)
