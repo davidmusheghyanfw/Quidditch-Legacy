@@ -294,7 +294,7 @@ MonoBehaviour:
   animator: {fileID: 3621211923003173579}
   posInSpline: 0
   smoothnesControl: 2
-  GetCheckPointRate: 60
+  GetCheckPointRate: 100
   rb: {fileID: 1752488336878765015}
   spawnPosPersent: 0
   speedCurve:
@@ -504,7 +504,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 708aaf7a5f01dc641a127c8481fcd8aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6000004
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708aaf7a5f01dc641a127c8481fcd8aa,
         type: 3}

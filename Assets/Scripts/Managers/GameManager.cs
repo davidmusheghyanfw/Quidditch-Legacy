@@ -30,16 +30,15 @@ public class GameManager : MonoBehaviour
        
         isGameInited = false;
         LevelManager.instance.InitLevel();
-        GameView.instance.SetActiveGameStartCanvas(true);
+        GameView.instance.GameViewCanvasInit();
         CanvasSetActivs();
         DebugCanvas.instance.DebugInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         this.Timer(1f, () =>
         {
             PlayerControler.instance.CharacterInit();
-
-
             EnemyManager.instance.EnemyInit();
+            GameView.instance.SetActiveGameStartCanvas(true);
 
             isGameInited = true;
         });
@@ -52,7 +51,6 @@ public class GameManager : MonoBehaviour
         PlayerControler.instance.StartCursorFollowing();
         EnemyManager.instance.EnemyStart();
 
-        GameView.instance.GameViewCanvasInit();
     }
 
     public void GameWin()
