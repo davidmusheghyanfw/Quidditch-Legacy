@@ -77,7 +77,6 @@ using System.Collections.Generic;
                     if (Vector2.Distance(mousPos, screenPos) <= deleteRadius)
                     {
                         DeletePoint(i);
-                        editor.ApplyModifiedProperties(true);
                         i--;
                     }
                 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck;
 using Dreamteck.Splines;
+using Dreamteck.Forever;
 using System;
 using System.Linq;
 
@@ -13,6 +14,7 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] SplineMesh splineMesh;
     [SerializeField] SplineDefinition splineDefinition;
     [SerializeField] GameObject finish;
+    [SerializeField] CustomPathGenerator pathGenerator;
     
     private double distance;
     private float offset;
@@ -42,6 +44,7 @@ public class RoadGenerator : MonoBehaviour
         newPointPos = Vector3.zero;
         prevPointPos = Vector3.zero;
         prevPointDir = Vector3.zero;
+        pathGenerator.Clear();
         offset = LevelManager.instance.GetRoadPointOffset();
         
         CreateRoadSplinePoints();
@@ -63,7 +66,7 @@ public class RoadGenerator : MonoBehaviour
         splineComputer.SetPoints(allSplinePoints.ToArray());
 
         distance = splineComputer.CalculateLength();
-
+        pathGenerator.points = allSplinePoints.ToArray();
         GenerateFinish();
         
     }
@@ -91,6 +94,7 @@ public class RoadGenerator : MonoBehaviour
             prevPointPos = newPointPos;
 
             allSplinePoints.Add(new SplinePoint(newPointPos));
+          
         }
 
     }

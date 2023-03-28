@@ -470,7 +470,6 @@ namespace Dreamteck.Splines.Editor
                     if (eventModule.mouseLeftDown && eventModule.mouseRight)
                     {
                         GUIUtility.hotControl = -1;
-                        ApplyModifiedProperties(true);
                         ToggleModule(0);
                     }
                 }
@@ -960,7 +959,6 @@ namespace Dreamteck.Splines.Editor
             }
             ResetCurrentModule();
         }
-
         public void LoopTriggerProperties(System.Action<SerializedProperty> onTrigger)
         {
             SerializedProperty triggerGroups = serializedObject.FindProperty("triggerGroups");
@@ -975,7 +973,6 @@ namespace Dreamteck.Splines.Editor
                 }
             }
         }
-
         public void AutoTangents()
         {
             RecordUndo("Auto Tangents");
