@@ -66,7 +66,7 @@ public class RoadGenerator : MonoBehaviour
         splineComputer.SetPoints(allSplinePoints.ToArray());
 
         distance = splineComputer.CalculateLength();
-        pathGenerator.points = allSplinePoints.ToArray();
+
         GenerateFinish();
         
     }
