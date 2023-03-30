@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New Forever Level
   m_EditorClassIdentifier: 
   _enabled: 1
-  _pathGenerator: {fileID: 11400000, guid: c174babc1e2fad54e8efff38649c5486, type: 2}
+  _pathGenerator: {fileID: 11400000, guid: 9dffd100053694d4daf3af1aa7799180, type: 2}
   _sequenceCollection:
     sequences:
     - enabled: 1
@@ -23,12 +23,18 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 2290268277496745809, guid: 6debc2987d4014a40a751285d2221f78,
+        _prefab: {fileID: 466452496, guid: 994fe45e95c91f44db9a54f927ec8d19, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 9099062786000722392, guid: 6debc2987d4014a40a751285d2221f78,
           type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
-      customPathGenerator: {fileID: 11400000, guid: c174babc1e2fad54e8efff38649c5486,
+      customPathGenerator: {fileID: 11400000, guid: 9dffd100053694d4daf3af1aa7799180,
         type: 2}
       spawnCount: 1
       type: 0
@@ -46,12 +52,18 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 2290268277496745809, guid: 6debc2987d4014a40a751285d2221f78,
+        _prefab: {fileID: 466452496, guid: 994fe45e95c91f44db9a54f927ec8d19, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 9099062786000722392, guid: 6debc2987d4014a40a751285d2221f78,
           type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
-      customPathGenerator: {fileID: 11400000, guid: c174babc1e2fad54e8efff38649c5486,
+      customPathGenerator: {fileID: 11400000, guid: 9dffd100053694d4daf3af1aa7799180,
         type: 2}
       spawnCount: 1
       type: 0
