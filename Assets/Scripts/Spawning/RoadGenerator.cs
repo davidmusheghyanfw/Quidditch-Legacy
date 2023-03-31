@@ -44,6 +44,7 @@ public class RoadGenerator : MonoBehaviour
         newPointPos = Vector3.zero;
         prevPointPos = Vector3.zero;
         prevPointDir = Vector3.zero;
+        
         pathGenerator.Clear();
         offset = LevelManager.instance.GetRoadPointOffset();
         
@@ -64,7 +65,8 @@ public class RoadGenerator : MonoBehaviour
             NewPoint(splineDefinition.SplineSegments[i].length, splineDefinition.SplineSegments[i].rotation);
         }
         splineComputer.SetPoints(allSplinePoints.ToArray());
-
+        pathGenerator.points = splineComputer.GetPoints();
+        EnvironmentManager.instance.GetLevelGenerator().pathGenerator = pathGenerator;
         distance = splineComputer.CalculateLength();
 
         GenerateFinish();

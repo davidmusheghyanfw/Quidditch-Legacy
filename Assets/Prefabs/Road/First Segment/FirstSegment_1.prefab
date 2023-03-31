@@ -5910,6 +5910,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3266592050438475292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2388826900216468262}
+  m_Layer: 0
+  m_Name: SegmentEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2388826900216468262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266592050438475292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8410305965840071286}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3276131401710572507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6068,7 +6099,7 @@ Transform:
   - {fileID: 5205214558898227006}
   - {fileID: 3522611417598217909}
   m_Father: {fileID: 8410305965840071286}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3412108311264290406
 GameObject:
@@ -7583,13 +7614,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4258562060954097522}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 1000, z: 100}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2000, y: 10000, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7164346812718744177}
-  m_RootOrder: 0
+  m_Father: {fileID: 8410305965840071286}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7748459714452910410
 MeshFilter:
@@ -9477,38 +9508,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4974126196933580703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7164346812718744177}
-  m_Layer: 0
-  m_Name: Ground
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7164346812718744177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4974126196933580703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3786737017400652715}
-  m_Father: {fileID: 8410305965840071286}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5038756678070164377
 GameObject:
   m_ObjectHideFlags: 0
@@ -16795,6 +16794,37 @@ LODGroup:
     renderers:
     - renderer: {fileID: 9192662416042924957}
   m_Enabled: 1
+--- !u!1 &8390711849744996011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7598699938031808651}
+  m_Layer: 0
+  m_Name: SegmentStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7598699938031808651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390711849744996011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8410305965840071286}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8465995058161985788
 GameObject:
   m_ObjectHideFlags: 0
@@ -18464,6 +18494,7 @@ GameObject:
   - component: {fileID: 1612052417332191339}
   - component: {fileID: 2438734107926637767}
   - component: {fileID: 7197203367838386235}
+  - component: {fileID: 1339016356445862948}
   m_Layer: 0
   m_Name: FirstSegment_1
   m_TagString: Untagged
@@ -18483,7 +18514,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7164346812718744177}
+  - {fileID: 7598699938031808651}
+  - {fileID: 2388826900216468262}
+  - {fileID: 3786737017400652715}
   - {fileID: 2521612582071768008}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -18595,10 +18628,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18614,7 +18647,7 @@ MonoBehaviour:
     editSplinePoints: []
     colliders: []
     _isRoot: 1
-  - transform: {fileID: 7164346812718744177}
+  - transform: {fileID: 7598699938031808651}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     extrudedMesh: {fileID: 0}
     extrusionSpriteVertices: []
@@ -18629,7 +18662,41 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
+      indexing: 0
+      applyRotation: 1
+      keepUpright: 0
+      upVector: {x: 0, y: 1, z: 0}
+      applyScale: 0
+      bendMesh: 0
+      bendSprite: 0
+      bendPolygonCollider: 0
+      applyMeshColors: 0
+    _settingsComponent: {fileID: 0}
+    overrideSettingsComponent: 0
+    meshFilter: {fileID: 0}
+    meshCollider: {fileID: 0}
+    spriteRenderer: {fileID: 0}
+    splineComputer: {fileID: 0}
+    editSplinePoints: []
+    colliders: []
+    _isRoot: 0
+  - transform: {fileID: 2388826900216468262}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    extrudedMesh: {fileID: 0}
+    extrusionSpriteVertices: []
+    extrusionSpriteUVs: []
+    extrusionSpriteRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    extrudedCollisionMesh: {fileID: 0}
+    _extrusionSettings:
+      meshColliderHandling: 0
+      bendSpline: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
       keepUpright: 0
@@ -18661,15 +18728,15 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
       boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
-      bendMesh: 1
+      bendMesh: 0
       bendSprite: 0
       bendPolygonCollider: 0
       applyMeshColors: 0
@@ -18697,10 +18764,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18731,10 +18798,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18765,10 +18832,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18799,10 +18866,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18833,10 +18900,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18867,10 +18934,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18901,10 +18968,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18935,10 +19002,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -18969,10 +19036,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19003,10 +19070,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19037,10 +19104,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19071,10 +19138,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19105,10 +19172,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19139,10 +19206,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19173,10 +19240,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19207,10 +19274,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19241,10 +19308,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19275,10 +19342,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19309,10 +19376,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19343,10 +19410,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19377,10 +19444,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19411,10 +19478,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19445,10 +19512,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19479,10 +19546,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19513,10 +19580,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19547,10 +19614,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19581,10 +19648,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19615,10 +19682,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19649,10 +19716,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19683,10 +19750,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19717,10 +19784,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19751,10 +19818,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19785,10 +19852,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19819,10 +19886,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19853,10 +19920,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19887,10 +19954,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19921,10 +19988,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19955,10 +20022,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -19989,10 +20056,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20023,10 +20090,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20057,10 +20124,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20091,10 +20158,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20125,10 +20192,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20159,10 +20226,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20193,10 +20260,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20227,10 +20294,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20261,10 +20328,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20295,10 +20362,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20329,10 +20396,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20363,10 +20430,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20397,10 +20464,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20431,10 +20498,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20465,10 +20532,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20499,10 +20566,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20533,10 +20600,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20567,10 +20634,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20601,10 +20668,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20635,10 +20702,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20669,10 +20736,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20703,10 +20770,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20737,10 +20804,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20771,10 +20838,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20805,10 +20872,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20839,10 +20906,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20873,10 +20940,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20907,10 +20974,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20941,10 +21008,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -20975,10 +21042,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21009,10 +21076,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21043,10 +21110,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21077,10 +21144,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21111,10 +21178,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21145,10 +21212,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21179,10 +21246,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21213,10 +21280,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21247,10 +21314,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21281,10 +21348,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21315,10 +21382,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21349,10 +21416,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21383,10 +21450,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21417,10 +21484,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21451,10 +21518,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21485,10 +21552,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21519,10 +21586,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21553,10 +21620,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21587,10 +21654,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21621,10 +21688,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21655,10 +21722,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21689,10 +21756,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21723,10 +21790,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21757,10 +21824,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21791,10 +21858,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21825,10 +21892,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21859,10 +21926,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21893,10 +21960,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21927,10 +21994,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21961,10 +22028,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -21995,10 +22062,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22029,10 +22096,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22063,10 +22130,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22097,10 +22164,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22131,10 +22198,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22165,10 +22232,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22199,10 +22266,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22233,10 +22300,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22267,10 +22334,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22301,10 +22368,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22335,10 +22402,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22369,10 +22436,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22403,10 +22470,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22437,10 +22504,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22471,10 +22538,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22505,10 +22572,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22539,10 +22606,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22573,10 +22640,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22607,10 +22674,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22641,10 +22708,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22675,10 +22742,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22709,10 +22776,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22743,10 +22810,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22777,10 +22844,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22811,10 +22878,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22845,10 +22912,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22879,10 +22946,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22913,10 +22980,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22947,10 +23014,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -22981,10 +23048,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23015,10 +23082,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23049,10 +23116,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23083,10 +23150,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23117,10 +23184,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23151,10 +23218,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23185,10 +23252,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23219,10 +23286,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23253,10 +23320,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23287,10 +23354,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23321,10 +23388,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23355,10 +23422,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23389,10 +23456,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23423,10 +23490,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23457,10 +23524,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23491,10 +23558,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23525,10 +23592,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23559,10 +23626,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23593,10 +23660,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23627,10 +23694,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23661,10 +23728,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23695,10 +23762,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23729,10 +23796,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23763,10 +23830,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23797,10 +23864,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23831,10 +23898,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23865,10 +23932,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23899,10 +23966,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23933,10 +24000,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -23967,10 +24034,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24001,10 +24068,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24035,10 +24102,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24069,10 +24136,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24103,10 +24170,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24137,10 +24204,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24171,10 +24238,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24205,10 +24272,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24239,10 +24306,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24273,10 +24340,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24307,10 +24374,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24341,10 +24408,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24375,10 +24442,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24409,10 +24476,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24443,10 +24510,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24477,10 +24544,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24511,10 +24578,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24545,10 +24612,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24579,10 +24646,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24613,10 +24680,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24647,10 +24714,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24681,10 +24748,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24715,10 +24782,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24749,10 +24816,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24783,10 +24850,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24817,10 +24884,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24851,10 +24918,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24885,10 +24952,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24919,10 +24986,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24953,10 +25020,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -24987,10 +25054,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25021,10 +25088,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25055,10 +25122,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25089,10 +25156,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25123,10 +25190,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25157,10 +25224,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25191,10 +25258,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25225,10 +25292,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25259,10 +25326,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25293,10 +25360,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25327,10 +25394,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25361,10 +25428,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25395,10 +25462,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25429,10 +25496,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25463,10 +25530,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25497,10 +25564,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25531,10 +25598,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25565,10 +25632,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25599,10 +25666,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25633,10 +25700,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25667,10 +25734,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25701,10 +25768,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25735,10 +25802,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25769,10 +25836,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25803,10 +25870,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25837,10 +25904,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25871,10 +25938,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25905,10 +25972,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25939,10 +26006,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -25973,10 +26040,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26007,10 +26074,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26041,10 +26108,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26075,10 +26142,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26109,10 +26176,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26143,10 +26210,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26177,10 +26244,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26211,10 +26278,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26245,10 +26312,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26279,10 +26346,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26313,10 +26380,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26347,10 +26414,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26381,10 +26448,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26415,10 +26482,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26449,10 +26516,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26483,10 +26550,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26517,10 +26584,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26551,10 +26618,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26585,10 +26652,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26619,10 +26686,10 @@ MonoBehaviour:
     _extrusionSettings:
       meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26639,11 +26706,11 @@ MonoBehaviour:
     colliders: []
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 6.360235, z: 0}
-    extents: {x: 20, y: 6.3602448, z: 99.99999}
-    max: {x: 20, y: 12.72048, z: 99.99999}
-    min: {x: -20, y: -0.000009536743, z: -99.99999}
-    size: {x: 40, y: 12.7204895, z: 199.99998}
+    center: {x: 5.0444584, y: 34.341232, z: 1.7829819}
+    extents: {x: 25.641878, y: 38.96469, z: 104.57697}
+    max: {x: 30.686337, y: 73.30592, z: 106.359955}
+    min: {x: -20.59742, y: -4.62346, z: -102.79399}
+    size: {x: 51.283756, y: 77.92938, z: 209.15395}
   builders: []
   unpacked: 0
   alwaysDraw: 0
@@ -26653,7 +26720,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 237
+  editorChildCount: 238
 --- !u!33 &7197203367838386235
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26662,6 +26729,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9099062786000722392}
   m_Mesh: {fileID: -462981019419857548, guid: bd7e4ea0ee4338e4f920987e60d89c64, type: 3}
+--- !u!114 &1339016356445862948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9099062786000722392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73df11de4fb68c54994c903a9912df21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmnetStart: {fileID: 7598699938031808651}
+  segmnetEnd: {fileID: 2388826900216468262}
 --- !u!1 &9114775972077861612
 GameObject:
   m_ObjectHideFlags: 0

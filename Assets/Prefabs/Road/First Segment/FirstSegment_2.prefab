@@ -84,7 +84,7 @@ Transform:
   - {fileID: 1050006810268242039}
   - {fileID: 3971265669371430009}
   m_Father: {fileID: 466452497}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6383950702756019060
 MeshFilter:
@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 466452500}
   - component: {fileID: 466452499}
   - component: {fileID: 466452498}
+  - component: {fileID: 3132068039810022364}
   m_Layer: 0
   m_Name: FirstSegment_2
   m_TagString: Untagged
@@ -125,7 +126,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1814833713}
+  - {fileID: 1750483080656834720}
+  - {fileID: 6744356940763982628}
+  - {fileID: 543450653550239038}
   - {fileID: 175215290}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -183,12 +186,12 @@ MonoBehaviour:
         tangent: {x: 0, y: 0, z: -93.066666}
         tangent2: {x: 0, y: 0, z: 40.26667}
       - _type: 0
-        position: {x: 0, y: 0, z: 173.7}
+        position: {x: 0, y: 0, z: 100}
         color: {r: 1, g: 1, b: 1, a: 1}
         normal: {x: 0, y: 1, z: 0}
         size: 1
-        tangent: {x: 0, y: 0, z: 107.03338}
-        tangent2: {x: 0, y: 0, z: 240.36661}
+        tangent: {x: 0, y: 0, z: 33.33338}
+        tangent2: {x: 0, y: 0, z: 166.66663}
       type: 2
       linearAverageDirection: 1
       customValueInterpolation:
@@ -223,12 +226,12 @@ MonoBehaviour:
       tangent: {x: 0, y: 0, z: -93.066666}
       tangent2: {x: 0, y: 0, z: 40.26667}
     - _type: 0
-      position: {x: 0, y: 0, z: 173.7}
+      position: {x: 0, y: 0, z: 100}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0, y: 1, z: 0}
       size: 1
-      tangent: {x: 0, y: 0, z: 107.03338}
-      tangent2: {x: 0, y: 0, z: 240.36661}
+      tangent: {x: 0, y: 0, z: 33.33338}
+      tangent2: {x: 0, y: 0, z: 166.66663}
   objectProperties:
   - transform: {fileID: 466452497}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -243,12 +246,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -256,7 +259,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 466452500}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -264,7 +267,7 @@ MonoBehaviour:
     editSplinePoints: []
     colliders: []
     _isRoot: 1
-  - transform: {fileID: 1814833713}
+  - transform: {fileID: 1750483080656834720}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
     extrudedMesh: {fileID: 0}
     extrusionSpriteVertices: []
@@ -277,9 +280,9 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
       keepUpright: 0
@@ -291,7 +294,41 @@ MonoBehaviour:
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
     overrideSettingsComponent: 0
-    meshFilter: {fileID: 4964812549011433896}
+    meshFilter: {fileID: 0}
+    meshCollider: {fileID: 0}
+    spriteRenderer: {fileID: 0}
+    splineComputer: {fileID: 0}
+    editSplinePoints: []
+    colliders: []
+    _isRoot: 0
+  - transform: {fileID: 6744356940763982628}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    extrudedMesh: {fileID: 0}
+    extrusionSpriteVertices: []
+    extrusionSpriteUVs: []
+    extrusionSpriteRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    extrudedCollisionMesh: {fileID: 0}
+    _extrusionSettings:
+      meshColliderHandling: 0
+      bendSpline: 0
+      boundsInclusion: -1
+      indexing: 0
+      applyRotation: 1
+      keepUpright: 0
+      upVector: {x: 0, y: 1, z: 0}
+      applyScale: 0
+      bendMesh: 0
+      bendSprite: 0
+      bendPolygonCollider: 0
+      applyMeshColors: 0
+    _settingsComponent: {fileID: 0}
+    overrideSettingsComponent: 0
+    meshFilter: {fileID: 0}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
     splineComputer: {fileID: 0}
@@ -311,20 +348,20 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
       boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
-      bendMesh: 1
+      bendMesh: 0
       bendSprite: 0
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3469287837401076379}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -345,12 +382,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -358,7 +395,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6383950702756019060}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -379,12 +416,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -392,7 +429,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6738241888090807930}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -413,12 +450,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -426,7 +463,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7213969728828761912}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -448,12 +485,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -461,7 +498,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8973405787746754298}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -482,12 +519,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -495,7 +532,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6051103167789249407}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -517,12 +554,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -530,7 +567,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1263504201752309413}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -551,12 +588,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -564,7 +601,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6051103168019952053}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -586,12 +623,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -599,7 +636,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5684714586753817956}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -620,12 +657,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -633,7 +670,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398309166748076}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -655,12 +692,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -668,7 +705,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8060880128123267420}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -689,12 +726,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -702,7 +739,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6051103166290856159}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -724,12 +761,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -737,7 +774,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5372546282305318952}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -758,12 +795,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -771,7 +808,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 2849343218159126323}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -792,12 +829,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -805,7 +842,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8684227848241026418}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -826,12 +863,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -839,7 +876,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4134436648875625949}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -860,12 +897,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -873,7 +910,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4087129166290216797}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -894,12 +931,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -907,7 +944,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339634696385}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -929,12 +966,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -942,7 +979,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 2854400605038510654}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -963,12 +1000,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -976,7 +1013,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3500410476152322089}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -997,12 +1034,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1010,7 +1047,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7352826943571073462}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1031,12 +1068,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1044,7 +1081,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7489885993097349022}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1065,12 +1102,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1078,7 +1115,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3735143039236766331}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1099,12 +1136,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1112,7 +1149,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7343597227451425018}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1133,12 +1170,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1146,7 +1183,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4840334774258554670}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1167,12 +1204,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1180,7 +1217,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 887272928710098111}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1201,12 +1238,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1214,7 +1251,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7046365244310007995}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1235,12 +1272,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1248,7 +1285,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5050434962722627675}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1269,12 +1306,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1282,7 +1319,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7051212621328831543}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1303,12 +1340,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1316,7 +1353,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7030318859349380920}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1337,12 +1374,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1350,7 +1387,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 456352036084803035}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1371,12 +1408,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1384,7 +1421,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398308987791213}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1406,12 +1443,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1419,7 +1456,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 9022094257791674000}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1440,12 +1477,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1453,7 +1490,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8492048686697992803}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1474,12 +1511,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1487,7 +1524,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 681416503608622843}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1508,12 +1545,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1521,7 +1558,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4726886807679191232}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1542,12 +1579,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1555,7 +1592,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8869799478951417205}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1576,12 +1613,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1589,7 +1626,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1700818595792676441}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1611,12 +1648,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1624,7 +1661,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7892282119325394536}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1645,12 +1682,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1658,7 +1695,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398309953813346}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1680,12 +1717,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1693,7 +1730,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8647378216139454819}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1714,12 +1751,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1727,7 +1764,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7213969728240877200}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1749,12 +1786,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1762,7 +1799,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3316316068979455402}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1783,12 +1820,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1796,7 +1833,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5054811698199534785}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1817,12 +1854,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1830,7 +1867,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1423451115307648069}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1851,12 +1888,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1864,7 +1901,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7489885992904869862}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1885,12 +1922,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1898,7 +1935,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7084260117665705230}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1919,12 +1956,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1932,7 +1969,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 2849343218058832064}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1953,12 +1990,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -1966,7 +2003,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1935880338094515739}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -1987,12 +2024,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2000,7 +2037,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1332832210429801915}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2021,12 +2058,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2034,7 +2071,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5166187224462882829}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2055,12 +2092,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2068,7 +2105,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8703738305714282494}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2089,12 +2126,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2102,7 +2139,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4785176464313881420}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2123,12 +2160,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2136,7 +2173,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4658421492538150914}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2158,12 +2195,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2171,7 +2208,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7411732845342775814}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2192,12 +2229,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2205,7 +2242,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288338039780510}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2227,12 +2264,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2240,7 +2277,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8668783621310300144}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2261,12 +2298,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2274,7 +2311,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398309535622383}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2296,12 +2333,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2309,7 +2346,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 473368542716875920}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2330,12 +2367,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2343,7 +2380,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1700818594505902287}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2365,12 +2402,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2378,7 +2415,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7567653063382369714}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2399,12 +2436,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2412,7 +2449,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8841904411458900364}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2434,12 +2471,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2447,7 +2484,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4118046095909298683}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2468,12 +2505,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2481,7 +2518,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398308629308580}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2503,12 +2540,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2516,7 +2553,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6861332511629653969}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2537,12 +2574,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2550,7 +2587,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6051103166643573824}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2572,12 +2609,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2585,7 +2622,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 702592462670143653}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2606,12 +2643,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2619,7 +2656,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8492048687739160724}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2640,12 +2677,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2653,7 +2690,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5961371791974957366}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2674,12 +2711,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2687,7 +2724,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398310338743931}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2709,12 +2746,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2722,7 +2759,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7717561842420353877}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2743,12 +2780,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2756,7 +2793,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339129251821}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2778,12 +2815,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2791,7 +2828,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4594413361869241955}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2812,12 +2849,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2825,7 +2862,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6051103167278057849}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2847,12 +2884,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2860,7 +2897,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8712760322262144178}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2881,12 +2918,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2894,7 +2931,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398309205128297}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2916,12 +2953,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2929,7 +2966,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 9219179448961877606}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2950,12 +2987,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2963,7 +3000,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7213969729004878264}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -2985,12 +3022,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -2998,7 +3035,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4080294215554250330}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3019,12 +3056,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3032,7 +3069,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339221613166}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3054,12 +3091,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3067,7 +3104,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8566395507726568607}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3088,12 +3125,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3101,7 +3138,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8492048686653700698}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3122,12 +3159,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3135,7 +3172,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7204850983505476616}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3156,12 +3193,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3169,7 +3206,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7213969727743561908}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3191,12 +3228,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3204,7 +3241,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1330164282563491899}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3225,12 +3262,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3238,7 +3275,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1700818595242422459}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3260,12 +3297,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3273,7 +3310,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1642887036892208163}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3294,12 +3331,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3307,7 +3344,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4726886807033745506}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3328,12 +3365,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3341,7 +3378,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 9209133626285596639}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3362,12 +3399,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3375,7 +3412,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4658421492589391915}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3397,12 +3434,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3410,7 +3447,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4669151374876743825}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3431,12 +3468,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3444,7 +3481,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339769249777}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3466,12 +3503,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3479,7 +3516,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8828774835330762247}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3500,12 +3537,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3513,7 +3550,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398310273622180}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3535,12 +3572,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3548,7 +3585,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3810761623740012316}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3569,12 +3606,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3582,7 +3619,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7030318859713860738}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3603,12 +3640,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3616,7 +3653,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 6928217133602993851}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3637,12 +3674,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3650,7 +3687,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4296398308553827985}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3672,12 +3709,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3685,7 +3722,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4012805522538526337}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3706,12 +3743,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3719,7 +3756,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339108919695}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3741,12 +3778,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3754,7 +3791,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7209780296348164463}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3775,12 +3812,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3788,7 +3825,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8492048687206074030}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3809,12 +3846,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3822,7 +3859,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3836682622760701148}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3843,12 +3880,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3856,7 +3893,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 7213969728253586507}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3878,12 +3915,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3891,7 +3928,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1967795984133940250}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3912,12 +3949,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3925,7 +3962,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 3725288339946621156}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3947,12 +3984,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3960,7 +3997,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 5788495561441742577}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -3981,12 +4018,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -3994,7 +4031,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 8841904411544305162}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -4016,12 +4053,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -4029,7 +4066,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 4081746347657030423}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -4050,12 +4087,12 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 2
+      meshColliderHandling: 0
       bendSpline: 0
-      boundsInclusion: 0
+      boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 0
+      keepUpright: 1
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -4063,7 +4100,7 @@ MonoBehaviour:
       bendPolygonCollider: 0
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
-    overrideSettingsComponent: 0
+    overrideSettingsComponent: 1
     meshFilter: {fileID: 1700818594495728815}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
@@ -4073,11 +4110,11 @@ MonoBehaviour:
     - {fileID: 8243401355139428203}
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 6.360235, z: 0}
-    extents: {x: 20, y: 6.3602448, z: 99.99999}
-    max: {x: 20, y: 12.72048, z: 99.99999}
-    min: {x: -20, y: -0.000009536743, z: -99.99999}
-    size: {x: 40, y: 12.7204895, z: 199.99998}
+    center: {x: -2.5253105, y: 20.540062, z: 1.6119766}
+    extents: {x: 22.532246, y: 28.310059, z: 104.85397}
+    max: {x: 20.006935, y: 48.85012, z: 106.46595}
+    min: {x: -25.057556, y: -7.7699966, z: -103.242}
+    size: {x: 45.06449, y: 56.620117, z: 209.70795}
   builders: []
   unpacked: 0
   alwaysDraw: 0
@@ -4087,8 +4124,22 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 112
---- !u!1 &1814833712
+  editorChildCount: 113
+--- !u!114 &3132068039810022364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466452496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73df11de4fb68c54994c903a9912df21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segmnetStart: {fileID: 1750483080656834720}
+  segmnetEnd: {fileID: 6744356940763982628}
+--- !u!1 &515955601427698149
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4096,39 +4147,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1814833713}
-  - component: {fileID: 4964812549011433896}
+  - component: {fileID: 1750483080656834720}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: SegmentStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1814833713
+--- !u!4 &1750483080656834720
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814833712}
+  m_GameObject: {fileID: 515955601427698149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 543450653550239038}
+  m_Children: []
   m_Father: {fileID: 466452497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4964812549011433896
-MeshFilter:
+--- !u!1 &1175650216291165170
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814833712}
-  m_Mesh: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6744356940763982628}
+  m_Layer: 0
+  m_Name: SegmentEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6744356940763982628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175650216291165170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 466452497}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27163585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4895,17 +4967,32 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1814833713}
+    m_TransformParent: {fileID: 466452497}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
@@ -4930,7 +5017,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
