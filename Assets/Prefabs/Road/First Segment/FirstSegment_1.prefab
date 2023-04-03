@@ -18733,7 +18733,7 @@ MonoBehaviour:
       boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 1
+      keepUpright: 0
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -26712,7 +26712,7 @@ MonoBehaviour:
     min: {x: -20.59742, y: -4.62346, z: -102.79399}
     size: {x: 51.283756, y: 77.92938, z: 209.15395}
   builders: []
-  unpacked: 0
+  unpacked: 1
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -26720,7 +26720,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 238
+  editorChildCount: 237
 --- !u!33 &7197203367838386235
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26743,6 +26743,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmnetStart: {fileID: 7598699938031808651}
   segmnetEnd: {fileID: 2388826900216468262}
+  levelSegment: {fileID: 2438734107926637767}
+  segmentDefinition:
+    nested: 0
+    randomPickChance: 1
+    _prefab: {fileID: 9099062786000722392}
+    _segmentPool: []
+    _pool: 0
+    _poolParent: {fileID: 0}
 --- !u!1 &9114775972077861612
 GameObject:
   m_ObjectHideFlags: 0

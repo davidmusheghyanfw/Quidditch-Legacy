@@ -353,7 +353,7 @@ MonoBehaviour:
       boundsInclusion: -1
       indexing: 0
       applyRotation: 1
-      keepUpright: 1
+      keepUpright: 0
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
       bendMesh: 0
@@ -4110,13 +4110,13 @@ MonoBehaviour:
     - {fileID: 8243401355139428203}
     _isRoot: 0
   bounds:
-    center: {x: -2.5253105, y: 20.540062, z: 1.6119766}
-    extents: {x: 22.532246, y: 28.310059, z: 104.85397}
+    center: {x: -2.5253105, y: 22.312574, z: 1.6119766}
+    extents: {x: 22.532246, y: 26.537546, z: 104.85397}
     max: {x: 20.006935, y: 48.85012, z: 106.46595}
-    min: {x: -25.057556, y: -7.7699966, z: -103.242}
-    size: {x: 45.06449, y: 56.620117, z: 209.70795}
+    min: {x: -25.057556, y: -4.2249703, z: -103.242}
+    size: {x: 45.06449, y: 53.075092, z: 209.70795}
   builders: []
-  unpacked: 0
+  unpacked: 1
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -4124,7 +4124,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 113
+  editorChildCount: 112
 --- !u!114 &3132068039810022364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4139,6 +4139,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmnetStart: {fileID: 1750483080656834720}
   segmnetEnd: {fileID: 6744356940763982628}
+  levelSegment: {fileID: 466452498}
+  segmentDefinition:
+    nested: 0
+    randomPickChance: 1
+    _prefab: {fileID: 466452496}
+    _segmentPool: []
+    _pool: 0
+    _poolParent: {fileID: 0}
 --- !u!1 &515955601427698149
 GameObject:
   m_ObjectHideFlags: 0

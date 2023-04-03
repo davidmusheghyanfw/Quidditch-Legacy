@@ -6,6 +6,7 @@ using Dreamteck.Splines;
 using Dreamteck.Forever;
 using System;
 using System.Linq;
+using Unity.Mathematics;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class RoadGenerator : MonoBehaviour
     private Vector3 prevPointPos;
     private Vector3 dir;
     private List<SplinePoint> allSplinePoints;
+   // private List<SplinePoint> LeftEnvironmentPoints = new List<SplinePoint>();    
    
 
     private void Awake()
@@ -66,8 +68,11 @@ public class RoadGenerator : MonoBehaviour
         }
         splineComputer.SetPoints(allSplinePoints.ToArray());
         pathGenerator.points = splineComputer.GetPoints();
-        EnvironmentManager.instance.GetLevelGenerator().pathGenerator = pathGenerator;
+        pathGenerator.segmentCount = (int)Mathf.Round( allSplinePoints.Count / 2);
         distance = splineComputer.CalculateLength();
+        EnvironmentManager.instance.GetLevelGenerator().pathGenerator = pathGenerator;
+        EnvironmentManager.instance.GenerateEnvironment();
+        
 
         GenerateFinish();
         
@@ -96,6 +101,8 @@ public class RoadGenerator : MonoBehaviour
             prevPointPos = newPointPos;
 
             allSplinePoints.Add(new SplinePoint(newPointPos));
+            //newPointPos.Set(newPointPos.x + 50, newPointPos.y, newPointPos.z);
+            //LeftEnvironmentPoints.Add(new SplinePoint(newPointPos));
           
         }
 
