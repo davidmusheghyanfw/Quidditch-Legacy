@@ -348,7 +348,7 @@ MonoBehaviour:
       height: 0
     extrudedCollisionMesh: {fileID: 0}
     _extrusionSettings:
-      meshColliderHandling: 0
+      meshColliderHandling: 2
       bendSpline: 0
       boundsInclusion: -1
       indexing: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
       keepUpright: 0
       upVector: {x: 0, y: 1, z: 0}
       applyScale: 0
-      bendMesh: 0
+      bendMesh: 1
       bendSprite: 0
       bendPolygonCollider: 0
       applyMeshColors: 0
@@ -5047,6 +5047,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bd7e4ea0ee4338e4f920987e60d89c64,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c8541317a9e37f44a1a90797fd27b80, type: 2}
     - target: {fileID: 919132149155446097, guid: bd7e4ea0ee4338e4f920987e60d89c64,
         type: 3}
       propertyPath: m_Name

@@ -47,8 +47,1226 @@ MonoBehaviour:
     size: 0
     tangent: {x: 0, y: 0, z: 0}
     tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
   _spline:
     points:
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
     - _type: 0
       position: {x: 0, y: 0, z: 0}
       color: {r: 0, g: 0, b: 0, a: 0}
