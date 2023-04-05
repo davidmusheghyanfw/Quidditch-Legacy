@@ -90,13 +90,13 @@ Material:
     - _Float0: 0
     - _Float1: -3.07
     - _Float2: 1
-    - _GrassBias: -6.81
-    - _GrassSharpness: 15.8
+    - _GrassBias: -3
+    - _GrassSharpness: 9
     - _Normal: 1
     - _SmoothnessMultiplier: 0
     - _SmoothnessMultiplier1: 0.07
-    - _StoneDirtBias: -5.72
-    - _StoneDirtSharpness: 14.9
+    - _StoneDirtBias: -5
+    - _StoneDirtSharpness: 8
     - __dirty: 0
     m_Colors:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
