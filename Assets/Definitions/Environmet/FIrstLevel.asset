@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FIrstLevel
   m_EditorClassIdentifier: 
   EnvironmentSegments:
-  - {fileID: 3893024753188021057, guid: e5530c93492fc9e4abfea9ebf1aa8413, type: 3}
-  - {fileID: 3893024753188021057, guid: e5530c93492fc9e4abfea9ebf1aa8413, type: 3}
+  - {fileID: 1339016356445862948, guid: 6debc2987d4014a40a751285d2221f78, type: 3}
+  - {fileID: 3132068039810022364, guid: 994fe45e95c91f44db9a54f927ec8d19, type: 3}

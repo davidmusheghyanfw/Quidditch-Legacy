@@ -6,7 +6,8 @@ using UnityEngine;
 public class EnvironmentManager : MonoBehaviour
 {
     public static EnvironmentManager instance;
-    [SerializeField] private LevelGenerator levelGenerator;
+    [SerializeField] private LevelGenerator LeftlevelGenerator;
+    [SerializeField] private LevelGenerator RightlevelGenerator;
     [SerializeField] private EnvironmentDefinition environmentDefinition;
     [SerializeField] private ForeverLevel foreverLevel;
     [SerializeField] private List<SegmentDefinition> segmentsList= new List<SegmentDefinition>();
@@ -18,9 +19,18 @@ public class EnvironmentManager : MonoBehaviour
     }
 
 
-    public LevelGenerator GetLevelGenerator() 
+    public LevelGenerator GetLeftSideLevelGenerator() 
     {
-        return levelGenerator;
+        return LeftlevelGenerator;
+    } 
+    public LevelGenerator GetRightSideLevelGenerator() 
+    {
+        return RightlevelGenerator;
+    }
+    public void SetPath(CustomPathGenerator path)
+    {
+        LeftlevelGenerator.pathGenerator= path;
+        RightlevelGenerator.pathGenerator= path;
     }
 
     public void GenerateEnvironment()
@@ -34,7 +44,8 @@ public class EnvironmentManager : MonoBehaviour
         }
 
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
-        levelGenerator.Restart();
+        LeftlevelGenerator.Restart();
+        RightlevelGenerator.Restart();
     }
 
 }
