@@ -38,7 +38,8 @@ public class EnvironmentManager : MonoBehaviour
         while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()*2)
         {
 
-            EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, 1)];
+            EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, environmentDefinition.EnvironmentSegments.Count)];
+           
             segmentsList.Add(environmentSegment.GetSegmentDefinition());
             overallEnvironmentDistance += environmentSegment.GetSegmentLength();
         }

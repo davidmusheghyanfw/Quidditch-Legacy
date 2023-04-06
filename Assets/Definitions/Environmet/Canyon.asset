@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6959ddebf6ba4834ba57af8dddb012ee, type: 3}
+  m_Name: Canyon
+  m_EditorClassIdentifier: 
+  EnvironmentSegments:
+  - {fileID: 8688704726208056410, guid: 7201149dbcf06e84aab35f8edd16c649, type: 3}

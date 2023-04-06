@@ -26,7 +26,6 @@ public class RoadGenerator : MonoBehaviour
     private Vector3 prevPointPos;
     private Vector3 dir;
     private List<SplinePoint> allSplinePoints;
-   // private List<SplinePoint> LeftEnvironmentPoints = new List<SplinePoint>();    
    
 
     private void Awake()
@@ -69,7 +68,6 @@ public class RoadGenerator : MonoBehaviour
         splineComputer.SetPoints(allSplinePoints.ToArray());
         pathGenerator.points =allSplinePoints.ToArray();
         pathGenerator.segmentCount = (int)Mathf.Round( allSplinePoints.Count / 2);
-        //pathGenerator.segmentCount =1;
         distance = splineComputer.CalculateLength();
         EnvironmentManager.instance.SetPath(pathGenerator);
         EnvironmentManager.instance.GenerateEnvironment();
@@ -102,9 +100,7 @@ public class RoadGenerator : MonoBehaviour
             prevPointPos = newPointPos;
 
             allSplinePoints.Add(new SplinePoint(newPointPos));
-            //newPointPos.Set(newPointPos.x + 50, newPointPos.y, newPointPos.z);
-            //LeftEnvironmentPoints.Add(new SplinePoint(newPointPos));
-          
+         
         }
 
     }
