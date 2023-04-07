@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
       
         transform.position = Vector3.Lerp(transform.position, playerPos, Time.fixedDeltaTime * smoothness);
 
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, playerRot.localRotation, Time.deltaTime * smoothness);
+        transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
     }
 
     Coroutine ForceEffectRoutineC;

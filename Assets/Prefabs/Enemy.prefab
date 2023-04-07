@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 1752488336878764588}
   - component: {fileID: 1752488336878765014}
   - component: {fileID: 3000513256064036229}
+  - component: {fileID: -1010020994671206868}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -292,6 +293,7 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   visualContainer: {fileID: 1752488334937976033}
   animator: {fileID: 3621211923003173579}
+  laneRunner: {fileID: -1010020994671206868}
   posInSpline: 0
   smoothnesControl: 2
   GetCheckPointRate: 100
@@ -310,6 +312,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 5.76, z: 4.66}
   m_Center: {x: 0, y: 0, z: 2.28}
+--- !u!114 &-1010020994671206868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752488336878765013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2d491ea20618745ada741714dad7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMode: 1
+  startPercent: 0
+  startDistance: 0
+  startMode: 0
+  followSpeed: 200
+  follow: 0
+  isPlayer: 0
+  loop: 0
+  physicsMode: 0
+  _motion:
+    enabled: 1
+    offset: {x: 0, y: 0}
+    useSplineSizes: 1
+    rotationOffset: {x: 0, y: 0, z: 0}
+    baseScale: {x: 1, y: 1, z: 1}
+    sample:
+      position: {x: 0, y: 0, z: 0}
+      up: {x: 0, y: 0, z: 0}
+      forward: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      size: 0
+      percent: 0
+    applyPositionX: 1
+    applyPositionY: 1
+    applyPositionZ: 1
+    applyRotationX: 1
+    applyRotationY: 1
+    applyRotationZ: 1
+    applyScaleX: 0
+    applyScaleY: 0
+    applyScaleZ: 0
+  width: 5
+  laneCount: 3
+  startLane: 2
+  laneSwitchSpeed: 5
+  useCustomPaths: 0
+  laneSwitchSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  laneVector: {x: 1, y: 0}
+  _lane: 2
 --- !u!1001 &1762928164
 PrefabInstance:
   m_ObjectHideFlags: 0

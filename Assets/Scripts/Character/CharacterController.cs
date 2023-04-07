@@ -1,3 +1,4 @@
+using Dreamteck.Forever;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] protected Vector3 cursor;
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
+    [SerializeField] private LaneRunner laneRunner;
 
     [SerializeField, Range(0, 1)] private double posInSpline = 0f; 
 
@@ -140,6 +142,7 @@ public class CharacterController : MonoBehaviour
 
     public void StartCursorFollowing()
     {
+        laneRunner.follow = true;
         characterMovemant.StartCursorFollowing();
     }
     public void StopCursorFollowing()

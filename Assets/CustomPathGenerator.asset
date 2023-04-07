@@ -31,8 +31,22 @@ MonoBehaviour:
   customValueInterpolation: 0
   loop: 0
   useRelativeCoordinates: 0
-  segmentCount: 44
+  segmentCount: 45
   points:
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
+  - _type: 0
+    position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    normal: {x: 0, y: 0, z: 0}
+    size: 0
+    tangent: {x: 0, y: 0, z: 0}
+    tangent2: {x: 0, y: 0, z: 0}
   - _type: 0
     position: {x: 0, y: 0, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
@@ -1281,6 +1295,20 @@ MonoBehaviour:
       size: 0
       tangent: {x: 0, y: 0, z: 0}
       tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
+    - _type: 0
+      position: {x: 0, y: 0, z: 0}
+      color: {r: 0, g: 0, b: 0, a: 0}
+      normal: {x: 0, y: 0, z: 0}
+      size: 0
+      tangent: {x: 0, y: 0, z: 0}
+      tangent2: {x: 0, y: 0, z: 0}
     type: 2
     linearAverageDirection: 1
     customValueInterpolation:
@@ -1295,6 +1323,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    sampleRate: 10
+    sampleRate: 55
     closed: 0
     _knotParametrization: 0

@@ -11,8 +11,7 @@ using Unity.Mathematics;
 public class RoadGenerator : MonoBehaviour
 {
     public static RoadGenerator instance;
-    [SerializeField] SplineComputer splineComputer;
-    [SerializeField] SplineMesh splineMesh;
+    [SerializeField] LevelGenerator levelGenerator;
     [SerializeField] SplineDefinition splineDefinition;
     [SerializeField] GameObject finish;
     [SerializeField] CustomPathGenerator pathGenerator;
@@ -55,7 +54,7 @@ public class RoadGenerator : MonoBehaviour
     private void CreateRoadSplinePoints()
     {
         
-        splineComputer.RebuildImmediate();
+        levelGenerator.Restart();
         allSplinePoints = new List<SplinePoint>();
         allSplinePoints.Add(new SplinePoint(Vector3.zero));
 
@@ -68,8 +67,8 @@ public class RoadGenerator : MonoBehaviour
         //splineComputer.SetPoints(allSplinePoints.ToArray());
         pathGenerator.points =allSplinePoints.ToArray();
         pathGenerator.segmentCount = (int)Mathf.Round( allSplinePoints.Count / 2);
-        distance = splineComputer.CalculateLength();
-        EnvironmentManager.instance.SetPath(pathGenerator);
+        //distance = splineComputer.CalculateLength();
+        levelGenerator.pathGenerator = pathGenerator;
         EnvironmentManager.instance.GenerateEnvironment();
         
 
@@ -95,7 +94,7 @@ public class RoadGenerator : MonoBehaviour
 
 
             newPointPos = prevPointPos + dir;
-
+            distance += Vector3.Distance(prevPointPos, newPointPos);
             prevPointDir = newPointDir;
             prevPointPos = newPointPos;
 
@@ -105,9 +104,9 @@ public class RoadGenerator : MonoBehaviour
 
     }
 
-    public SplineComputer GetSplineComputer() 
+    public LevelGenerator GetLevelGenerator() 
     {
-        return splineComputer;
+        return levelGenerator;
     } 
 
     public double GetDistance()
@@ -121,9 +120,6 @@ public class RoadGenerator : MonoBehaviour
         finish.transform.position = newPointPos;
     }
 
-    public float GetFirstAndLastPointDistance()
-    {
-        return Vector3.Distance(Vector3.zero, splineComputer.GetPoint(splineComputer.pointCount-1).position);
-    }
+   
 }
 

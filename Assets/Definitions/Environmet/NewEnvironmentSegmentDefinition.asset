@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6959ddebf6ba4834ba57af8dddb012ee, type: 3}
-  m_Name: FIrstLevel
+  m_Name: NewEnvironmentSegmentDefinition
   m_EditorClassIdentifier: 
   EnvironmentSegments:
-  - {fileID: 1339016356445862948, guid: e2d7a0ec39dfc254393f5a999cba32e0, type: 3}
-  - {fileID: 1339016356445862948, guid: e2d7a0ec39dfc254393f5a999cba32e0, type: 3}
+  - {fileID: 1339016356445862948, guid: 464dbd5724fce454c8b47e9ce056a69f, type: 3}

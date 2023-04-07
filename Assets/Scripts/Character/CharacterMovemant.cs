@@ -26,55 +26,52 @@ public class CharacterMovemant : MonoBehaviour
     {
         characterController = controller;
     }
-    //private void OnDrawGizmos()
-    //{
-    //    if (characterController is not PlayerControler) return;
-    //    foreach(var dot in splineSamples)
-    //    {
-    //        Gizmos.DrawSphere(dot.position + Vector3.up * 3, 1f);
-    //    }
-    //}
-    //List<SplineSample> splineSamples = new List<SplineSample>();
-
+    
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
         visual = characterController.GetCharacterVisual();
         Vector3 newPos = Vector3.zero;
         Vector3 cursorPrevPos = Vector3.zero;
-
+        SplineSample sample = new SplineSample();
         while (true)
         {
-            
 
-            if (characterController.GetPosInSpline() <= 1f)
-            dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetPosInSpline());
-            //splineSamples.Add(dot);
+
+            //if (characterController.GetPosInSpline() <= 1f)
+            ////dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetPosInSpline());
+            //EnvironmentManager.instance.GetLevelGenerator().Evaluate(characterController.GetPosInSpline(), ref dot);
+            ////splineSamples.Add(dot);
+            
             cursor = characterController.GetCursor();
 
             cursor.z = 0;
 
+            RoadGenerator.instance.GetLevelGenerator().Project(PlayerControler.instance.transform.position, ref sample);
+            
             cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
-            newPos = dot.position;
-            newPos += cursorPrevPos.x * dot.right + cursorPrevPos.y * dot.up;
+            //newPos = sample.position;
+            newPos = cursorPrevPos.x * sample.right + cursorPrevPos.y * sample.up;
+    
+            transform.position += sample.forward * tmpFlySpeed + newPos;
+            
+
+            //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
+            characterController.GetCharacterVisual().rotation = sample.rotation;
 
 
-            characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
-            characterController.GetCharacterVisual().rotation = dot.rotation;
+            ////Vector3 diff = (cursor - dot.position).normalized;
+            ////characterController.GetAnimator().SetFloat("DirY", diff.y);
 
+           
 
-            //Vector3 diff = (cursor - dot.position).normalized;
-            //characterController.GetAnimator().SetFloat("DirY", diff.y);
-
-
-       
-            if(characterController is PlayerControler)
+            if (characterController is PlayerControler)
             CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position,PlayerControler.instance.GetCharacterVisual());
       
 
 
-            characterController.SetPosInSpline(characterController.GetPosInSpline()
-            + tmpFlySpeed / RoadGenerator.instance.GetDistance());
+            //characterController.SetPosInSpline(characterController.GetPosInSpline()
+            //+ tmpFlySpeed / RoadGenerator.instance.GetDistance());
 
             yield return new WaitForFixedUpdate();
         }
@@ -84,7 +81,7 @@ public class CharacterMovemant : MonoBehaviour
 
     public void StartCursorFollowing()
     {
-       
+
         if (CharacterCoursorFollowRoutineC != null) StopCoroutine(CharacterCoursorFollowRoutineC);
         CharacterCoursorFollowRoutineC = StartCoroutine(CharacterCoursorFollowRoutine());
 

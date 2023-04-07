@@ -1,4 +1,5 @@
 using Dreamteck.Forever;
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,8 @@ using UnityEngine;
 public class EnvironmentManager : MonoBehaviour
 {
     public static EnvironmentManager instance;
-    [SerializeField] private LevelGenerator LeftlevelGenerator;
-    [SerializeField] private LevelGenerator RightlevelGenerator;
+    //[SerializeField] private LevelGenerator LeftlevelGenerator;
+    //[SerializeField] private LevelGenerator RightlevelGenerator;
     [SerializeField] private EnvironmentDefinition environmentDefinition;
     [SerializeField] private ForeverLevel foreverLevel;
     [SerializeField] private List<SegmentDefinition> segmentsList= new List<SegmentDefinition>();
@@ -18,24 +19,9 @@ public class EnvironmentManager : MonoBehaviour
         instance = this; 
     }
 
-
-    public LevelGenerator GetLeftSideLevelGenerator() 
-    {
-        return LeftlevelGenerator;
-    } 
-    public LevelGenerator GetRightSideLevelGenerator() 
-    {
-        return RightlevelGenerator;
-    }
-    public void SetPath(CustomPathGenerator path)
-    {
-        LeftlevelGenerator.pathGenerator= path;
-        RightlevelGenerator.pathGenerator= path;
-    }
-
     public void GenerateEnvironment()
     {
-        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()*2)
+        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance())
         {
 
             EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, environmentDefinition.EnvironmentSegments.Count)];
@@ -45,8 +31,9 @@ public class EnvironmentManager : MonoBehaviour
         }
 
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
-        LeftlevelGenerator.Restart();
-        RightlevelGenerator.Restart();
+        RoadGenerator.instance.GetLevelGenerator().StartGeneration();
+        //RightlevelGenerator.Restart();
     }
+
 
 }

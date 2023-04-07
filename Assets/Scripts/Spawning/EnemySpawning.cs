@@ -69,7 +69,7 @@ public class EnemySpawning : MonoBehaviour
     private Vector3 GetNearestPointOnRoad(float offset)
     {
 
-        return RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
+        return Vector3.zero;//RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
     }
 
 

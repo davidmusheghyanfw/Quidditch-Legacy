@@ -31,7 +31,7 @@ public class PlayerControler : CharacterController
         transform.position = cursor = Vector3.zero;
         CameraController.instance.PlayerPosUpdate(cursor,GetCharacterVisual());
         SetPosInSpline(0);
-        //base.CharacterInit();
+        base.CharacterInit();
         
     }
  
@@ -48,7 +48,7 @@ public class PlayerControler : CharacterController
         if (!isStopping)
         {
             Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
-           
+
             if (newCursorPosition.y < verticalBorderMin) newCursorPosition.y = verticalBorderMin;
             if (newCursorPosition.y > verticalBorderMax) newCursorPosition.y = verticalBorderMax;
 
@@ -56,7 +56,7 @@ public class PlayerControler : CharacterController
             if (newCursorPosition.x > horizontalBorderMax) newCursorPosition.x = horizontalBorderMax;
 
             cursor = newCursorPosition;
-           
+
         }
         else
         {
