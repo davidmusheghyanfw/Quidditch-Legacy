@@ -34,7 +34,7 @@ public class RoadGenerator : MonoBehaviour
 
     private void Start()
     {
-    
+        levelGenerator.loopSegmentLogic = true;
     }
 
     public void RoadGeneratorInit()

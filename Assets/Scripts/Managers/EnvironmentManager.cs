@@ -35,5 +35,8 @@ public class EnvironmentManager : MonoBehaviour
         //RightlevelGenerator.Restart();
     }
 
-
+    private void Update()
+    {
+        Debug.Log(RoadGenerator.instance.GetLevelGenerator().generationProgress);
+    }
 }

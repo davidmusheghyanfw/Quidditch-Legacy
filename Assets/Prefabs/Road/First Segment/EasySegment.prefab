@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 8410305965840071286}
   - component: {fileID: 1612052417332191339}
   - component: {fileID: 2438734107926637767}
-  - component: {fileID: 7197203367838386235}
   - component: {fileID: 1339016356445862948}
   m_Layer: 0
   m_Name: EasySegment
@@ -219,7 +218,7 @@ MonoBehaviour:
       applyMeshColors: 0
     _settingsComponent: {fileID: 0}
     overrideSettingsComponent: 0
-    meshFilter: {fileID: 7197203367838386235}
+    meshFilter: {fileID: 0}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
     splineComputer: {fileID: 0}
@@ -330,10 +329,10 @@ MonoBehaviour:
     _isRoot: 0
   bounds:
     center: {x: 0, y: 0, z: 0}
-    extents: {x: 0.01, y: 0.01, z: 100}
-    max: {x: 0.01, y: 0.01, z: 100}
-    min: {x: -0.01, y: -0.01, z: -100}
-    size: {x: 0.02, y: 0.02, z: 200}
+    extents: {x: 0, y: 0, z: 100}
+    max: {x: 0, y: 0, z: 100}
+    min: {x: 0, y: 0, z: -100}
+    size: {x: 0, y: 0, z: 200}
   builders: []
   unpacked: 0
   alwaysDraw: 0
@@ -344,14 +343,6 @@ MonoBehaviour:
   drawBounds: 1
   drawCustomPaths: 1
   editorChildCount: 4
---- !u!33 &7197203367838386235
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9099062786000722392}
-  m_Mesh: {fileID: -462981019419857548, guid: bd7e4ea0ee4338e4f920987e60d89c64, type: 3}
 --- !u!114 &1339016356445862948
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -72,7 +72,10 @@ namespace Dreamteck.Forever
             if(LevelGenerator.instance == null || !LevelGenerator.instance.ready || LevelGenerator.instance.segments.Count == 0)
             {
                 Debug.LogError(name + " Runner attempting to start following but the Level Generator isn't ready.");
-                return;
+                if(LevelGenerator.instance.generationProgress < .2f)
+                {
+                    return;
+                }
             }
             int segmentIndex = 0;
             double localPercent = 0.0;
@@ -225,7 +228,7 @@ namespace Dreamteck.Forever
             if (!follow) return;
             if (_segment == null)
             {
-                if(LevelGenerator.instance != null && LevelGenerator.instance.ready)
+                if(LevelGenerator.instance != null /*&& LevelGenerator.instance.ready*/)
                 {
                     if (LevelGenerator.instance.segments.Count > 0) StartFollow();
                     else return;
