@@ -853,7 +853,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &183552311
 Transform:
   m_ObjectHideFlags: 0
@@ -3023,7 +3023,7 @@ MonoBehaviour:
   updateMode: 1
   startPercent: 0
   startDistance: 0
-  startMode: 0
+  startMode: 2
   followSpeed: 300
   follow: 0
   isPlayer: 1
@@ -3305,7 +3305,7 @@ MonoBehaviour:
   _loopSegmentLogic: 1
   _levelCollection:
   - {fileID: 11400000, guid: 2c17b63b1cb5f8f4f9b071e345fbb258, type: 2}
-  _levelIteration: 0
+  _levelIteration: 5
   _levelRandomizer: {fileID: 0}
   _generationRandomizer: {fileID: 0}
   _startLevel: 0
@@ -5329,7 +5329,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69550dabc27b1b64eb1e2dab04ae5d8d, type: 2}
   - {fileID: 11400000, guid: daceaf2b6b9b76f46b3cf008d8ae90a0, type: 2}
   - {fileID: 11400000, guid: 8dfeacf04eecdde41bab587df79753c6, type: 2}
-  roadPointOffset: 100
+  roadPointOffset: 500
 --- !u!114 &2141305810
 MonoBehaviour:
   m_ObjectHideFlags: 0

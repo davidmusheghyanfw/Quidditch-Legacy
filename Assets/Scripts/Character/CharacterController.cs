@@ -116,6 +116,7 @@ public class CharacterController : MonoBehaviour
 
     public void OnGameWin()
     {
+        laneRunner.follow = false;
         StopCursorFollowing();
         StartCharacterStoppingRoutin();
     }

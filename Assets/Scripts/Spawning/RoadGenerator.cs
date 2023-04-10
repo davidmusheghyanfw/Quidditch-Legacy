@@ -53,7 +53,7 @@ public class RoadGenerator : MonoBehaviour
 
     private void CreateRoadSplinePoints()
     {
-        
+        distance = 0;
         levelGenerator.Restart();
         allSplinePoints = new List<SplinePoint>();
         allSplinePoints.Add(new SplinePoint(Vector3.zero));

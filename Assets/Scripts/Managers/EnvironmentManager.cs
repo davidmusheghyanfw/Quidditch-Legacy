@@ -7,12 +7,13 @@ using UnityEngine;
 public class EnvironmentManager : MonoBehaviour
 {
     public static EnvironmentManager instance;
-    //[SerializeField] private LevelGenerator LeftlevelGenerator;
-    //[SerializeField] private LevelGenerator RightlevelGenerator;
+    
     [SerializeField] private EnvironmentDefinition environmentDefinition;
     [SerializeField] private ForeverLevel foreverLevel;
-    [SerializeField] private List<SegmentDefinition> segmentsList= new List<SegmentDefinition>();
+    [SerializeField] private List<SegmentDefinition> segmentsList;
+    
     float overallEnvironmentDistance = 0;
+
 
     private void Awake()
     {
@@ -21,9 +22,12 @@ public class EnvironmentManager : MonoBehaviour
 
     public void GenerateEnvironment()
     {
-        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance())
+        overallEnvironmentDistance = 0;
+        Debug.Log(RoadGenerator.instance.GetDistance() - 500);
+        segmentsList = new List<SegmentDefinition>();
+        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()-500)
         {
-
+            Debug.Log(overallEnvironmentDistance);
             EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, environmentDefinition.EnvironmentSegments.Count)];
            
             segmentsList.Add(environmentSegment.GetSegmentDefinition());
@@ -32,11 +36,6 @@ public class EnvironmentManager : MonoBehaviour
 
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
         RoadGenerator.instance.GetLevelGenerator().StartGeneration();
-        //RightlevelGenerator.Restart();
-    }
 
-    private void Update()
-    {
-        Debug.Log(RoadGenerator.instance.GetLevelGenerator().generationProgress);
     }
 }

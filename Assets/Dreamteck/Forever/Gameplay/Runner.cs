@@ -95,7 +95,7 @@ namespace Dreamteck.Forever
                     break;
             }
             Init(LevelGenerator.instance.segments[segmentIndex], localPercent);
-            follow = true;
+            //follow = true;
         }
 
         public virtual void SetPercent(double percent)

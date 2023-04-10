@@ -47,7 +47,7 @@ public class CharacterMovemant : MonoBehaviour
 
             cursor.z = 0;
 
-            RoadGenerator.instance.GetLevelGenerator().Project(PlayerControler.instance.transform.position, ref sample);
+            RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
             
             cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             //newPos = sample.position;

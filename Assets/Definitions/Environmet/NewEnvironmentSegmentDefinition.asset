@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NewEnvironmentSegmentDefinition
   m_EditorClassIdentifier: 
   EnvironmentSegments:
-  - {fileID: 1339016356445862948, guid: 464dbd5724fce454c8b47e9ce056a69f, type: 3}
+  - {fileID: 400527224196664828, guid: a2e093b5f40203840975e8a5a5e659c1, type: 3}
