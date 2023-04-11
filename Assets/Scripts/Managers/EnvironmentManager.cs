@@ -23,17 +23,17 @@ public class EnvironmentManager : MonoBehaviour
     public void GenerateEnvironment()
     {
         overallEnvironmentDistance = 0;
-        Debug.Log(RoadGenerator.instance.GetDistance() - 500);
+     
         segmentsList = new List<SegmentDefinition>();
-        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()-500)
+        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()-environmentDefinition.finish.GetSegmentLength()-500)
         {
-            Debug.Log(overallEnvironmentDistance);
+          
             EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, environmentDefinition.EnvironmentSegments.Count)];
            
             segmentsList.Add(environmentSegment.GetSegmentDefinition());
             overallEnvironmentDistance += environmentSegment.GetSegmentLength();
         }
-
+        segmentsList.Add(environmentDefinition.finish.GetSegmentDefinition());
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
         RoadGenerator.instance.GetLevelGenerator().StartGeneration();
 

@@ -29,13 +29,13 @@ public class CoinSpawner : MonoBehaviour
 
     public void CoinSpawnerInit()
     {
-        StopCoinSpawnRoutine();
+        //StopCoinSpawnRoutine();
         DestroyAll();
         coins.Clear();
         tmpOffset= 0f;
         tmpOffset += offset;
         spawnPos = Vector3.zero;
-        StartCoinSpawnRoutine();
+       // StartCoinSpawnRoutine();
     }
 
     Coroutine CoinSpawnRoutineC;

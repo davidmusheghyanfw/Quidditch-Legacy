@@ -6,9 +6,11 @@ using UnityEngine.TextCore.Text;
 public class EnemyController : CharacterController
 {
     [SerializeField] private float smoothnesControl;
+    [SerializeField] private float smoothSpeedChanging;
     [SerializeField] private float GetCheckPointRate;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float spawnPosPersent;
+    [SerializeField] private AnimationCurve curve;
 
     private CharacterMovemant characterMovemant;
     private Vector3 targetCursor;
@@ -26,11 +28,12 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
-
+        StopSpeedControllRountine();
         prevCheckPointCount = 0;
         CheckPointCount = 0;
         SetPosInSpline(spawnPosPersent);
         characterMovemant = GetCharacterMovemant();
+        StartSpeedControllRountine();
         base.CharacterInit();
     }
 
@@ -73,20 +76,15 @@ public class EnemyController : CharacterController
     Coroutine SpeedControllRountineC;
     IEnumerator SpeedControllRountine()
     {
-        characterMovemant.SetCurrentSpeed(characterMovemant.GetCurrentSpeed() * 2);
-            float t = 0.0f;
-            float startTime = Time.fixedTime;
+       
         while (true)
         {
-
-            while (t < 1)
-            {
-                t = (Time.fixedTime - startTime) / 5;
-                characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
-                yield return new WaitForEndOfFrame();
-            }
-           
+          
+            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(),
+                characterMovemant.GetDefaultSpeed() * curve.Evaluate((float)GetPosInSpline()) 
+                , Time.deltaTime * smoothSpeedChanging));
             yield return new WaitForEndOfFrame();
+
         }
     }
 
@@ -104,6 +102,7 @@ public class EnemyController : CharacterController
     }
     public void StartGettingCursor()
     {
+  
         if (GettingCursorPositionRoutineC != null) StopCoroutine(GettingCursorPositionRoutineC);
         GettingCursorPositionRoutineC = StartCoroutine(GettingCursorPositionRoutine());
 
@@ -145,6 +144,16 @@ public class EnemyController : CharacterController
 
     }
 
+    public AnimationCurve GetCurve()
+    {
+        return curve;
+    }
+    public void SetCurve(AnimationCurve animationCurve)
+    {
+        curve = animationCurve;
+    }
+
+  
     public void SetSpawnPosPersent(float persent)
     {
        

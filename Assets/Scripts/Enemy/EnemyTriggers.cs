@@ -12,9 +12,11 @@ public class EnemyTriggers : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-          
+            Debug.Log("finish");
             gameObject.GetComponent<EnemyController>().StopGettingCursor();
+            gameObject.GetComponent<EnemyController>().StopSpeedControllRountine();
             gameObject.GetComponent<CharacterController>().StartCharacterStoppingRoutin();
+            
         }
     }
 }

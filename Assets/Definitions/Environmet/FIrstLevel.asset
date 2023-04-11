@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6959ddebf6ba4834ba57af8dddb012ee, type: 3}
   m_Name: FIrstLevel
   m_EditorClassIdentifier: 
+  finish: {fileID: 400527224196664828, guid: ff6817480484bac4698ebe6e88fe10c6, type: 3}
   EnvironmentSegments:
-  - {fileID: 1339016356445862948, guid: e2d7a0ec39dfc254393f5a999cba32e0, type: 3}
-  - {fileID: 1339016356445862948, guid: e2d7a0ec39dfc254393f5a999cba32e0, type: 3}
+  - {fileID: 400527224196664828, guid: a2e093b5f40203840975e8a5a5e659c1, type: 3}

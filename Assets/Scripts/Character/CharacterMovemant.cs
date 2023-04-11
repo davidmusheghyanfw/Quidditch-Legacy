@@ -48,12 +48,15 @@ public class CharacterMovemant : MonoBehaviour
             cursor.z = 0;
 
             RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
+
+            characterController.SetPosInSpline(sample.percent);
             
-            cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
+
+                cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             //newPos = sample.position;
             newPos = cursorPrevPos.x * sample.right + cursorPrevPos.y * sample.up;
     
-            transform.position += sample.forward * tmpFlySpeed + newPos;
+            transform.position +=  newPos;
             
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
@@ -112,18 +115,18 @@ public class CharacterMovemant : MonoBehaviour
     {
         float t = 0.0f;
         float startTime = Time.fixedTime;
-        cursor = characterController.GetCharacter().position;
-        visual.rotation = Quaternion.Euler(0, 0, 0);
+        //cursor = characterController.GetCharacter().position;
+        //visual.rotation = Quaternion.Euler(0, 0, 0);
 
 
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 1;
-            tmpFlySpeed = Mathf.Lerp(tmpFlySpeed, 0, t);
+            SetCurrentSpeed(Mathf.Lerp(tmpFlySpeed, 0, t));
             yield return new WaitForEndOfFrame();
         }
         if (characterController.IsStopping()) StopCursorFollowing();
-        else tmpFlySpeed = flySpeed;
+        else SetCurrentSpeed(flySpeed);
     }
 
     public float GetDefaultSpeed()
@@ -137,5 +140,8 @@ public class CharacterMovemant : MonoBehaviour
     public void SetCurrentSpeed(float value)
     {
         tmpFlySpeed = value;
+
+        characterController.GetLaneRunner().followSpeed = value;
+
     }
 }

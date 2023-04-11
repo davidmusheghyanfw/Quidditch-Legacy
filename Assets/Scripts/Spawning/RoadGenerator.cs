@@ -13,7 +13,6 @@ public class RoadGenerator : MonoBehaviour
     public static RoadGenerator instance;
     [SerializeField] LevelGenerator levelGenerator;
     [SerializeField] SplineDefinition splineDefinition;
-    [SerializeField] GameObject finish;
     [SerializeField] CustomPathGenerator pathGenerator;
     
     private double distance;
@@ -70,9 +69,7 @@ public class RoadGenerator : MonoBehaviour
         //distance = splineComputer.CalculateLength();
         levelGenerator.pathGenerator = pathGenerator;
         EnvironmentManager.instance.GenerateEnvironment();
-        
-
-        GenerateFinish();
+       
         
     }
 
@@ -114,12 +111,6 @@ public class RoadGenerator : MonoBehaviour
        
         return distance;
     }
-
-    private void GenerateFinish()
-    {
-        finish.transform.position = newPointPos;
-    }
-
    
 }
 

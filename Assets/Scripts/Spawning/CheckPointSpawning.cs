@@ -44,13 +44,13 @@ public class CheckPointSpawning : MonoBehaviour
 
     public void CheckPointsSpawningInit()
     {
-        StopCheckPointSpawning();
+        //StopCheckPointSpawning();
         tmpOffset = 0;
         DestroyAll();
         checkPoints.Clear();
         spawnPos = Vector3.zero;
         prevPointOnRoad = Vector3.zero;
-        StartCheckPointSpawning();
+        //StartCheckPointSpawning();
     }
 
     private Coroutine CheckPointSpawnRoutineC;

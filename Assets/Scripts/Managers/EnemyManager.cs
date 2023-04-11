@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
     public EnemySpawning spawner;
+    [SerializeField] private EnemyCurveDefinition curveDefinition;
 
     [SerializeField] private List<EnemyController> enemyList = new List<EnemyController>();
     private void Awake()
@@ -20,6 +21,7 @@ public class EnemyManager : MonoBehaviour
         foreach (EnemyController character in enemyList)
         {
             character.CharacterInit();
+            character.SetCurve(curveDefinition.curveList[Random.Range(0,curveDefinition.curveList.Count)]);
         }
     }
 
@@ -39,7 +41,7 @@ public class EnemyManager : MonoBehaviour
             
             character.StartCursorFollowing();
 
-            character.StartGettingCursor();
+            //character.StartGettingCursor();
             character.StartSpeedControllRountine();
         }
     }

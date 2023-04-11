@@ -27,10 +27,9 @@ public class CharacterController : MonoBehaviour
 
     public virtual void CharacterInit()
     {
-        
+
         StopCursorFollowing();
         characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
-       
         transform.position = cursor;
         isStopping = false;
     }
@@ -81,6 +80,10 @@ public class CharacterController : MonoBehaviour
     {
         return cursor;
     }
+    public LaneRunner GetLaneRunner()
+    {
+        return laneRunner;
+    }
      public void SetCursor(Vector3 pos)
     {
         cursor = pos;
@@ -116,7 +119,7 @@ public class CharacterController : MonoBehaviour
 
     public void OnGameWin()
     {
-        laneRunner.follow = false;
+       
         StopCursorFollowing();
         StartCharacterStoppingRoutin();
     }
@@ -134,6 +137,8 @@ public class CharacterController : MonoBehaviour
 
     public void StartCharacterStoppingRoutin()
     {
+        laneRunner.follow = false;
+
         characterMovemant.StartCharacterStoppingRoutin();
     }
      public void StopCharacterStoppingRoutin()

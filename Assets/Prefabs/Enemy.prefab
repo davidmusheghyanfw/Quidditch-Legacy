@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 6
+  flySpeed: 300
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -296,9 +296,115 @@ MonoBehaviour:
   laneRunner: {fileID: -1010020994671206868}
   posInSpline: 0
   smoothnesControl: 2
+  smoothSpeedChanging: 1
   GetCheckPointRate: 100
   rb: {fileID: 1752488336878765015}
   spawnPosPersent: 0
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0004119873
+      value: 1.0096109
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1097509
+      value: 1.2789792
+      inSlope: 0.85181755
+      outSlope: 0.85181755
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2858764
+      value: 1.3397701
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.46672708
+      value: 1.1477679
+      inSlope: -1.9248524
+      outSlope: -1.9248524
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5450215
+      value: 0.84095407
+      inSlope: -3.5426831
+      outSlope: -3.5426831
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5981754
+      value: 0.68208814
+      inSlope: 0.013462686
+      outSlope: 0.013462686
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.42710537
+    - serializedVersion: 3
+      time: 0.7018873
+      value: 0.7173938
+      inSlope: 0.020005656
+      outSlope: 0.020005656
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8042836
+      value: 0.69537723
+      inSlope: 0.33163062
+      outSlope: 0.33163062
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.8656572
+      value: 0.46259558
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.93531394
+      value: 0.53077877
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0019469
+      value: 0.4106493
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &3000513256064036229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -328,7 +434,7 @@ MonoBehaviour:
   startPercent: 0
   startDistance: 0
   startMode: 0
-  followSpeed: 200
+  followSpeed: 300
   follow: 0
   isPlayer: 0
   loop: 0
