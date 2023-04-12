@@ -1,4 +1,5 @@
 using Dreamteck.Forever;
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
     [SerializeField] private LaneRunner laneRunner;
+
+    private SplineSample sample;
 
     [SerializeField, Range(0, 1)] private double posInSpline = 0f; 
 
@@ -59,12 +62,18 @@ public class CharacterController : MonoBehaviour
     }
     public double GetPosInSpline()
     {
-        return posInSpline;
+        return sample.percent;
     }
-    public void SetPosInSpline(double value)
+   
+    public void SetSplineSample(SplineSample splineSample)
     {
-        posInSpline = value;
+        sample = splineSample;
     }
+    public SplineSample GetSplineSample()
+    {
+        return sample;
+    }
+
    
 
     public Transform GetCharacter()

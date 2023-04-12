@@ -9,14 +9,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: New Terrain 1 Splatmap
   m_Shader: {fileID: 4800000, guid: e96f2ed4879dc5d48b327216506f6078, type: 3}
-  m_ValidKeywords:
-  - _T2M_LAYER_0_NORMAL
-  - _T2M_LAYER_1_NORMAL
-  - _T2M_LAYER_2_NORMAL
-  - _T2M_LAYER_3_NORMAL
-  - _T2M_LAYER_4_NORMAL
-  - _T2M_LAYER_COUNT_5
-  m_InvalidKeywords: []
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _T2M_LAYER_COUNT_2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -27,11 +22,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f8a20bfdfc5ce0e49a3a3c0e225499ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 769b37685bf2cca488706ea69dba33c2, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_DiffuseMaps2DArray:
@@ -43,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_0_Diffuse:
-        m_Texture: {fileID: 2800000, guid: eacec9cd0f31ea04b82121877a6cccaa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8c75ba30e5f76df4fb30725e4c9bf38a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_0_Mask:
@@ -51,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_0_NormalMap:
-        m_Texture: {fileID: 2800000, guid: aeff12fbe9fe2384bae4d1b436607b55, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_10_Diffuse:
@@ -127,7 +122,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_1_Diffuse:
-        m_Texture: {fileID: 2800000, guid: 9875bf7345d4ac04ab35f3b9ed63a954, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0b09c625cee17a48b22b2cf949cd320, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_1_Mask:
@@ -135,11 +130,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_1_NormalMap:
-        m_Texture: {fileID: 2800000, guid: 6711a6f408dca5b41b938ec249d8d444, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_2_Diffuse:
-        m_Texture: {fileID: 2800000, guid: 216e2729631e003468211108545a08f1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_2_Mask:
@@ -147,11 +142,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_2_NormalMap:
-        m_Texture: {fileID: 2800000, guid: 219386670151bc542a3b2fd69819e13e, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_3_Diffuse:
-        m_Texture: {fileID: 2800000, guid: 6dff70b1f69dbc640b854ad550b78c39, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_3_Mask:
@@ -159,11 +154,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_3_NormalMap:
-        m_Texture: {fileID: 2800000, guid: 7fa0035d52e52164dbe94df41517b0b7, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_4_Diffuse:
-        m_Texture: {fileID: 2800000, guid: 3d6ea8373013b3546a620f84802e06f6, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_4_Mask:
@@ -171,7 +166,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_4_NormalMap:
-        m_Texture: {fileID: 2800000, guid: 772b522eb070d9c4fa30ce003900a485, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_Layer_5_Diffuse:
@@ -247,7 +242,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_SplatMap_1:
-        m_Texture: {fileID: 2800000, guid: 6e13e28e59f36824ba1538fa6d48b74b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _T2M_SplatMap_2:
@@ -310,7 +305,7 @@ Material:
     - _T2M_Layer_8_SmoothnessFromDiffuseAlpha: 0
     - _T2M_Layer_9_NormalScale: 1
     - _T2M_Layer_9_SmoothnessFromDiffuseAlpha: 0
-    - _T2M_Layer_Count: 5
+    - _T2M_Layer_Count: 2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_0_ColorTint: {r: 1, g: 1, b: 1, a: 1}
@@ -366,19 +361,19 @@ Material:
     - _T2M_Layer_2_MaskMapRemapMax: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_2_MaskMapRemapMin: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_2_MetallicOcclusionSmoothness: {r: 0, g: 1, b: 0, a: 0}
-    - _T2M_Layer_2_uvScaleOffset: {r: 500, g: 500, b: 0, a: 0}
+    - _T2M_Layer_2_uvScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _T2M_Layer_3_ColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_3_MapsUsage: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_3_MaskMapRemapMax: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_3_MaskMapRemapMin: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_3_MetallicOcclusionSmoothness: {r: 0, g: 1, b: 0, a: 0}
-    - _T2M_Layer_3_uvScaleOffset: {r: 500, g: 500, b: 0, a: 0}
+    - _T2M_Layer_3_uvScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _T2M_Layer_4_ColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_4_MapsUsage: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_4_MaskMapRemapMax: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_4_MaskMapRemapMin: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_4_MetallicOcclusionSmoothness: {r: 0, g: 1, b: 0, a: 0}
-    - _T2M_Layer_4_uvScaleOffset: {r: 500, g: 500, b: 0, a: 0}
+    - _T2M_Layer_4_uvScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _T2M_Layer_5_ColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _T2M_Layer_5_MapsUsage: {r: 0, g: 0, b: 0, a: 0}
     - _T2M_Layer_5_MaskMapRemapMax: {r: 1, g: 1, b: 1, a: 1}

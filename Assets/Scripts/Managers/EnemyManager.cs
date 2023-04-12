@@ -36,12 +36,12 @@ public class EnemyManager : MonoBehaviour
         foreach (EnemyController character in enemyList)
         {
            
-            character.SetPosInSpline(character.GetSpawnPosPersent());
-            character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
+            //character.SetPosInSpline(character.GetSpawnPosPersent());
+            //character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
             
             character.StartCursorFollowing();
 
-            //character.StartGettingCursor();
+            character.StartGettingCursor();
             character.StartSpeedControllRountine();
         }
     }

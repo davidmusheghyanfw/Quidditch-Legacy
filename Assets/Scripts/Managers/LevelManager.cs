@@ -27,15 +27,15 @@ public class LevelManager : MonoBehaviour
 
     public void InitLevel()
     {
-       
+
         RoadGenerator.instance.RoadGeneratorInit();
 
-        this.Timer(1f, () => {
-            CheckPointSpawning.instance.CheckPointsSpawningInit();
-            CoinSpawner.instance.CoinSpawnerInit();
-            CalculateLevelDistance();
-        });
-        
+        // this.Timer(1f, () => {
+        CheckPointSpawning.instance.CheckPointsSpawningInit();
+        CoinSpawner.instance.CoinSpawnerInit();
+        CalculateLevelDistance();
+        // });
+
     }
 
     public int GetLevel()

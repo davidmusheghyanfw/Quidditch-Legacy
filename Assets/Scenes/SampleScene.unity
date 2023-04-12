@@ -5222,6 +5222,7 @@ MonoBehaviour:
     type: 3}
   parent: {fileID: 729865354}
   player: {fileID: 1106438648}
+  checkPoints: []
 --- !u!114 &2141305809
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ public class EnemySpawning : MonoBehaviour
 
                 var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
                 enemies.Add(currentEnemy);
-                enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
+                //enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
                 enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
                 enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
             }

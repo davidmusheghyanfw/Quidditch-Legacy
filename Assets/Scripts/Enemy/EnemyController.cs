@@ -17,7 +17,7 @@ public class EnemyController : CharacterController
     private Vector3 randomPos;
 
     int prevCheckPointCount;
-    int CheckPointCount;
+    int checkPointCount;
     Vector3 pushedPos;
     private int nextCheckPointIndex;
 
@@ -30,8 +30,8 @@ public class EnemyController : CharacterController
     {
         StopSpeedControllRountine();
         prevCheckPointCount = 0;
-        CheckPointCount = 0;
-        SetPosInSpline(spawnPosPersent);
+        nextCheckPointIndex = 0;
+        checkPointCount = 0;
         characterMovemant = GetCharacterMovemant();
         StartSpeedControllRountine();
         base.CharacterInit();
@@ -42,15 +42,14 @@ public class EnemyController : CharacterController
     {
         bool getNewCheckpoint = NewCheckPointRate();
         bool isPosGetted = false;
-        CheckPointCount = CheckPointSpawning.instance.GetCheckPointCount();
+        checkPointCount = CheckPointSpawning.instance.MaxCheckpointCount;
         while (true)
         {
             if (getNewCheckpoint && !isPosGetted)
             {
 
                 targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
-
-                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle * 7;
+                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
                 targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
                 isPosGetted = true;
             }
@@ -62,9 +61,10 @@ public class EnemyController : CharacterController
 
 
 
-            if (CheckPointSpawning.instance.GetNextCheckPointOnSpline(nextCheckPointIndex) < GetPosInSpline() && nextCheckPointIndex < CheckPointCount - 1)
+            Debug.Log(CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z + "index" + nextCheckPointIndex);
+            //Debug.Log(GetSplineSample().position.z);
+            if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < checkPointCount - 1)
             {
-
                 nextCheckPointIndex++;
                 getNewCheckpoint = NewCheckPointRate();
                 isPosGetted = false;

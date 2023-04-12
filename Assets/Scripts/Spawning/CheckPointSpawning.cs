@@ -1,3 +1,4 @@
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,11 +20,17 @@ public class CheckPointSpawning : MonoBehaviour
 
     [SerializeField] private Transform player;
 
-    private List<CheckPointInfo> checkPoints = new List<CheckPointInfo>();
+    [SerializeField] private List<CheckPointInfo> checkPoints = new List<CheckPointInfo>();
 
     //GameObject currentCheckPoint;
 
-    private int maxCheckpointCount = 0;
+    public int MaxCheckpointCount
+    {
+        get
+        {
+            return checkPoints.Count;
+        }
+    }
 
     float tmpOffset;
     private Vector3 spawnPos;
@@ -81,14 +88,17 @@ public class CheckPointSpawning : MonoBehaviour
 
         var currentCheckPoint = Instantiate(checkPoint, spawnPos + pointOnRoad, transform.rotation, parent);
         currentCheckPoint.transform.LookAt(prevPointOnRoad - pointOnRoad);
-        currentCheckPoint.SetPosInSpline((float)(tmpOffset / RoadGenerator.instance.GetDistance()));
         currentCheckPoint.SetOverallPos(spawnPos + pointOnRoad);
         currentCheckPoint.SetPosInScreen(spawnPos);
         checkPoints.Add(currentCheckPoint);
-        maxCheckpointCount++;
 
         
 
+    }
+
+    public void AddCheckPointToList(CheckPointInfo checkPointInfo)
+    {
+        checkPoints.Add(checkPointInfo);
     }
 
     private Vector3 GetNearestPointOnRoad(float offset)
@@ -112,10 +122,12 @@ public class CheckPointSpawning : MonoBehaviour
         if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInScreen();
         return checkPoints[index].GetPosInScreen();
     }
-    public float GetNextCheckPointOnSpline(int index)
+    public SplineSample GetCurrentRingSample(int index)
     {
-        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInSpline();
-        return checkPoints[index].GetPosInSpline();
+        checkPoints[index].UpdateSpineSample();
+        
+        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetSplineSample();
+        return checkPoints[index].GetSplineSample();
     }
 
     private void DestroyCheckPoint()
@@ -124,8 +136,6 @@ public class CheckPointSpawning : MonoBehaviour
         Destroy(checkPoints[0].gameObject);
 
         checkPoints.RemoveAt(0);
-        maxCheckpointCount--;
-
     }
 
     private void DestroyAll()
@@ -154,9 +164,4 @@ public class CheckPointSpawning : MonoBehaviour
     }
 
 
-
-    public int GetCheckPointCount()
-    {
-        return maxCheckpointCount;
-    }
 }

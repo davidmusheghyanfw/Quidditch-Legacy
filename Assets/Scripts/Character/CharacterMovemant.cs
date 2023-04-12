@@ -17,10 +17,9 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private float smoothnes;
 
     private Vector3 cursor;
-    private Transform visual;
+    
 
     float tmpFlySpeed;
-    SplineSample dot;
 
     public void SetCharacterController( CharacterController controller)
     {
@@ -30,7 +29,6 @@ public class CharacterMovemant : MonoBehaviour
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
-        visual = characterController.GetCharacterVisual();
         Vector3 newPos = Vector3.zero;
         Vector3 cursorPrevPos = Vector3.zero;
         SplineSample sample = new SplineSample();
@@ -49,7 +47,7 @@ public class CharacterMovemant : MonoBehaviour
 
             RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
 
-            characterController.SetPosInSpline(sample.percent);
+            characterController.SetSplineSample(sample);
             
 
                 cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
@@ -115,10 +113,7 @@ public class CharacterMovemant : MonoBehaviour
     {
         float t = 0.0f;
         float startTime = Time.fixedTime;
-        //cursor = characterController.GetCharacter().position;
-        //visual.rotation = Quaternion.Euler(0, 0, 0);
-
-
+        
         while (t < 1)
         {
             t = (Time.fixedTime - startTime) / 1;
