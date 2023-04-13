@@ -124,9 +124,12 @@ public class CheckPointSpawning : MonoBehaviour
     }
     public SplineSample GetCurrentRingSample(int index)
     {
+        if (index >= MaxCheckpointCount - 1)
+        {
+            checkPoints[checkPoints.Count - 1].UpdateSpineSample();
+            return checkPoints[checkPoints.Count - 1].GetSplineSample();
+        }
         checkPoints[index].UpdateSpineSample();
-        
-        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetSplineSample();
         return checkPoints[index].GetSplineSample();
     }
 

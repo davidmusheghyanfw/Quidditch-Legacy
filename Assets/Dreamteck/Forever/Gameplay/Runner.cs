@@ -69,14 +69,14 @@ namespace Dreamteck.Forever
 
         public virtual void StartFollow()
         {
-            if(LevelGenerator.instance == null || !LevelGenerator.instance.ready || LevelGenerator.instance.segments.Count == 0)
-            {
-                Debug.LogError(name + " Runner attempting to start following but the Level Generator isn't ready.");
-                if(LevelGenerator.instance.generationProgress < .2f)
-                {
-                    return;
-                }
-            }
+            //if(LevelGenerator.instance == null || !LevelGenerator.instance.ready || LevelGenerator.instance.segments.Count == 0)
+            //{
+            //    Debug.LogError(name + " Runner attempting to start following but the Level Generator isn't ready.");
+            //    if(LevelGenerator.instance.generationProgress < .2f)
+            //    {
+            //        return;
+            //    }
+            //}
             int segmentIndex = 0;
             double localPercent = 0.0;
             switch (startMode)
@@ -114,11 +114,11 @@ namespace Dreamteck.Forever
 
         public virtual void StartFollow(LevelSegment segment, double percent)
         {
-            if (LevelGenerator.instance == null || !LevelGenerator.instance.ready || LevelGenerator.instance.segments.Count == 0)
-            {
-                Debug.LogError(name + " Runner attempting to start following but the Level Generator isn't ready.");
-                return;
-            }
+           // if (LevelGenerator.instance == null || !LevelGenerator.instance.ready || LevelGenerator.instance.segments.Count == 0)
+            //{
+            //    Debug.LogError(name + " Runner attempting to start following but the Level Generator isn't ready.");
+             //   return;
+            //}
             Init(segment, percent);
             follow = true;
         }

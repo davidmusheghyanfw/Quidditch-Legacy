@@ -16,20 +16,20 @@ MonoBehaviour:
   - length: 500
     rotation: {x: 0, y: 0, z: 0}
   - length: 500
-    rotation: {x: 15, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 500
-    rotation: {x: 0, y: 15, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 500
-    rotation: {x: 15, y: 20, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: 0, y: -20, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: -15, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: -15, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: 0, y: -10, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: -15, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
   - length: 2000
-    rotation: {x: 15, y: 10, z: 0}
+    rotation: {x: 0, y: 0, z: 0}

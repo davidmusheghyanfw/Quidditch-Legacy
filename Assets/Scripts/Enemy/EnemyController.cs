@@ -16,8 +16,7 @@ public class EnemyController : CharacterController
     private Vector3 targetCursor;
     private Vector3 randomPos;
 
-    int prevCheckPointCount;
-    int checkPointCount;
+   
     Vector3 pushedPos;
     private int nextCheckPointIndex;
 
@@ -29,9 +28,8 @@ public class EnemyController : CharacterController
     public override void CharacterInit()
     {
         StopSpeedControllRountine();
-        prevCheckPointCount = 0;
         nextCheckPointIndex = 0;
-        checkPointCount = 0;
+       
         characterMovemant = GetCharacterMovemant();
         StartSpeedControllRountine();
         base.CharacterInit();
@@ -42,7 +40,7 @@ public class EnemyController : CharacterController
     {
         bool getNewCheckpoint = NewCheckPointRate();
         bool isPosGetted = false;
-        checkPointCount = CheckPointSpawning.instance.MaxCheckpointCount;
+       
         while (true)
         {
             if (getNewCheckpoint && !isPosGetted)
@@ -60,7 +58,7 @@ public class EnemyController : CharacterController
 
 
             //Debug.Log(GetSplineSample().position.z);
-            if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < checkPointCount - 1)
+            if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < CheckPointSpawning.instance.MaxCheckpointCount - 1)
             {
                 nextCheckPointIndex++;
                 getNewCheckpoint = NewCheckPointRate();
