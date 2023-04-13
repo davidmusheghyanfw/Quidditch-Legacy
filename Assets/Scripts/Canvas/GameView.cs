@@ -9,10 +9,6 @@ public class GameView : MonoBehaviour
     public static GameView instance;
 
     [SerializeField] private Slider scoreUpdateSlider;
-    [SerializeField] private Slider sensetivitySlider;
-    [SerializeField] private Slider flySpeedSlider;
-    [SerializeField] private TMP_Text sensetivityText;
-    [SerializeField] private TMP_Text flySpeedText;
 
     [SerializeField] private float levelCompleteScore;
 
@@ -33,10 +29,7 @@ public class GameView : MonoBehaviour
     {
         scoreUpdateSlider.value = 0;
         scoreUpdateSlider.maxValue = levelCompleteScore;
-        sensetivitySlider.value = PlayerControler.instance.GetSensetivity();
-        sensetivityText.text = PlayerControler.instance.GetSensetivity().ToString();
-        flySpeedSlider.value = PlayerControler.instance.GetCharacterMovemant().GetCurrentSpeed();
-        flySpeedText.text = PlayerControler.instance.GetCharacterMovemant().GetCurrentSpeed().ToString();
+       
         SetActiveGameStartCanvas(false);
 
     }
@@ -65,14 +58,5 @@ public class GameView : MonoBehaviour
         SetActiveGameStartCanvas(false);
     }
 
-    public void OnSensetivityChanged()
-    {
-        sensetivityText.text = sensetivitySlider.value.ToString();
-        PlayerControler.instance.SetSensetivity(sensetivitySlider.value);
-    }
-    public void OnFlyaSpeedChanged()
-    {
-        flySpeedText.text = flySpeedSlider.value.ToString();
-        PlayerControler.instance.GetCharacterMovemant().SetCurrentSpeed(flySpeedSlider.value);
-    }
+   
 }

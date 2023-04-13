@@ -128,7 +128,6 @@ public class CharacterController : MonoBehaviour
 
     public void OnGameWin()
     {
-       
         StopCursorFollowing();
         StartCharacterStoppingRoutin();
     }

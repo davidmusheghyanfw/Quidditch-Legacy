@@ -297,7 +297,7 @@ MonoBehaviour:
   posInSpline: 0
   smoothnesControl: 2
   smoothSpeedChanging: 1
-  GetCheckPointRate: 100
+  GetCheckPointRate: 60
   rb: {fileID: 1752488336878765015}
   spawnPosPersent: 0
   curve:

@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
        
         isGameInited = false;
+        CameraController.instance.PlayerPosUpdate(Vector3.zero,PlayerControler.instance.transform);
         LevelManager.instance.InitLevel();
         GameView.instance.GameViewCanvasInit();
         CanvasSetActivs();

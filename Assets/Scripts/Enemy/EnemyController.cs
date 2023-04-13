@@ -59,9 +59,6 @@ public class EnemyController : CharacterController
             cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
-
-
-            Debug.Log(CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z + "index" + nextCheckPointIndex);
             //Debug.Log(GetSplineSample().position.z);
             if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < checkPointCount - 1)
             {
