@@ -50,12 +50,11 @@ public class CharacterMovemant : MonoBehaviour
             characterController.SetSplineSample(sample);
             
 
-                cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
+            cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             //newPos = sample.position;
-            newPos = cursorPrevPos.x * sample.right + cursorPrevPos.y * sample.up;
-    
-            transform.position +=  newPos;
-            
+
+            //transform.position += newPos;
+            characterController.GetLaneRunner().motion.offset = new Vector2(cursorPrevPos.x, cursorPrevPos.y);
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
             characterController.GetCharacterVisual().rotation = sample.rotation;

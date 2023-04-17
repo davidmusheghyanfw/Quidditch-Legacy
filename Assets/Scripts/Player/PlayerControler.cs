@@ -3,13 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerControler : CharacterController
 {
     public static PlayerControler instance;
-
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private SplineProjector splineProjector;
 
     private void Awake()
     {

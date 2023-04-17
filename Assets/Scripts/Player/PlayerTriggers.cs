@@ -6,7 +6,7 @@ public class PlayerTriggers : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "CheckPoint")
+        if (other.gameObject.tag == "CheckPoint")
         {
             //gameObject.GetComponent<PlayerControler>().StartAddForceRoutine();
             //CameraController.instance.StartForceEffectRoutine();
@@ -18,14 +18,23 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            
+
             other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
         }
 
         if (other.gameObject.tag == "Coin")
         {
-            DataManager.instance.SetCoinsAmount(DataManager.instance.GetCoinsAmount()+1);
+            DataManager.instance.SetCoinsAmount(DataManager.instance.GetCoinsAmount() + 1);
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Environment")
+        {
+            PlayerControler.instance.Die();
+            this.Timer(1f, () =>
+            {
+                PlayerControler.instance.Reborn();
+            });
         }
     }
 }

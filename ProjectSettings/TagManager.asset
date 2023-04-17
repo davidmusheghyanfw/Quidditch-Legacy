@@ -7,6 +7,7 @@ TagManager:
   - CheckPoint
   - Enemy
   - Coin
+  - Environment
   layers:
   - Default
   - TransparentFX

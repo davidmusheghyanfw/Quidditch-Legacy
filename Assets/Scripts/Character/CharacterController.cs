@@ -19,13 +19,15 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform visualContainer;
     [SerializeField] private Animator animator;
     [SerializeField] private LaneRunner laneRunner;
-
+    [SerializeField] private GameObject CharacterCenter;
+    [SerializeField] private List<Rigidbody> ragdollList = new List<Rigidbody>();
     private SplineSample sample;
 
     [SerializeField, Range(0, 1)] private double posInSpline = 0f; 
 
     protected bool isStopping = false;
-
+    protected bool isDied = false;
+    private bool isReborned = true;
     private Vector3 pos;
 
     public virtual void CharacterInit()
@@ -141,6 +143,40 @@ public class CharacterController : MonoBehaviour
     {
         StopCharacterStoppingRoutin();
         StartCursorFollowing();
+    }
+
+    public void Reborn()
+    {
+        if (!isReborned)
+        {
+            animator.enabled = true;
+            ChangeRagdollKinematicState(true);
+            laneRunner.SetPercent(GetPosInSpline() - GetPosInSpline() % 20);
+            laneRunner.follow = true;
+            isReborned = true;
+            isDied = false;
+        }
+    }
+
+    public void Die()
+    {
+        if (!isDied)
+        {
+            ChangeRagdollKinematicState(false);
+            laneRunner.follow = false;
+            animator.enabled = false;
+            CharacterCenter.GetComponent<Rigidbody>().AddForce(Vector3.forward * 2);
+            isDied = true;
+            isReborned = false;
+        }
+    }
+
+    private void ChangeRagdollKinematicState(bool isKinematic)
+    {
+        for (int i = 0; i < ragdollList.Count; i++)
+        {
+            ragdollList[i].isKinematic = isKinematic;
+        }
     }
 
     public void StartCharacterStoppingRoutin()

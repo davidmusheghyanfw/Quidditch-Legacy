@@ -8,14 +8,14 @@ public class GameManager : MonoBehaviour
 
     public bool isGameInited = false;
     public bool isGameStopped = false;
-   
+
 
     private void Awake()
     {
         instance = this;
     }
 
-  
+
     void Start()
     {
         GameInit();
@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
 
     public void GameDefaultConfigs()
     {
-       
+
     }
     public void GameInit()
     {
-       
+
         isGameInited = false;
-        CameraController.instance.PlayerPosUpdate(Vector3.zero,PlayerControler.instance.transform);
+        CameraController.instance.PlayerPosUpdate(Vector3.zero, PlayerControler.instance.transform);
         LevelManager.instance.InitLevel();
         GameView.instance.GameViewCanvasInit();
         CanvasSetActivs();
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-       
+
         PlayerControler.instance.CharacterInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         PlayerControler.instance.StartCursorFollowing();
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void CanvasSetActivs()
     {
-        
+
         DebugCanvas.instance.gameObject.SetActive(true);
         GameView.instance.gameObject.SetActive(true);
         LevelEndCanvas.instance.gameObject.SetActive(true);
@@ -87,6 +87,22 @@ public class GameManager : MonoBehaviour
         //isGameStopped = false;
         PlayerControler.instance.GameResume();
     }
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Break();
+        }
+        //else if (Input.GetKeyDown("r"))
+        //{
+        //    RestartGame();
+        //}
+        //else if (Input.GetKeyDown("w"))
+        //{
+        //    LevelCompleted();
+        //}
+    }
+#endif
 
-   
 }

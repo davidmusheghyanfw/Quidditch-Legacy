@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class EnemyTriggers : MonoBehaviour
 {
+    [SerializeField] private EnemyController enemyController;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "CheckPoint")
         {
             //gameObject.GetComponent<EnemyController>().StartAddForceRoutine();
         }
-        if (other.gameObject.tag == "Finish")
+        else if (other.gameObject.tag == "Finish")
         {
-            Debug.Log("finish");
-            gameObject.GetComponent<EnemyController>().StopGettingCursor();
-            gameObject.GetComponent<EnemyController>().StopSpeedControllRountine();
-            gameObject.GetComponent<CharacterController>().StartCharacterStoppingRoutin();
-            
+           
+            enemyController.StopGettingCursor();
+            enemyController.StopSpeedControllRountine();
+            enemyController.StartCharacterStoppingRoutin();
+
         }
+        else if (other.gameObject.CompareTag("Environment"))
+        {
+            enemyController.Die();
+            this.Timer(1f,() => 
+            {
+                enemyController.Reborn();
+            });
+            //Debug.Log("Ara kpav!!!", transform);
+        }
+      
     }
 }
