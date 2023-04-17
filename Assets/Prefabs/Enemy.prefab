@@ -243,7 +243,7 @@ MonoBehaviour:
   characterMovemant: {fileID: 1752488336878764584}
   sensetivity: 0.1165
   verticalBorderMax: 30
-  verticalBorderMin: -6
+  verticalBorderMin: 1
   horizontalBorderMax: 25
   horizontalBorderMin: -25
   cursor: {x: 0, y: 0, z: 0}

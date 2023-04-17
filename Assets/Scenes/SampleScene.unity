@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.36494464, g: 0.56071514, b: 0.68675673, a: 1}
+  m_IndirectSpecularColor: {r: 0.36661553, g: 0.55958515, b: 0.68864954, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2661,7 +2661,7 @@ GameObject:
   - component: {fileID: 1106438654}
   - component: {fileID: 1106438655}
   m_Layer: 0
-  m_Name: Char
+  m_Name: CharacterController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   characterMovemant: {fileID: 1106438652}
   sensetivity: 0.1165
   verticalBorderMax: 30
-  verticalBorderMin: -6
+  verticalBorderMin: 1
   horizontalBorderMax: 25
   horizontalBorderMin: -25
   cursor: {x: 0, y: 0, z: 0}
