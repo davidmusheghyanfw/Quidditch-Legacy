@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour
             //character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
             
             character.StartCursorFollowing();
-
+            character.StartForceRoutine();
             character.StartGettingCursor();
             character.StartSpeedControllRountine();
         }

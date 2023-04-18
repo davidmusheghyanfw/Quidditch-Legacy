@@ -6,16 +6,16 @@ using UnityEditor;
 public class CharacterMovemant : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
-
+    [Header("Speed")]
     [SerializeField] private float flySpeed;
   
+    [Header("Rotation")]
     [SerializeField] private float rotationDiff;
     [SerializeField] private float rotationZAxisSensitivity;
     [SerializeField] private float rotationDelay;
-
+    [Header("Smoothnes")]
     [SerializeField] private float touchControl;
     [SerializeField] private float smoothnes;
-
     private Vector3 cursor;
     
 
@@ -123,10 +123,17 @@ public class CharacterMovemant : MonoBehaviour
         else SetCurrentSpeed(flySpeed);
     }
 
+   
     public float GetDefaultSpeed()
     {
         return flySpeed;
     }
+    public void SetDefaultSpeed(float value)
+    {
+        flySpeed = value;
+        SetCurrentSpeed(value);
+    }
+
     public float GetCurrentSpeed()
     {
         return tmpFlySpeed;

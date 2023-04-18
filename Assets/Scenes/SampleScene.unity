@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  flySpeed: 250
+  flySpeed: 0
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -2715,13 +2715,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.1
+  sensetivity: 0.15
   cursor: {x: 0, y: 0, z: 0}
-  verticalBorderMax: 30
+  verticalBorderMax: 25
   verticalBorderMin: 1
   horizontalBorderMax: 35
   horizontalBorderMin: -28
-  posInSpline: 0
   rebornPosition: 0.05000000074505806
   animator: {fileID: 2011246906}
   laneRunner: {fileID: 1106438655}
@@ -2739,6 +2738,7 @@ MonoBehaviour:
   - {fileID: 1364761444}
   - {fileID: 763559972}
   - {fileID: 414935601}
+  maxSpeed: 250
 --- !u!114 &1106438654
 MonoBehaviour:
   m_ObjectHideFlags: 0

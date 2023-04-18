@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerControler : CharacterController
 {
     public static PlayerControler instance;
+    [SerializeField] private float maxSpeed;
 
     private void Awake()
     {
@@ -65,4 +66,8 @@ public class PlayerControler : CharacterController
 
     }
 
+    public float GetMaxSpeed()
+    {
+        return maxSpeed;
+    }
 }

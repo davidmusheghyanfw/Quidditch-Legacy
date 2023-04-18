@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 250
+  flySpeed: 0
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -242,14 +242,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1752488336878764584}
   sensetivity: 0.1165
+  cursor: {x: 0, y: 0, z: 0}
   verticalBorderMax: 30
   verticalBorderMin: 1
   horizontalBorderMax: 25
   horizontalBorderMin: -25
-  cursor: {x: 0, y: 0, z: 0}
-  visualContainer: {fileID: 1752488334937976033}
+  rebornPosition: 0
   animator: {fileID: 3621211923003173579}
   laneRunner: {fileID: -1010020994671206868}
+  visualContainer: {fileID: 1752488334937976033}
   CharacterCenter: {fileID: 9142956232944980721}
   ragdollList:
   - {fileID: 7970773053788187121}
@@ -263,7 +264,6 @@ MonoBehaviour:
   - {fileID: 3625359641101945219}
   - {fileID: 5927336032288154235}
   - {fileID: 4398076957777021508}
-  posInSpline: 0
   smoothnesControl: 2
   smoothSpeedChanging: 1
   GetCheckPointRate: 60

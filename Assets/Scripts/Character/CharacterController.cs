@@ -41,6 +41,7 @@ public class CharacterController : MonoBehaviour
         StopCursorFollowing();
         characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
         transform.position = cursor;
+        
         isStopping = false;
     }
 
@@ -159,6 +160,7 @@ public class CharacterController : MonoBehaviour
             ChangeRagdollKinematicState(true);
             laneRunner.SetPercent(GetPosInSpline() - rebornPosition);
             laneRunner.follow = true;
+            StartForceRoutine();
             isReborned = true;
             isDied = false;
         }
@@ -168,6 +170,8 @@ public class CharacterController : MonoBehaviour
     {
         if (!isDied)
         {
+            StopForceRoutine();
+            characterMovemant.SetDefaultSpeed(0);
             ChangeRagdollKinematicState(false);
             laneRunner.follow = false;
             animator.enabled = false;
@@ -177,6 +181,36 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    Coroutine ForceRoutineC;
+    public IEnumerator ForceRoutine()
+    {
+
+        float t = 0.0f;
+        float startTime = Time.deltaTime;
+        float minSpeed = characterMovemant.GetDefaultSpeed();
+
+        while (t < 1)
+        {
+            t = (Time.fixedTime - startTime) / 10f;
+
+            characterMovemant.SetDefaultSpeed(Mathf.Lerp(minSpeed,PlayerControler.instance.GetMaxSpeed(),t));
+
+            yield return new WaitForEndOfFrame();
+        }
+
+
+    }
+    public void StartForceRoutine()
+    {
+        if (ForceRoutineC != null) StopCoroutine(ForceRoutineC);
+        ForceRoutineC = StartCoroutine(ForceRoutine());
+
+    }
+
+    public void StopForceRoutine()
+    {
+        if (ForceRoutineC != null) StopCoroutine(ForceRoutineC);
+    }
     private void ChangeRagdollKinematicState(bool isKinematic)
     {
         for (int i = 0; i < ragdollList.Count; i++)
@@ -206,8 +240,8 @@ public class CharacterController : MonoBehaviour
         characterMovemant.StopCursorFollowing();
     }
 
-    Coroutine AddForceRoutineC;
-    private IEnumerator AddForceRoutine()
+    Coroutine BoostRoutineC;
+    private IEnumerator BoostRoutine()
     {
         
         float t = 0.0f;
@@ -232,15 +266,15 @@ public class CharacterController : MonoBehaviour
     }
 
 
-    public void StartAddForceRoutine()
+    public void StartBoostRoutine()
     {
-        if (AddForceRoutineC != null) StopCoroutine(AddForceRoutineC);
-        AddForceRoutineC = StartCoroutine(AddForceRoutine());
+        if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
+        BoostRoutineC = StartCoroutine(BoostRoutine());
 
     }
 
-    public void StopAddForceRoutine()
+    public void StopBoostRoutine()
     {
-        if (AddForceRoutineC != null) StopCoroutine(AddForceRoutineC);
+        if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
     }
 }

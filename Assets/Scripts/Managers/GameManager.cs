@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         PlayerControler.instance.CharacterInit();
         LevelEndCanvas.instance.LevelEndCanvasInit();
         PlayerControler.instance.StartCursorFollowing();
+        PlayerControler.instance.StartForceRoutine();
         EnemyManager.instance.EnemyStart();
 
     }
