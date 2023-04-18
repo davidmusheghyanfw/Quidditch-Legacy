@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float maxFiledOfView;
     [SerializeField] private float minFiledOfView;
 
+    private Vector3 cameraPos;
     private void Awake()
     {
         instance = this;
@@ -20,8 +21,12 @@ public class CameraController : MonoBehaviour
     public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
     {
         //transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref camVelocity, smoothness);
-      
-        transform.position = Vector3.Lerp(transform.position, playerPos, Time.fixedDeltaTime * smoothness);
+
+        cameraPos.Set(Mathf.Lerp(transform.position.x, playerPos.x, Time.fixedDeltaTime * smoothness),
+           Mathf.Lerp(transform.position.y, playerPos.y, Time.fixedDeltaTime * smoothness), playerPos.z);
+        
+        //cameraPos.Set(cameraPos.x,cameraPos.y,playerPos.z);
+        transform.position =  cameraPos;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
     }

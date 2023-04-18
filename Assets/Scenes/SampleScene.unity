@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.36661553, g: 0.55958515, b: 0.68864954, a: 1}
+  m_IndirectSpecularColor: {r: 0.36494464, g: 0.56071514, b: 0.68675673, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -825,7 +825,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.06
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -883,7 +883,7 @@ TrailRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 3
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 10
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
@@ -1232,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.013457496, y: -0, z: -0, w: 0.99990946}
-  m_LocalPosition: {x: 0, y: 3.79, z: 2.39}
+  m_LocalPosition: {x: 0, y: 4.48, z: -20.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 330585545}
-  smoothness: 15
+  smoothness: 100
   maxFiledOfView: 75
   minFiledOfView: 60
 --- !u!4 &651112316
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  flySpeed: 300
+  flySpeed: 250
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -2715,15 +2715,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.1165
+  sensetivity: 0.1
+  cursor: {x: 0, y: 0, z: 0}
   verticalBorderMax: 30
   verticalBorderMin: 1
-  horizontalBorderMax: 25
-  horizontalBorderMin: -25
-  cursor: {x: 0, y: 0, z: 0}
-  visualContainer: {fileID: 1814656535}
+  horizontalBorderMax: 35
+  horizontalBorderMin: -28
+  posInSpline: 0
+  rebornPosition: 0.05000000074505806
   animator: {fileID: 2011246906}
   laneRunner: {fileID: 1106438655}
+  visualContainer: {fileID: 1814656535}
   CharacterCenter: {fileID: 2011246917}
   ragdollList:
   - {fileID: 2011246918}
@@ -2737,7 +2739,6 @@ MonoBehaviour:
   - {fileID: 1364761444}
   - {fileID: 763559972}
   - {fileID: 414935601}
-  posInSpline: 0
 --- !u!114 &1106438654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,17 +3853,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 983f753d787c7724999e77a1d75ae39a,
         type: 3}

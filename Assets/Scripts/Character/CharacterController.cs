@@ -8,26 +8,31 @@ public class CharacterController : MonoBehaviour
 {
 
     [SerializeField] private CharacterMovemant characterMovemant;
-
+    [Header("Mouse")]
     [SerializeField] protected float sensetivity;
+    [SerializeField] protected Vector3 cursor;
+    [Header("Borders")]
     [SerializeField] protected float verticalBorderMax;
     [SerializeField] protected float verticalBorderMin;
     [SerializeField] protected float horizontalBorderMax;
     [SerializeField] protected float horizontalBorderMin;
 
-    [SerializeField] protected Vector3 cursor;
-    [SerializeField] private Transform visualContainer;
+    [Header("Spline")]
+    private SplineSample sample;
+    [SerializeField, Range(0, 1)] private double rebornPosition = 0f; 
+    
+    [Header("Components")]
     [SerializeField] private Animator animator;
     [SerializeField] private LaneRunner laneRunner;
+    
+    [Header("Character")]
+    [SerializeField] private Transform visualContainer;
     [SerializeField] private GameObject CharacterCenter;
-    [SerializeField] private List<Rigidbody> ragdollList = new List<Rigidbody>();
-    private SplineSample sample;
-
-    [SerializeField, Range(0, 1)] private double posInSpline = 0f; 
+    [SerializeField] private List<Rigidbody> ragdollList;
 
     protected bool isStopping = false;
     protected bool isDied = false;
-    private bool isReborned = true;
+    protected bool isReborned = true;
     private Vector3 pos;
 
     public virtual void CharacterInit()
@@ -64,6 +69,7 @@ public class CharacterController : MonoBehaviour
     }
     public double GetPosInSpline()
     {
+        
         return sample.percent;
     }
    
@@ -151,7 +157,7 @@ public class CharacterController : MonoBehaviour
         {
             animator.enabled = true;
             ChangeRagdollKinematicState(true);
-            laneRunner.SetPercent(GetPosInSpline() - GetPosInSpline() % 20);
+            laneRunner.SetPercent(GetPosInSpline() - rebornPosition);
             laneRunner.follow = true;
             isReborned = true;
             isDied = false;
@@ -165,7 +171,7 @@ public class CharacterController : MonoBehaviour
             ChangeRagdollKinematicState(false);
             laneRunner.follow = false;
             animator.enabled = false;
-            CharacterCenter.GetComponent<Rigidbody>().AddForce(Vector3.forward * 2);
+            CharacterCenter.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
             isDied = true;
             isReborned = false;
         }

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 300
+  flySpeed: 250
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5

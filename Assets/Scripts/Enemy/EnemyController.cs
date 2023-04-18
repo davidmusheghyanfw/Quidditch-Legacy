@@ -51,6 +51,13 @@ public class EnemyController : CharacterController
                 targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
                 isPosGetted = true;
             }
+            else if (!getNewCheckpoint && !isPosGetted)
+            {
+                targetCursor = CheckPointSpawning.instance.GetOtherWay(nextCheckPointIndex);
+                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
+                targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+                isPosGetted = true;
+            }
 
             cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
             cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);

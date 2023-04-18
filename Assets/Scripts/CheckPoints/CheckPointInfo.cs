@@ -1,4 +1,5 @@
 using Dreamteck.Splines;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPointInfo : MonoBehaviour
@@ -10,10 +11,11 @@ public class CheckPointInfo : MonoBehaviour
     [SerializeField] private Vector3 overallPos;
     [SerializeField] private SplineSample sample;
     [SerializeField] private Vector3 pos;
+    [SerializeField] private List<Transform> otherWayList; 
     private void Start()
     {
         UpdateSpineSample();
-        SetPosInScreen(transform.position - sample.position);
+        posInScreen = transform.position - sample.position;
         CheckPointSpawning.instance.AddCheckPointToList(this);
     }
   
@@ -22,13 +24,15 @@ public class CheckPointInfo : MonoBehaviour
         return (float)sample.percent;
     }
 
-    public Vector3 GetPosInScreen() { return posInScreen; }
+    public Vector3 GetPosInScreen(Vector3? pos = null)
+    {
+        if(pos is null) return posInScreen;
+        return (Vector3)(pos - sample.position);
+
+    }
     public Vector3 GetOverallPos() { return overallPos; }
 
-    public void SetPosInScreen(Vector3 pos)
-    {
-        posInScreen = pos;
-    }
+   
     public void SetOverallPos(Vector3 pos)
     {
         overallPos = pos;
@@ -41,5 +45,10 @@ public class CheckPointInfo : MonoBehaviour
     public SplineSample GetSplineSample()
     {
         return sample;
+    }
+
+    public Vector3 GetOtherWay()
+    {
+        return otherWayList[Random.Range(0, otherWayList.Count)].position;
     }
 }

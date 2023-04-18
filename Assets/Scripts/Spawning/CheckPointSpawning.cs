@@ -89,7 +89,7 @@ public class CheckPointSpawning : MonoBehaviour
         var currentCheckPoint = Instantiate(checkPoint, spawnPos + pointOnRoad, transform.rotation, parent);
         currentCheckPoint.transform.LookAt(prevPointOnRoad - pointOnRoad);
         currentCheckPoint.SetOverallPos(spawnPos + pointOnRoad);
-        currentCheckPoint.SetPosInScreen(spawnPos);
+        //currentCheckPoint.SetPosInScreen(spawnPos);
         checkPoints.Add(currentCheckPoint);
 
         
@@ -121,6 +121,12 @@ public class CheckPointSpawning : MonoBehaviour
     {
         if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInScreen();
         return checkPoints[index].GetPosInScreen();
+    }
+
+    public Vector3 GetOtherWay(int index)
+    {
+        if (index > checkPoints.Count - 1) return checkPoints[checkPoints.Count - 1].GetPosInScreen(checkPoints[checkPoints.Count - 1].GetOtherWay());
+        return checkPoints[index].GetPosInScreen(checkPoints[index].GetOtherWay());
     }
     public SplineSample GetCurrentRingSample(int index)
     {
