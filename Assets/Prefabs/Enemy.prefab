@@ -374,7 +374,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   smoothSpeedChanging: 0.4
   smoothnesControl: 2
-  getCheckPointRate: 60
+  getCheckPointRate: 45
   randomRangeInRing: 3
 --- !u!114 &-1010020994671206868
 MonoBehaviour:
