@@ -12,10 +12,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] protected float sensetivity;
     [SerializeField] protected Vector3 cursor;
     [Header("Borders")]
-    [SerializeField] protected float verticalBorderMax;
-    [SerializeField] protected float verticalBorderMin;
-    [SerializeField] protected float horizontalBorderMax;
-    [SerializeField] protected float horizontalBorderMin;
+    [SerializeField] private Vector2 verticalBorderRange;
+    [SerializeField] private Vector2 horizontalBorderRange;
+    public Vector2 VerticalBorderRange { get { return verticalBorderRange; } }
+    public Vector2 HorizontalBorderRange { get { return horizontalBorderRange; }}
 
     [Header("Spline")]
     private SplineSample sample;
@@ -45,22 +45,7 @@ public class CharacterController : MonoBehaviour
         isStopping = false;
     }
 
-    public float VerticalBorderMax()
-    {
-        return verticalBorderMax;
-    }
-    public float VerticalBorderMin()
-    {
-        return verticalBorderMin;
-    }
-     public float HorizontalBorderMax()
-    {
-        return horizontalBorderMax;
-    }
-    public float HorizontalBorderMin()
-    {
-        return horizontalBorderMin;
-    }
+   
 
     public Vector3 CharacterNewPos(Vector3 deltaPos)
     {

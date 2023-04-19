@@ -52,14 +52,14 @@ public class EnemySpawning : MonoBehaviour
                 float tmpRange = Random.Range(-rangeOffset, rangeOffset);
                 spawnPosOnRoad = GetNearestPointOnRoad(tmpRange+tmpOffset);
 
-                spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderMin(), enemy.HorizontalBorderMax()),
-                  Random.Range(enemy.VerticalBorderMin(), enemy.VerticalBorderMax()), spawnPosOnRoad.z);
+                spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderRange.x, enemy.HorizontalBorderRange.y),
+                  Random.Range(enemy.VerticalBorderRange.x, enemy.VerticalBorderRange.y), spawnPosOnRoad.z);
 
                 var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
                 enemies.Add(currentEnemy);
                 //enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
                 enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
-                //enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
+                //3enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
             }
             tmpOffset += offset;
 

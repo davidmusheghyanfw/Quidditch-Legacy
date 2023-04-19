@@ -245,10 +245,8 @@ MonoBehaviour:
   characterMovemant: {fileID: 1752488336878764584}
   sensetivity: 0.1165
   cursor: {x: 0, y: 0, z: 0}
-  verticalBorderMax: 30
-  verticalBorderMin: 1
-  horizontalBorderMax: 25
-  horizontalBorderMin: -25
+  verticalBorderRange: {x: 1, y: 30}
+  horizontalBorderRange: {x: -28, y: 35}
   rebornPosition: 0.05000000074505806
   animator: {fileID: 3621211923003173579}
   laneRunner: {fileID: -1010020994671206868}

@@ -72,8 +72,8 @@ public class EnemyController : CharacterController
             }
 
             cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
-            cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
-            cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
+            //cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
+            //cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
             //Debug.Log(GetSplineSample().position.z);

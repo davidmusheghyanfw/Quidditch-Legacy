@@ -44,11 +44,11 @@ public class PlayerControler : CharacterController
         {
             Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
 
-            if (newCursorPosition.y < verticalBorderMin) newCursorPosition.y = verticalBorderMin;
-            if (newCursorPosition.y > verticalBorderMax) newCursorPosition.y = verticalBorderMax;
+            if (newCursorPosition.y < VerticalBorderRange.x - 10f) newCursorPosition.y = VerticalBorderRange.x - 10f;
+            if (newCursorPosition.y > VerticalBorderRange.y + 10f) newCursorPosition.y = VerticalBorderRange.y + 10f;
 
-            if (newCursorPosition.x < horizontalBorderMin) newCursorPosition.x = horizontalBorderMin;
-            if (newCursorPosition.x > horizontalBorderMax) newCursorPosition.x = horizontalBorderMax;
+            if (newCursorPosition.x < HorizontalBorderRange.x - 10f) newCursorPosition.x = HorizontalBorderRange.x - 10f;
+            if (newCursorPosition.x > HorizontalBorderRange.y + 10f) newCursorPosition.x = HorizontalBorderRange.y + 10f;
 
             cursor = newCursorPosition;
 

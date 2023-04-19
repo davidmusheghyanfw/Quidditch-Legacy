@@ -53,12 +53,19 @@ public class CharacterMovemant : MonoBehaviour
             RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
 
             characterController.SetSplineSample(sample);
-            
+
 
             cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
+            //cursorPrevPos = Vector3.MoveTowards(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             //newPos = sample.position;
 
             //transform.position += newPos;
+
+            if (cursorPrevPos.y < characterController.VerticalBorderRange.x) cursorPrevPos.y = characterController.VerticalBorderRange.x;
+            if (cursorPrevPos.y > characterController.VerticalBorderRange.y) cursorPrevPos.y = characterController.VerticalBorderRange.y;
+
+            if (cursorPrevPos.x < characterController.HorizontalBorderRange.x) cursorPrevPos.x = characterController.HorizontalBorderRange.x;
+            if (cursorPrevPos.x > characterController.HorizontalBorderRange.y) cursorPrevPos.x = characterController.HorizontalBorderRange.y;
             characterController.GetLaneRunner().motion.offset = new Vector2(cursorPrevPos.x, cursorPrevPos.y);
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);

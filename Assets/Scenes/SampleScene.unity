@@ -2717,12 +2717,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.17
+  sensetivity: 0.2
   cursor: {x: 0, y: 0, z: 0}
-  verticalBorderMax: 25
-  verticalBorderMin: 1
-  horizontalBorderMax: 35
-  horizontalBorderMin: -28
+  verticalBorderRange: {x: 1, y: 30}
+  horizontalBorderRange: {x: -28, y: 35}
   rebornPosition: 0.05000000074505806
   animator: {fileID: 2011246906}
   laneRunner: {fileID: 1106438655}
