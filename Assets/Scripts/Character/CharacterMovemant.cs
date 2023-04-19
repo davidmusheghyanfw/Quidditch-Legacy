@@ -7,8 +7,13 @@ public class CharacterMovemant : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [Header("Speed")]
-    [SerializeField] private float flySpeed;
-  
+    [SerializeField] private float minFlySpeed;
+    [SerializeField] private float maxFlySpeed;
+    [SerializeField] private float currentFlySpeed;
+    public float MinFlySpeed { get { return minFlySpeed; } }
+    public float MaxFlySpeed { get { return maxFlySpeed; } }
+    public float CurrentFlySpeed { get { return currentFlySpeed; } set { currentFlySpeed = value; characterController.GetLaneRunner().followSpeed = value; } }
+
     [Header("Rotation")]
     [SerializeField] private float rotationDiff;
     [SerializeField] private float rotationZAxisSensitivity;
@@ -19,7 +24,7 @@ public class CharacterMovemant : MonoBehaviour
     private Vector3 cursor;
     
 
-    float tmpFlySpeed;
+    //float tmpFlySpeed;
 
     public void SetCharacterController( CharacterController controller)
     {
@@ -112,37 +117,17 @@ public class CharacterMovemant : MonoBehaviour
     {
         float t = 0.0f;
         float startTime = Time.fixedTime;
-        
+        float tmp = CurrentFlySpeed;
         while (t < 1)
         {
-            t = (Time.fixedTime - startTime) / 1;
-            SetCurrentSpeed(Mathf.Lerp(tmpFlySpeed, 0, t));
+            t = (Time.fixedTime - startTime) / 5f;
+            CurrentFlySpeed = Mathf.Lerp(tmp, 0, t);
             yield return new WaitForEndOfFrame();
         }
         if (characterController.IsStopping()) StopCursorFollowing();
-        else SetCurrentSpeed(flySpeed);
+        //else characterController.StartForceRoutine();
     }
 
    
-    public float GetDefaultSpeed()
-    {
-        return flySpeed;
-    }
-    public void SetDefaultSpeed(float value)
-    {
-        flySpeed = value;
-        SetCurrentSpeed(value);
-    }
-
-    public float GetCurrentSpeed()
-    {
-        return tmpFlySpeed;
-    }
-    public void SetCurrentSpeed(float value)
-    {
-        tmpFlySpeed = value;
-
-        characterController.GetLaneRunner().followSpeed = value;
-
-    }
+    
 }

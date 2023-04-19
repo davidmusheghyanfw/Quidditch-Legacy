@@ -5,17 +5,22 @@ using UnityEngine.TextCore.Text;
 
 public class EnemyController : CharacterController
 {
-    [SerializeField] private float smoothnesControl;
-    [SerializeField] private float smoothSpeedChanging;
-    [SerializeField] private float GetCheckPointRate;
+    private CharacterMovemant characterMovemant;
+
+    [Header("Components")]
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float spawnPosPersent;
     [SerializeField] private AnimationCurve curve;
 
-    private CharacterMovemant characterMovemant;
-    private Vector3 targetCursor;
-    private Vector3 randomPos;
+    [Header("Speed")]
+    [SerializeField] private float smoothSpeedChanging;
+    [Header("Control")]
+    [SerializeField] private float smoothnesControl;
+    [Header("Checkpoints")]
+    [SerializeField] private float getCheckPointRate;
+    [SerializeField] private float randomRangeInRing;
 
+    private Vector3 targetCursor;
+    
    
     Vector3 pushedPos;
     private int nextCheckPointIndex;
@@ -43,19 +48,26 @@ public class EnemyController : CharacterController
        
         while (true)
         {
-            if (getNewCheckpoint && !isPosGetted)
+          
+            if(nextCheckPointIndex > 0 && CheckPointSpawning.instance.GetPervRingSample(nextCheckPointIndex).position.z > GetSplineSample().position.z)
+            {
+                nextCheckPointIndex--;
+            }
+
+            if (isDied || getNewCheckpoint && !isPosGetted)
             {
 
                 targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
-                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
+                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle * randomRangeInRing;
                 targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
                 isPosGetted = true;
             }
-            else if (!getNewCheckpoint && !isPosGetted)
+            else if (isDied || !getNewCheckpoint && !isPosGetted)
             {
                 targetCursor = CheckPointSpawning.instance.GetOtherWay(nextCheckPointIndex);
-                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
-                targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+                //Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
+                //targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+                targetCursor.Set(targetCursor.x, targetCursor.y, 0);
                 isPosGetted = true;
             }
 
@@ -71,7 +83,7 @@ public class EnemyController : CharacterController
                 getNewCheckpoint = NewCheckPointRate();
                 isPosGetted = false;
             }
-            yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
         }
 
     }
@@ -82,9 +94,9 @@ public class EnemyController : CharacterController
         while (true)
         {
           
-            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(),
-                characterMovemant.GetDefaultSpeed() * curve.Evaluate((float)GetPosInSpline()) 
-                , Time.deltaTime * smoothSpeedChanging));
+            characterMovemant.CurrentFlySpeed = Mathf.Lerp(characterMovemant.CurrentFlySpeed,
+                characterMovemant.CurrentFlySpeed * curve.Evaluate((float)GetPosInSpline()) 
+                , Time.deltaTime * smoothSpeedChanging);
             yield return new WaitForEndOfFrame();
 
         }
@@ -118,7 +130,7 @@ public class EnemyController : CharacterController
 
     private bool NewCheckPointRate()
     {
-        if (Random.value < GetCheckPointRate / 100) return true;
+        if (Random.value < getCheckPointRate / 100) return true;
         return false;
 
     }
@@ -155,17 +167,6 @@ public class EnemyController : CharacterController
         curve = animationCurve;
     }
 
-  
-    public void SetSpawnPosPersent(float persent)
-    {
-       
-        spawnPosPersent = persent;
-    }
-
-    public float GetSpawnPosPersent()
-    {
-        return spawnPosPersent;
-    }
     public void SetNextCheckPointIndex(int index)
     {
 

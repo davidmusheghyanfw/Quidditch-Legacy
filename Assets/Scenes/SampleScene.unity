@@ -2696,7 +2696,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  flySpeed: 0
+  minFlySpeed: 10
+  maxFlySpeed: 250
+  currentFlySpeed: 0
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -2715,7 +2717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1106438652}
-  sensetivity: 0.15
+  sensetivity: 0.17
   cursor: {x: 0, y: 0, z: 0}
   verticalBorderMax: 25
   verticalBorderMin: 1
@@ -2738,7 +2740,6 @@ MonoBehaviour:
   - {fileID: 1364761444}
   - {fileID: 763559972}
   - {fileID: 414935601}
-  maxSpeed: 250
 --- !u!114 &1106438654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,7 +2773,7 @@ MonoBehaviour:
   startPercent: 0
   startDistance: 0
   startMode: 2
-  followSpeed: 300
+  followSpeed: 0
   follow: 0
   isPlayer: 1
   loop: 0

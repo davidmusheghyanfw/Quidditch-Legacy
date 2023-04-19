@@ -39,7 +39,7 @@ public class CharacterController : MonoBehaviour
     {
 
         StopCursorFollowing();
-        characterMovemant.SetCurrentSpeed(characterMovemant.GetDefaultSpeed());
+        characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
         transform.position = cursor;
         
         isStopping = false;
@@ -171,7 +171,7 @@ public class CharacterController : MonoBehaviour
         if (!isDied)
         {
             StopForceRoutine();
-            characterMovemant.SetDefaultSpeed(0);
+            characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
             ChangeRagdollKinematicState(false);
             laneRunner.follow = false;
             animator.enabled = false;
@@ -186,14 +186,14 @@ public class CharacterController : MonoBehaviour
     {
 
         float t = 0.0f;
-        float startTime = Time.deltaTime;
-        float minSpeed = characterMovemant.GetDefaultSpeed();
+        float startTime = Time.fixedTime;
+        float minSpeed = characterMovemant.MinFlySpeed;
 
         while (t < 1)
         {
-            t = (Time.fixedTime - startTime) / 10f;
+            t = (Time.fixedTime - startTime) / 3f;
 
-            characterMovemant.SetDefaultSpeed(Mathf.Lerp(minSpeed,PlayerControler.instance.GetMaxSpeed(),t));
+            characterMovemant.CurrentFlySpeed = Mathf.Lerp(minSpeed,characterMovemant.MaxFlySpeed,t);
 
             yield return new WaitForEndOfFrame();
         }
@@ -202,9 +202,9 @@ public class CharacterController : MonoBehaviour
     }
     public void StartForceRoutine()
     {
+       
         if (ForceRoutineC != null) StopCoroutine(ForceRoutineC);
         ForceRoutineC = StartCoroutine(ForceRoutine());
-
     }
 
     public void StopForceRoutine()
@@ -240,41 +240,41 @@ public class CharacterController : MonoBehaviour
         characterMovemant.StopCursorFollowing();
     }
 
-    Coroutine BoostRoutineC;
-    private IEnumerator BoostRoutine()
-    {
+    //Coroutine BoostRoutineC;
+    //private IEnumerator BoostRoutine()
+    //{
         
-        float t = 0.0f;
-        float startTime = Time.fixedTime;
+    //    float t = 0.0f;
+    //    float startTime = Time.fixedTime;
 
-        while (t < 1)
-        {
-            t = (Time.fixedTime - startTime) / 0.5f;
-            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed()+(characterMovemant.GetDefaultSpeed()/2), t));
-               // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
-            yield return new WaitForEndOfFrame();
-        }
-        yield return new WaitForSeconds(1);
-        t = 0.0f;
-        startTime = Time.fixedTime;
-        while (t < 1)
-        {
-            t = (Time.fixedTime - startTime) / 1.5f;
-            characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
-            yield return new WaitForEndOfFrame();
-        }
-    }
+    //    while (t < 1)
+    //    {
+    //        t = (Time.fixedTime - startTime) / 0.5f;
+    //        characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed()+(characterMovemant.GetDefaultSpeed()/2), t));
+    //           // characterMovemant.GetSpeed() + (10 / characterMovemant.GetSpeed()), t));
+    //        yield return new WaitForEndOfFrame();
+    //    }
+    //    yield return new WaitForSeconds(1);
+    //    t = 0.0f;
+    //    startTime = Time.fixedTime;
+    //    while (t < 1)
+    //    {
+    //        t = (Time.fixedTime - startTime) / 1.5f;
+    //        characterMovemant.SetCurrentSpeed(Mathf.Lerp(characterMovemant.GetCurrentSpeed(), characterMovemant.GetDefaultSpeed(), t));
+    //        yield return new WaitForEndOfFrame();
+    //    }
+    //}
 
 
-    public void StartBoostRoutine()
-    {
-        if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
-        BoostRoutineC = StartCoroutine(BoostRoutine());
+    //public void StartBoostRoutine()
+    //{
+    //    if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
+    //    BoostRoutineC = StartCoroutine(BoostRoutine());
 
-    }
+    //}
 
-    public void StopBoostRoutine()
-    {
-        if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
-    }
+    //public void StopBoostRoutine()
+    //{
+    //    if (BoostRoutineC != null) StopCoroutine(BoostRoutineC);
+    //}
 }

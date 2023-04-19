@@ -222,7 +222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  flySpeed: 0
+  minFlySpeed: 10
+  maxFlySpeed: 250
+  currentFlySpeed: 0
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
@@ -247,7 +249,7 @@ MonoBehaviour:
   verticalBorderMin: 1
   horizontalBorderMax: 25
   horizontalBorderMin: -25
-  rebornPosition: 0
+  rebornPosition: 0.05000000074505806
   animator: {fileID: 3621211923003173579}
   laneRunner: {fileID: -1010020994671206868}
   visualContainer: {fileID: 1752488334937976033}
@@ -264,11 +266,7 @@ MonoBehaviour:
   - {fileID: 3625359641101945219}
   - {fileID: 5927336032288154235}
   - {fileID: 4398076957777021508}
-  smoothnesControl: 2
-  smoothSpeedChanging: 1
-  GetCheckPointRate: 60
   rb: {fileID: 0}
-  spawnPosPersent: 0
   curve:
     serializedVersion: 2
     m_Curve:
@@ -374,6 +372,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  smoothSpeedChanging: 0.4
+  smoothnesControl: 2
+  getCheckPointRate: 60
+  randomRangeInRing: 3
 --- !u!114 &-1010020994671206868
 MonoBehaviour:
   m_ObjectHideFlags: 0

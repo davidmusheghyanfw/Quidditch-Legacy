@@ -138,6 +138,16 @@ public class CheckPointSpawning : MonoBehaviour
         checkPoints[index].UpdateSpineSample();
         return checkPoints[index].GetSplineSample();
     }
+     public SplineSample GetPervRingSample(int index)
+    {
+        if (index-1 < 0)
+        {
+            checkPoints[0].UpdateSpineSample();
+            return checkPoints[0].GetSplineSample();
+        }
+        checkPoints[index-1].UpdateSpineSample();
+        return checkPoints[index-1].GetSplineSample();
+    }
 
     private void DestroyCheckPoint()
     {
