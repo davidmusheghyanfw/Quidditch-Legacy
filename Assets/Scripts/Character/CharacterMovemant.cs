@@ -20,7 +20,7 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private float rotationDelay;
     [Header("Smoothnes")]
     [SerializeField] private float touchControl;
-    [SerializeField] private float smoothnes;
+    //[SerializeField] private float smoothnes;
     private Vector3 cursor;
     
 
