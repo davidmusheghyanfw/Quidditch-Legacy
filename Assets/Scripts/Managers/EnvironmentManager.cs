@@ -25,7 +25,11 @@ public class EnvironmentManager : MonoBehaviour
         overallEnvironmentDistance = 0;
      
         segmentsList = new List<SegmentDefinition>();
-        while (overallEnvironmentDistance <= RoadGenerator.instance.GetDistance()-environmentDefinition.finish.GetSegmentLength()-500)
+        segmentsList.Add(environmentDefinition.start.GetSegmentDefinition());
+        while (overallEnvironmentDistance <= 
+            RoadGenerator.instance.GetDistance() - 
+            environmentDefinition.finish.GetSegmentLength() -
+            environmentDefinition.start.GetSegmentLength() - 500)
         {
           
             EnvironmentSegmentInfo environmentSegment = environmentDefinition.EnvironmentSegments[Random.Range(0, environmentDefinition.EnvironmentSegments.Count)];
@@ -37,5 +41,10 @@ public class EnvironmentManager : MonoBehaviour
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
         RoadGenerator.instance.GetLevelGenerator().StartGeneration();
 
+    }
+
+    public EnvironmentSegmentInfo GetStartSegment()
+    {
+        return environmentDefinition.start;
     }
 }

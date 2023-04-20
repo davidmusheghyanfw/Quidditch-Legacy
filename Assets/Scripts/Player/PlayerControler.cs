@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerControler : CharacterController
 {
     public static PlayerControler instance;
+    private SplineSample sample;
 
     private void Awake()
     {
@@ -23,9 +24,11 @@ public class PlayerControler : CharacterController
 
     public override void CharacterInit()
     {
-       
-        transform.position = cursor = Vector3.zero;
-        CameraController.instance.PlayerPosUpdate(cursor,GetCharacterVisual());
+
+        RoadGenerator.instance.GetLevelGenerator().Project(EnvironmentManager.instance.GetStartSegment().GetRaceStartPos(), ref sample);
+        GetLaneRunner().SetPercent(sample.percent);
+        GetLaneRunner().motion.offset = cursor = sample.position;
+        CameraController.instance.PlayerPosUpdate(transform.position,GetCharacterVisual());
         base.CharacterInit();
         
     }

@@ -40,8 +40,6 @@ public class CharacterController : MonoBehaviour
 
         StopCursorFollowing();
         characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
-        transform.position = cursor;
-        
         isStopping = false;
     }
 
@@ -88,8 +86,12 @@ public class CharacterController : MonoBehaviour
         return laneRunner;
     }
      public void SetCursor(Vector3 pos)
-    {
+     {
         cursor = pos;
+     }
+    public void SetSpawnPos(Vector2 pos)
+    {
+        laneRunner.motion.offset = pos;
     }
 
     public Transform GetCharacterVisual()

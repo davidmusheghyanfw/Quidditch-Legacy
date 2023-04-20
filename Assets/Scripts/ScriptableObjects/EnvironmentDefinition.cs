@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnvironmentDefinition : ScriptableObject 
 {
     public EnvironmentSegmentInfo finish;
+    public EnvironmentSegmentInfo start;
     public List<EnvironmentSegmentInfo> EnvironmentSegments = new List<EnvironmentSegmentInfo>();
 
 }

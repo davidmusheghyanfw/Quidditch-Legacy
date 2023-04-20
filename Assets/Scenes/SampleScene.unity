@@ -1854,8 +1854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1752488336878765014, guid: ebeb046de698bbf42b3694d08e86d391, type: 3}
   parent: {fileID: 613219149}
-  SegmentCount: 2
-  enemyCountInSegment: 10
+  enemyCount: 10
   offset: 500
   rangeOffset: 10
 --- !u!1 &617711558
@@ -2696,7 +2695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1106438653}
-  minFlySpeed: 10
+  minFlySpeed: 25
   maxFlySpeed: 250
   currentFlySpeed: 0
   rotationDiff: 0.1
@@ -2721,7 +2720,7 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   verticalBorderRange: {x: 1, y: 30}
   horizontalBorderRange: {x: -28, y: 35}
-  rebornPosition: 0.05000000074505806
+  rebornPosition: 0.02500000037252903
   animator: {fileID: 2011246906}
   laneRunner: {fileID: 1106438655}
   visualContainer: {fileID: 1814656535}

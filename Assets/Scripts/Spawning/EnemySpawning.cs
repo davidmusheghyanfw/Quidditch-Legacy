@@ -1,3 +1,4 @@
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,17 @@ public class EnemySpawning : MonoBehaviour
   
     [SerializeField] private EnemyController enemy;
     [SerializeField] private Transform parent;
-    [SerializeField, Range(2,10)] private int SegmentCount;
-    [SerializeField] private int enemyCountInSegment;
+    [SerializeField] private int enemyCount;
     [SerializeField] private float offset;
     [SerializeField] private float rangeOffset;
 
+    private SplineSample sample;
     private float tmpOffset;
 
     private List<EnemyController> enemies = new List<EnemyController>();
 
     private Vector3 spawnPosOnRoad;
-    private Vector3 spawnPosOnScreen;
+    private Vector2 spawnPosOnScreen;
     private void Awake()
     {
         instance = this;
@@ -38,40 +39,26 @@ public class EnemySpawning : MonoBehaviour
     //Coroutine EnemySpawningRoutineC;
     public void SpawnEnemies()
     {
-        tmpOffset = 50;
-        //for (int i = 0; i < SegmentCount; i++)
-        //{
-            int enemyCount = enemyCountInSegment; //Random.Range(0, enemyCountInSegment);
-            for (int j = 0; j < enemyCount; j++)
-            {
-               
-                if (tmpOffset >= RoadGenerator.instance.GetDistance())
-                {
-                        break;
-                }
-                float tmpRange = Random.Range(-rangeOffset, rangeOffset);
-                spawnPosOnRoad = GetNearestPointOnRoad(tmpRange+tmpOffset);
+        var start = EnvironmentManager.instance.GetStartSegment();
 
-                spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderRange.x, enemy.HorizontalBorderRange.y),
-                  Random.Range(enemy.VerticalBorderRange.x, enemy.VerticalBorderRange.y), spawnPosOnRoad.z);
+        int enemyCount = this.enemyCount; //Random.Range(0, enemyCountInSegment);
+        RoadGenerator.instance.GetLevelGenerator().Project(start.GetRaceStartPos(), ref sample);
+        for (int j = 0; j < enemyCount; j++)
+        {
+            spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderRange.x, enemy.HorizontalBorderRange.y),
+              Random.Range(enemy.VerticalBorderRange.x, enemy.VerticalBorderRange.y));
 
-                var currentEnemy = Instantiate(enemy, spawnPosOnRoad + spawnPosOnScreen, transform.rotation, parent);
-                enemies.Add(currentEnemy);
-                //enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
-                enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
-                //3enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
-            }
-            tmpOffset += offset;
 
-        //}
+            var currentEnemy = Instantiate(enemy, spawnPosOnRoad + sample.position, transform.rotation, parent);
+            enemies.Add(currentEnemy);
+            //enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
+            enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
+            enemies[enemies.Count - 1].SetSpawnPos(spawnPosOnScreen);
+            enemies[enemies.Count - 1].SetSplineSample(sample);
+            enemies[enemies.Count - 1].GetLaneRunner().SetPercent(sample.percent);
+            //3enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
+        }
     }
-
-    private Vector3 GetNearestPointOnRoad(float offset)
-    {
-
-        return Vector3.zero;//RoadGenerator.instance.GetSplineComputer().Evaluate(offset / RoadGenerator.instance.GetDistance()).position;
-    }
-
 
     private void DestroyAll()
     {

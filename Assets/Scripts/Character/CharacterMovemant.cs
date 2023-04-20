@@ -35,7 +35,7 @@ public class CharacterMovemant : MonoBehaviour
     IEnumerator CharacterCoursorFollowRoutine()
     {
         Vector3 newPos = Vector3.zero;
-        Vector3 cursorPrevPos = Vector3.zero;
+        Vector3 cursorPos = characterController.GetCursor();
         SplineSample sample = new SplineSample();
         while (true)
         {
@@ -55,18 +55,18 @@ public class CharacterMovemant : MonoBehaviour
             characterController.SetSplineSample(sample);
 
 
-            cursorPrevPos = Vector3.Lerp(cursorPrevPos, cursor, Time.deltaTime * touchControl);
+            cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
             //cursorPrevPos = Vector3.MoveTowards(cursorPrevPos, cursor, Time.deltaTime * touchControl);
             //newPos = sample.position;
 
             //transform.position += newPos;
 
-            if (cursorPrevPos.y < characterController.VerticalBorderRange.x) cursorPrevPos.y = characterController.VerticalBorderRange.x;
-            if (cursorPrevPos.y > characterController.VerticalBorderRange.y) cursorPrevPos.y = characterController.VerticalBorderRange.y;
+            if (cursorPos.y < characterController.VerticalBorderRange.x) cursorPos.y = characterController.VerticalBorderRange.x;
+            if (cursorPos.y > characterController.VerticalBorderRange.y) cursorPos.y = characterController.VerticalBorderRange.y;
 
-            if (cursorPrevPos.x < characterController.HorizontalBorderRange.x) cursorPrevPos.x = characterController.HorizontalBorderRange.x;
-            if (cursorPrevPos.x > characterController.HorizontalBorderRange.y) cursorPrevPos.x = characterController.HorizontalBorderRange.y;
-            characterController.GetLaneRunner().motion.offset = new Vector2(cursorPrevPos.x, cursorPrevPos.y);
+            if (cursorPos.x < characterController.HorizontalBorderRange.x) cursorPos.x = characterController.HorizontalBorderRange.x;
+            if (cursorPos.x > characterController.HorizontalBorderRange.y) cursorPos.x = characterController.HorizontalBorderRange.y;
+            characterController.GetLaneRunner().motion.offset = new Vector2(cursorPos.x, cursorPos.y);
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
             characterController.GetCharacterVisual().rotation = sample.rotation;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FIrstLevel
   m_EditorClassIdentifier: 
   finish: {fileID: 400527224196664828, guid: ff6817480484bac4698ebe6e88fe10c6, type: 3}
+  start: {fileID: 400527224196664828, guid: 1d1d486676004234ba180791ad1e426a, type: 3}
   EnvironmentSegments:
   - {fileID: 400527224196664828, guid: a2e093b5f40203840975e8a5a5e659c1, type: 3}
   - {fileID: 400527224196664828, guid: 2b5f6248c16359e4a8f5c43551b31772, type: 3}

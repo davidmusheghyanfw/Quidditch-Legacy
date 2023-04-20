@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
-  minFlySpeed: 10
+  minFlySpeed: 25
   maxFlySpeed: 250
   currentFlySpeed: 0
   rotationDiff: 0.1
@@ -247,7 +247,7 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   verticalBorderRange: {x: 1, y: 30}
   horizontalBorderRange: {x: -28, y: 35}
-  rebornPosition: 0.05000000074505806
+  rebornPosition: 0.02500000037252903
   animator: {fileID: 3621211923003173579}
   laneRunner: {fileID: -1010020994671206868}
   visualContainer: {fileID: 1752488334937976033}
