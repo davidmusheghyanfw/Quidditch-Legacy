@@ -223,13 +223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 1752488336878765014}
   minFlySpeed: 25
-  maxFlySpeed: 250
+  maxFlySpeed: 200
   currentFlySpeed: 0
   rotationDiff: 0.1
   rotationZAxisSensitivity: 1.5
   rotationDelay: 5
   touchControl: 5
-  smoothnes: 10
 --- !u!114 &1752488336878765014
 MonoBehaviour:
   m_ObjectHideFlags: 0

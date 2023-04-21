@@ -13,10 +13,12 @@ public class EnemyTriggers : MonoBehaviour
         }
         else if (other.gameObject.tag == "Finish")
         {
+
             enemyController.StopGettingCursor();
             enemyController.StopSpeedControllRountine();
             enemyController.StartCharacterStoppingRoutin();
-
+            LevelManager.instance.Finished();
+            enemyController.FinishPlace = LevelManager.instance.GetFinishPlace();
         }
         else if (other.gameObject.CompareTag("Environment"))
         {

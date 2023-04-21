@@ -9,54 +9,31 @@ public class GameView : MonoBehaviour
     public static GameView instance;
 
     [SerializeField] private Slider scoreUpdateSlider;
+    [SerializeField] private TMP_Text sliderTxt;
 
     [SerializeField] private float levelCompleteScore;
 
     [SerializeField] private GameObject GameStartCanvas;
-    
+
 
     private void Awake()
     {
         instance = this;
     }
 
-    void Start()
+    public void GameViewInit()
     {
-       
-    }
-
-    public void GameViewCanvasInit()
-    {
-        scoreUpdateSlider.value = 0;
-        scoreUpdateSlider.maxValue = levelCompleteScore;
-       
-        SetActiveGameStartCanvas(false);
 
     }
-    public void SetFinishDistance(float distance)
+    
+    public void SetLevelSettings()
     {
-        levelCompleteScore = distance;
-    }
-    public void UpdateScore()
-    {
-        scoreUpdateSlider.value = PlayerControler.instance.GetCharacter().transform.position.z;
+        scoreUpdateSlider.maxValue = LevelManager.instance.GetLevelDistance();
+        sliderTxt.text = "Level " + LevelManager.instance.GetLevel();
     }
 
-    public GameObject GetGameObject()
+    public void SetActive(bool state)
     {
-        return this.gameObject;
+        this.gameObject.SetActive(state);
     }
-
-    public void SetActiveGameStartCanvas(bool State)
-    {
-        GameStartCanvas.SetActive(State);
-    }
-
-    public void OnStartGame()
-    {
-        GameManager.instance.GameStart();
-        SetActiveGameStartCanvas(false);
-    }
-
-   
 }

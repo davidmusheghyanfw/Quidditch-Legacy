@@ -35,6 +35,9 @@ public class CharacterController : MonoBehaviour
     protected bool isReborned = true;
     private Vector3 pos;
 
+    private int finishPlace = 0;
+    public int FinishPlace { get { return finishPlace; } set { finishPlace = value; } }
+
     public virtual void CharacterInit()
     {
 

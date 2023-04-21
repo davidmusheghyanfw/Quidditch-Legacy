@@ -13,7 +13,10 @@ public class PlayerTriggers : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-            GameManager.instance.GameWin();
+            LevelManager.instance.Finished();
+            PlayerControler.instance.FinishPlace = LevelManager.instance.GetFinishPlace();
+            LevelManager.instance.GetReward(PlayerControler.instance.FinishPlace);
+            GameManager.instance.LevelComplete();
         }
 
         if (other.gameObject.tag == "Enemy")
@@ -24,7 +27,7 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Coin")
         {
-            DataManager.instance.SetCoinsAmount(DataManager.instance.GetCoinsAmount() + 1);
+            DataManager.instance.SetCoinsAmount(1);
             Destroy(other.gameObject);
         }
 

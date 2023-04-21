@@ -7,10 +7,13 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     [SerializeField] private List<SplineDefinition> levelDefinitionsList;
     [SerializeField] private List<CoinDefinition> coinDefinitionsList;
+    [SerializeField] private List<int> placeReward;
+    [SerializeField] private int defaultReward;
     [SerializeField] private float roadPointOffset;
 
-    private float levelCompleteDistance;
 
+    private int finishPlace = 0;
+    private float levelCompleteDistance;
     private int level = 1;
     private int levelDefinition = 0;
 
@@ -19,23 +22,15 @@ public class LevelManager : MonoBehaviour
     {
         instance = this;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void InitLevel()
     {
 
         RoadGenerator.instance.RoadGeneratorInit();
 
-        // this.Timer(1f, () => {
+        
         CheckPointSpawning.instance.CheckPointsSpawningInit();
         CoinSpawner.instance.CoinSpawnerInit();
-        CalculateLevelDistance();
-        // });
-
     }
 
     public int GetLevel()
@@ -47,15 +42,6 @@ public class LevelManager : MonoBehaviour
     {
         levelDefinition++; ;
         DataManager.instance.IncreaseLevelNumber();
-    }
-
-    private void CalculateLevelDistance()
-    {
-
-        //levelCompleteDistance = DataManager.instance.GetLevelNumber() * (RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z * 2);
-        levelCompleteDistance = (float)RoadGenerator.instance.GetDistance();
-
-        GameView.instance.SetFinishDistance(levelCompleteDistance);//+ RoadSpawning.instance.GetRoad().GetComponent<RoadInfo>().GetRoadScale().z/2);
     }
 
     public float GetLevelDistance()
@@ -83,5 +69,28 @@ public class LevelManager : MonoBehaviour
     public CoinDefinition GetCoinDefinition(int index)
     {
         return coinDefinitionsList[index];
+    }
+
+    public void Finished()
+    {
+        finishPlace++;
+    }
+
+    public int GetFinishPlace()
+    {
+       
+        return finishPlace;
+    }
+
+    public void GetReward(int finishedPlace)
+    {
+        if(placeReward.Count < finishPlace)
+        {
+            DataManager.instance.SetCoinsAmount(defaultReward);
+        }
+        else
+        {
+            DataManager.instance.SetCoinsAmount(placeReward[finishedPlace]);
+        }
     }
 }

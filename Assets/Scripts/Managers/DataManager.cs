@@ -39,7 +39,7 @@ public class DataManager : MonoBehaviour
 
     public void SetCoinsAmount(int newTotalCoins)
     {
-        PlayerPrefs.SetInt("coinsAmount", newTotalCoins);
+        PlayerPrefs.SetInt("coinsAmount", GetCoinsAmount() + newTotalCoins);
     }
     public int GetCoinsAmount()
     {

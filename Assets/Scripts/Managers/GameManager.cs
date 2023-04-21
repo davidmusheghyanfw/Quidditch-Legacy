@@ -21,60 +21,44 @@ public class GameManager : MonoBehaviour
         GameInit();
     }
 
-    public void GameDefaultConfigs()
-    {
-
-    }
+   
     public void GameInit()
     {
-
+        MenuView.instance.gameObject.SetActive(true);
         isGameInited = false;
         LevelManager.instance.InitLevel();
-        GameView.instance.GameViewCanvasInit();
-        CanvasSetActivs();
+        GameView.instance.GameViewInit();
+        LevelCompleteView.instance.gameObject.SetActive(false);
         DebugCanvas.instance.DebugInit();
-        LevelEndCanvas.instance.LevelEndCanvasInit();
+        
         this.Timer(1f, () =>
         {
             PlayerControler.instance.CharacterInit();
             EnemyManager.instance.EnemyInit();
-            GameView.instance.SetActiveGameStartCanvas(true);
+           
 
             isGameInited = true;
         });
     }
     public void GameStart()
     {
-
+        GameView.instance.SetActive(true);
         PlayerControler.instance.CharacterInit();
-        LevelEndCanvas.instance.LevelEndCanvasInit();
         PlayerControler.instance.StartCursorFollowing();
         PlayerControler.instance.StartForceRoutine();
         EnemyManager.instance.EnemyStart();
 
     }
 
-    public void GameWin()
+    public void LevelComplete()
     {
-        GameView.instance.GetGameObject().SetActive(false);
+        GameView.instance.SetActive(false);
+        LevelCompleteView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
         PlayerControler.instance.OnGameWin();
-        LevelEndCanvas.instance.LevelWinCanvasActive();
+     
     }
-
-    public void CanvasSetActivs()
-    {
-
-        DebugCanvas.instance.gameObject.SetActive(true);
-        GameView.instance.gameObject.SetActive(true);
-        LevelEndCanvas.instance.gameObject.SetActive(true);
-    }
-
-    public void GameOver()
-    {
-
-    }
-
+   
     public void GameStopped()
     {
         //isGameStopped = true;
