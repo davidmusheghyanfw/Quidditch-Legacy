@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
         //cameraPos.Set(cameraPos.x,cameraPos.y,playerPos.z);
         transform.position =  cameraPos;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
+       // transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
     }
 
     Coroutine ForceEffectRoutineC;

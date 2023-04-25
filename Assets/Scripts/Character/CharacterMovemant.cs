@@ -15,37 +15,34 @@ public class CharacterMovemant : MonoBehaviour
     public float CurrentFlySpeed { get { return currentFlySpeed; } set { currentFlySpeed = value; characterController.GetLaneRunner().followSpeed = value; } }
 
     [Header("Rotation")]
-    [SerializeField] private float rotationDiff;
-    [SerializeField] private float rotationZAxisSensitivity;
-    [SerializeField] private float rotationDelay;
+    [SerializeField] private float rotationSmoothness;
+    [SerializeField] private float movementTiltAngle;
+    [SerializeField] private float rotationSensetivity;
+    [SerializeField] private Vector2 horizontalRotantionBorder;
+    [SerializeField] private Vector2 verticalRotantionBorder;
     [Header("Smoothnes")]
     [SerializeField] private float touchControl;
-    //[SerializeField] private float smoothnes;
+
     private Vector3 cursor;
-    
+
 
     //float tmpFlySpeed;
 
-    public void SetCharacterController( CharacterController controller)
+    public void SetCharacterController(CharacterController controller)
     {
         characterController = controller;
     }
-    
+
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
         Vector3 newPos = Vector3.zero;
+        Vector3 prevMousPos = Vector3.zero;
         Vector3 cursorPos = characterController.GetCursor();
         SplineSample sample = new SplineSample();
         while (true)
         {
 
-
-            //if (characterController.GetPosInSpline() <= 1f)
-            ////dot = RoadGenerator.instance.GetSplineComputer().Evaluate(characterController.GetPosInSpline());
-            //EnvironmentManager.instance.GetLevelGenerator().Evaluate(characterController.GetPosInSpline(), ref dot);
-            ////splineSamples.Add(dot);
-            
             cursor = characterController.GetCursor();
 
             cursor.z = 0;
@@ -56,10 +53,6 @@ public class CharacterMovemant : MonoBehaviour
 
 
             cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
-            //cursorPrevPos = Vector3.MoveTowards(cursorPrevPos, cursor, Time.deltaTime * touchControl);
-            //newPos = sample.position;
-
-            //transform.position += newPos;
 
             if (cursorPos.y < characterController.VerticalBorderRange.x) cursorPos.y = characterController.VerticalBorderRange.x;
             if (cursorPos.y > characterController.VerticalBorderRange.y) cursorPos.y = characterController.VerticalBorderRange.y;
@@ -69,22 +62,36 @@ public class CharacterMovemant : MonoBehaviour
             characterController.GetLaneRunner().motion.offset = new Vector2(cursorPos.x, cursorPos.y);
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
-            characterController.GetCharacterVisual().rotation = sample.rotation;
+
+            
+            Vector3 tiltDirection = new Vector3(-cursorPos.y + rotationSensetivity, cursorPos.x + rotationSensetivity, 0);
 
 
-            ////Vector3 diff = (cursor - dot.position).normalized;
-            ////characterController.GetAnimator().SetFloat("DirY", diff.y);
 
-           
+            Vector3 rot = Vector3.Slerp(
+            characterController.GetCharacterVisual().localEulerAngles,
+            tiltDirection.normalized * movementTiltAngle,
+            Time.deltaTime * rotationSmoothness);
 
             if (characterController is PlayerControler)
-            CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position,PlayerControler.instance.GetCharacterVisual());
-      
+                Debug.Log(rot);
 
+            Vector3 euler = rot;
 
-            //characterController.SetPosInSpline(characterController.GetPosInSpline()
-            //+ tmpFlySpeed / RoadGenerator.instance.GetDistance());
+            if (euler.x < horizontalRotantionBorder.x) euler.x = horizontalRotantionBorder.x;
+            if (euler.x > horizontalRotantionBorder.y) euler.x = horizontalRotantionBorder.y;
 
+            if (euler.y < verticalRotantionBorder.x) euler.y = verticalRotantionBorder.x;
+            if (euler.y > verticalRotantionBorder.y) euler.y = verticalRotantionBorder.y;
+            euler.z = 0;
+
+            
+            characterController.GetCharacterVisual().localRotation = Quaternion.Euler(euler);
+
+            if (characterController is PlayerControler)
+                CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position, PlayerControler.instance.GetCharacterVisual());
+
+            prevMousPos = cursorPos;
             yield return new WaitForFixedUpdate();
         }
     }
@@ -135,6 +142,6 @@ public class CharacterMovemant : MonoBehaviour
         //else characterController.StartForceRoutine();
     }
 
-   
-    
+
+
 }
