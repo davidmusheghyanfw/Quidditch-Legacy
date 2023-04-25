@@ -3237,10 +3237,9 @@ MonoBehaviour:
   maxFlySpeed: 200
   currentFlySpeed: 0
   rotationSmoothness: 10
-  movementTiltAngle: 2
-  rotationSensetivity: 10
-  horizontalRotantionBorder: {x: -15, y: 15}
-  verticalRotantionBorder: {x: -15, y: 15}
+  rotationDelay: 2
+  rotationSensetivity: 1
+  rotationZAxisSpeed: 0.5
   touchControl: 7
 --- !u!114 &1106438653
 MonoBehaviour:

@@ -16,10 +16,10 @@ public class CharacterMovemant : MonoBehaviour
 
     [Header("Rotation")]
     [SerializeField] private float rotationSmoothness;
-    [SerializeField] private float movementTiltAngle;
+    [SerializeField] private float rotationDelay;
     [SerializeField] private float rotationSensetivity;
-    [SerializeField] private Vector2 horizontalRotantionBorder;
-    [SerializeField] private Vector2 verticalRotantionBorder;
+    [SerializeField] private float rotationZAxisSpeed;
+ 
     [Header("Smoothnes")]
     [SerializeField] private float touchControl;
 
@@ -37,8 +37,10 @@ public class CharacterMovemant : MonoBehaviour
     IEnumerator CharacterCoursorFollowRoutine()
     {
         Vector3 newPos = Vector3.zero;
-        Vector3 prevMousPos = Vector3.zero;
+        Vector3 prevPos = Vector3.zero;
         Vector3 cursorPos = characterController.GetCursor();
+
+        var visual = characterController.GetCharacterVisual();
         SplineSample sample = new SplineSample();
         while (true)
         {
@@ -64,39 +66,55 @@ public class CharacterMovemant : MonoBehaviour
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
 
             
-            Vector3 tiltDirection = new Vector3(-cursorPos.y + rotationSensetivity, cursorPos.x + rotationSensetivity, 0);
+            //Vector3 tiltDirection = new Vector3(-cursorPos.y + rotationSensetivity, cursorPos.x + rotationSensetivity, 0);
 
 
 
-            Vector3 rot = Vector3.Slerp(
-            characterController.GetCharacterVisual().localEulerAngles,
-            tiltDirection.normalized * movementTiltAngle,
-            Time.deltaTime * rotationSmoothness);
+            Vector3 diff = transform.position - prevPos;
 
-            if (characterController is PlayerControler)
-                Debug.Log(rot);
 
-            Vector3 euler = rot;
+            diff = diff.normalized + Vector3.forward * rotationDelay;
 
-            if (euler.x < horizontalRotantionBorder.x) euler.x = horizontalRotantionBorder.x;
-            if (euler.x > horizontalRotantionBorder.y) euler.x = horizontalRotantionBorder.y;
 
-            if (euler.y < verticalRotantionBorder.x) euler.y = verticalRotantionBorder.x;
-            if (euler.y > verticalRotantionBorder.y) euler.y = verticalRotantionBorder.y;
-            euler.z = 0;
+            Vector3 upwards = Vector3.up + (Vector3.up * diff.x * rotationSensetivity);
 
-            
-            characterController.GetCharacterVisual().localRotation = Quaternion.Euler(euler);
+            visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), Time.deltaTime * rotationSmoothness);
+
+            StartCharachterRotatingRoutine();
 
             if (characterController is PlayerControler)
                 CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position, PlayerControler.instance.GetCharacterVisual());
 
-            prevMousPos = cursorPos;
+
+            prevPos = transform.position;
             yield return new WaitForFixedUpdate();
         }
     }
 
+    Coroutine CharachterRotatingRoutineC;
+    IEnumerator CharachterRotatingRoutine()
+    {
+        var visual = characterController.GetCharacterVisual();
+        while (true)
+        {
+            visual.Rotate(transform.forward, 360 * rotationZAxisSpeed* Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+    }
 
+
+    public void StartCharachterRotatingRoutine()
+    {
+
+        if (CharachterRotatingRoutineC != null) StopCoroutine(CharachterRotatingRoutineC);
+        CharachterRotatingRoutineC = StartCoroutine(CharachterRotatingRoutine());
+
+    }
+
+    public void StopCharachterRotatingRoutine()
+    {
+        if (CharachterRotatingRoutineC != null) StopCoroutine(CharachterRotatingRoutineC);
+    }
 
     public void StartCursorFollowing()
     {

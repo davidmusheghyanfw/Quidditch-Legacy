@@ -903,9 +903,10 @@ MonoBehaviour:
   minFlySpeed: 25
   maxFlySpeed: 200
   currentFlySpeed: 0
-  rotationDiff: 0.1
-  rotationZAxisSensitivity: 1.5
-  rotationDelay: 5
+  rotationSmoothness: 10
+  rotationDelay: 2
+  rotationSensetivity: 1
+  rotationZAxisSpeed: 3
   touchControl: 5
 --- !u!114 &1752488336878765014
 MonoBehaviour:
@@ -4790,8 +4791,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 3.12}
+  m_Size: {x: 1, y: 0.67, z: 6.5531826}
+  m_Center: {x: 0, y: 0, z: -0.016591072}
 --- !u!114 &7621706623171377344
 MonoBehaviour:
   m_ObjectHideFlags: 0
