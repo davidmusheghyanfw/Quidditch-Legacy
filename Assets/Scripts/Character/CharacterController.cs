@@ -26,7 +26,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LaneRunner laneRunner;
     
     [Header("Character")]
-    [SerializeField] private Transform visualContainer;
+    [SerializeField] private Transform mainVisualContainer;
+    [SerializeField] private Transform secondVisualContainer;
     [SerializeField] private GameObject CharacterCenter;
     [SerializeField] private List<Rigidbody> ragdollList;
 
@@ -97,9 +98,13 @@ public class CharacterController : MonoBehaviour
         laneRunner.motion.offset = pos;
     }
 
-    public Transform GetCharacterVisual()
+    public Transform GetMainVisualContainer()
     {
-        return visualContainer;
+        return mainVisualContainer;
+    }
+    public Transform GetSecondVisualContainer()
+    {
+        return secondVisualContainer;
     }
 
     public bool IsStopping()

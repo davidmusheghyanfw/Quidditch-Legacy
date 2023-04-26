@@ -29,7 +29,7 @@ public class PlayerControler : CharacterController
         RoadGenerator.instance.GetLevelGenerator().Project(EnvironmentManager.instance.GetStartSegment().GetRaceStartPos(), ref sample);
         GetLaneRunner().SetPercent(sample.percent);
         GetLaneRunner().motion.offset = cursor = sample.position;
-        CameraController.instance.PlayerPosUpdate(transform.position,GetCharacterVisual());
+        CameraController.instance.PlayerPosUpdate(transform.position,GetMainVisualContainer());
         base.CharacterInit();
         
     }

@@ -40,7 +40,7 @@ public class CharacterMovemant : MonoBehaviour
         Vector3 prevPos = Vector3.zero;
         Vector3 cursorPos = characterController.GetCursor();
 
-        var visual = characterController.GetCharacterVisual();
+        var visual = characterController.GetMainVisualContainer();
         SplineSample sample = new SplineSample();
         while (true)
         {
@@ -83,7 +83,7 @@ public class CharacterMovemant : MonoBehaviour
             StartCharachterRotatingRoutine();
 
             if (characterController is PlayerControler)
-                CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position, PlayerControler.instance.GetCharacterVisual());
+                CameraController.instance.PlayerPosUpdate(PlayerControler.instance.gameObject.transform.position, PlayerControler.instance.GetMainVisualContainer());
 
 
             prevPos = transform.position;
@@ -94,7 +94,7 @@ public class CharacterMovemant : MonoBehaviour
     Coroutine CharachterRotatingRoutineC;
     IEnumerator CharachterRotatingRoutine()
     {
-        var visual = characterController.GetCharacterVisual();
+        var visual = characterController.GetSecondVisualContainer();
         while (true)
         {
             visual.Rotate(transform.forward, 360 * rotationZAxisSpeed* Time.deltaTime);

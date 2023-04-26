@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6959ddebf6ba4834ba57af8dddb012ee, type: 3}
+  m_Name: WithoutCHeckPoint
+  m_EditorClassIdentifier: 
+  finish: {fileID: 400527224196664828, guid: ff6817480484bac4698ebe6e88fe10c6, type: 3}
+  start: {fileID: 400527224196664828, guid: 1d1d486676004234ba180791ad1e426a, type: 3}
+  EnvironmentSegments:
+  - {fileID: 400527224196664828, guid: ca2da3aed3a8d42499ee6d0855f7e8bd, type: 3}
+  - {fileID: 400527224196664828, guid: f1e452dc86743f845826bcd38c1e162e, type: 3}
