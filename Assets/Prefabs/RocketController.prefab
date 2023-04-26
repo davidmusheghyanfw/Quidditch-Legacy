@@ -5930,6 +5930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8457650093951145435}
     m_Modifications:
+    - target: {fileID: 1546833849197960, guid: 0698273b88ba93745acd6770db56deac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1914651395349144, guid: 0698273b88ba93745acd6770db56deac, type: 3}
       propertyPath: m_Name
       value: SoftTallFireRed
@@ -5977,6 +5981,11 @@ PrefabInstance:
     - target: {fileID: 4359711283917062, guid: 0698273b88ba93745acd6770db56deac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198906292631769098, guid: 0698273b88ba93745acd6770db56deac,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 20.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0698273b88ba93745acd6770db56deac, type: 3}

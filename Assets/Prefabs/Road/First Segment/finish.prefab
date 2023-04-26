@@ -62999,11 +62999,11 @@ MonoBehaviour:
     colliders: []
     _isRoot: 0
   bounds:
-    center: {x: 0, y: 51.409092, z: 500}
-    extents: {x: 500, y: 54.0445, z: 500}
+    center: {x: 0, y: 50.53062, z: 500}
+    extents: {x: 500, y: 54.92297, z: 500}
     max: {x: 500, y: 105.45359, z: 1000}
-    min: {x: -500, y: -2.6354074, z: 0}
-    size: {x: 1000, y: 108.089, z: 1000}
+    min: {x: -500, y: -4.392346, z: 0}
+    size: {x: 1000, y: 109.84594, z: 1000}
   builders: []
   unpacked: 1
   alwaysDraw: 0
@@ -63283,9 +63283,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnParticle: {fileID: 4476608419633437502}
+  mesh: {fileID: 488007892500789336}
+  normalColor:
+    serializedVersion: 2
+    rgba: 4288059030
+  burnColor:
+    serializedVersion: 2
+    rgba: 4284769380
 --- !u!4 &475766419650933126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012437581218, guid: 61c787ad40ab08f409a57210cd8e416b,
+    type: 3}
+  m_PrefabInstance: {fileID: 474134654600485924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &488007892500789336 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23000011431388284, guid: 61c787ad40ab08f409a57210cd8e416b,
     type: 3}
   m_PrefabInstance: {fileID: 474134654600485924}
   m_PrefabAsset: {fileID: 0}
@@ -63628,6 +63641,12 @@ MeshFilter:
     type: 3}
   m_PrefabInstance: {fileID: 3563689531139841188}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &3541362974433489330 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23000013433629974, guid: d39ecaf886599264f8182ab11a605849,
+    type: 3}
+  m_PrefabInstance: {fileID: 3563689531139841188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3564398163374798758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013599353602, guid: d39ecaf886599264f8182ab11a605849,
@@ -63660,6 +63679,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnParticle: {fileID: 188615831579497900}
+  mesh: {fileID: 3541362974433489330}
+  normalColor:
+    serializedVersion: 2
+    rgba: 4288059030
+  burnColor:
+    serializedVersion: 2
+    rgba: 4285164138
 --- !u!4 &3565427323288915688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013709857356, guid: d39ecaf886599264f8182ab11a605849,
@@ -100456,6 +100482,12 @@ MeshFilter:
     type: 3}
   m_PrefabInstance: {fileID: 6407611006745617543}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &6394511279688244541 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23000013223197114, guid: 1ab69ec7f794b39429d78db38da5fbb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6407611006745617543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6404784698000696025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011637802590, guid: 1ab69ec7f794b39429d78db38da5fbb6,
@@ -100494,6 +100526,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnParticle: {fileID: 5073550430315557668}
+  mesh: {fileID: 6394511279688244541}
+  normalColor:
+    serializedVersion: 2
+    rgba: 4288059030
+  burnColor:
+    serializedVersion: 2
+    rgba: 4284769380
 --- !u!1001 &6734060039111958159
 PrefabInstance:
   m_ObjectHideFlags: 0
