@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float smoothness;
     [SerializeField] private float maxFiledOfView;
     [SerializeField] private float minFiledOfView;
+    [SerializeField] private CinemachineVirtualCamera followCamera;
+    [SerializeField] private CinemachineVirtualCamera LauncherCamera;
+
 
     private Vector3 cameraPos;
     private void Awake()
@@ -66,5 +70,11 @@ public class CameraController : MonoBehaviour
     public void StopForceEffectRoutine()
     {
         if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
+    }
+
+    public void SetFollower(Transform target)
+    {
+        followCamera.Follow = target;
+        followCamera.LookAt = target;
     }
 }

@@ -34,6 +34,7 @@ public class Launcher : MonoBehaviour
      
     public void OnLaunch()
     {
+        CameraController.instance.SetFollower(rocketControllers[0].transform);
         rocketControllers[0].gameObject.SetActive(true);
         rocketControllers[0].CharacterInit();
         rocketControllers[0].StartCursorFollowing();
