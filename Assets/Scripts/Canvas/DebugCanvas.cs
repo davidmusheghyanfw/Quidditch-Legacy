@@ -22,8 +22,8 @@ public class DebugCanvas : MonoBehaviour
     public void OpenDebugMenu()
     {
         debugMenu.SetActive(true);
-        slider.value = PlayerControler.instance.GetSensetivity();
-        sliderTxt.text = PlayerControler.instance.GetSensetivity().ToString();
+        slider.value = Launcher.instance.GetRocketController().GetSensetivity();
+        sliderTxt.text = Launcher.instance.GetRocketController().GetSensetivity().ToString();
     }
 
     public void Exit()
@@ -49,7 +49,7 @@ public class DebugCanvas : MonoBehaviour
 
     public void OnSensetivityChange()
     {
-        PlayerControler.instance.SetSensetivity(slider.value);
+        Launcher.instance.GetRocketController().SetSensetivity(slider.value);
         SetSensetivityTxt(slider.value);
     }
 }

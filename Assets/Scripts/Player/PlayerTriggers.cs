@@ -14,8 +14,8 @@ public class PlayerTriggers : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             LevelManager.instance.Finished();
-            PlayerControler.instance.FinishPlace = LevelManager.instance.GetFinishPlace();
-            LevelManager.instance.GetReward(PlayerControler.instance.FinishPlace);
+            Launcher.instance.GetRocketController().FinishPlace = LevelManager.instance.GetFinishPlace();
+            LevelManager.instance.GetReward(Launcher.instance.GetRocketController().FinishPlace);
             GameManager.instance.LevelComplete();
         }
 
@@ -33,10 +33,10 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Environment")
         {
-            PlayerControler.instance.Die();
+            Launcher.instance.GetRocketController().Die();
             this.Timer(1f, () =>
             {
-                PlayerControler.instance.Reborn();
+                Launcher.instance.GetRocketController().Reborn();
             });
         }
     }

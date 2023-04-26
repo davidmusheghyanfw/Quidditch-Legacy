@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
    
     public void GameInit()
     {
+        Launcher.instance.LauncherInit();
         MenuView.instance.gameObject.SetActive(true);
         isGameInited = false;
         LevelManager.instance.InitLevel();
@@ -31,23 +32,12 @@ public class GameManager : MonoBehaviour
         LevelCompleteView.instance.gameObject.SetActive(false);
         DebugCanvas.instance.DebugInit();
         
-        this.Timer(1f, () =>
-        {
-            PlayerControler.instance.CharacterInit();
-            EnemyManager.instance.EnemyInit();
-           
 
-            isGameInited = true;
-        });
     }
     public void GameStart()
     {
+        Launcher.instance.OnLunch();
         GameView.instance.SetActive(true);
-        PlayerControler.instance.CharacterInit();
-        PlayerControler.instance.StartCursorFollowing();
-        PlayerControler.instance.StartForceRoutine();
-        EnemyManager.instance.EnemyStart();
-
     }
 
     public void LevelComplete()
@@ -55,21 +45,21 @@ public class GameManager : MonoBehaviour
         GameView.instance.SetActive(false);
         LevelCompleteView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
-        PlayerControler.instance.OnGameWin();
+        Launcher.instance.GetRocketController().OnGameWin();
      
     }
    
     public void GameStopped()
     {
         //isGameStopped = true;
-        PlayerControler.instance.GameStopped();
+        Launcher.instance.GetRocketController().GameStopped();
 
     }
 
     public void GameResume()
     {
         //isGameStopped = false;
-        PlayerControler.instance.GameResume();
+        Launcher.instance.GetRocketController().GameResume();
     }
 #if UNITY_EDITOR
     private void Update()

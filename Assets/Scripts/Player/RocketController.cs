@@ -3,16 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : CharacterController
+public class RocketController : CharacterController
 {
-    public static PlayerControler instance;
+    
     private SplineSample sample;
     [SerializeField] private float borderSmoothness;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     void Start()
     {
@@ -25,11 +20,11 @@ public class PlayerControler : CharacterController
 
     public override void CharacterInit()
     {
-
+        GetLaneRunner().isPlayer = true;
         RoadGenerator.instance.GetLevelGenerator().Project(EnvironmentManager.instance.GetStartSegment().GetRaceStartPos(), ref sample);
         GetLaneRunner().SetPercent(sample.percent);
         GetLaneRunner().motion.offset = cursor = sample.position;
-        CameraController.instance.PlayerPosUpdate(transform.position,GetCharacterVisual());
+        CameraController.instance.PlayerPosUpdate(transform.position,GetMainVisualContainer());
         base.CharacterInit();
         
     }
@@ -68,5 +63,4 @@ public class PlayerControler : CharacterController
     {
 
     }
-
 }
