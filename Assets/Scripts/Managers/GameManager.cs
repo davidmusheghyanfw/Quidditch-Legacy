@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
-        Launcher.instance.OnLunch();
+        Launcher.instance.OnLaunch();
         GameView.instance.SetActive(true);
     }
 
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         GameView.instance.SetActive(false);
         LevelCompleteView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
-        Launcher.instance.GetRocketController().OnGameWin();
+       // Launcher.instance.GetRocketController().OnGameWin();
      
     }
    

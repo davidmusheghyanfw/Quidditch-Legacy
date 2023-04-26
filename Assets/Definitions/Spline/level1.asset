@@ -17,19 +17,7 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0}
   - length: 500
     rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
     rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 2000
     rotation: {x: 0, y: 0, z: 0}

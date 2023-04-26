@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterMovemant: {fileID: 1752488336878764584}
-  sensetivity: 0.1165
+  sensetivity: 0.1
   cursor: {x: 0, y: 0, z: 0}
   verticalBorderRange: {x: 1, y: 30}
   horizontalBorderRange: {x: -28, y: 35}

@@ -7,7 +7,8 @@ public class Launcher : MonoBehaviour
     public static Launcher instance;
     [SerializeField] private int rocketCount;
     [SerializeField] private GameObject rocket;
-    [SerializeField] private List<RocketController> rocketControllers = new List<RocketController>();
+    [SerializeField] private GameObject destroyParticle;
+    [SerializeField] private List<RocketController> rocketControllers;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class Launcher : MonoBehaviour
 
     public void LauncherInit()
     {
+        rocketControllers = new List<RocketController>();
         CreateRocketPull();
     }
     
@@ -30,7 +32,7 @@ public class Launcher : MonoBehaviour
     }
 
      
-    public void OnLunch()
+    public void OnLaunch()
     {
         rocketControllers[0].gameObject.SetActive(true);
         rocketControllers[0].CharacterInit();
@@ -42,5 +44,19 @@ public class Launcher : MonoBehaviour
     {
         return rocketControllers[0];
     }
-
+    public void RocketDestroyed()
+    {
+        destroyParticle.gameObject.transform.position = rocketControllers[0].transform.position;
+        destroyParticle.SetActive(true);
+        rocketControllers.RemoveAt(0);
+        if(rocketControllers.Count<=0)
+        {
+            GameManager.instance.LevelComplete();
+            return;
+        }
+        this.Timer(1f, () =>
+        {
+        OnLaunch();
+        });
+    }
 }

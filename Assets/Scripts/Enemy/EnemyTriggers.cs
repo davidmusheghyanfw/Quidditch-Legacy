@@ -22,12 +22,7 @@ public class EnemyTriggers : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Environment"))
         {
-            enemyController.Die();
-            this.Timer(1f,() => 
-            {
-                enemyController.Reborn();
-            });
-            //Debug.Log("Ara kpav!!!", transform);
+    
         }
       
     }

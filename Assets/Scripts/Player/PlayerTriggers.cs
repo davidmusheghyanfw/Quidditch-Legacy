@@ -13,16 +13,18 @@ public class PlayerTriggers : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-            LevelManager.instance.Finished();
-            Launcher.instance.GetRocketController().FinishPlace = LevelManager.instance.GetFinishPlace();
-            LevelManager.instance.GetReward(Launcher.instance.GetRocketController().FinishPlace);
-            GameManager.instance.LevelComplete();
+            Destroy(Launcher.instance.GetRocketController().gameObject);
+            // LevelManager.instance.Finished();
+            // Launcher.instance.GetRocketController().FinishPlace = LevelManager.instance.GetFinishPlace();
+            // LevelManager.instance.GetReward(Launcher.instance.GetRocketController().FinishPlace);
+            // GameManager.instance.LevelComplete();
+
         }
 
         if (other.gameObject.tag == "Enemy")
         {
-
-            other.gameObject.GetComponent<EnemyController>().OnPlayerTriggered(gameObject.transform.position);
+            other.gameObject.GetComponent<Environment>().IsDamaged(true);
+            Destroy(Launcher.instance.GetRocketController().gameObject);
         }
 
         if (other.gameObject.tag == "Coin")
@@ -33,11 +35,12 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Environment")
         {
-            Launcher.instance.GetRocketController().Die();
-            this.Timer(1f, () =>
-            {
-                Launcher.instance.GetRocketController().Reborn();
-            });
+            //Launcher.instance.GetRocketController().Die();
+            //this.Timer(1f, () =>
+            //{
+            //    Launcher.instance.GetRocketController().Reborn();
+            //});
+            Destroy(Launcher.instance.GetRocketController().gameObject);
         }
     }
 }

@@ -30,6 +30,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Transform secondVisualContainer;
     [SerializeField] private GameObject CharacterCenter;
     [SerializeField] private List<Rigidbody> ragdollList;
+    
 
     protected bool isStopping = false;
     protected bool isDied = false;
@@ -130,12 +131,6 @@ public class CharacterController : MonoBehaviour
         return characterMovemant;
     }
 
-    public void OnGameWin()
-    {
-        StopCursorFollowing();
-        StartCharacterStoppingRoutin();
-    }
-
     public void GameStopped()
     {
         StopCharacterStoppingRoutin();
@@ -147,34 +142,44 @@ public class CharacterController : MonoBehaviour
         StartCursorFollowing();
     }
 
-    public void Reborn()
-    {
-        if (!isReborned)
-        {
-            animator.enabled = true;
-            ChangeRagdollKinematicState(true);
-            laneRunner.SetPercent(GetPosInSpline() - rebornPosition);
-            laneRunner.follow = true;
-            StartForceRoutine();
-            isReborned = true;
-            isDied = false;
-        }
-    }
+    //public void Reborn()
+    //{
+    //    if (!isReborned)
+    //    {
+    //        animator.enabled = true;
+    //        ChangeRagdollKinematicState(true);
+    //        laneRunner.SetPercent(GetPosInSpline() - rebornPosition);
+    //        laneRunner.follow = true;
+    //        StartForceRoutine();
+    //        isReborned = true;
+    //        isDied = false;
+    //    }
+    //}
 
-    public void Die()
-    {
+    //public void Die()
+    //{
 
-        //if (!isDied)
-        //{
-        //    StopForceRoutine();
-        //    characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
-        //    ChangeRagdollKinematicState(false);
-        //    laneRunner.follow = false;
-        //    animator.enabled = false;
-        //    CharacterCenter.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
-        //    isDied = true;
-        //    isReborned = false;
-        //}
+    //    //if (!isDied)
+    //    //{
+    //    //    StopForceRoutine();
+    //    //    characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
+    //    //    ChangeRagdollKinematicState(false);
+    //    //    laneRunner.follow = false;
+    //    //    animator.enabled = false;
+    //    //    CharacterCenter.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10);
+    //    //    isDied = true;
+    //    //    isReborned = false;
+    //    //}
+    //}
+
+    private void OnDestroy()
+    {
+        StopCursorFollowing();
+        StopForceRoutine();
+        
+        laneRunner.isPlayer = false;
+        Launcher.instance.RocketDestroyed();
+        Destroy(this);
     }
 
     Coroutine ForceRoutineC;
