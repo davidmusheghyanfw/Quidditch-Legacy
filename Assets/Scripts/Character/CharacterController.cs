@@ -172,14 +172,14 @@ public class CharacterController : MonoBehaviour
     //    //}
     //}
 
-    private void OnDestroy()
+    public void DestroyObject()
     {
         StopCursorFollowing();
         StopForceRoutine();
         
         laneRunner.isPlayer = false;
         Launcher.instance.RocketDestroyed();
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     Coroutine ForceRoutineC;

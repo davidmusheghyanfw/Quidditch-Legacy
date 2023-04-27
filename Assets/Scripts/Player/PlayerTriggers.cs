@@ -13,7 +13,7 @@ public class PlayerTriggers : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-            Destroy(Launcher.instance.GetRocketController().gameObject);
+          
             // LevelManager.instance.Finished();
             // Launcher.instance.GetRocketController().FinishPlace = LevelManager.instance.GetFinishPlace();
             // LevelManager.instance.GetReward(Launcher.instance.GetRocketController().FinishPlace);
@@ -24,7 +24,7 @@ public class PlayerTriggers : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Environment>().IsDamaged(true);
-            Destroy(Launcher.instance.GetRocketController().gameObject);
+            Launcher.instance.GetRocketController().DestroyObject();
         }
 
         if (other.gameObject.tag == "Coin")
@@ -40,7 +40,7 @@ public class PlayerTriggers : MonoBehaviour
             //{
             //    Launcher.instance.GetRocketController().Reborn();
             //});
-            Destroy(Launcher.instance.GetRocketController().gameObject);
+            Launcher.instance.GetRocketController().DestroyObject();
         }
     }
 }

@@ -65,10 +65,6 @@ public class CharacterMovemant : MonoBehaviour
 
             //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
 
-            
-            //Vector3 tiltDirection = new Vector3(-cursorPos.y + rotationSensetivity, cursorPos.x + rotationSensetivity, 0);
-
-
 
             Vector3 diff = transform.position - prevPos;
 
@@ -82,8 +78,8 @@ public class CharacterMovemant : MonoBehaviour
 
             StartCharachterRotatingRoutine();
 
-            if (characterController is RocketController)
-                CameraController.instance.PlayerPosUpdate(Launcher.instance.GetRocketController().gameObject.transform.position, Launcher.instance.GetRocketController().GetMainVisualContainer());
+            //if (characterController is RocketController)
+            //    CameraController.instance.PlayerPosUpdate(Launcher.instance.GetRocketController().gameObject.transform.position, Launcher.instance.GetRocketController().GetMainVisualContainer());
 
 
             prevPos = transform.position;

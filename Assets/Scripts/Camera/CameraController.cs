@@ -2,79 +2,172 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System.Linq;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
-    public Camera main;
-
-    [SerializeField] private float smoothness;
-    [SerializeField] private float maxFiledOfView;
-    [SerializeField] private float minFiledOfView;
-    [SerializeField] private CinemachineVirtualCamera followCamera;
-    [SerializeField] private CinemachineVirtualCamera LauncherCamera;
+    public Camera cam;
 
 
-    private Vector3 cameraPos;
-    private void Awake()
+    [SerializeField] CinemachineBrain cmBrain;
+    [SerializeField] List<CameraProperties> cameraStates = new List<CameraProperties>();
+
+
+    [System.Serializable]
+    class CameraProperties
+    {
+        public CameraState state;
+        public CinemachineVirtualCamera camera;
+    }
+
+    Vector3 targetPosition;
+
+    void Awake()
     {
         instance = this;
     }
 
-    Vector3 camVelocity;
-    public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
+    public void InitCamera()
     {
-        //transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref camVelocity, smoothness);
-
-        cameraPos.Set(Mathf.Lerp(transform.position.x, playerPos.x, Time.fixedDeltaTime * smoothness),
-           Mathf.Lerp(transform.position.y, playerPos.y, Time.fixedDeltaTime * smoothness), playerPos.z);
-        
-        //cameraPos.Set(cameraPos.x,cameraPos.y,playerPos.z);
-        transform.position =  cameraPos;
-
-       // transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
+        targetPosition = Vector3.zero;
+        transform.position = targetPosition;
     }
 
-    Coroutine ForceEffectRoutineC;
-    private IEnumerator ForceEffectRoutine()
-    {
-      
-        float t = 0.0f;
-        float startTime = Time.fixedTime;
 
-        while (t < 1)
+    public void SetFollowTarget(CameraState cameraState, Transform target)
+    {
+        GetCamera(cameraState).Follow = target;
+    }
+
+    public void SetAimTarget(CameraState cameraState, Transform target)
+    {
+        GetCamera(cameraState).LookAt = target;
+    }
+
+    public void SetDistanceFromObject(CameraState cameraState, float distance)
+    {
+        GetCamera(cameraState).GetCinemachineComponent<CinemachineFramingTransposer>().m_CameraDistance = distance;
+    }
+
+    public void SwitchCamera(CameraState state)
+    {
+        for (int i = 0; i < cameraStates.Count; i++)
         {
-            t = (Time.fixedTime - startTime) / 0.5f;
-            main.fieldOfView = Mathf.Lerp(main.fieldOfView, maxFiledOfView, t);
-            yield return new WaitForEndOfFrame();
-        }
-        yield return new WaitForSeconds(1);
-        t = 0.0f;
-        startTime = Time.fixedTime;
-        while (t < 1)
-        {
-            t = (Time.fixedTime - startTime) / 1.5f;
-            main.fieldOfView = Mathf.Lerp(main.fieldOfView, minFiledOfView, t);
-            yield return new WaitForEndOfFrame();
+            cameraStates[i].camera.Priority = 0;
+
+            if (cameraStates[i].state == state)
+            {
+                cameraStates[i].camera.Priority = 10;
+                continue;
+            }
         }
     }
 
-
-    public void StartForceEffectRoutine()
+    public void SetUpdateMethod(CinemachineBrain.UpdateMethod updateMethod)
     {
-        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
-        ForceEffectRoutineC = StartCoroutine(ForceEffectRoutine());
-
+        cmBrain.m_UpdateMethod = updateMethod;
     }
 
-    public void StopForceEffectRoutine()
+    public CinemachineVirtualCamera GetCamera(CameraState state)
     {
-        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
+        for (int i = 0; i < cameraStates.Count; i++)
+        {
+            if (cameraStates[i].state == state)
+            {
+                return cameraStates[i].camera;
+            }
+        }
+
+        Debug.LogError("Such Camera State Doesn't Exist!");
+        return null;
     }
 
-    public void SetFollower(Transform target)
+    public void SetYawDamping(CameraState cameraState, float yaw)
     {
-        followCamera.Follow = target;
-        followCamera.LookAt = target;
+        GetCamera(cameraState).GetCinemachineComponent<CinemachineOrbitalTransposer>().m_YawDamping = yaw;
     }
 }
+
+
+public enum CameraState { Rocket, Aim, Launcher, Enemy };
+
+
+//public class CameraController : MonoBehaviour
+//{
+//    public static CameraController instance;
+//    public Camera main;
+
+//    [SerializeField] private float smoothness;
+//    [SerializeField] private float maxFiledOfView;
+//    [SerializeField] private float minFiledOfView;
+//    [SerializeField] private CinemachineVirtualCamera followCamera;
+//    [SerializeField] private CinemachineVirtualCamera LauncherCamera;
+
+//    private enum CameraState { FollowCamera, LauncherCamera }
+
+//    private Vector3 cameraPos;
+//    private void Awake()
+//    {
+//        instance = this;
+//    }
+
+//    Vector3 camVelocity;
+//    public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
+//    {
+//        //transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref camVelocity, smoothness);
+
+//        cameraPos.Set(Mathf.Lerp(transform.position.x, playerPos.x, Time.fixedDeltaTime * smoothness),
+//           Mathf.Lerp(transform.position.y, playerPos.y, Time.fixedDeltaTime * smoothness), playerPos.z);
+
+//        //cameraPos.Set(cameraPos.x,cameraPos.y,playerPos.z);
+//        transform.position =  cameraPos;
+
+//       // transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
+//    }
+
+//    Coroutine ForceEffectRoutineC;
+//    private IEnumerator ForceEffectRoutine()
+//    {
+
+//        float t = 0.0f;
+//        float startTime = Time.fixedTime;
+
+//        while (t < 1)
+//        {
+//            t = (Time.fixedTime - startTime) / 0.5f;
+//            main.fieldOfView = Mathf.Lerp(main.fieldOfView, maxFiledOfView, t);
+//            yield return new WaitForEndOfFrame();
+//        }
+//        yield return new WaitForSeconds(1);
+//        t = 0.0f;
+//        startTime = Time.fixedTime;
+//        while (t < 1)
+//        {
+//            t = (Time.fixedTime - startTime) / 1.5f;
+//            main.fieldOfView = Mathf.Lerp(main.fieldOfView, minFiledOfView, t);
+//            yield return new WaitForEndOfFrame();
+//        }
+//    }
+
+
+//    public void StartForceEffectRoutine()
+//    {
+//        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
+//        ForceEffectRoutineC = StartCoroutine(ForceEffectRoutine());
+
+//    }
+
+//    public void StopForceEffectRoutine()
+//    {
+//        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
+//    }
+
+//    public void SetFollower(Transform target)
+//    {
+//        followCamera.Follow = target;
+//        followCamera.LookAt = target;
+//    }
+//}
