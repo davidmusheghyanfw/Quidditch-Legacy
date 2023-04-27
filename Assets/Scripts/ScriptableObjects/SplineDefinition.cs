@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewSplineDefinition", menuName = "SplineDefinition", order = 1)]
 public class SplineDefinition : ScriptableObject 
 {
+    public float startLength;
+    public float finishLength;
     public List<SplineParameter> SplineSegments = new List<SplineParameter>();
 
 }

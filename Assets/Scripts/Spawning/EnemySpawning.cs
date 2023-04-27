@@ -42,7 +42,7 @@ public class EnemySpawning : MonoBehaviour
         var start = EnvironmentManager.instance.GetStartSegment();
 
         int enemyCount = this.enemyCount; //Random.Range(0, enemyCountInSegment);
-        RoadGenerator.instance.GetLevelGenerator().Project(start.GetRaceStartPos(), ref sample);
+        RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
         for (int j = 0; j < enemyCount; j++)
         {
             spawnPosOnScreen.Set(Random.Range(enemy.HorizontalBorderRange.x, enemy.HorizontalBorderRange.y),

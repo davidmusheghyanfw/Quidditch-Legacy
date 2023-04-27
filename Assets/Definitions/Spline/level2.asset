@@ -15,15 +15,5 @@ MonoBehaviour:
   SplineSegments:
   - length: 1000
     rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 800
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 800
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 1000
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 800
     rotation: {x: 0, y: 0, z: 0}

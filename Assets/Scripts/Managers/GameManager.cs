@@ -24,26 +24,30 @@ public class GameManager : MonoBehaviour
    
     public void GameInit()
     {
-        Launcher.instance.LauncherInit();
-        MenuView.instance.gameObject.SetActive(true);
         isGameInited = false;
         LevelManager.instance.InitLevel();
         GameView.instance.GameViewInit();
-        LevelCompleteView.instance.gameObject.SetActive(false);
+        LevelEndView.instance.gameObject.SetActive(false);
         DebugCanvas.instance.DebugInit();
+        this.Timer(1f, () => 
+        { 
+            Launcher.instance.LauncherInit();
+            MenuView.instance.gameObject.SetActive(true);
+        });
         
 
     }
     public void GameStart()
     {
-        Launcher.instance.OnLaunch();
-        GameView.instance.SetActive(true);
+        CameraController.instance.StopTrackedDollAnimRoutine();
+        Launcher.instance.LauncherInGame();
+        GameView.instance.LaunchBtnSetActive(true);
     }
 
     public void LevelComplete()
     {
-        GameView.instance.SetActive(false);
-        LevelCompleteView.instance.gameObject.SetActive(true);
+
+        LevelEndView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
        // Launcher.instance.GetRocketController().OnGameWin();
      

@@ -9,7 +9,6 @@ public class EnvironmentSegmentInfo : MonoBehaviour
     [SerializeField] Transform segmnetEnd;
     [SerializeField] LevelSegment levelSegment;
     [SerializeField] SegmentDefinition segmentDefinition;
-    [SerializeField] Transform raceStartPos;
     public float GetSegmentLength()
     { 
         float pos = Mathf.Abs(segmnetStart.position.z) + Mathf.Abs(segmnetEnd.position.z);
@@ -23,9 +22,5 @@ public class EnvironmentSegmentInfo : MonoBehaviour
     public LevelSegment GetLevelSegment()
     {
         return levelSegment;
-    }
-    public Vector3 GetRaceStartPos()
-    {
-        return raceStartPos.position;
     }
 }

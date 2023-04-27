@@ -59,6 +59,8 @@ public class RoadGenerator : MonoBehaviour
 
         splineDefinition = LevelManager.instance.GetLevelDefinition();
 
+        NewPoint(splineDefinition.startLength, splineDefinition.SplineSegments[0].rotation);
+        NewPoint(splineDefinition.finishLength, splineDefinition.SplineSegments[0].rotation);
         for (int i = 0; i < splineDefinition.SplineSegments.Count; i++)
         {
             NewPoint(splineDefinition.SplineSegments[i].length, splineDefinition.SplineSegments[i].rotation);

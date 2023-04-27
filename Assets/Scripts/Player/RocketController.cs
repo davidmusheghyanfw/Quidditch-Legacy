@@ -21,7 +21,7 @@ public class RocketController : CharacterController
     public override void CharacterInit()
     {
         GetLaneRunner().isPlayer = true;
-        RoadGenerator.instance.GetLevelGenerator().Project(EnvironmentManager.instance.GetStartSegment().GetRaceStartPos(), ref sample);
+        RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
         GetLaneRunner().SetPercent(sample.percent);
         GetLaneRunner().motion.offset = cursor = sample.position;
       

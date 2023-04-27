@@ -11,9 +11,7 @@ public class GameView : MonoBehaviour
     [SerializeField] private Slider scoreUpdateSlider;
     [SerializeField] private TMP_Text sliderTxt;
 
-    [SerializeField] private float levelCompleteScore;
-
-    [SerializeField] private GameObject GameStartCanvas;
+    [SerializeField] private Button LaunchBtn;
 
 
     private void Awake()
@@ -23,17 +21,24 @@ public class GameView : MonoBehaviour
 
     public void GameViewInit()
     {
-
+        SetActive(true);
+        sliderTxt.text = "Level " + DataManager.instance.GetLevelNumber(); 
+        LaunchBtnSetActive(false);
     }
     
-    public void SetLevelSettings()
+    public void OnLaunch()
     {
-        scoreUpdateSlider.maxValue = LevelManager.instance.GetLevelDistance();
-        sliderTxt.text = "Level " + LevelManager.instance.GetLevel();
+        Launcher.instance.OnLaunch();
+        LaunchBtnSetActive(false);
+    }
+ 
+    public void SetActive(bool value)
+    {
+        gameObject.SetActive(value);
     }
 
-    public void SetActive(bool state)
+    public void LaunchBtnSetActive(bool value)
     {
-        this.gameObject.SetActive(state);
+        LaunchBtn.gameObject.SetActive(value);
     }
 }

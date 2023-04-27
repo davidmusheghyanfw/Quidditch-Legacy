@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df829a94294ed14399a49551cca0c01, type: 3}
   m_Name: level1
   m_EditorClassIdentifier: 
+  startLength: 1000
+  finishLength: 1000
   SplineSegments:
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
-  - length: 500
-    rotation: {x: 0, y: 0, z: 0}
   - length: 1000
     rotation: {x: 0, y: 0, z: 0}
-  - length: 1000
+  - length: 500
     rotation: {x: 0, y: 0, z: 0}

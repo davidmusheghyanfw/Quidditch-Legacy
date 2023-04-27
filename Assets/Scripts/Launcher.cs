@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Launcher : MonoBehaviour
 {
     public static Launcher instance;
+    [SerializeField] private CinemachinePath path;
     [SerializeField] private int rocketCount;
     [SerializeField] private GameObject rocket;
     [SerializeField] private GameObject destroyParticle;
@@ -14,7 +16,28 @@ public class Launcher : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        RotatingAroundLauncher();
+    }
 
+    public void RotatingAroundLauncher()
+    {
+        CameraController.instance.SwitchCamera(CameraState.Overlay);
+        CameraController.instance.SetTrackedDollyCamera(CameraState.Overlay);
+        CameraController.instance.SetTrackedDollyPath(CameraState.Overlay,path);
+        CameraController.instance.SetAimTarget(CameraState.Overlay, gameObject.transform);
+        CameraController.instance.SetFollowTarget(CameraState.Overlay, gameObject.transform);
+        CameraController.instance.StartTrackedDollAnimRoutine();
+
+    }
+
+    public void LauncherInGame()
+    {
+        CameraController.instance.SwitchCamera(CameraState.Launcher);
+        CameraController.instance.SetAimTarget(CameraState.Launcher, gameObject.transform);
+        CameraController.instance.SetFollowTarget(CameraState.Launcher, gameObject.transform);
+    }
     public void LauncherInit()
     {
         rocketControllers = new List<RocketController>();
@@ -25,7 +48,7 @@ public class Launcher : MonoBehaviour
     {
         for (int i = 0; i < rocketCount; i++)
         {
-            var go = Instantiate(rocket, Vector3.zero, Quaternion.identity, this.transform);
+            var go = Instantiate(rocket, Vector3.zero, Quaternion.identity);
             go.SetActive(false);
             rocketControllers.Add(go.GetComponent<RocketController>());
         }
@@ -34,6 +57,7 @@ public class Launcher : MonoBehaviour
      
     public void OnLaunch()
     {
+        CameraController.instance.SwitchCamera(CameraState.Rocket);
         RocketController firstRocketController = rocketControllers[0];
         CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
         CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.transform);
@@ -60,7 +84,9 @@ public class Launcher : MonoBehaviour
         }
         this.Timer(1f, () =>
         {
-        OnLaunch();
+            GameManager.instance.GameStart();
         });
     }
+
+
 }

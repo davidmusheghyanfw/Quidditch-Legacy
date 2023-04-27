@@ -10,10 +10,12 @@ public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
     public Camera cam;
+    private CinemachineTrackedDolly activeTrackedDollyCamera;
 
-
+    [SerializeField] private float pathAnimSpeed;
     [SerializeField] CinemachineBrain cmBrain;
     [SerializeField] List<CameraProperties> cameraStates = new List<CameraProperties>();
+
 
 
     [System.Serializable]
@@ -66,6 +68,19 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void SetTrackedDollyPath(CameraState cameraState, CinemachinePath path)
+    {
+        if (!GetCamera(cameraState).GetCinemachineComponent<CinemachineTrackedDolly>()) return;
+
+        GetCamera(cameraState).GetCinemachineComponent<CinemachineTrackedDolly>().m_Path = path;
+    }
+
+    public void SetTrackedDollyCamera(CameraState cameraState)
+    {
+        if (!GetCamera(cameraState).GetCinemachineComponent<CinemachineTrackedDolly>()) return;
+
+        activeTrackedDollyCamera = GetCamera(cameraState).GetCinemachineComponent<CinemachineTrackedDolly>();
+    }
     public void SetUpdateMethod(CinemachineBrain.UpdateMethod updateMethod)
     {
         cmBrain.m_UpdateMethod = updateMethod;
@@ -89,85 +104,33 @@ public class CameraController : MonoBehaviour
     {
         GetCamera(cameraState).GetCinemachineComponent<CinemachineOrbitalTransposer>().m_YawDamping = yaw;
     }
+
+    Coroutine TrackedDollAnimRoutineC;
+    IEnumerator TrackedDollAnimRoutine()
+    {
+        while(true)
+        {
+            activeTrackedDollyCamera.m_AutoDolly.m_PositionOffset += pathAnimSpeed * Time.fixedDeltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
+    public void StartTrackedDollAnimRoutine()
+    {
+        if (TrackedDollAnimRoutineC != null) StopCoroutine(TrackedDollAnimRoutineC);
+        TrackedDollAnimRoutineC = StartCoroutine(TrackedDollAnimRoutine());
+
+    }
+
+    public void StopTrackedDollAnimRoutine()
+    {
+        if (TrackedDollAnimRoutineC != null) StopCoroutine(TrackedDollAnimRoutineC);
+
+    }
 }
 
 
-public enum CameraState { Rocket, Aim, Launcher, Enemy };
+public enum CameraState { Rocket, Overlay, Launcher, Enemy };
 
 
-//public class CameraController : MonoBehaviour
-//{
-//    public static CameraController instance;
-//    public Camera main;
-
-//    [SerializeField] private float smoothness;
-//    [SerializeField] private float maxFiledOfView;
-//    [SerializeField] private float minFiledOfView;
-//    [SerializeField] private CinemachineVirtualCamera followCamera;
-//    [SerializeField] private CinemachineVirtualCamera LauncherCamera;
-
-//    private enum CameraState { FollowCamera, LauncherCamera }
-
-//    private Vector3 cameraPos;
-//    private void Awake()
-//    {
-//        instance = this;
-//    }
-
-//    Vector3 camVelocity;
-//    public void PlayerPosUpdate(Vector3 playerPos, Transform playerRot)
-//    {
-//        //transform.position = Vector3.SmoothDamp(transform.position, playerPos, ref camVelocity, smoothness);
-
-//        cameraPos.Set(Mathf.Lerp(transform.position.x, playerPos.x, Time.fixedDeltaTime * smoothness),
-//           Mathf.Lerp(transform.position.y, playerPos.y, Time.fixedDeltaTime * smoothness), playerPos.z);
-
-//        //cameraPos.Set(cameraPos.x,cameraPos.y,playerPos.z);
-//        transform.position =  cameraPos;
-
-//       // transform.rotation = Quaternion.Lerp(transform.rotation, playerRot.rotation, Time.deltaTime * smoothness);
-//    }
-
-//    Coroutine ForceEffectRoutineC;
-//    private IEnumerator ForceEffectRoutine()
-//    {
-
-//        float t = 0.0f;
-//        float startTime = Time.fixedTime;
-
-//        while (t < 1)
-//        {
-//            t = (Time.fixedTime - startTime) / 0.5f;
-//            main.fieldOfView = Mathf.Lerp(main.fieldOfView, maxFiledOfView, t);
-//            yield return new WaitForEndOfFrame();
-//        }
-//        yield return new WaitForSeconds(1);
-//        t = 0.0f;
-//        startTime = Time.fixedTime;
-//        while (t < 1)
-//        {
-//            t = (Time.fixedTime - startTime) / 1.5f;
-//            main.fieldOfView = Mathf.Lerp(main.fieldOfView, minFiledOfView, t);
-//            yield return new WaitForEndOfFrame();
-//        }
-//    }
-
-
-//    public void StartForceEffectRoutine()
-//    {
-//        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
-//        ForceEffectRoutineC = StartCoroutine(ForceEffectRoutine());
-
-//    }
-
-//    public void StopForceEffectRoutine()
-//    {
-//        if (ForceEffectRoutineC != null) StopCoroutine(ForceEffectRoutineC);
-//    }
-
-//    public void SetFollower(Transform target)
-//    {
-//        followCamera.Follow = target;
-//        followCamera.LookAt = target;
-//    }
-//}
