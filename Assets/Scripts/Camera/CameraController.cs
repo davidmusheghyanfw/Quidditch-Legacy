@@ -108,12 +108,19 @@ public class CameraController : MonoBehaviour
     Coroutine TrackedDollAnimRoutineC;
     IEnumerator TrackedDollAnimRoutine()
     {
-        while(true)
+        float t = 0;
+        float startTime = Time.fixedTime;
+
+        while(t < 1)
         {
-            activeTrackedDollyCamera.m_AutoDolly.m_PositionOffset += pathAnimSpeed * Time.fixedDeltaTime;
+            t = (Time.fixedTime - startTime) / pathAnimSpeed;
+            //activeTrackedDollyCamera.m_AutoDolly.m_PositionOffset += pathAnimSpeed * Time.fixedDeltaTime;
+            //activeTrackedDollyCamera.m_PathPosition += pathAnimSpeed * Time.deltaTime;
+            activeTrackedDollyCamera.m_PathPosition = Mathf.Lerp(0,1,t);
+            Debug.Log(activeTrackedDollyCamera.m_PathPosition);
             yield return new WaitForEndOfFrame();
         }
-
+        StartTrackedDollAnimRoutine();
     }
 
     public void StartTrackedDollAnimRoutine()

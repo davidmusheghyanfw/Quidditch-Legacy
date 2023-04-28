@@ -11,6 +11,7 @@ public class Launcher : MonoBehaviour
     [SerializeField] private GameObject rocket;
     [SerializeField] private GameObject destroyParticle;
     [SerializeField] private List<RocketController> rocketControllers;
+    [SerializeField] private List<Transform> launchSlots;
 
     private void Awake()
     {
@@ -27,7 +28,6 @@ public class Launcher : MonoBehaviour
         CameraController.instance.SetTrackedDollyCamera(CameraState.Overlay);
         CameraController.instance.SetTrackedDollyPath(CameraState.Overlay,path);
         CameraController.instance.SetAimTarget(CameraState.Overlay, gameObject.transform);
-        CameraController.instance.SetFollowTarget(CameraState.Overlay, gameObject.transform);
         CameraController.instance.StartTrackedDollAnimRoutine();
 
     }
@@ -57,8 +57,12 @@ public class Launcher : MonoBehaviour
      
     public void OnLaunch()
     {
+        Transform launchSlot = launchSlots[Random.Range(0, launchSlots.Count)];
         CameraController.instance.SwitchCamera(CameraState.Rocket);
         RocketController firstRocketController = rocketControllers[0];
+        firstRocketController.GetLaneRunner().motion.offset = launchSlot.position;
+        firstRocketController.SetCursor(launchSlot.position);
+        firstRocketController.GetMainVisualContainer().localRotation = launchSlot.rotation;
         CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
         CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.transform);
 

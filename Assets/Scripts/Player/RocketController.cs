@@ -23,7 +23,7 @@ public class RocketController : CharacterController
         GetLaneRunner().isPlayer = true;
         RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
         GetLaneRunner().SetPercent(sample.percent);
-        GetLaneRunner().motion.offset = cursor = sample.position;
+       
       
         base.CharacterInit();
         
