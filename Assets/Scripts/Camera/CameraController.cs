@@ -114,10 +114,7 @@ public class CameraController : MonoBehaviour
         while(t < 1)
         {
             t = (Time.fixedTime - startTime) / pathAnimSpeed;
-            //activeTrackedDollyCamera.m_AutoDolly.m_PositionOffset += pathAnimSpeed * Time.fixedDeltaTime;
-            //activeTrackedDollyCamera.m_PathPosition += pathAnimSpeed * Time.deltaTime;
             activeTrackedDollyCamera.m_PathPosition = Mathf.Lerp(0,1,t);
-            Debug.Log(activeTrackedDollyCamera.m_PathPosition);
             yield return new WaitForEndOfFrame();
         }
         StartTrackedDollAnimRoutine();

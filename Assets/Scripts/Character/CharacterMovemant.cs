@@ -52,7 +52,7 @@ public class CharacterMovemant : MonoBehaviour
             RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
 
             characterController.SetSplineSample(sample);
-
+            GameView.instance.SetPlayerCurrentPos((float)sample.percent);
 
             cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
 

@@ -7,7 +7,6 @@ public class Launcher : MonoBehaviour
 {
     public static Launcher instance;
     [SerializeField] private CinemachinePath path;
-    [SerializeField] private int rocketCount;
     [SerializeField] private GameObject rocket;
     [SerializeField] private GameObject destroyParticle;
     [SerializeField] private List<RocketController> rocketControllers;
@@ -40,12 +39,14 @@ public class Launcher : MonoBehaviour
     }
     public void LauncherInit()
     {
+       
         rocketControllers = new List<RocketController>();
         CreateRocketPull();
     }
     
     private void CreateRocketPull()
     {
+        int rocketCount = LevelManager.instance.GetRocketCount();
         for (int i = 0; i < rocketCount; i++)
         {
             var go = Instantiate(rocket, Vector3.zero, Quaternion.identity);
@@ -70,25 +71,39 @@ public class Launcher : MonoBehaviour
         firstRocketController.CharacterInit();
         firstRocketController.StartCursorFollowing();
         firstRocketController.StartForceRoutine();
+        GameView.instance.SetPlayerStartPos((float)firstRocketController.GetPosInSpline());
     }
 
     public RocketController GetRocketController()
     {
         return rocketControllers[0];
     }
+
+    public void DestroyAllRockets()
+    {
+        
+        for (int i = 0; i < rocketControllers.Count; i++)
+        {
+           
+            Destroy(rocketControllers[0].gameObject);
+            rocketControllers.RemoveAt(0);
+        }
+    }
     public void RocketDestroyed()
     {
         destroyParticle.gameObject.transform.position = rocketControllers[0].transform.position;
         destroyParticle.SetActive(true);
         rocketControllers.RemoveAt(0);
-        if(rocketControllers.Count<=0)
+        GameView.instance.SetPlayerCurrentPos(0f);
+        if (rocketControllers.Count<=0)
         {
             GameManager.instance.LevelComplete();
             return;
         }
+        GameView.instance.SetRocketCount(rocketControllers.Count);
         this.Timer(1f, () =>
         {
-            GameManager.instance.GameStart();
+            GameManager.instance.InGame();
         });
     }
 

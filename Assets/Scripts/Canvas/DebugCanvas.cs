@@ -33,7 +33,7 @@ public class DebugCanvas : MonoBehaviour
 
     public void RestartGame()
     {
-        GameManager.instance.GameInit();
+        GameManager.instance.GameRestart();
     }
 
     public void ClearStats()

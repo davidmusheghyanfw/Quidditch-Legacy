@@ -41,7 +41,16 @@ public class GameManager : MonoBehaviour
     {
         CameraController.instance.StopTrackedDollAnimRoutine();
         Launcher.instance.LauncherInGame();
+        GameView.instance.SetDistance(LevelManager.instance.GetLevelEndPosPercent());
         GameView.instance.LaunchBtnSetActive(true);
+    }
+
+    public void InGame()
+    {
+        Launcher.instance.LauncherInGame();
+        this.Timer(1f, () => {
+            GameView.instance.LaunchBtnSetActive(true);
+        });
     }
 
     public void LevelComplete()
@@ -55,15 +64,20 @@ public class GameManager : MonoBehaviour
    
     public void GameStopped()
     {
-        //isGameStopped = true;
+       
         Launcher.instance.GetRocketController().GameStopped();
 
     }
 
     public void GameResume()
     {
-        //isGameStopped = false;
         Launcher.instance.GetRocketController().GameResume();
+    }
+
+    public void GameRestart()
+    {
+        Launcher.instance.DestroyAllRockets();
+        GameInit();
     }
 #if UNITY_EDITOR
     private void Update()

@@ -6,14 +6,13 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     [SerializeField] private List<SplineDefinition> levelDefinitionsList;
-    [SerializeField] private List<CoinDefinition> coinDefinitionsList;
-    [SerializeField] private List<int> placeReward;
-    [SerializeField] private int defaultReward;
+    [SerializeField] private int rocketCount;
+
     [SerializeField] private float roadPointOffset;
 
 
     private int finishPlace = 0;
-    private float levelCompleteDistance;
+    private float levelEndPosPercent;
     private int level = 1;
     private int levelDefinition = 0;
 
@@ -44,11 +43,6 @@ public class LevelManager : MonoBehaviour
         DataManager.instance.IncreaseLevelNumber();
     }
 
-    public float GetLevelDistance()
-    {
-        return levelCompleteDistance;
-    }
-
     public float GetRoadPointOffset()
     {
         return roadPointOffset;
@@ -62,15 +56,7 @@ public class LevelManager : MonoBehaviour
         return levelDefinitionsList[levelDefinition];
     }
 
-    public int GetCoinDefinitionsCount()
-    { 
-        return coinDefinitionsList.Count;
-    }
-    public CoinDefinition GetCoinDefinition(int index)
-    {
-        return coinDefinitionsList[index];
-    }
-
+   
     public void Finished()
     {
         finishPlace++;
@@ -82,15 +68,19 @@ public class LevelManager : MonoBehaviour
         return finishPlace;
     }
 
-    public void GetReward(int finishedPlace)
+    public int GetRocketCount()
     {
-        if(placeReward.Count < finishPlace)
-        {
-            DataManager.instance.SetCoinsAmount(defaultReward);
-        }
-        else
-        {
-            DataManager.instance.SetCoinsAmount(placeReward[finishedPlace]);
-        }
+        return rocketCount;
+    }
+
+    public void SetLevelEndPos(float value)
+    {
+ 
+        levelEndPosPercent = value;
+    }
+
+    public float GetLevelEndPosPercent()
+    {
+        return levelEndPosPercent;
     }
 }

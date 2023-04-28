@@ -40,7 +40,7 @@ public class EnvironmentManager : MonoBehaviour
         segmentsList.Add(environmentDefinition.finish.GetSegmentDefinition());
         foreverLevel.sequenceCollection.sequences[0].segments = segmentsList.ToArray();
         RoadGenerator.instance.GetLevelGenerator().StartGeneration();
-
+        LevelManager.instance.SetLevelEndPos(environmentDefinition.finish.GetEndPos());
     }
 
     public EnvironmentSegmentInfo GetStartSegment()

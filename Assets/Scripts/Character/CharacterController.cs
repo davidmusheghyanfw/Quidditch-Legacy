@@ -133,12 +133,15 @@ public class CharacterController : MonoBehaviour
 
     public void GameStopped()
     {
-        StopCharacterStoppingRoutin();
+        StartCharacterStoppingRoutin();
+        StopCursorFollowing();
+        StopForceRoutine();
     }
 
     public void GameResume()
     {
         StopCharacterStoppingRoutin();
+        StartForceRoutine();
         StartCursorFollowing();
     }
 
