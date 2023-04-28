@@ -23,7 +23,7 @@ public class PlayerTriggers : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Environment>().IsDamaged(true);
+            other.gameObject.GetComponent<Destroyable>().IsDamaged(true);
             Launcher.instance.GetRocketController().DestroyObject();
         }
 

@@ -6,7 +6,112 @@ ModelImporter:
   - first:
       74: -9200819078505995946
     second: CINEMA_4D_________ _____
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270ASIE
+    second: {fileID: 2100000, guid: d10adc8ba6838c548966626b7967285b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270CRI
+    second: {fileID: 2100000, guid: 57e08db7365ee334e9a790d8dd7edde1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270CROM
+    second: {fileID: 2100000, guid: 5e8a771d1399bfe4f9e730aa2f87d76f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270FAB
+    second: {fileID: 2100000, guid: 871a5b91ebd262b40b8e2780cb2adfc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270FAN
+    second: {fileID: 2100000, guid: ffd3ba3046cdb4f43823e8c6e4b2e719, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270FARR
+    second: {fileID: 2100000, guid: 6c9cc58eaac702b4ea9f3f38232c9723, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270GOMA
+    second: {fileID: 2100000, guid: 7b697bbd07a182f4b918cc631c882445, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270LLAN
+    second: {fileID: 2100000, guid: a9fca625329179a488f9f88bdce81378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270METN
+    second: {fileID: 2100000, guid: eebf2c60f04826d47adb41ca86cfe387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270PIME
+    second: {fileID: 2100000, guid: df3c6450a3aa83d4ab137ef0dfafe665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270PPOR
+    second: {fileID: 2100000, guid: 6f1ce929351b567438633c1b3d4a1129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270RELA
+    second: {fileID: 2100000, guid: e4772ebbb0079c54c94fba8b3c04ba0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270RELB
+    second: {fileID: 2100000, guid: c50c502ef8696434094935534a703865, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270RELP
+    second: {fileID: 2100000, guid: 7c55ac21d73e7db408cecf2aff8c9bf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270TEXT
+    second: {fileID: 2100000, guid: af72b8a1150c9de44bf006ba13997c4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M270VEIG
+    second: {fileID: 2100000, guid: b526668683bf0e6488249ae32bf465d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: missle
+    second: {fileID: 2100000, guid: 4188ca3911020c5419965c98f5d2683b, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: M270CJBK
+    second: {fileID: 2800000, guid: d0d77874fa0871c4ca4d60498cc5fb44, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PutinHuilo_BaseColor
+    second: {fileID: 2800000, guid: 29c6bbb67c2a10a47b3b9afd4b45b8bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PutinHuilo_Normal
+    second: {fileID: 2800000, guid: 421c2dd438c4e0c4cafac582eb017d86, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PutinHuilo_Roughness
+    second: {fileID: 2800000, guid: 51cc78f5df8a2e3488ebc4efe46e2468, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
