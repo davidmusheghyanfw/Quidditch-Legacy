@@ -20,9 +20,9 @@ public class RocketController : CharacterController
 
     public override void CharacterInit()
     {
-        GetLaneRunner().isPlayer = true;
-        RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
-        GetLaneRunner().SetPercent(sample.percent);
+        cursor = Vector3.zero;
+        //RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
+        //GetLaneRunner().SetPercent(sample.percent);
        
       
         base.CharacterInit();
@@ -41,27 +41,29 @@ public class RocketController : CharacterController
 
         if (!isStopping)
         {
-            Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
+            //Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
 
-            if (newCursorPosition.y < VerticalBorderRange.x - borderSmoothness) newCursorPosition.y = VerticalBorderRange.x - borderSmoothness;
-            if (newCursorPosition.y > VerticalBorderRange.y + borderSmoothness) newCursorPosition.y = VerticalBorderRange.y + borderSmoothness;
+            Vector3 newCursorPosition = cursor + deltaPosition;
+            //if (newCursorPosition.y < VerticalBorderRange.x - borderSmoothness) newCursorPosition.y = VerticalBorderRange.x - borderSmoothness;
+            //if (newCursorPosition.y > VerticalBorderRange.y + borderSmoothness) newCursorPosition.y = VerticalBorderRange.y + borderSmoothness;
 
-            if (newCursorPosition.x < HorizontalBorderRange.x - borderSmoothness) newCursorPosition.x = HorizontalBorderRange.x - borderSmoothness;
-            if (newCursorPosition.x > HorizontalBorderRange.y + borderSmoothness) newCursorPosition.x = HorizontalBorderRange.y + borderSmoothness;
+            //if (newCursorPosition.x < HorizontalBorderRange.x - borderSmoothness) newCursorPosition.x = HorizontalBorderRange.x - borderSmoothness;
+            //if (newCursorPosition.x > HorizontalBorderRange.y + borderSmoothness) newCursorPosition.x = HorizontalBorderRange.y + borderSmoothness;
 
             cursor = newCursorPosition;
 
+            print(cursor);
         }
         else
         {
-            cursor = transform.position;
+            //cursor = transform.position;
         }
 
     }
 
     void OnTouchUp(Vector3 lastPos)
     {
-
+        cursor = Vector3.zero;
     }
 
 }

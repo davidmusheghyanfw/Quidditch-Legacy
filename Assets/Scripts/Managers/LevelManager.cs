@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     public void InitLevel()
     {
 
-        RoadGenerator.instance.RoadGeneratorInit();
+        //RoadGenerator.instance.RoadGeneratorInit();
 
         
         CheckPointSpawning.instance.CheckPointsSpawningInit();

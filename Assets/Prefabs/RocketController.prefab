@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165451402168065356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.63}
+  m_LocalPosition: {x: 0, y: 0, z: -2.82}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 8580578707613783493}
   - component: {fileID: 8580578707613783495}
   - component: {fileID: 8580578707613783494}
+  - component: {fileID: 6267673644962437266}
   m_Layer: 0
   m_Name: RocketController
   m_TagString: Untagged
@@ -241,13 +242,14 @@ MonoBehaviour:
   characterMovemant: {fileID: 8580578707613783493}
   sensetivity: 0.1
   cursor: {x: 0, y: 0, z: 0}
-  verticalBorderRange: {x: 1, y: 30}
-  horizontalBorderRange: {x: -28, y: 35}
+  verticalBorderRange: {x: -100, y: 100}
+  horizontalBorderRange: {x: -100, y: 100}
   rebornPosition: 0.02500000037252903
   animator: {fileID: 0}
   laneRunner: {fileID: 8580578707613783494}
   mainVisualContainer: {fileID: 8580578707020843566}
-  secondVisualContainer: {fileID: 8580578707744119292}
+  secondVisualContainer: {fileID: 1185729687067758204, guid: bf0fe6a3ac208cc45af8da67e6a43468,
+    type: 3}
   CharacterCenter: {fileID: 0}
   ragdollList:
   - {fileID: 0}
@@ -275,14 +277,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8580578707613783492}
-  minFlySpeed: 250
-  maxFlySpeed: 250
+  minFlySpeed: 20
+  maxFlySpeed: 20
   currentFlySpeed: 0
-  rotationSmoothness: 10
+  rotationSmoothness: 100
   rotationDelay: 2
-  rotationSensetivity: 1
+  rotationSensetivity: 100
   rotationZAxisSpeed: 0.5
-  touchControl: 7
+  touchControl: 5
 --- !u!114 &8580578707613783495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580578707613783498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7229980844ad147488029774acc664eb, type: 3}
   m_Name: 
@@ -307,7 +309,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8580578707613783498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d2d491ea20618745ada741714dad7c0, type: 3}
   m_Name: 
@@ -374,6 +376,22 @@ MonoBehaviour:
     m_RotationOrder: 4
   laneVector: {x: 1, y: 0}
   _lane: 2
+--- !u!54 &6267673644962437266
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8580578707613783498}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &8580578707744119293
 GameObject:
   m_ObjectHideFlags: 0

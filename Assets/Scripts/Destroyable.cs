@@ -59,22 +59,4 @@ public class Destroyable : MonoBehaviour
         }
     }
 
-
-
-    //[CustomEditor(typeof(Destroyable))]
-    //public class DestroingParts : Editor
-    //{
-    //    public override void OnInspectorGUI()
-    //    {
-    //        base.OnInspectorGUI();
-
-    //        Destroyable tool = (Destroyable)target;
-
-    //        if (tool.isVisualDestroy)
-    //        {
-    //            tool.mainBody = (GameObject)EditorGUILayout.ObjectField("Main Body", tool.mainBody, typeof(GameObject), true);
-    //            tool.detachPart = (GameObject)EditorGUILayout.ObjectField("Detach Part", tool.detachPart, typeof(GameObject), true);
-    //        }
-    //    }
-    //}
 }

@@ -84,16 +84,15 @@ public class CharacterController : MonoBehaviour
     }
     public Vector3 GetCursor()
     {
-        return cursor;
+        float maxEdge = Mathf.Max(Screen.width, Screen.height);
+        maxEdge /= 2f;
+        return new Vector3(Mathf.Clamp(cursor.x / maxEdge, -1, 1f), Mathf.Clamp(cursor.y / maxEdge, -1, 1f), cursor.z) ;
     }
     public LaneRunner GetLaneRunner()
     {
         return laneRunner;
     }
-     public void SetCursor(Vector3 pos)
-     {
-        cursor = pos;
-     }
+    
     public void SetSpawnPos(Vector2 pos)
     {
         laneRunner.motion.offset = pos;

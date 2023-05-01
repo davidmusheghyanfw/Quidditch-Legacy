@@ -25,6 +25,7 @@ public class CharacterMovemant : MonoBehaviour
 
     private Vector3 cursor;
 
+  
 
     //float tmpFlySpeed;
 
@@ -37,55 +38,92 @@ public class CharacterMovemant : MonoBehaviour
     IEnumerator CharacterCoursorFollowRoutine()
     {
         Vector3 newPos = Vector3.zero;
-        Vector3 prevPos = Vector3.zero;
+        Vector3 prevPos = transform.position;
         Vector3 cursorPos = characterController.GetCursor();
+        Vector3 prevCursorPos = Vector3.zero;
 
         var visual = characterController.GetMainVisualContainer();
         SplineSample sample = new SplineSample();
+        var targetDirection = transform.forward;
         while (true)
         {
 
             cursor = characterController.GetCursor();
-
-            cursor.z = 0;
-
-            RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
-
-            characterController.SetSplineSample(sample);
-            GameView.instance.SetPlayerCurrentPos((float)sample.percent);
-
             cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
+            //print(cursorPos);
+            Rigidbody objBody = gameObject.GetComponent<Rigidbody>();
 
-            if (cursorPos.y < characterController.VerticalBorderRange.x) cursorPos.y = characterController.VerticalBorderRange.x;
-            if (cursorPos.y > characterController.VerticalBorderRange.y) cursorPos.y = characterController.VerticalBorderRange.y;
+            //var temp = cursorPos.x;
+            //cursorPos.x = cursorPos.y;
+            //cursorPos.y = temp;
+            
+            //targetDirection = Quaternion.Euler(cursorPos * rotationSensetivity) * targetDirection;
 
-            if (cursorPos.x < characterController.HorizontalBorderRange.x) cursorPos.x = characterController.HorizontalBorderRange.x;
-            if (cursorPos.x > characterController.HorizontalBorderRange.y) cursorPos.x = characterController.HorizontalBorderRange.y;
-            characterController.GetLaneRunner().motion.offset = new Vector2(cursorPos.x, cursorPos.y);
+            //var rotation = Quaternion.LookRotation(targetDirection);
+            //objBody.MoveRotation(Quaternion.Lerp(objBody.transform.rotation, rotation, Time.deltaTime * rotationSmoothness));
+            objBody.transform.Rotate(new Vector3(-cursorPos.y, cursorPos.x, 0f) * rotationSensetivity * Time.deltaTime, Space.Self);
 
-            //characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
-
-
-            Vector3 diff = transform.position - prevPos;
-
-
-            diff = diff.normalized + Vector3.forward * rotationDelay;
+            objBody.velocity = (objBody.transform.forward) * currentFlySpeed;
 
 
-            Vector3 upwards = Vector3.up + (Vector3.up * diff.x * rotationSensetivity);
 
-            visual.rotation = Quaternion.Lerp(visual.rotation, Quaternion.LookRotation(diff, upwards), Time.deltaTime * rotationSmoothness);
-
-            StartCharachterRotatingRoutine();
-
-            //if (characterController is RocketController)
-            //    CameraController.instance.PlayerPosUpdate(Launcher.instance.GetRocketController().gameObject.transform.position, Launcher.instance.GetRocketController().GetMainVisualContainer());
-
+            prevCursorPos = cursor;
 
             prevPos = transform.position;
+
+
+
+            //cursor.z = 0;
+
+            ////RoadGenerator.instance.GetLevelGenerator().Project(characterController.GetCharacter().transform.position, ref sample);
+
+            ////characterController.SetSplineSample(sample);
+            ////GameView.instance.SetPlayerCurrentPos((float)sample.percent);
+
+            //cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
+
+            ////if (cursorPos.y < characterController.VerticalBorderRange.x) cursorPos.y = characterController.VerticalBorderRange.x;
+            ////if (cursorPos.y > characterController.VerticalBorderRange.y) cursorPos.y = characterController.VerticalBorderRange.y;
+
+            ////if (cursorPos.x < characterController.HorizontalBorderRange.x) cursorPos.x = characterController.HorizontalBorderRange.x;
+            ////if (cursorPos.x > characterController.HorizontalBorderRange.y) cursorPos.x = characterController.HorizontalBorderRange.y;
+            ////characterController.GetLaneRunner().motion.offset = new Vector2(cursorPos.x, cursorPos.y);
+
+            ////characterController.GetCharacter().position =  Vector3.Lerp(characterController.GetCharacter().position, newPos, Time.deltaTime * smoothnes);
+
+
+
+            //gameObject.GetComponent<Rigidbody>().velocity = (transform.forward + ((cursorPos-prevCursorPos).normalized * rotationSensetivity )) * currentFlySpeed;
+
+            //Vector3 diff = transform.position - prevPos;
+
+            //diff = diff.normalized + Vector3.forward * rotationDelay;
+
+            //Vector3 upwards = Vector3.up + (Vector3.up * diff.x * rotationSensetivity);
+
+            ////gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(diff, upwards), Time.deltaTime * rotationSmoothness));
+
+            ////gameObject.GetComponent<Rigidbody>().MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(diff, upwards), Time.deltaTime * rotationSmoothness));
+
+
+            //var heading = cursorPos - transform.position;
+            //heading.z = transform.position.z;
+            //var rotation = Quaternion.LookRotation(heading * rotationSensetivity);
+            //gameObject.GetComponent<Rigidbody>().MoveRotation(rotation);
+            ////StartCharachterRotatingRoutine();
+
+            ////if (characterController is RocketController)
+            ////    CameraController.instance.PlayerPosUpdate(Launcher.instance.GetRocketController().gameObject.transform.position, Launcher.instance.GetRocketController().GetMainVisualContainer());
+
+
+            //prevPos = transform.position;
+            //prevCursorPos = cursorPos;
             yield return new WaitForFixedUpdate();
         }
     }
+
+
+    
 
     Coroutine CharachterRotatingRoutineC;
     IEnumerator CharachterRotatingRoutine()
