@@ -360,7 +360,7 @@ BoxCollider:
   m_GameObject: {fileID: 1027083149278676}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3.36, y: 1.305268, z: 10.011866}
   m_Center: {x: 0, y: -0.22300458, z: -1.2712297}
@@ -508,7 +508,7 @@ BoxCollider:
   m_GameObject: {fileID: 1035570769795684}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1852198, z: 2.9712982}
   m_Center: {x: 0, y: 1.7002277, z: -0.0067214966}
@@ -2501,7 +2501,7 @@ BoxCollider:
   m_GameObject: {fileID: 1153925476592910}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.87596416, z: 1}
   m_Center: {x: 0, y: 1.0557172, z: 0}
@@ -5948,7 +5948,7 @@ BoxCollider:
   m_GameObject: {fileID: 1465491592573918}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8844427, z: 1}
   m_Center: {x: 0, y: 1.0586164, z: 0}
@@ -6029,7 +6029,7 @@ BoxCollider:
   m_GameObject: {fileID: 1466466758016830}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.6093154, z: 1}
   m_Center: {x: 0, y: 1.049294, z: 0}
@@ -8203,6 +8203,14 @@ MonoBehaviour:
   burnColor:
     serializedVersion: 2
     rgba: 4285164138
+  isVisualDestroy: 1
+  mainBody: {fileID: 1027083149278676}
+  detachParts:
+  - {fileID: 1035570769795684}
+  - {fileID: 1153925476592910}
+  - {fileID: 1465491592573918}
+  - {fileID: 1828985821084102}
+  - {fileID: 1466466758016830}
 --- !u!65 &1351211396959727968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11824,7 +11832,7 @@ BoxCollider:
   m_GameObject: {fileID: 1828985821084102}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.4330324, z: 1}
   m_Center: {x: 0, y: 1.0749199, z: 0}

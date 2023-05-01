@@ -27,12 +27,13 @@ public class GameManager : MonoBehaviour
         isGameInited = false;
         LevelManager.instance.InitLevel();
         GameView.instance.GameViewInit();
+        MenuView.instance.MenuViewInit();
         LevelEndView.instance.gameObject.SetActive(false);
         DebugCanvas.instance.DebugInit();
         this.Timer(1f, () => 
         { 
             Launcher.instance.LauncherInit();
-            MenuView.instance.gameObject.SetActive(true);
+            MenuView.instance.SetActive(true);
         });
         
 

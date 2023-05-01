@@ -11,9 +11,19 @@ public class MenuView : MonoBehaviour
         instance = this;
     }
 
+    public void MenuViewInit()
+    {
+        SetActive(false);
+    }
+
+    public void SetActive(bool value)
+    {
+        gameObject.SetActive(value);
+    }
+
     public void OnGameStart()
     {
-        gameObject.SetActive(false);
+        SetActive(false);
         GameManager.instance.GameStart();
     }
 }

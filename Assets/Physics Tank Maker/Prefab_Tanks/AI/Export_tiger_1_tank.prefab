@@ -1549,7 +1549,7 @@ BoxCollider:
   m_GameObject: {fileID: 1141980056075178}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7831422, z: 2.1109226}
   m_Center: {x: 0, y: 0.6345806, z: 0.017803403}
@@ -3960,7 +3960,7 @@ BoxCollider:
   m_GameObject: {fileID: 1386017063125032}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3.6767, y: 1.6071414, z: 6.194541}
   m_Center: {x: 0, y: -0.0013588667, z: 0.012849331}
@@ -5285,6 +5285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4340232635364644}
   - component: {fileID: 881619708533757869}
+  - component: {fileID: 7170879400021226547}
   m_Layer: 0
   m_Name: Export_tiger_1_tank
   m_TagString: Enemy
@@ -5329,6 +5330,20 @@ MonoBehaviour:
   burnColor:
     serializedVersion: 2
     rgba: 4285624689
+  isVisualDestroy: 1
+--- !u!65 &7170879400021226547
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504879558737424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.3240757, y: 4.370088, z: 10.42659}
+  m_Center: {x: 0.045781612, y: 0.17477202, z: 0.36649323}
 --- !u!1 &1536059296414604
 GameObject:
   m_ObjectHideFlags: 0
