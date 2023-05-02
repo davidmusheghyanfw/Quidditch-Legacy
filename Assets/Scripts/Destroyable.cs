@@ -18,17 +18,22 @@ public class Destroyable : MonoBehaviour
     private void Start()
     {
         IsDamaged(false);
+        PointerManager.Instance.AddToList(this);
     }
 
     public void IsDamaged(bool value)
     {
         burnParticle.SetActive(value);
+        
         for (int i = 0; i < mesh.materials.Length; i++)
         {
             mesh.materials[0].color = value ? burnColor : normalColor;
         }
-        if(value && isVisualDestroy) VisualDamage();
-
+        if (value && isVisualDestroy)
+        {
+            VisualDamage();
+            PointerManager.Instance.RemoveFromList(this);
+        }
     }
 
     private void VisualDamage()

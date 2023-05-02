@@ -16,9 +16,7 @@ public class CharacterMovemant : MonoBehaviour
 
     [Header("Rotation")]
     [SerializeField] private float rotationSmoothness;
-    [SerializeField] private float rotationDelay;
     [SerializeField] private float rotationSensetivity;
-    [SerializeField] private float rotationZAxisSpeed;
  
     [Header("Smoothnes")]
     [SerializeField] private float touchControl;
@@ -46,15 +44,20 @@ public class CharacterMovemant : MonoBehaviour
         {
 
             cursor = characterController.GetCursor();
-            cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
+
+            cursorPos = cursor;// Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
            
           
 
          
-            objBody.transform.Rotate(new Vector3(-cursorPos.y, cursorPos.x, 0f) * rotationSensetivity * Time.deltaTime, Space.Self);
-            //characterController.GetCameraFollowDot().localRotation = Quaternion.LookRotation(objBody.transform.forward);
+            objBody.transform.Rotate(new Vector3(-cursorPos.y * rotationSensetivity, cursorPos.x * rotationSensetivity, 0f) * rotationSmoothness  * Time.deltaTime, Space.Self);
 
-            objBody.velocity = (objBody.transform.forward) * currentFlySpeed;
+            //Vector3 euler = objBody.transform.localEulerAngles;
+            //euler.y = Mathf.Clamp(euler.y, -35, 35);
+           
+            //objBody.transform.localEulerAngles = euler;
+
+            objBody.velocity = objBody.transform.forward * currentFlySpeed;
 
 
             //cursor.z = 0;

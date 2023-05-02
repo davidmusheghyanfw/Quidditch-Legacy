@@ -40,10 +40,12 @@ public class GameManager : MonoBehaviour
     }
     public void GameStart()
     {
+
         CameraController.instance.StopTrackedDollAnimRoutine();
         Launcher.instance.LauncherInGame();
         GameView.instance.SetDistance(LevelManager.instance.GetLevelEndPosPercent());
         GameView.instance.LaunchBtnSetActive(true);
+       
     }
 
     public void InGame()
@@ -59,8 +61,9 @@ public class GameManager : MonoBehaviour
 
         LevelEndView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
+        PointerManager.Instance.DestroyPoints();
        // Launcher.instance.GetRocketController().OnGameWin();
-     
+
     }
    
     public void GameStopped()

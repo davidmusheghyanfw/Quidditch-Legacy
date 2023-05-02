@@ -273,9 +273,6 @@ MonoBehaviour:
   cursor: {x: 0, y: 0, z: 0}
   verticalBorderRange: {x: -100, y: 100}
   horizontalBorderRange: {x: -100, y: 100}
-  rebornPosition: 0.02500000037252903
-  animator: {fileID: 0}
-  laneRunner: {fileID: 0}
   CharacterCenter: {fileID: 0}
   ragdollList:
   - {fileID: 0}
@@ -307,9 +304,9 @@ MonoBehaviour:
   minFlySpeed: 250
   maxFlySpeed: 250
   currentFlySpeed: 0
-  rotationSmoothness: 100
+  rotationSmoothness: 20
   rotationDelay: 2
-  rotationSensetivity: 100
+  rotationSensetivity: 2
   rotationZAxisSpeed: 0.5
   touchControl: 5
 --- !u!54 &6267673644962437266

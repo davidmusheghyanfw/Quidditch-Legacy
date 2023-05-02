@@ -59,18 +59,21 @@ public class Launcher : MonoBehaviour
     public void OnLaunch()
     {
         Transform launchSlot = launchSlots[Random.Range(0, launchSlots.Count)];
-        CameraController.instance.SwitchCamera(CameraState.Rocket);
         RocketController firstRocketController = rocketControllers[0];
         firstRocketController.transform.position = launchSlot.position;
         
         firstRocketController.transform.rotation = launchSlot.rotation;
-        CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
-        CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.GetCameraFollowDot());
-
         firstRocketController.gameObject.SetActive(true);
+        PointerManager.Instance.SetPlayerTransform(firstRocketController.transform);
+        PointerManager.Instance.Show();
         firstRocketController.CharacterInit();
         firstRocketController.StartCursorFollowing();
         firstRocketController.StartForceRoutine();
+        CameraController.instance.SwitchCamera(CameraState.Rocket);
+        CameraController.instance.SetAimTarget(CameraState.Launcher, null);
+        CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
+        CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.transform);
+        
         //GameView.instance.SetPlayerStartPos((float)firstRocketController.GetPosInSpline());
     }
 
@@ -94,6 +97,7 @@ public class Launcher : MonoBehaviour
         destroyParticle.gameObject.transform.position = rocketControllers[0].transform.position;
         destroyParticle.SetActive(true);
         rocketControllers.RemoveAt(0);
+        PointerManager.Instance.Hide();
         GameView.instance.SetPlayerCurrentPos(0f);
         if (rocketControllers.Count<=0)
         {
