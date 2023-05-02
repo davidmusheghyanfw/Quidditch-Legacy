@@ -15,7 +15,6 @@ public class EnemyTriggers : MonoBehaviour
         {
 
             enemyController.StopGettingCursor();
-            enemyController.StopSpeedControllRountine();
             enemyController.StartCharacterStoppingRoutin();
             LevelManager.instance.Finished();
             enemyController.FinishPlace = LevelManager.instance.GetFinishPlace();

@@ -906,7 +906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 728.9489, y: 141.04, z: 802.2266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2960,8 +2960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418e42c7d0405cc48a7b83f63ea53bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Path: {fileID: 0}
-  m_PathPosition: 0
+  m_Path: {fileID: 1455677083}
+  m_PathPosition: 0.02666667
   m_PositionUnits: 2
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -3525,6 +3525,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1455677083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2451055135188085736, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2451055134286700802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1545779828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,14 +4248,14 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneWidth: 0
+  m_SoftZoneHeight: 0
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -5357,6 +5369,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: World
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055134836489745, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055134836489745, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 57.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055134836489745, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135055305397, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_MaterialTemplate
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c8541317a9e37f44a1a90797fd27b80, type: 2}
+    - target: {fileID: 2451055135188085739, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 68.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135585497142, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 191.77649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135585497142, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135585497142, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 418.78604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135726446955, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 276.39062
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135726446955, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 67.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451055135726446955, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 435.64127
       objectReference: {fileID: 0}
     - target: {fileID: 8467163805768498388, guid: b1b282d3377af7e4bb98c513e3a6bbf6,
         type: 3}

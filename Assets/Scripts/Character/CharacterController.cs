@@ -17,19 +17,11 @@ public class CharacterController : MonoBehaviour
     public Vector2 VerticalBorderRange { get { return verticalBorderRange; } }
     public Vector2 HorizontalBorderRange { get { return horizontalBorderRange; }}
 
-    [Header("Spline")]
-    private SplineSample sample;
-    [SerializeField, Range(0, 1)] private double rebornPosition = 0f; 
-    
-    [Header("Components")]
-    [SerializeField] private Animator animator;
-    [SerializeField] private LaneRunner laneRunner;
     
     [Header("Character")]
-    [SerializeField] private Transform mainVisualContainer;
-    [SerializeField] private Transform secondVisualContainer;
     [SerializeField] private GameObject CharacterCenter;
     [SerializeField] private List<Rigidbody> ragdollList;
+    [SerializeField] private Transform cameraFollowDot;
     
 
     protected bool isStopping = false;
@@ -44,7 +36,7 @@ public class CharacterController : MonoBehaviour
     {
 
         StopCursorFollowing();
-        characterMovemant.CurrentFlySpeed = characterMovemant.MinFlySpeed;
+       
         isStopping = false;
     }
 
@@ -56,21 +48,6 @@ public class CharacterController : MonoBehaviour
         return pos;
 
     }
-    public double GetPosInSpline()
-    {
-        
-        return sample.percent;
-    }
-   
-    public void SetSplineSample(SplineSample splineSample)
-    {
-        sample = splineSample;
-    }
-    public SplineSample GetSplineSample()
-    {
-        return sample;
-    }
-
    
 
     public Transform GetCharacter()
@@ -78,33 +55,17 @@ public class CharacterController : MonoBehaviour
         return gameObject.transform;
     }
 
-    public Animator GetAnimator()
-    {
-        return animator;
-    }
+    
     public Vector3 GetCursor()
     {
         float maxEdge = Mathf.Max(Screen.width, Screen.height);
         maxEdge /= 2f;
         return new Vector3(Mathf.Clamp(cursor.x / maxEdge, -1, 1f), Mathf.Clamp(cursor.y / maxEdge, -1, 1f), cursor.z) ;
     }
-    public LaneRunner GetLaneRunner()
+   
+    public Transform GetCameraFollowDot()
     {
-        return laneRunner;
-    }
-    
-    public void SetSpawnPos(Vector2 pos)
-    {
-        laneRunner.motion.offset = pos;
-    }
-
-    public Transform GetMainVisualContainer()
-    {
-        return mainVisualContainer;
-    }
-     public Transform GetSecondVisualContainer()
-    {
-        return secondVisualContainer;
+        return cameraFollowDot;
     }
 
     public bool IsStopping()
@@ -179,7 +140,6 @@ public class CharacterController : MonoBehaviour
         StopCursorFollowing();
         StopForceRoutine();
         
-        laneRunner.isPlayer = false;
         Launcher.instance.RocketDestroyed();
         Destroy(gameObject);
     }
@@ -224,7 +184,7 @@ public class CharacterController : MonoBehaviour
 
     public void StartCharacterStoppingRoutin()
     {
-        laneRunner.follow = false;
+        
 
         characterMovemant.StartCharacterStoppingRoutin();
     }
@@ -235,7 +195,7 @@ public class CharacterController : MonoBehaviour
 
     public void StartCursorFollowing()
     {
-        laneRunner.follow = true;
+      
         characterMovemant.StartCursorFollowing();
     }
     public void StopCursorFollowing()

@@ -12,7 +12,7 @@ public class CharacterMovemant : MonoBehaviour
     [SerializeField] private float currentFlySpeed;
     public float MinFlySpeed { get { return minFlySpeed; } }
     public float MaxFlySpeed { get { return maxFlySpeed; } }
-    public float CurrentFlySpeed { get { return currentFlySpeed; } set { currentFlySpeed = value; characterController.GetLaneRunner().followSpeed = value; } }
+    public float CurrentFlySpeed { get { return currentFlySpeed; } set { currentFlySpeed = value;} }
 
     [Header("Rotation")]
     [SerializeField] private float rotationSmoothness;
@@ -37,40 +37,24 @@ public class CharacterMovemant : MonoBehaviour
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
-        Vector3 newPos = Vector3.zero;
-        Vector3 prevPos = transform.position;
+        
         Vector3 cursorPos = characterController.GetCursor();
-        Vector3 prevCursorPos = Vector3.zero;
 
-        var visual = characterController.GetMainVisualContainer();
-        SplineSample sample = new SplineSample();
-        var targetDirection = transform.forward;
+        Rigidbody objBody = gameObject.GetComponent<Rigidbody>();
+    
         while (true)
         {
 
             cursor = characterController.GetCursor();
             cursorPos = Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
-            //print(cursorPos);
-            Rigidbody objBody = gameObject.GetComponent<Rigidbody>();
+           
+          
 
-            //var temp = cursorPos.x;
-            //cursorPos.x = cursorPos.y;
-            //cursorPos.y = temp;
-            
-            //targetDirection = Quaternion.Euler(cursorPos * rotationSensetivity) * targetDirection;
-
-            //var rotation = Quaternion.LookRotation(targetDirection);
-            //objBody.MoveRotation(Quaternion.Lerp(objBody.transform.rotation, rotation, Time.deltaTime * rotationSmoothness));
+         
             objBody.transform.Rotate(new Vector3(-cursorPos.y, cursorPos.x, 0f) * rotationSensetivity * Time.deltaTime, Space.Self);
+            //characterController.GetCameraFollowDot().localRotation = Quaternion.LookRotation(objBody.transform.forward);
 
             objBody.velocity = (objBody.transform.forward) * currentFlySpeed;
-
-
-
-            prevCursorPos = cursor;
-
-            prevPos = transform.position;
-
 
 
             //cursor.z = 0;
@@ -124,32 +108,6 @@ public class CharacterMovemant : MonoBehaviour
 
 
     
-
-    Coroutine CharachterRotatingRoutineC;
-    IEnumerator CharachterRotatingRoutine()
-    {
-        var visual = characterController.GetSecondVisualContainer();
-        while (true)
-        {
-            visual.Rotate(transform.forward, 360 * rotationZAxisSpeed* Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-
-    public void StartCharachterRotatingRoutine()
-    {
-
-        if (CharachterRotatingRoutineC != null) StopCoroutine(CharachterRotatingRoutineC);
-        CharachterRotatingRoutineC = StartCoroutine(CharachterRotatingRoutine());
-
-    }
-
-    public void StopCharachterRotatingRoutine()
-    {
-        if (CharachterRotatingRoutineC != null) StopCoroutine(CharachterRotatingRoutineC);
-    }
-
     public void StartCursorFollowing()
     {
 

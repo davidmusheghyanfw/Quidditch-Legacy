@@ -42,7 +42,7 @@ public class EnemyManager : MonoBehaviour
             character.StartCursorFollowing();
             character.StartForceRoutine();
             character.StartGettingCursor();
-            character.StartSpeedControllRountine();
+            
         }
     }
 

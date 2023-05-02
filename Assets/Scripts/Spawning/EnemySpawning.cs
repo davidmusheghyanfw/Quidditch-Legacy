@@ -53,9 +53,7 @@ public class EnemySpawning : MonoBehaviour
             enemies.Add(currentEnemy);
             //enemies[enemies.Count - 1].SetPosInSpline((tmpRange+tmpOffset) / RoadGenerator.instance.GetDistance());
             //enemies[enemies.Count - 1].SetCursor(spawnPosOnScreen);
-            enemies[enemies.Count - 1].SetSpawnPos(spawnPosOnScreen);
-            enemies[enemies.Count - 1].SetSplineSample(sample);
-            enemies[enemies.Count - 1].GetLaneRunner().SetPercent(sample.percent);
+          
             //3enemies[enemies.Count - 1].SetSpawnPosPersent((float)((tmpRange + tmpOffset) / RoadGenerator.instance.GetDistance()));
         }
     }

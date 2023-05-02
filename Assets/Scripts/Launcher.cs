@@ -62,15 +62,15 @@ public class Launcher : MonoBehaviour
         CameraController.instance.SwitchCamera(CameraState.Rocket);
         RocketController firstRocketController = rocketControllers[0];
         firstRocketController.transform.position = launchSlot.position;
-        //firstRocketController.SetCursor(launchSlot.position);
-        //firstRocketController.transform.rotation = launchSlot.rotation;
+        
+        firstRocketController.transform.rotation = launchSlot.rotation;
         CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
-        CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.transform);
+        CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.GetCameraFollowDot());
 
         firstRocketController.gameObject.SetActive(true);
         firstRocketController.CharacterInit();
         firstRocketController.StartCursorFollowing();
-        //firstRocketController.StartForceRoutine();
+        firstRocketController.StartForceRoutine();
         //GameView.instance.SetPlayerStartPos((float)firstRocketController.GetPosInSpline());
     }
 

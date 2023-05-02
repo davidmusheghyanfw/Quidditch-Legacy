@@ -21,9 +21,6 @@ public class RocketController : CharacterController
     public override void CharacterInit()
     {
         cursor = Vector3.zero;
-        //RoadGenerator.instance.GetLevelGenerator().Project(Launcher.instance.transform.position, ref sample);
-        //GetLaneRunner().SetPercent(sample.percent);
-       
       
         base.CharacterInit();
         
@@ -51,8 +48,6 @@ public class RocketController : CharacterController
             //if (newCursorPosition.x > HorizontalBorderRange.y + borderSmoothness) newCursorPosition.x = HorizontalBorderRange.y + borderSmoothness;
 
             cursor = newCursorPosition;
-
-            print(cursor);
         }
         else
         {

@@ -32,11 +32,11 @@ public class EnemyController : CharacterController
 
     public override void CharacterInit()
     {
-        StopSpeedControllRountine();
+       
         nextCheckPointIndex = 0;
        
         characterMovemant = GetCharacterMovemant();
-        StartSpeedControllRountine();
+      
         base.CharacterInit();
     }
 
@@ -49,71 +49,46 @@ public class EnemyController : CharacterController
         while (true)
         {
           
-            if(nextCheckPointIndex > 0 && CheckPointSpawning.instance.GetPervRingSample(nextCheckPointIndex).position.z > GetSplineSample().position.z)
-            {
-                nextCheckPointIndex--;
-            }
+            //if(nextCheckPointIndex > 0 && CheckPointSpawning.instance.GetPervRingSample(nextCheckPointIndex).position.z > GetSplineSample().position.z)
+            //{
+            //    nextCheckPointIndex--;
+            //}
 
-            if (isDied || getNewCheckpoint && !isPosGetted)
-            {
+            //if (isDied || getNewCheckpoint && !isPosGetted)
+            //{
 
-                targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
-                Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle * randomRangeInRing;
-                targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
-                isPosGetted = true;
-            }
-            else if (isDied || !getNewCheckpoint && !isPosGetted)
-            {
-                targetCursor = CheckPointSpawning.instance.GetOtherWay(nextCheckPointIndex);
-                //Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
-                //targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
-                targetCursor.Set(targetCursor.x, targetCursor.y, 0);
-                isPosGetted = true;
-            }
+            //    targetCursor = CheckPointSpawning.instance.GetNextCheckPointOnScreen(nextCheckPointIndex);
+            //    Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle * randomRangeInRing;
+            //    targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+            //    isPosGetted = true;
+            //}
+            //else if (isDied || !getNewCheckpoint && !isPosGetted)
+            //{
+            //    targetCursor = CheckPointSpawning.instance.GetOtherWay(nextCheckPointIndex);
+            //    //Vector2 randomPointInsideUnitCircle = Random.insideUnitCircle;
+            //    //targetCursor.Set(targetCursor.x + randomPointInsideUnitCircle.x, targetCursor.y + randomPointInsideUnitCircle.y, 0);
+            //    targetCursor.Set(targetCursor.x, targetCursor.y, 0);
+            //    isPosGetted = true;
+            //}
 
-            cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
+            //cursor = Vector3.Lerp(cursor, targetCursor, smoothnesControl * Time.deltaTime);
             //cursor.x = Mathf.Clamp(cursor.x, horizontalBorderMin, horizontalBorderMax);
             //cursor.y = Mathf.Clamp(cursor.y, verticalBorderMin, verticalBorderMax);
 
 
             //Debug.Log(GetSplineSample().position.z);
-            if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < CheckPointSpawning.instance.MaxCheckpointCount - 1)
-            {
-                nextCheckPointIndex++;
-                getNewCheckpoint = NewCheckPointRate();
-                isPosGetted = false;
-            }
+            //if (CheckPointSpawning.instance.GetCurrentRingSample(nextCheckPointIndex).position.z < GetSplineSample().position.z && nextCheckPointIndex < CheckPointSpawning.instance.MaxCheckpointCount - 1)
+            //{
+            //    nextCheckPointIndex++;
+            //    getNewCheckpoint = NewCheckPointRate();
+            //    isPosGetted = false;
+            //}
                 yield return new WaitForEndOfFrame();
         }
 
     }
-    Coroutine SpeedControllRountineC;
-    IEnumerator SpeedControllRountine()
-    {
-       
-        while (true)
-        {
-          
-            characterMovemant.CurrentFlySpeed = Mathf.Lerp(characterMovemant.CurrentFlySpeed,
-                characterMovemant.CurrentFlySpeed * curve.Evaluate((float)GetPosInSpline()) 
-                , Time.deltaTime * smoothSpeedChanging);
-            yield return new WaitForEndOfFrame();
-
-        }
-    }
-
-    public void StartSpeedControllRountine()
-    {
-        if (SpeedControllRountineC != null) StopCoroutine(SpeedControllRountineC);
-        SpeedControllRountineC = StartCoroutine(SpeedControllRountine());
-
-    }
-
-    public void StopSpeedControllRountine()
-    {
-        if (SpeedControllRountineC != null) StopCoroutine(SpeedControllRountineC);
-      
-    }
+   
+   
     public void StartGettingCursor()
     {
   

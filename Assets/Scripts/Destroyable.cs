@@ -34,8 +34,7 @@ public class Destroyable : MonoBehaviour
     private void VisualDamage()
     {
         if (!mainBody && detachParts.Count == 0) return;
-        Debug.Log("a");
-        
+       
         if (mainBody)
         {
             dir.Set(Random.Range(-1, 2), 1, Random.Range(-1, 2));
@@ -46,8 +45,7 @@ public class Destroyable : MonoBehaviour
         
         if (detachParts.Count != 0)
         {
-            Debug.Log("ass");
-
+            
             for (int i = 0; i < detachParts.Count; i++)
             {
                 dir.Set(Random.Range(-1, 2), 1, Random.Range(-1, 2));
