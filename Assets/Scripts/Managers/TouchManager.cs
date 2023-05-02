@@ -53,7 +53,7 @@ public class TouchManager : MonoBehaviour
             m_TotalDeltaPosition = m_CurrentPosition - m_StartPosition;
 
            
-            OnTouchDrag?.Invoke(m_CurrentPosition, m_DeltaPosition);
+            OnTouchDrag?.Invoke(m_CurrentPosition, m_TotalDeltaPosition);
         }
         if (Input.GetMouseButtonUp(0) && !IsPointerOverUI())// && !IsPointerOverUI() && GameManager.instance.isGameStarted)
         {

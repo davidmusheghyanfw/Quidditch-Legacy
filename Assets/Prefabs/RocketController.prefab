@@ -301,13 +301,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 8580578707613783492}
-  minFlySpeed: 250
-  maxFlySpeed: 250
+  minFlySpeed: 100
+  maxFlySpeed: 100
   currentFlySpeed: 0
-  rotationSmoothness: 20
-  rotationDelay: 2
-  rotationSensetivity: 2
-  rotationZAxisSpeed: 0.5
+  rotationSmoothness: 10
+  rotationSensetivity: 0.005
   touchControl: 5
 --- !u!54 &6267673644962437266
 Rigidbody:

@@ -58,9 +58,10 @@ public class CharacterController : MonoBehaviour
     
     public Vector3 GetCursor()
     {
-        float maxEdge = Mathf.Max(Screen.width, Screen.height);
-        maxEdge /= 2f;
-        return new Vector3(Mathf.Clamp(cursor.x / maxEdge, -1, 1f), Mathf.Clamp(cursor.y / maxEdge, -1, 1f), cursor.z) ;
+        //float maxEdge = Mathf.Max(Screen.width, Screen.height);
+        //maxEdge /= 2f;
+        //return new Vector3(Mathf.Clamp(cursor.x / maxEdge, -1, 1f), Mathf.Clamp(cursor.y / maxEdge, -1, 1f), cursor.z) ;
+        return cursor;
     }
    
     public Transform GetCameraFollowDot()

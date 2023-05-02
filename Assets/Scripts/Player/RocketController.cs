@@ -33,21 +33,21 @@ public class RocketController : CharacterController
 
     }
    
-    void OnTouchDrag(Vector3 currentPos, Vector3 deltaPosition)
+    void OnTouchDrag(Vector3 currentPos, Vector3 totalDeltaPosition)
     {
 
         if (!isStopping)
         {
             //Vector3 newCursorPosition = cursor + CharacterNewPos(deltaPosition);
 
-            Vector3 newCursorPosition = cursor + deltaPosition;
+            //Vector3 newCursorPosition = cursor + totalDeltaPosition;
             //if (newCursorPosition.y < VerticalBorderRange.x - borderSmoothness) newCursorPosition.y = VerticalBorderRange.x - borderSmoothness;
             //if (newCursorPosition.y > VerticalBorderRange.y + borderSmoothness) newCursorPosition.y = VerticalBorderRange.y + borderSmoothness;
 
             //if (newCursorPosition.x < HorizontalBorderRange.x - borderSmoothness) newCursorPosition.x = HorizontalBorderRange.x - borderSmoothness;
             //if (newCursorPosition.x > HorizontalBorderRange.y + borderSmoothness) newCursorPosition.x = HorizontalBorderRange.y + borderSmoothness;
 
-            cursor = newCursorPosition;
+            cursor = totalDeltaPosition;
         }
         else
         {

@@ -35,27 +35,42 @@ public class CharacterMovemant : MonoBehaviour
     Coroutine CharacterCoursorFollowRoutineC;
     IEnumerator CharacterCoursorFollowRoutine()
     {
-        
+
         Vector3 cursorPos = characterController.GetCursor();
 
         Rigidbody objBody = gameObject.GetComponent<Rigidbody>();
-    
+
         while (true)
         {
 
             cursor = characterController.GetCursor();
 
             cursorPos = cursor;// Vector3.Lerp(cursorPos, cursor, Time.deltaTime * touchControl);
-           
-          
 
-         
-            objBody.transform.Rotate(new Vector3(-cursorPos.y * rotationSensetivity, cursorPos.x * rotationSensetivity, 0f) * rotationSmoothness  * Time.deltaTime, Space.Self);
+
+
+
+            //objBody.transform.Rotate(new Vector3(-cursorPos.y * rotationSensetivity, cursorPos.x * rotationSensetivity, 0f) * rotationSmoothness  * Time.deltaTime, Space.Self);
 
             //Vector3 euler = objBody.transform.localEulerAngles;
             //euler.y = Mathf.Clamp(euler.y, -35, 35);
-           
+
             //objBody.transform.localEulerAngles = euler;
+
+            //objBody.transform.Rotate(new Vector3(-cursorPos.y * rotationSensetivity, cursorPos.x * rotationSensetivity));
+            Quaternion deltaRotation =  Quaternion.Euler(-cursorPos.y * rotationSensetivity, cursorPos.x * rotationSensetivity, 0f);
+
+            Vector3 newForward = deltaRotation * objBody.transform.forward;
+            
+            if (Vector3.Angle(Vector3.up,newForward) < 60f || Vector3.Angle(-Vector3.up, newForward) < 60f)
+            {
+                newForward = objBody.transform.forward;
+            }
+
+            Debug.Log(Vector3.Angle(-Vector3.up, newForward));
+            objBody.transform.forward = newForward;
+            //objBody.transform.Rotate(heading * rotationSmoothness * Time.fixedDeltaTime);
+
 
             objBody.velocity = objBody.transform.forward * currentFlySpeed;
 
