@@ -8,43 +8,60 @@ public class EnemyManager : MonoBehaviour
     public EnemySpawning spawner;
     [SerializeField] private EnemyCurveDefinition curveDefinition;
 
-    [SerializeField] private List<EnemyController> enemyList = new List<EnemyController>();
+    [SerializeField] private List<Destroyable> enemyList = new List<Destroyable>();
     private void Awake()
     {
         instance = this;
     }
 
-    public void EnemyInit()
+    public void AddToList(Destroyable destroyable)
     {
-        enemyList = spawner.EnemySpawningInit();
+        enemyList.Add(destroyable);
+    }
 
-        foreach (EnemyController character in enemyList)
+    public int GetEnemyCount()
+    {
+        return enemyList.Count-1;
+    }
+   public void Enemyinit()
+    {
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            character.CharacterInit();
-            character.SetCurve(curveDefinition.curveList[Random.Range(0,curveDefinition.curveList.Count)]);
+            PointerManager.Instance.AddToList(enemyList[i]);
         }
     }
 
-    public void SpawnEnemies()
-    {
+    //public void EnemyInit()
+    //{
+    //    enemyList = spawner.EnemySpawningInit();
 
-    }
+    //    foreach (EnemyController character in enemyList)
+    //    {
+    //        character.CharacterInit();
+    //        character.SetCurve(curveDefinition.curveList[Random.Range(0,curveDefinition.curveList.Count)]);
+    //    }
+    //}
 
-    public void EnemyStart()
-    {
+    //public void SpawnEnemies()
+    //{
+
+    //}
+
+    //public void EnemyStart()
+    //{
         
-        foreach (EnemyController character in enemyList)
-        {
+    //    foreach (EnemyController character in enemyList)
+    //    {
            
-            //character.SetPosInSpline(character.GetSpawnPosPersent());
-            //character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
+    //        //character.SetPosInSpline(character.GetSpawnPosPersent());
+    //        //character.SetNextCheckPointIndex(CheckPointSpawning.instance.CalculateEnemyNearestCheckPoint(character.GetSpawnPosPersent()));
             
-            character.StartCursorFollowing();
-            character.StartForceRoutine();
-            character.StartGettingCursor();
+    //        character.StartCursorFollowing();
+    //        character.StartForceRoutine();
+    //        character.StartGettingCursor();
             
-        }
-    }
+    //    }
+    //}
 
 
 

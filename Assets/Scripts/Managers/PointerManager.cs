@@ -12,6 +12,7 @@ public class PointerManager : MonoBehaviour
 
     public static PointerManager Instance;
 
+
     private void Awake()
     {
         if (Instance == null)
@@ -37,20 +38,19 @@ public class PointerManager : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    //public void InitPointerManager()
-    //{
-    //    gameObject.SetActive(true);
-    //}
-
-    public void DestroyPoints()
+    public void InitPointerManager()
     {
+        
         foreach (var i in _dictionary)
         {
             Destroy(i.Key.gameObject);
             Destroy(i.Value.gameObject);
         }
         _dictionary.Clear();
+        Hide();
     }
+
+   
 
     public void SetPlayerTransform(Transform player)
     {
@@ -87,6 +87,7 @@ public class PointerManager : MonoBehaviour
             PointerIcon pointerIcon = kvp.Value;
 
             Vector3 toDestroyable = destroyable.transform.position - _playerTransform.position;
+            pointerIcon.CorrectTargetScale(Vector3.Distance(destroyable.transform.position, _playerTransform.position));
             Ray ray = new Ray(_playerTransform.position, toDestroyable);
             //Debug.DrawRay(_playerTransform.position, toZombie);
 

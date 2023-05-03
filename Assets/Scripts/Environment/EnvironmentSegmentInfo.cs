@@ -16,7 +16,6 @@ public class EnvironmentSegmentInfo : MonoBehaviour
     private void Start()
     {
 
-        LevelManager.instance.SetLevelEndPos(GetEndPos());
     }
     public float GetSegmentLength()
     { 

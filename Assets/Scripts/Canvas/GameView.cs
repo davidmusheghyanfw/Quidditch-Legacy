@@ -25,8 +25,8 @@ public class GameView : MonoBehaviour
         SetActive(true);
         sliderTxt.text = "Level " + DataManager.instance.GetLevelNumber();
         SetRocketCount(LevelManager.instance.GetRocketCount());
-        SetPlayerCurrentPos(0);
         LaunchBtnSetActive(false);
+        scoreUpdateSlider.minValue = 0;
     }
     
     public void OnLaunch()
@@ -50,18 +50,14 @@ public class GameView : MonoBehaviour
         LaunchBtn.gameObject.SetActive(value);
     }
     
-    public void SetDistance(float value)
+    public void SetEnemyCount(int value)
     {
         
         scoreUpdateSlider.maxValue = value;
     }
 
-    public void SetPlayerStartPos(float value)
-    {
-        scoreUpdateSlider.minValue = value; 
-    }
 
-    public void SetPlayerCurrentPos(float value)
+    public void DestroyedEnemyCount(int value)
     {
         scoreUpdateSlider.value = value;
     }

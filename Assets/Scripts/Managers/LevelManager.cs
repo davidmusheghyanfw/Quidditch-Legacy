@@ -73,14 +73,5 @@ public class LevelManager : MonoBehaviour
         return rocketCount;
     }
 
-    public void SetLevelEndPos(float value)
-    {
- 
-        levelEndPosPercent = value;
-    }
-
-    public float GetLevelEndPosPercent()
-    {
-        return levelEndPosPercent;
-    }
+   
 }

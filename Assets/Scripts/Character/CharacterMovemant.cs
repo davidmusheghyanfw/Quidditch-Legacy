@@ -67,7 +67,7 @@ public class CharacterMovemant : MonoBehaviour
                 newForward = objBody.transform.forward;
             }
 
-            Debug.Log(Vector3.Angle(-Vector3.up, newForward));
+           
             objBody.transform.forward = newForward;
             //objBody.transform.Rotate(heading * rotationSmoothness * Time.fixedDeltaTime);
 

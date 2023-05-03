@@ -12,6 +12,7 @@ public class Launcher : MonoBehaviour
     [SerializeField] private List<RocketController> rocketControllers;
     [SerializeField] private List<Transform> launchSlots;
 
+    private int destroyedEnemyCount = 0;
     private void Awake()
     {
         instance = this;
@@ -74,7 +75,6 @@ public class Launcher : MonoBehaviour
         CameraController.instance.SetFollowTarget(CameraState.Rocket, firstRocketController.transform);
         CameraController.instance.SetAimTarget(CameraState.Rocket, firstRocketController.transform);
         
-        //GameView.instance.SetPlayerStartPos((float)firstRocketController.GetPosInSpline());
     }
 
     public RocketController GetRocketController()
@@ -98,7 +98,7 @@ public class Launcher : MonoBehaviour
         destroyParticle.SetActive(true);
         rocketControllers.RemoveAt(0);
         PointerManager.Instance.Hide();
-        GameView.instance.SetPlayerCurrentPos(0f);
+       
         if (rocketControllers.Count<=0)
         {
             GameManager.instance.LevelComplete();
@@ -111,5 +111,10 @@ public class Launcher : MonoBehaviour
         });
     }
 
+    public void IncreaseDestroyedEnemyCount()
+    {
+        destroyedEnemyCount++;
+        GameView.instance.DestroyedEnemyCount(destroyedEnemyCount);
+    }
 
 }

@@ -18,7 +18,7 @@ public class Destroyable : MonoBehaviour
     private void Start()
     {
         IsDamaged(false);
-        PointerManager.Instance.AddToList(this);
+        EnemyManager.instance.AddToList(this);
     }
 
     public void IsDamaged(bool value)
@@ -32,6 +32,7 @@ public class Destroyable : MonoBehaviour
         if (value && isVisualDestroy)
         {
             VisualDamage();
+            Launcher.instance.IncreaseDestroyedEnemyCount();
             PointerManager.Instance.RemoveFromList(this);
         }
     }

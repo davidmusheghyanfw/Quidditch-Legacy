@@ -9,6 +9,13 @@ public class PointerIcon : MonoBehaviour
     [SerializeField] Image targetImage;
     bool isPointShown = true;
 
+    float minDistance = 0.5f;
+    float maxDistance = 300f;
+
+    float minScale = 1f;
+    float maxScale = 4f;
+
+   
     private void Awake()
     {
         pointImage.enabled = false;
@@ -45,10 +52,16 @@ public class PointerIcon : MonoBehaviour
         transform.localScale = Vector3.zero;
         for (float t = 0; t < 1f; t += Time.deltaTime * 4f)
         {
-            transform.localScale = Vector3.one * t;
+            pointImage.transform.localScale = Vector3.one * t;
             yield return null;
         }
         transform.localScale = Vector3.one;
+    }
+
+    public void CorrectTargetScale(float distance)
+    {
+        var scale = Mathf.Lerp(minScale, maxScale, Mathf.InverseLerp(maxDistance, minDistance, distance));
+        targetImage.transform.localScale = new Vector3(scale, scale, scale);
     }
 
     IEnumerator HideProcess()
@@ -56,7 +69,7 @@ public class PointerIcon : MonoBehaviour
 
         for (float t = 0; t < 1f; t += Time.deltaTime * 4f)
         {
-            transform.localScale = Vector3.one * (1f - t);
+            pointImage.transform.localScale = Vector3.one * (1f - t);
             yield return null;
         }
         pointImage.enabled = false;

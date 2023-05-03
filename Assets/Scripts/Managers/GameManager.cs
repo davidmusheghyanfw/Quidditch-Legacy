@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void GameInit()
     {
         isGameInited = false;
+        PointerManager.Instance.InitPointerManager();
         LevelManager.instance.InitLevel();
         GameView.instance.GameViewInit();
         MenuView.instance.MenuViewInit();
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         this.Timer(1f, () => 
         { 
             Launcher.instance.LauncherInit();
+            EnemyManager.instance.Enemyinit();
             MenuView.instance.SetActive(true);
         });
         
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         CameraController.instance.StopTrackedDollAnimRoutine();
         Launcher.instance.LauncherInGame();
-        GameView.instance.SetDistance(LevelManager.instance.GetLevelEndPosPercent());
+        GameView.instance.SetEnemyCount(EnemyManager.instance.GetEnemyCount());
         GameView.instance.LaunchBtnSetActive(true);
        
     }
@@ -61,8 +63,7 @@ public class GameManager : MonoBehaviour
 
         LevelEndView.instance.gameObject.SetActive(true);
         LevelManager.instance.levelWin();
-        PointerManager.Instance.DestroyPoints();
-       // Launcher.instance.GetRocketController().OnGameWin();
+      
 
     }
    
