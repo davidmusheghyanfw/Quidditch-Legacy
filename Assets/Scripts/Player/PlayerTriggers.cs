@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTriggers : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "CheckPoint")
         {
@@ -13,7 +13,7 @@ public class PlayerTriggers : MonoBehaviour
         }
         if (other.gameObject.tag == "Finish")
         {
-          
+
             // LevelManager.instance.Finished();
             // Launcher.instance.GetRocketController().FinishPlace = LevelManager.instance.GetFinishPlace();
             // LevelManager.instance.GetReward(Launcher.instance.GetRocketController().FinishPlace);
@@ -24,6 +24,7 @@ public class PlayerTriggers : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Destroyable>().IsDamaged(true);
+            CameraController.instance.SetFollowTarget(CameraState.Rocket, other.gameObject.transform);
             Launcher.instance.GetRocketController().DestroyObject();
         }
 
@@ -33,14 +34,11 @@ public class PlayerTriggers : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.tag == "Environment")
+        if (other.gameObject.tag == "Ground")
         {
-            //Launcher.instance.GetRocketController().Die();
-            //this.Timer(1f, () =>
-            //{
-            //    Launcher.instance.GetRocketController().Reborn();
-            //});
+
             Launcher.instance.GetRocketController().DestroyObject();
         }
     }
+  
 }
